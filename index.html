@@ -1141,71 +1141,114 @@
 
     /* コラム連載 */
     .column-block {
-      background: var(--dark);
-      border-radius: 14px;
-      padding: 32px 36px;
+      background: #1a1a1a;
+      border-radius: 24px;
+      padding: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .column-media-name {
       font-family: 'Noto Serif JP', serif;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 700;
       color: var(--yellow);
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .column-media-note {
-      font-family: 'Noto Serif JP', serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 12px;
       color: rgba(255, 255, 255, 0.4);
-      margin-bottom: 24px;
+      margin-bottom: 32px;
+      letter-spacing: 0.05em;
     }
 
     .column-list {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
 
     .column-item {
-      display: flex;
-      gap: 16px;
-      align-items: baseline;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 0;
+      border-bottom: none;
     }
 
-    .column-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
+    .column-link {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 24px;
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .column-link:hover {
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .column-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .column-tag {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--yellow);
+      background: rgba(255, 184, 0, 0.1);
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     .column-date {
       font-family: 'DM Sans', sans-serif;
       font-size: 11px;
-      color: rgba(255, 255, 255, 0.35);
-      white-space: nowrap;
-      flex-shrink: 0;
+      color: rgba(255, 255, 255, 0.3);
       letter-spacing: 0.05em;
+    }
+
+    .column-title-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
     }
 
     .column-title {
       font-family: 'Noto Serif JP', serif;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.7;
+      font-size: 16px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+      flex: 1;
     }
 
-    a.column-title {
-      text-decoration: none;
-      color: rgba(255, 255, 255, 0.8);
-      transition: color 0.2s;
-    }
-
-    a.column-title:hover {
+    .column-arrow {
+      width: 24px;
+      height: 24px;
       color: var(--yellow);
-      text-decoration: underline;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      opacity: 0.5;
+    }
+
+    .column-link:hover .column-arrow {
+      transform: translateX(6px);
+      opacity: 1;
     }
 
     .tv-episode a,
