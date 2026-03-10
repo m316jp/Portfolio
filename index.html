@@ -64,14 +64,32 @@
     .nav-logo {
       font-family: 'Noto Serif JP', serif;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 15px;
       color: var(--dark);
       letter-spacing: 0.05em;
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
     .nav-logo span {
+      font-weight: 400;
+      font-size: 13px;
       color: var(--yellow-dark);
+      position: relative;
+      padding-left: 12px;
+    }
+
+    .nav-logo span::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 14px;
+      background: rgba(0, 0, 0, 0.15);
     }
 
     .nav-links {
@@ -1595,7 +1613,7 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#" class="nav-logo">宮崎 <span>真理</span></a>
+    <a href="#" class="nav-logo">宮崎 真理 <span>AI✕家事</span></a>
     <ul class="nav-links">
       <li><a href="#profile">プロフィール</a></li>
       <li><a href="#book">著書</a></li>
