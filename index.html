@@ -843,8 +843,9 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-auto-rows: 1fr;
-      /* Force cards to have the same height in rows */
       gap: 16px;
+      justify-items: stretch;
+      /* Ensure cards fill the full column width */
     }
 
     .tv-card {
@@ -857,7 +858,8 @@
       border: 1px solid rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease;
       height: 100%;
-      /* Stretch to fill the grid cell */
+      width: 100%;
+      /* Force uniform width regardless of content */
     }
 
     .tv-card:hover {
