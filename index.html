@@ -14,14 +14,14 @@
   <meta property="og:description" content="毎日バタバタな3児ママがAIを使ってみたら、一人で悩む時間が消えた。1000日以上の実践から生まれた活用術を公開。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://m316jp.github.io/Portfolio/">
-  <meta property="og:image" content="https://raw.githubusercontent.com/m316jp/Portfolio/main/AItaizen_hyo1_0120.jpg">
+  <meta property="og:image" content="https://raw.githubusercontent.com/m316jp/Portfolio/main/AItaizen_hyo1_0120.webp">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@m316jp2">
   <meta name="twitter:title" content="宮崎真理 | AI×家事">
   <meta name="twitter:description" content="生成AIで、暮らしをラクに。1000日以上の実践から厳選した60の活用例をまとめた著書『AI×家事』を出版。">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/m316jp/Portfolio/main/AItaizen_hyo1_0120.jpg">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/m316jp/Portfolio/main/AItaizen_hyo1_0120.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -152,6 +152,7 @@
       grid-template-columns: 1fr 1fr;
       align-items: center;
       padding-top: 80px;
+      padding-bottom: 120px;
       overflow: hidden;
     }
 
@@ -393,7 +394,24 @@
 
     /* ===== SECTION BASE ===== */
     section {
-      padding: 120px 0;
+      padding: 140px 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Shippori Mincho', serif;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      line-height: 1.4;
+      letter-spacing: 0.03em;
+    }
+
+    p {
+      line-height: 1.9;
+      letter-spacing: 0.03em;
+      color: var(--charcoal);
+      margin-bottom: 1.5em;
     }
 
     .container {
@@ -1506,6 +1524,48 @@
       }
     }
 
+    /* Floating Mobile CTA */
+    .mobile-floating-cta {
+      display: none;
+      position: fixed;
+      bottom: 24px;
+      left: 20px;
+      right: 20px;
+      z-index: 1000;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .mobile-floating-cta.visible {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .floating-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--dark);
+      color: var(--white);
+      padding: 16px 24px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .floating-btn span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      opacity: 0.8;
+      font-weight: 500;
+    }
+
     .reveal {
       opacity: 0;
       transform: translateY(32px);
@@ -1575,7 +1635,11 @@
       }
 
       section {
-        padding: 80px 0;
+        padding: 90px 0;
+      }
+
+      .mobile-floating-cta.visible {
+        display: block;
       }
 
       .profile-grid,
@@ -1665,7 +1729,7 @@
 
     <div class="hero-right">
       <div class="book-wrapper">
-        <img src="AItaizen_hyo1_0120.jpg" alt="AI×家事 書影" class="book-cover">
+        <img src="AItaizen_hyo1_0120.webp" alt="AI×家事 書影" class="book-cover">
       </div>
     </div>
   </section>
@@ -1747,14 +1811,14 @@
         </div>
 
         <div class="book-visual reveal reveal-delay-2">
-          <img src="AI✕家事.jpg" alt="AI×家事 書影" class="book-cover-large">
+          <img src="AI_kaji.webp" alt="AI×家事 書影" class="book-cover-large">
           <p class="book-publisher">扶桑社 ／ 2026年3月発売</p>
         </div>
       </div>
 
       <div class="mokuji-grid reveal" style="margin-top: 60px;">
-        <img src="mokuji1.png" alt="目次1" class="mokuji-img">
-        <img src="mokuji2.png" alt="目次2" class="mokuji-img">
+        <img src="mokuji1.webp" alt="目次1" class="mokuji-img">
+        <img src="mokuji2.webp" alt="目次2" class="mokuji-img">
       </div>
     </div>
   </section>
@@ -2075,7 +2139,24 @@
     <img id="lightbox-img" src="" alt="">
   </div>
 
+  <!-- Mobile Floating CTA -->
+  <div class="mobile-floating-cta" id="mobile-cta">
+    <a href="https://amzn.to/3T79r9I" target="_blank" rel="noopener" class="floating-btn">
+      Amazonで購入 <span>¥1,540</span>
+    </a>
+  </div>
+
   <script>
+    // Mobile CTA Visibility
+    const mobileCta = document.getElementById('mobile-cta');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500 && window.innerWidth <= 768) {
+        mobileCta.classList.add('visible');
+      } else {
+        mobileCta.classList.remove('visible');
+      }
+    });
+
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
 
