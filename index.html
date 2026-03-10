@@ -1344,13 +1344,15 @@
     }
 
     .contact-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      justify-content: center;
       gap: 16px;
       text-align: left;
     }
 
     .contact-card {
+      max-width: 320px;
+      width: 100%;
       background: var(--white);
       border-radius: 16px;
       padding: 28px;
@@ -1660,7 +1662,7 @@
                 <path
                   d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
-              <span>𝕏 (@m316jp2)</span>
+              <span>@m316jp2</span>
             </a>
             <a class="profile-sns-link" href="https://note.com/m316jp2" target="_blank" rel="noopener">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -1995,14 +1997,6 @@
             <div class="contact-card-text">
               <p class="contact-card-label">SNS</p>
               <p class="contact-card-title">X（旧Twitter）DM</p>
-            </div>
-            <span class="contact-card-arrow">→</span>
-          </a>
-          <a href="https://note.com/m316jp2" target="_blank" rel="noopener" class="contact-card">
-            <div class="contact-card-icon">📝</div>
-            <div class="contact-card-text">
-              <p class="contact-card-label">Blog</p>
-              <p class="contact-card-title">note</p>
             </div>
             <span class="contact-card-arrow">→</span>
           </a>
