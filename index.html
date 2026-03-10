@@ -416,6 +416,33 @@
       margin-bottom: 0;
     }
 
+    .profile-sns {
+      display: flex;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .profile-sns-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .profile-sns-link:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--yellow);
+      color: var(--yellow);
+    }
+
     .profile-career {
       margin-top: 36px;
       padding-top: 36px;
@@ -820,10 +847,12 @@
       margin-bottom: 16px;
       border-radius: 8px;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
     }
 
     .magazine-cover-img {
-      width: 100%;
+      width: 120px;
       display: block;
       border-radius: 8px;
     }
@@ -1016,6 +1045,7 @@
       color: var(--charcoal);
       transition: color 0.2s;
     }
+
 
     a.article-title:hover {
       color: var(--yellow-dark);
@@ -1581,6 +1611,16 @@
             2026年3月、1000日以上の実践から厳選した60の活用例をまとめた
             初の著書『AI×家事』（扶桑社）を出版。
           </p>
+          <div class="profile-sns">
+            <a class="profile-sns-link" href="https://x.com/m316jp2" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              @m316jp2
+            </a>
+            <a class="profile-sns-link" href="https://note.com/m316jp2" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 3h10v2H7V8zm0 4h10v2H7v-2zm0 4h6v2H7v-2z"/></svg>
+              note
+            </a>
+          </div>
         </div>
 
       </div>
@@ -1724,7 +1764,7 @@
           </div>
           <div class="event-info">
             <p class="event-host">マイナビ子育て</p>
-            <p class="event-title"><a href="https://www.instagram.com/p/DVhzSVqESIY/" target="_blank" rel="noopener">「AI難しそう…と思っているママが<br>"これなら使えそう！"となる30分」</a></p>
+            <p class="event-title">「AI難しそう…と思っているママが<br>"これなら使えそう！"となる30分」</p>
             <p class="event-format">インスタライブ配信</p>
           </div>
         </div>
@@ -1761,7 +1801,7 @@
 
         <div class="web-media-block">
           <p class="web-media-name">集英社オンライン</p>
-          <p class="web-media-note">2026年3月「3児ママのAI活用術」シリーズ</p>
+          <p class="web-media-note">2026年3月「3児ママのAI活用術」</p>
           <ul class="article-list">
             <li class="article-item">
               <span class="article-date">2026.03.02</span>
@@ -1780,7 +1820,6 @@
 
         <div class="web-media-block">
           <p class="web-media-name">マイナビ子育て</p>
-          <p class="web-media-note">「AI×家事」シリーズ</p>
           <ul class="article-list">
             <li class="article-item">
               <span class="article-date">2026.03.03</span>
@@ -1799,7 +1838,6 @@
 
         <div class="web-media-block">
           <p class="web-media-name">ESSEonline（エッセ オンライン）</p>
-          <p class="web-media-note">書籍『AI×家事』抜粋記事（2026年3月）</p>
           <ul class="article-list">
             <li class="article-item">
               <span class="article-date">2026.03.06</span>
@@ -1830,7 +1868,7 @@
           <h3 class="media-category-title">コラム連載</h3>
         </div>
         <div class="column-block">
-          <p class="column-media-name">講談社『with class mama』</p>
+          <p class="column-media-name"><a href="https://withonline.jp/authors/9miIK" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid currentColor;">講談社『with class mama』</a></p>
           <p class="column-media-note">コラムニスト（withonline.jp）</p>
           <ul class="column-list">
             <li class="column-item">
