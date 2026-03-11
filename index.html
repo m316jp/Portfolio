@@ -460,7 +460,23 @@
       background: var(--white);
     }
 
-.profile-grid {
+    .profile-photo-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-photo {
+      width: 100%;
+      max-width: 260px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 14px;
+      display: block;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    .profile-grid {
       display: grid;
       grid-template-columns: 5fr 4fr;
       gap: 80px;
@@ -1773,7 +1789,11 @@
         justify-items: stretch;
       }
 
-      .book-grid {
+      .profile-photo {
+        max-width: 200px;
+      }
+
+.book-grid {
         gap: 40px;
       }
 
@@ -1921,6 +1941,9 @@
           </div>
         </div>
 
+        <div class="profile-photo-wrap reveal reveal-delay-2">
+          <img src="MariSaimu.png" alt="宮崎真理" class="profile-photo">
+        </div>
       </div>
     </div>
   </section>
