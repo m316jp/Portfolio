@@ -8,20 +8,24 @@
   <meta name="description" content="3児の母であり、1000日以上AIを家事・育児に活用してきた宮崎真理のポートフォリオ。著書『AI×家事』（扶桑社）の紹介やメディア出演実績を掲載。">
   <meta name="keywords" content="宮崎真理, AI×家事, 生成AI, 家事効率化, 育児AI, 扶桑社">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="AItaizen_hyo1_0120.jpg">
+  <link rel="apple-touch-icon" href="AItaizen_hyo1_0120.jpg">
+
   <!-- OGP -->
   <meta property="og:site_name" content="宮崎真理 ポートフォリオ">
   <meta property="og:title" content="宮崎真理 | AI×家事 著者">
   <meta property="og:description" content="毎日バタバタな3児ママがAIを使ってみたら、一人で悩む時間が消えた。1000日以上の実践から生まれた活用術を公開。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://m316jp.github.io/Portfolio/">
-  <meta property="og:image" content="https://raw.githubusercontent.com/m316jp/Portfolio/main/AItaizen_hyo1_0120.webp">
+  <meta property="og:image" content="https://m316jp.github.io/Portfolio/AItaizen_hyo1_0120.jpg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@m316jp2">
   <meta name="twitter:title" content="宮崎真理 | AI×家事">
   <meta name="twitter:description" content="生成AIで、暮らしをラクに。1000日以上の実践から厳選した60の活用例をまとめた著書『AI×家事』を出版。">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/m316jp/Portfolio/main/AItaizen_hyo1_0120.webp">
+  <meta name="twitter:image" content="https://m316jp.github.io/Portfolio/AItaizen_hyo1_0120.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -76,6 +80,10 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       transition: all 0.3s ease;
+    }
+
+    .hamburger {
+      display: none;
     }
 
     .nav-logo {
@@ -394,7 +402,7 @@
 
     /* ===== SECTION BASE ===== */
     section {
-      padding: 140px 0;
+      padding: 120px 0;
     }
 
     h1,
@@ -801,12 +809,12 @@
     }
 
     .media-header {
-      margin-bottom: 64px;
+      margin-bottom: 48px;
     }
 
     /* カテゴリブロック */
     .media-category {
-      margin-bottom: 56px;
+      margin-bottom: 48px;
     }
 
     .media-category-header {
@@ -826,8 +834,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
       flex-shrink: 0;
+      color: var(--dark);
+    }
+
+    .media-category-icon svg {
+      width: 20px;
+      height: 20px;
     }
 
     .media-category-title {
@@ -850,22 +863,26 @@
 
     .tv-card {
       background: var(--white);
-      border-radius: 14px;
+      border-radius: 16px;
       padding: 24px 28px;
       display: flex;
-      gap: 20px;
-      align-items: flex-start;
-      border: 1px solid rgba(0, 0, 0, 0.05);
+      flex-direction: column;
+      gap: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
       transition: all 0.3s ease;
       height: 100%;
-      width: 100%;
-      /* Force uniform width regardless of content */
     }
 
     .tv-card:hover {
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
       transform: translateY(-2px);
       border-color: var(--yellow-light);
+    }
+
+    .tv-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .tv-station-badge {
@@ -875,15 +892,22 @@
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.08em;
-      padding: 6px 12px;
-      border-radius: 8px;
+      padding: 5px 12px;
+      border-radius: 6px;
       white-space: nowrap;
-      flex-shrink: 0;
-      align-self: flex-start;
+    }
+
+    .tv-date {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      color: var(--gray);
+      letter-spacing: 0.08em;
     }
 
     .tv-info {
-      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
     .tv-program {
@@ -891,7 +915,6 @@
       font-size: 15px;
       font-weight: 700;
       color: var(--dark);
-      margin-bottom: 4px;
       line-height: 1.5;
     }
 
@@ -900,14 +923,6 @@
       font-size: 13px;
       color: var(--charcoal);
       line-height: 1.7;
-      margin-bottom: 8px;
-    }
-
-    .tv-date {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
-      color: var(--gray);
-      letter-spacing: 0.08em;
     }
 
     /* 雑誌カード */
@@ -1690,6 +1705,58 @@
 
       .nav-links {
         display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(254, 250, 243, 0.97);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        z-index: 99;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        font-size: 20px;
+      }
+
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 101;
+        background: none;
+        border: none;
+        padding: 4px;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--dark);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
       }
 
       section {
@@ -1698,7 +1765,7 @@
 
       .hero {
         grid-template-columns: 1fr;
-        padding-bottom: 80px;
+        padding-bottom: 0;
       }
 
       .hero-left {
@@ -1744,7 +1811,7 @@
       }
 
       section {
-        padding: 90px 0;
+        padding: 80px 0;
       }
 
       .mobile-floating-cta.visible {
@@ -1758,7 +1825,7 @@
       .contents-grid,
       .contact-cards {
         grid-template-columns: 1fr;
-        justify-items: center;
+        justify-items: stretch;
         text-align: center;
       }
 
@@ -1823,12 +1890,15 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">宮崎 真理 <span>AI✕家事</span></a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
       <li><a href="#profile">プロフィール</a></li>
       <li><a href="#book">著書</a></li>
       <li><a href="#media">メディア実績</a></li>
       <li><a href="#contact">お問い合わせ</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -1891,12 +1961,6 @@
               </svg>
               <span>@m316jp2</span>
             </a>
-            <a class="profile-sns-link" href="https://note.com/m316jp2" target="_blank" rel="noopener">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 3h10v2H7V8zm0 4h10v2H7v-2zm0 4h6v2H7v-2z" />
-              </svg>
-              <span>note</span>
-            </a>
           </div>
         </div>
 
@@ -1944,7 +2008,7 @@
         </div>
       </div>
 
-      <div class="mokuji-grid reveal" style="margin-top: 60px;">
+      <div class="mokuji-grid reveal" style="margin-top: 48px;">
         <img src="mokuji1.webp" alt="目次1" class="mokuji-img">
         <img src="mokuji2.webp" alt="目次2" class="mokuji-img">
       </div>
@@ -1962,40 +2026,48 @@
       <!-- テレビ出演 -->
       <div class="media-category reveal">
         <div class="media-category-header">
-          <div class="media-category-icon">📺</div>
+          <div class="media-category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 2l-4 5-4-5"/></svg></div>
           <h3 class="media-category-title">テレビ出演</h3>
         </div>
         <div class="tv-grid">
           <div class="tv-card">
-            <span class="tv-station-badge">NHK</span>
+            <div class="tv-card-top">
+              <span class="tv-station-badge">NHK</span>
+              <span class="tv-date">2025.05.17</span>
+            </div>
             <div class="tv-info">
               <p class="tv-program">週刊情報チャージ！チルシル</p>
               <p class="tv-episode">「どこまで知ってる？生成AIのいま」</p>
-              <p class="tv-date">2025.05.17</p>
             </div>
           </div>
           <div class="tv-card">
-            <span class="tv-station-badge">日本テレビ</span>
+            <div class="tv-card-top">
+              <span class="tv-station-badge">日本テレビ</span>
+              <span class="tv-date">2025.06.12</span>
+            </div>
             <div class="tv-info">
               <p class="tv-program">DayDay.</p>
               <p class="tv-episode">「家庭の悩みAIで解決！」</p>
-              <p class="tv-date">2025.06.12</p>
             </div>
           </div>
           <div class="tv-card">
-            <span class="tv-station-badge">日本テレビ</span>
+            <div class="tv-card-top">
+              <span class="tv-station-badge">日本テレビ</span>
+              <span class="tv-date">2025.07.29</span>
+            </div>
             <div class="tv-info">
               <p class="tv-program">カズレーザーと学ぶ。</p>
               <p class="tv-episode">「子育ての悩みを最新科学で解決SP<br>生成AIは子育ての味方？」</p>
-              <p class="tv-date">2025.07.29</p>
             </div>
           </div>
           <div class="tv-card">
-            <span class="tv-station-badge">フジテレビ</span>
+            <div class="tv-card-top">
+              <span class="tv-station-badge">フジテレビ</span>
+              <span class="tv-date">2026.02.27</span>
+            </div>
             <div class="tv-info">
               <p class="tv-program">ノンストップ！</p>
               <p class="tv-episode">「家事育児にも役立つAI活用術」</p>
-              <p class="tv-date">2026.02.27</p>
             </div>
           </div>
         </div>
@@ -2004,7 +2076,7 @@
       <!-- 雑誌掲載 -->
       <div class="media-category reveal">
         <div class="media-category-header">
-          <div class="media-category-icon">📖</div>
+          <div class="media-category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
           <h3 class="media-category-title">雑誌掲載</h3>
         </div>
         <div class="magazine-grid">
@@ -2037,7 +2109,7 @@
       <!-- イベント・ライブ配信 -->
       <div class="media-category reveal">
         <div class="media-category-header">
-          <div class="media-category-icon">🎤</div>
+          <div class="media-category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 1 3 3v7a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg></div>
           <h3 class="media-category-title">イベント・ライブ配信</h3>
         </div>
         <div class="event-card">
@@ -2057,7 +2129,7 @@
       <!-- Web記事 -->
       <div class="media-category reveal">
         <div class="media-category-header">
-          <div class="media-category-icon">🌐</div>
+          <div class="media-category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
           <h3 class="media-category-title">Web記事</h3>
         </div>
 
@@ -2162,7 +2234,7 @@
       <!-- コラム連載 -->
       <div class="media-category reveal">
         <div class="media-category-header">
-          <div class="media-category-icon">✍️</div>
+          <div class="media-category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
           <h3 class="media-category-title">コラム連載</h3>
         </div>
         <div class="column-block">
@@ -2299,6 +2371,22 @@
   </footer>
 
   <script>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
