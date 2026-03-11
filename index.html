@@ -1478,6 +1478,89 @@
       margin-bottom: 16px;
     }
 
+    .contact-form {
+      margin-top: 40px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .contact-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .contact-form-group label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--dark);
+      letter-spacing: 0.06em;
+    }
+
+    .contact-form-group label span {
+      color: #e05;
+    }
+
+    .contact-form-group input,
+    .contact-form-group select,
+    .contact-form-group textarea {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 14px;
+      color: var(--dark);
+      background: rgba(255,255,255,0.7);
+      border: 1.5px solid rgba(0,0,0,0.15);
+      border-radius: 10px;
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .contact-form-group input:focus,
+    .contact-form-group select:focus,
+    .contact-form-group textarea:focus {
+      border-color: var(--dark);
+    }
+
+    .contact-form-group textarea {
+      resize: vertical;
+    }
+
+    .contact-form-btn {
+      align-self: center;
+      background: var(--dark);
+      color: var(--yellow);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      padding: 14px 40px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .contact-form-btn:hover {
+      background: var(--charcoal);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 900px) {
+      .contact-form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .contact-desc {
       font-family: 'Noto Serif JP', serif;
       font-size: 16px;
@@ -2340,6 +2423,24 @@
             <span class="contact-card-arrow">→</span>
           </a>
         </div>
+
+        <form class="contact-form" action="https://formspree.io/f/xvzwakrg" method="POST">
+          <div class="contact-form-row">
+            <div class="contact-form-group">
+              <label for="cf-name">お名前 <span>*</span></label>
+              <input type="text" id="cf-name" name="name" required placeholder="山田 花子">
+            </div>
+            <div class="contact-form-group">
+              <label for="cf-email">メールアドレス <span>*</span></label>
+              <input type="email" id="cf-email" name="email" required placeholder="example@mail.com">
+            </div>
+          </div>
+          <div class="contact-form-group">
+            <label for="cf-message">メッセージ <span>*</span></label>
+            <textarea id="cf-message" name="message" required placeholder="お気軽にご連絡ください。" rows="5"></textarea>
+          </div>
+          <button type="submit" class="contact-form-btn">送信する →</button>
+        </form>
       </div>
     </div>
   </section>
