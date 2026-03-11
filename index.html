@@ -198,8 +198,8 @@
     }
 
     .hero-name {
-      font-family: 'Noto Serif JP', serif;
-      font-size: clamp(52px, 6vw, 80px);
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(52px, 6vw, 88px);
       font-weight: 700;
       line-height: 1.1;
       color: var(--dark);
@@ -276,6 +276,36 @@
       width: 1px;
       background: #ddd;
       align-self: stretch;
+    }
+
+    .hero-tv-badges {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .hero-tv-badge {
+      background: var(--dark);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0 12px;
+      border-radius: 4px;
+      height: 26px;
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
+    }
+
+    .hero-tv-more {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 12px;
+      color: var(--gray);
+      letter-spacing: 0.04em;
     }
 
     .hero-cta {
@@ -408,7 +438,7 @@
 
     /* ===== SECTION BASE ===== */
     section {
-      padding: 120px 0;
+      padding: 140px 0;
     }
 
     h1,
@@ -455,12 +485,12 @@
     }
 
     .section-title {
-      font-family: 'Noto Serif JP', serif;
-      font-size: clamp(28px, 4vw, 42px);
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(28px, 4vw, 44px);
       font-weight: 700;
       line-height: 1.4;
       color: var(--dark);
-      margin-bottom: 16px;
+      margin-bottom: 24px;
       letter-spacing: -0.01em;
     }
 
@@ -555,7 +585,7 @@
       letter-spacing: 0.2em;
       color: var(--gray);
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .career-list {
@@ -831,12 +861,12 @@
     }
 
     .media-header {
-      margin-bottom: 48px;
+      margin-bottom: 64px;
     }
 
     /* カテゴリブロック */
     .media-category {
-      margin-bottom: 48px;
+      margin-bottom: 64px;
     }
 
     .media-category-header {
@@ -866,8 +896,8 @@
     }
 
     .media-category-title {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 18px;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 20px;
       font-weight: 700;
       color: var(--dark);
       letter-spacing: 0.05em;
@@ -886,7 +916,7 @@
     .tv-card {
       background: var(--white);
       border-radius: 16px;
-      padding: 24px 28px;
+      padding: 28px 32px;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -933,8 +963,8 @@
     }
 
     .tv-program {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 15px;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 16px;
       font-weight: 700;
       color: var(--dark);
       line-height: 1.5;
@@ -972,7 +1002,7 @@
     .magazine-card {
       background: var(--white);
       border-radius: 14px;
-      padding: 24px 28px;
+      padding: 28px 32px;
       border: 1px solid rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease;
     }
@@ -1021,7 +1051,7 @@
     .event-card {
       background: var(--white);
       border-radius: 14px;
-      padding: 28px 32px;
+      padding: 32px 36px;
       border: 1px solid rgba(0, 0, 0, 0.05);
       display: flex;
       gap: 24px;
@@ -1107,7 +1137,7 @@
     .web-media-block {
       background: var(--white);
       border-radius: 14px;
-      padding: 28px 32px;
+      padding: 32px 36px;
       margin-bottom: 16px;
       border: 1px solid rgba(0, 0, 0, 0.05);
     }
@@ -1180,13 +1210,13 @@
     .column-block {
       background: #1a1a1a;
       border-radius: 24px;
-      padding: 40px;
+      padding: 52px;
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .column-media-name {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 18px;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 20px;
       font-weight: 700;
       color: var(--yellow);
       margin-bottom: 2px;
@@ -1204,65 +1234,68 @@
       list-style: none;
       display: grid;
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 0;
     }
 
-    .column-item {
-      padding: 0;
+    .column-item:last-child .column-link {
       border-bottom: none;
+    }
+
+    .column-more-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+
+    .column-more-link:hover {
+      color: var(--yellow);
     }
 
     .column-link {
       display: flex;
-      flex-direction: column;
-      gap: 12px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
-      padding: 24px;
+      flex-direction: row;
+      align-items: baseline;
+      gap: 16px;
+      background: none;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 0;
+      padding: 12px 0;
       text-decoration: none;
-      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-      position: relative;
-      overflow: hidden;
+      transition: color 0.2s;
     }
 
-    .column-link:hover {
-      background: rgba(255, 255, 255, 0.06);
-      transform: translateY(-4px);
-      border-color: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    .column-link:hover .column-title {
+      color: var(--yellow) !important;
     }
 
     .column-meta-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-shrink: 0;
     }
 
     .column-tag {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--yellow);
-      background: rgba(255, 184, 0, 0.1);
-      padding: 4px 10px;
-      border-radius: 6px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      display: none;
     }
 
     .column-date {
       font-family: 'DM Sans', sans-serif;
       font-size: 11px;
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.5);
       letter-spacing: 0.05em;
+      white-space: nowrap;
     }
 
     .column-title-wrap {
+      flex: 1;
       display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 20px;
+      align-items: center;
+      gap: 8px;
     }
 
     .column-title {
@@ -1275,6 +1308,7 @@
     }
 
     .column-arrow {
+      display: none;
       width: 24px;
       height: 24px;
       color: var(--yellow);
@@ -1672,6 +1706,22 @@
       color: var(--dark) !important;
     }
 
+    .column-date {
+      color: var(--gray) !important;
+    }
+
+    .column-link {
+      border-bottom-color: rgba(0,0,0,0.06) !important;
+    }
+
+    .column-more-link {
+      color: var(--gray) !important;
+    }
+
+    .column-more-link:hover {
+      color: var(--yellow-dark) !important;
+    }
+
     .tv-date,
     .mag-date,
     .event-date,
@@ -1835,6 +1885,10 @@
         justify-content: center;
       }
 
+      .hero-tv-badges {
+        justify-content: center;
+      }
+
       .hero-cta {
         flex-direction: column;
         gap: 16px;
@@ -1980,6 +2034,12 @@
         <strong>AIを使ってみたら</strong>、<br>
         一人で悩む時間が消えた。
       </p>
+      <div class="hero-tv-badges">
+        <span class="hero-tv-badge">NHK</span>
+        <span class="hero-tv-badge">日本テレビ</span>
+        <span class="hero-tv-badge">フジテレビ</span>
+        <span class="hero-tv-more">ほか多数出演</span>
+      </div>
       <div class="hero-cta">
         <a href="#book" class="btn-primary">著書を見る →</a>
         <a href="#contact" class="btn-secondary">お問い合わせ</a>
@@ -2016,7 +2076,7 @@
           <p>
             「難しそう」「専門的な知識が必要」と思われがちなAIを、
             普通のママ目線で実践・発信したことで大きな反響を呼び、
-            NHK・日本テレビ・フジテレビをはじめ多数のメディアに出演。
+            <strong>NHK・日本テレビ・フジテレビ</strong>をはじめ多数のメディアに出演。
           </p>
           <p>
             2026年3月、1000日以上の実践から厳選した60の活用例をまとめた
@@ -2048,7 +2108,7 @@
           <span class="section-label">Book</span>
           <h2 class="section-title">AI×家事</h2>
           <p class="book-subtitle">
-            1000日間 使い倒して厳選した、60の活用例
+            1000日間使い倒して厳選した、60の活用例
           </p>
           <p class="book-catch">
             毎日バタバタな3児ママが<br>
@@ -2275,7 +2335,7 @@
         </div>
 
         <div class="web-media-block">
-          <p class="web-media-name">ESSEonline（エッセ オンライン）</p>
+          <p class="web-media-name">ESSE online</p>
           <ul class="article-list">
             <li class="article-item">
               <span class="article-date">2026.03.06</span>
@@ -2286,6 +2346,10 @@
               <span class="article-date">2026.03.08</span>
               <a class="article-title" href="https://news.yahoo.co.jp/articles/5bee4694ec8002100f483e245034760c1bf25e68"
                 target="_blank" rel="noopener">「洗濯機トラブル」をAIに相談したら。即解決する"神プロンプト"があった！洗濯表示タグの解読にも</a>
+            </li>
+            <li class="article-item">
+              <span class="article-date">2026.03.10</span>
+              <a class="article-title" href="https://esse-online.jp/articles/-/36316" target="_blank" rel="noopener">「Sサイズ？Mサイズ？」もう迷わない！ネット通販の服選びをChatGPTに相談したら、失敗がゼロになった話</a>
             </li>
           </ul>
         </div>
@@ -2406,6 +2470,9 @@
               </a>
             </li>
           </ul>
+          <a href="https://withonline.jp/authors/9miIK" target="_blank" rel="noopener" class="column-more-link">
+            すべてのコラムを読む →
+          </a>
         </div>
       </div>
 
