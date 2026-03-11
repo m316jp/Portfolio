@@ -497,29 +497,33 @@
     /* ===== PROFILE ===== */
     .profile {
       background: var(--white);
+      overflow: hidden;
     }
 
     .profile-photo-wrap {
-      display: flex;
-      justify-content: center;
+      position: relative;
     }
 
     .profile-photo {
       width: 100%;
-      max-width: 260px;
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 3 / 4;
       object-fit: cover;
       object-position: top center;
-      border-radius: 14px;
+      border-radius: 20px;
       display: block;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
     }
 
     .profile-grid {
       display: grid;
-      grid-template-columns: 5fr 4fr;
-      gap: 80px;
-      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-items: stretch;
+    }
+
+    .profile-text {
+      padding-right: 64px;
+      position: relative;
+      z-index: 2;
     }
 
     .profile-text p {
@@ -1999,8 +2003,16 @@
         justify-items: stretch;
       }
 
+      .profile-text {
+        padding-right: 0;
+        padding-bottom: 40px;
+      }
+
       .profile-photo {
-        max-width: 200px;
+        aspect-ratio: unset;
+        width: 60%;
+        margin: 0 auto;
+        display: block;
       }
 
 .book-grid {
