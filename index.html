@@ -56,6 +56,7 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     body {
@@ -80,10 +81,6 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       transition: all 0.3s ease;
-    }
-
-    .hamburger {
-      display: none;
     }
 
     .nav-logo {
@@ -463,7 +460,7 @@
       background: var(--white);
     }
 
-    .profile-grid {
+.profile-grid {
       display: grid;
       grid-template-columns: 5fr 4fr;
       gap: 80px;
@@ -1705,58 +1702,6 @@
 
       .nav-links {
         display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(254, 250, 243, 0.97);
-        backdrop-filter: blur(12px);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
-        z-index: 99;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a {
-        font-size: 20px;
-      }
-
-      .hamburger {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-        z-index: 101;
-        background: none;
-        border: none;
-        padding: 4px;
-      }
-
-      .hamburger span {
-        display: block;
-        width: 24px;
-        height: 2px;
-        background: var(--dark);
-        border-radius: 2px;
-        transition: all 0.3s ease;
-      }
-
-      .hamburger.open span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-      }
-
-      .hamburger.open span:nth-child(2) {
-        opacity: 0;
-      }
-
-      .hamburger.open span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
       }
 
       section {
@@ -1798,8 +1743,8 @@
       }
 
       .hero-right {
-        height: 50vh;
-        min-height: 300px;
+        height: 40vh;
+        min-height: 260px;
       }
 
       .book-cover {
@@ -1826,21 +1771,27 @@
       .contact-cards {
         grid-template-columns: 1fr;
         justify-items: stretch;
-        text-align: center;
+      }
+
+      .book-grid {
+        gap: 40px;
+      }
+
+      .profile-sns {
+        justify-content: flex-start;
       }
 
       .event-card {
         flex-direction: row;
-        /* Keep side-by-side even on mobile for better balance */
         align-items: center;
-        gap: 20px;
+        gap: 16px;
         padding: 20px;
       }
 
       .event-date-block {
-        width: 70px;
-        /* Slightly smaller on mobile */
-        height: 70px;
+        width: 64px;
+        height: 64px;
+        flex-shrink: 0;
       }
 
       .web-media-block {
@@ -1851,15 +1802,15 @@
         padding: 24px 20px;
       }
 
-      .column-link {
-        padding: 20px;
-      }
-
       .column-title {
         font-size: 15px;
       }
 
-      .article-item,
+      .article-item {
+        flex-wrap: wrap;
+        gap: 4px 12px;
+      }
+
       .column-item {
         flex-direction: column;
         gap: 4px;
@@ -1870,9 +1821,18 @@
         align-items: flex-start;
       }
 
-      .media-bar {
-        flex-direction: column;
-        align-items: flex-start;
+      .tv-card-top {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .mokuji-img {
+        border-radius: 8px;
+      }
+
+      .book-buy-btn {
+        font-size: 14px;
+        padding: 12px 20px;
       }
 
       footer {
@@ -1896,9 +1856,6 @@
       <li><a href="#media">メディア実績</a></li>
       <li><a href="#contact">お問い合わせ</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="メニューを開く">
-      <span></span><span></span><span></span>
-    </button>
   </nav>
 
   <!-- HERO -->
@@ -2371,22 +2328,6 @@
   </footer>
 
   <script>
-    // Hamburger menu
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      navLinks.classList.toggle('open');
-    });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        navLinks.classList.remove('open');
-      });
-    });
-
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
