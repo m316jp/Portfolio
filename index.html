@@ -1320,13 +1320,21 @@
 
     .web-media-chevron {
       flex-shrink: 0;
-      color: var(--gray);
-      transition: transform 0.25s ease;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--dark);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s ease, background 0.2s;
       line-height: 0;
     }
 
     .web-media-block.is-open .web-media-chevron {
       transform: rotate(180deg);
+      background: var(--yellow-dark);
     }
 
     /* コラム「もっと見る」ボタン */
