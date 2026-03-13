@@ -2060,6 +2060,45 @@
       transition-delay: 0.32s;
     }
 
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.94);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+    }
+
+    .reveal-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-28px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(28px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
       nav {
@@ -2386,7 +2425,7 @@
   <section class="profile" id="profile">
     <div class="container">
       <div class="profile-grid">
-        <div class="profile-text reveal">
+        <div class="profile-text reveal-left">
           <span class="section-label">Profile</span>
           <h2 class="section-title">生成AIで、<br>暮らしをラクに。</h2>
           <p>
@@ -2418,12 +2457,12 @@
           </div>
         </div>
 
-        <div class="profile-photo-wrap reveal reveal-delay-2">
+        <div class="profile-photo-wrap reveal-right reveal-delay-2">
           <img src="MariSaimu.jpg" alt="宮崎真理" class="profile-photo" loading="lazy">
         </div>
       </div>
 
-      <div class="profile-scenes reveal">
+      <div class="profile-scenes reveal-scale">
         <img src="風景１.jpg" alt="キッチンでAIを活用する宮崎真理" class="profile-scene-img" loading="lazy">
         <img src="風景２.png" alt="家族でAIを活用する宮崎真理" class="profile-scene-img" loading="lazy">
       </div>
@@ -2434,7 +2473,7 @@
   <section class="book-section" id="book">
     <div class="container">
       <div class="book-grid">
-        <div class="book-info reveal">
+        <div class="book-info reveal-left">
           <span class="section-label">Book</span>
           <h2 class="section-title">AI×家事</h2>
           <p class="book-subtitle">
@@ -2464,7 +2503,7 @@
           </div>
         </div>
 
-        <div class="book-visual reveal reveal-delay-2">
+        <div class="book-visual reveal-right reveal-delay-2">
           <img src="AI_kaji.webp" alt="AI×家事 書影" class="book-cover-large" loading="lazy">
           <p class="book-publisher">扶桑社 ／ 2026年3月発売</p>
         </div>
@@ -2860,7 +2899,7 @@
           <div class="contact-form-row">
             <div class="contact-form-group">
               <label for="cf-name">お名前 <span>*</span></label>
-              <input type="text" id="cf-name" name="name" required placeholder="山田 花子">
+              <input type="text" id="cf-name" name="name" required placeholder="お名前">
             </div>
             <div class="contact-form-group">
               <label for="cf-email">メールアドレス <span>*</span></label>
@@ -2885,7 +2924,7 @@
 
   <script>
     // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
+    const reveals = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -2895,6 +2934,17 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     reveals.forEach(el => observer.observe(el));
+
+    // TV・雑誌カードのstagger
+    ['.tv-grid .tv-card', '.magazine-grid .magazine-card'].forEach(selector => {
+      document.querySelectorAll(selector).forEach((card, i) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
+        observer.observe(card);
+        card.classList.add('reveal');
+      });
+    });
 
     // Nav scroll effect
     const nav = document.querySelector('nav');
