@@ -2938,11 +2938,9 @@
     // TV・雑誌カードのstagger
     ['.tv-grid .tv-card', '.magazine-grid .magazine-card'].forEach(selector => {
       document.querySelectorAll(selector).forEach((card, i) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
-        observer.observe(card);
+        card.style.transitionDelay = `${i * 0.1}s`;
         card.classList.add('reveal');
+        observer.observe(card);
       });
     });
 
