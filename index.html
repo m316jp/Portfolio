@@ -964,6 +964,7 @@
         0 20px 40px rgba(0, 0, 0, 0.3);
       display: block;
       transition: transform 0.4s ease;
+      cursor: zoom-in;
     }
 
     .book-cover-large:hover {
@@ -2932,7 +2933,7 @@
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
 
-    document.querySelectorAll('.mokuji-img').forEach(img => {
+    document.querySelectorAll('.mokuji-img, .book-cover-large').forEach(img => {
       img.addEventListener('click', () => {
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt;
