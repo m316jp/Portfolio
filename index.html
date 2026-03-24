@@ -1168,6 +1168,24 @@
       font-size: 14px;
       color: var(--charcoal);
       line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .magazine-read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--yellow-dark);
+      border-bottom: 1px solid var(--yellow-dark);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    }
+
+    .magazine-card:hover .magazine-read-link {
+      opacity: 0.7;
     }
 
     /* イベントカード */
@@ -2618,6 +2636,7 @@
             <p class="magazine-publisher">扶桑社</p>
             <span class="magazine-issue">2026年1月号</span>
             <p class="magazine-theme">暮らしと電気のこれから</p>
+            <span class="magazine-read-link">記事を読む →</span>
           </a>
           <a class="magazine-card"
             href="https://www.shinyusha.co.jp/media/ldk%E3%82%A8%E3%83%AB%E3%83%BB%E3%83%87%E3%82%A3%E3%83%BC%E3%83%BB%E3%82%B1%E3%83%BC2026%E5%B9%B44%E6%9C%88%E5%8F%B7/"
@@ -2630,6 +2649,7 @@
             <p class="magazine-publisher">晋遊舎</p>
             <span class="magazine-issue">2026年4月号</span>
             <p class="magazine-theme">暮らしアガるAI活用テク</p>
+            <span class="magazine-read-link">記事を読む →</span>
           </a>
         </div>
       </div>
