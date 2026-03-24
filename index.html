@@ -906,6 +906,37 @@
       color: #fff;
     }
 
+    .book-review-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .book-review-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--yellow-light);
+      color: var(--yellow-dark);
+      text-decoration: none;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 100px;
+      border: 1.5px solid var(--yellow-dark);
+      transition: all 0.25s;
+    }
+
+    .book-review-links a:hover {
+      background: var(--yellow);
+      color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
     .book-buy-btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
@@ -2555,6 +2586,11 @@
       <div class="mokuji-grid reveal" style="margin-top: 48px;">
         <img src="mokuji1.webp" alt="目次1" class="mokuji-img" loading="lazy">
         <img src="mokuji2.webp" alt="目次2" class="mokuji-img" loading="lazy">
+      </div>
+
+      <div class="book-review-links reveal">
+        <a href="https://www.amazon.co.jp/dp/4594101909#customerReviews" target="_blank" rel="noopener">Amazon のレビューを読む</a>
+        <a href="https://booklog.jp/item/1/4594101909" target="_blank" rel="noopener">ブクログ のレビューを読む</a>
       </div>
     </div>
   </section>
