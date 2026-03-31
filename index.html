@@ -917,6 +917,7 @@
     .book-review-links a {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       background: var(--yellow-light);
       color: var(--yellow-dark);
@@ -928,6 +929,8 @@
       border-radius: 100px;
       border: 1.5px solid var(--yellow-dark);
       transition: all 0.25s;
+      min-width: 240px;
+      box-sizing: border-box;
     }
 
     .book-review-links a:hover {
@@ -1595,6 +1598,122 @@
     .mokuji-img:hover {
       transform: scale(1.02);
       box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    .ranking-block {
+      margin-top: 80px;
+      padding-top: 64px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .ranking-heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .ranking-heading::before,
+    .ranking-heading::after {
+      content: '';
+      flex: 1;
+      max-width: 60px;
+      height: 1px;
+      background: var(--yellow-dark);
+      opacity: 0.5;
+    }
+
+    .ranking-heading span {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--yellow-dark);
+    }
+
+    .ranking-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .ranking-item {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .ranking-rank {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .ranking-rank-num {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--yellow);
+    }
+
+    .ranking-rank-suffix {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--yellow);
+    }
+
+    .ranking-rank-platform {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 2px;
+    }
+
+    .ranking-item-img-wrap {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--light-gray);
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: zoom-in;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ranking-item-img-wrap:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
+    }
+
+    .ranking-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
+      box-sizing: border-box;
+    }
+
+    .ranking-caption {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 12px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 600px) {
+      .ranking-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .ranking-rank-num {
+        font-size: 40px;
+      }
     }
 
     .lightbox {
@@ -2588,8 +2707,38 @@
         <img src="mokuji2.webp" alt="目次2" class="mokuji-img" loading="lazy">
       </div>
 
+      <div class="ranking-block reveal">
+        <div class="ranking-grid">
+          <div class="ranking-item">
+            <div class="ranking-item-img-wrap">
+              <img src="amazon_ranking_0315.JPG" alt="Amazon 整理・収納カテゴリ 8位" loading="lazy">
+            </div>
+            <div>
+              <div class="ranking-rank">
+                <span class="ranking-rank-num">8</span>
+                <span class="ranking-rank-suffix">位</span>
+              </div>
+              <p class="ranking-rank-platform">Amazon｜整理・収納カテゴリ（2026年3月15日）</p>
+            </div>
+          </div>
+          <div class="ranking-item">
+            <div class="ranking-item-img-wrap">
+              <img src="rakuten_ranking_0326.JPG" alt="楽天ブックス 家事カテゴリ 10位" loading="lazy">
+            </div>
+            <div>
+              <div class="ranking-rank">
+                <span class="ranking-rank-num">10</span>
+                <span class="ranking-rank-suffix">位</span>
+              </div>
+              <p class="ranking-rank-platform">楽天ブックス｜美容・暮らし・健康・料理（家事）カテゴリ（2026年3月26日）</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="book-review-links reveal">
         <a href="https://www.amazon.co.jp/dp/4594101909#customerReviews" target="_blank" rel="noopener">Amazon のレビューを読む</a>
+        <a href="https://books.rakuten.co.jp/rb/18539586/#itemReview" target="_blank" rel="noopener">楽天ブックス のレビューを読む</a>
         <a href="https://booklog.jp/item/1/4594101909" target="_blank" rel="noopener">ブクログ のレビューを読む</a>
       </div>
     </div>
@@ -3112,6 +3261,15 @@
 
     document.querySelectorAll('.mokuji-img, .book-cover-large').forEach(img => {
       img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+      });
+    });
+
+    document.querySelectorAll('.ranking-item-img-wrap').forEach(wrap => {
+      wrap.addEventListener('click', () => {
+        const img = wrap.querySelector('img');
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt;
         lightbox.classList.add('active');
