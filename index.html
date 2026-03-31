@@ -911,7 +911,9 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
-      margin-top: 32px;
+      margin-top: 80px;
+      padding-top: 64px;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
     .book-review-links a {
@@ -919,25 +921,25 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      background: var(--yellow-light);
-      color: var(--yellow-dark);
+      background: transparent;
+      color: rgba(255,255,255,0.7);
       text-decoration: none;
       font-family: 'Noto Serif JP', serif;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
-      padding: 14px 28px;
+      padding: 13px 28px;
       border-radius: 100px;
-      border: 1.5px solid var(--yellow-dark);
+      border: 1px solid rgba(255,255,255,0.25);
       transition: all 0.25s;
       min-width: 240px;
       box-sizing: border-box;
     }
 
     .book-review-links a:hover {
-      background: var(--yellow);
-      color: var(--black);
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      border-color: rgba(255,255,255,0.5);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
 
     .book-buy-btn:hover {
@@ -1582,6 +1584,9 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
+      margin-top: 80px;
+      padding-top: 64px;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
     .mokuji-img {
@@ -1603,7 +1608,7 @@
     .ranking-block {
       margin-top: 80px;
       padding-top: 64px;
-      border-top: 1px solid rgba(0,0,0,0.08);
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
     .ranking-heading {
@@ -1713,6 +1718,62 @@
       }
       .ranking-rank-num {
         font-size: 40px;
+      }
+    }
+
+    .bookstore-gallery {
+      margin-top: 80px;
+      padding-top: 64px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .bookstore-scroll {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .bookstore-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .bookstore-card {
+      flex: 0 0 calc(33.333% - 14px);
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .bookstore-card img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      cursor: zoom-in;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+    }
+
+    .bookstore-card img:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    }
+
+    .bookstore-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .bookstore-card {
+        flex: 0 0 72vw;
       }
     }
 
@@ -2702,7 +2763,7 @@
         </div>
       </div>
 
-      <div class="mokuji-grid reveal" style="margin-top: 48px;">
+      <div class="mokuji-grid reveal">
         <img src="mokuji1.webp" alt="目次1" class="mokuji-img" loading="lazy">
         <img src="mokuji2.webp" alt="目次2" class="mokuji-img" loading="lazy">
       </div>
@@ -2740,6 +2801,23 @@
         <a href="https://www.amazon.co.jp/dp/4594101909#customerReviews" target="_blank" rel="noopener">Amazon のレビューを読む</a>
         <a href="https://books.rakuten.co.jp/rb/18539586/#itemReview" target="_blank" rel="noopener">楽天ブックス のレビューを読む</a>
         <a href="https://booklog.jp/item/1/4594101909" target="_blank" rel="noopener">ブクログ のレビューを読む</a>
+      </div>
+
+      <div class="bookstore-gallery reveal">
+        <div class="bookstore-scroll">
+          <div class="bookstore-card">
+            <img src="IMG_3392.JPG" alt="紀伊國屋書店 新宿本店" loading="lazy">
+            <p class="bookstore-name">紀伊國屋書店 新宿本店</p>
+          </div>
+          <div class="bookstore-card">
+            <img src="IMG_4042.JPG" alt="三省堂書店 神田神保町本店" loading="lazy">
+            <p class="bookstore-name">三省堂書店 神田神保町本店</p>
+          </div>
+          <div class="bookstore-card">
+            <img src="IMG_4855.JPG" alt="ジュンク堂書店 大阪本店" loading="lazy">
+            <p class="bookstore-name">ジュンク堂書店 大阪本店</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -3259,7 +3337,7 @@
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
 
-    document.querySelectorAll('.mokuji-img, .book-cover-large').forEach(img => {
+    document.querySelectorAll('.mokuji-img, .book-cover-large, .bookstore-card img').forEach(img => {
       img.addEventListener('click', () => {
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt;
