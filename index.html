@@ -824,6 +824,10 @@
       box-shadow: var(--shadow-md);
     }
 
+    .profile-scenes .profile-scene-img:first-child {
+      object-position: 88% center;
+    }
+
     /* ===== BOOK ===== */
     .book-section {
       background: var(--dark);
@@ -1796,22 +1800,54 @@
       border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-    .bookstore-scroll {
+    .bookstore-heading {
       display: flex;
-      gap: 20px;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .bookstore-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 14px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .bookstore-count {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em;
+    }
+
+    .bookstore-scroll {
+      position: relative;
       overflow-x: auto;
+      overflow-y: hidden;
       padding-bottom: 8px;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
+      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+              mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
     }
 
     .bookstore-scroll::-webkit-scrollbar {
       display: none;
     }
 
+    .bookstore-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+    }
+
     .bookstore-card {
-      flex: 0 0 calc(33.333% - 14px);
-      min-width: 220px;
+      flex: 0 0 200px;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -1836,16 +1872,20 @@
 
     .bookstore-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 14px;
+      font-size: 13px;
       font-style: italic;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.45);
       line-height: 1.6;
       letter-spacing: 0.04em;
     }
 
     @media (max-width: 600px) {
+      .bookstore-gallery {
+        margin-top: 64px;
+        padding-top: 48px;
+      }
       .bookstore-card {
-        flex: 0 0 72vw;
+        flex: 0 0 160px;
       }
     }
 
@@ -2607,14 +2647,69 @@
         font-size: 15px;
       }
 
+      /* 記事カード：モバイルでの一覧性向上 */
       .article-item {
-        flex-wrap: wrap;
-        gap: 4px 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+        padding: 14px 0;
       }
 
+      .article-date {
+        font-size: 10.5px;
+        font-style: italic;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(0, 0, 0, 0.38);
+      }
+
+      .article-title {
+        font-size: 13.5px;
+        line-height: 1.6;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+                line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-mask-image: linear-gradient(to bottom, #000 72%, rgba(0,0,0,0.2));
+                mask-image: linear-gradient(to bottom, #000 72%, rgba(0,0,0,0.2));
+      }
+
+      /* コラム連載カードも同じ設計言語で揃える */
       .column-item {
         flex-direction: column;
         gap: 4px;
+      }
+
+      .column-link {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+        padding: 14px 0;
+      }
+
+      .column-date {
+        font-size: 10.5px;
+        font-style: italic;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      .column-title-wrap {
+        width: 100%;
+      }
+
+      .column-title {
+        font-size: 14px;
+        line-height: 1.6;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+                line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-mask-image: linear-gradient(to bottom, #000 72%, rgba(0,0,0,0.2));
+                mask-image: linear-gradient(to bottom, #000 72%, rgba(0,0,0,0.2));
       }
 
       .media-header {
@@ -2898,18 +2993,67 @@
       </div>
 
       <div class="bookstore-gallery reveal">
+        <div class="bookstore-heading">
+          <span class="bookstore-eyebrow">Sightings</span>
+        </div>
         <div class="bookstore-scroll">
-          <div class="bookstore-card">
-            <img src="IMG_3392.JPG" alt="紀伊國屋書店 新宿本店" loading="lazy">
-            <p class="bookstore-name">紀伊國屋書店 新宿本店</p>
-          </div>
-          <div class="bookstore-card">
-            <img src="IMG_4042.JPG" alt="三省堂書店 神田神保町本店" loading="lazy">
-            <p class="bookstore-name">三省堂書店 神田神保町本店</p>
-          </div>
-          <div class="bookstore-card">
-            <img src="IMG_4855.JPG" alt="ジュンク堂書店 大阪本店" loading="lazy">
-            <p class="bookstore-name">ジュンク堂書店 大阪本店</p>
+          <div class="bookstore-track">
+            <div class="bookstore-card">
+              <img src="IMG_3392.JPG" alt="紀伊國屋書店 新宿本店" loading="lazy">
+              <p class="bookstore-name">紀伊國屋書店 新宿本店</p>
+            </div>
+            <div class="bookstore-card">
+              <img src="IMG_6996.jpeg" alt="紀伊國屋書店 新宿本店" loading="lazy">
+              <p class="bookstore-name">紀伊國屋書店 新宿本店</p>
+            </div>
+            <div class="bookstore-card">
+              <img src="IMG_4714.jpeg" alt="紀伊國屋書店 梅田本店" loading="lazy">
+              <p class="bookstore-name">紀伊國屋書店 梅田本店</p>
+            </div>
+            <div class="bookstore-card">
+              <img src="IMG_4042.JPG" alt="三省堂書店 神田神保町本店" loading="lazy">
+              <p class="bookstore-name">三省堂書店 神田神保町本店</p>
+            </div>
+            <div class="bookstore-card">
+              <img src="IMG_6983.jpeg" alt="ジュンク堂書店 池袋本店" loading="lazy">
+              <p class="bookstore-name">ジュンク堂書店 池袋本店</p>
+            </div>
+            <div class="bookstore-card">
+              <img src="IMG_4855.JPG" alt="ジュンク堂書店 大阪本店" loading="lazy">
+              <p class="bookstore-name">ジュンク堂書店 大阪本店</p>
+            </div>
+            <div class="bookstore-card">
+              <img src="IMG_4850.PNG" alt="ジュンク堂書店 三宮店" loading="lazy">
+              <p class="bookstore-name">ジュンク堂書店 三宮店</p>
+            </div>
+            <div class="bookstore-card" aria-hidden="true">
+              <img src="IMG_3392.JPG" alt="" loading="lazy">
+              <p class="bookstore-name">紀伊國屋書店 新宿本店</p>
+            </div>
+            <div class="bookstore-card" aria-hidden="true">
+              <img src="IMG_6996.jpeg" alt="" loading="lazy">
+              <p class="bookstore-name">紀伊國屋書店 新宿本店</p>
+            </div>
+            <div class="bookstore-card" aria-hidden="true">
+              <img src="IMG_4714.jpeg" alt="" loading="lazy">
+              <p class="bookstore-name">紀伊國屋書店 梅田本店</p>
+            </div>
+            <div class="bookstore-card" aria-hidden="true">
+              <img src="IMG_4042.JPG" alt="" loading="lazy">
+              <p class="bookstore-name">三省堂書店 神田神保町本店</p>
+            </div>
+            <div class="bookstore-card" aria-hidden="true">
+              <img src="IMG_6983.jpeg" alt="" loading="lazy">
+              <p class="bookstore-name">ジュンク堂書店 池袋本店</p>
+            </div>
+            <div class="bookstore-card" aria-hidden="true">
+              <img src="IMG_4855.JPG" alt="" loading="lazy">
+              <p class="bookstore-name">ジュンク堂書店 大阪本店</p>
+            </div>
+            <div class="bookstore-card" aria-hidden="true">
+              <img src="IMG_4850.PNG" alt="" loading="lazy">
+              <p class="bookstore-name">ジュンク堂書店 三宮店</p>
+            </div>
           </div>
         </div>
       </div>
@@ -3168,6 +3312,10 @@
             <li class="article-item">
               <span class="article-date">2026.04.14</span>
               <a class="article-title" href="https://withonline.jp/with-class/education/topics-parenting/fWKCR" target="_blank" rel="noopener">子連れ外出のルート検索、GoogleMapの"最適"よりも我が家にとっての正解を</a>
+            </li>
+            <li class="article-item">
+              <span class="article-date">2026.04.18</span>
+              <a class="article-title" href="https://withonline.jp/with-class/education/topics-parenting/B6cqm" target="_blank" rel="noopener">「がんばってたね」しか言えない…。スポーツ未経験の親でも子どもの頑張りを120%言語化できるAI活用術</a>
             </li>
           </ul>
         </div>
@@ -3460,6 +3608,42 @@
         lightbox.classList.add('active');
       });
     });
+
+    // Bookstore gallery — auto-scroll with touch/hover passthrough
+    (function initBookstoreMarquee() {
+      const scroller = document.querySelector('.bookstore-scroll');
+      const track = scroller && scroller.querySelector('.bookstore-track');
+      if (!scroller || !track) return;
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
+
+      const speed = window.innerWidth <= 600 ? 0.35 : 0.5; // px per frame, slow and editorial
+      let hoverPaused = false;
+      let pauseUntil = 0;
+
+      const pauseFor = ms => { pauseUntil = Math.max(pauseUntil, performance.now() + ms); };
+
+      scroller.addEventListener('mouseenter', () => { hoverPaused = true; });
+      scroller.addEventListener('mouseleave', () => { hoverPaused = false; });
+      scroller.addEventListener('pointerdown', () => pauseFor(2500), { passive: true });
+      scroller.addEventListener('touchstart', () => pauseFor(3000), { passive: true });
+      scroller.addEventListener('wheel',      () => pauseFor(2000), { passive: true });
+
+      function step(now) {
+        const half = track.scrollWidth / 2;
+        if (!hoverPaused && now >= pauseUntil) {
+          scroller.scrollLeft += speed;
+        }
+        if (scroller.scrollLeft >= half) {
+          scroller.scrollLeft -= half;
+        } else if (scroller.scrollLeft < 0) {
+          scroller.scrollLeft += half;
+        }
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    })();
 
     document.querySelectorAll('.ranking-item-img-wrap').forEach(wrap => {
       wrap.addEventListener('click', () => {
