@@ -1327,6 +1327,16 @@
       line-height: 1.6;
     }
 
+    .book-buy-news {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.7;
+      margin-top: 2px;
+      padding-left: 14px;
+      border-left: 2px solid var(--yellow);
+    }
+
     .step-item {
       display: flex;
       align-items: center;
@@ -3535,6 +3545,7 @@
             <a class="book-buy-btn book-buy-btn--rakuten" href="http://books.rakuten.co.jp/rb/18539586/" target="_blank"
               rel="noopener">楽天ブックスで見る</a>
             <p class="book-buy-note">全国書店でも発売中。電子書籍（Kindle）でもお読みいただけます。</p>
+            <p class="book-buy-news">2026年6月2日、Amazon Kindle日替わりセール対象に選ばれました。</p>
           </div>
         </div>
 
@@ -4326,6 +4337,7 @@
     document.querySelectorAll('.ranking-item-img-wrap').forEach(wrap => {
       wrap.addEventListener('click', () => {
         const img = wrap.querySelector('img');
+        if (!img) return;
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt;
         lightbox.classList.add('active');
