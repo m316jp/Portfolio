@@ -1302,24 +1302,21 @@
     }
 
     .reader-voices-quote {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: grid;
+      justify-items: center;
     }
 
     .reader-voices-card {
+      grid-area: 1 / 1;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 16px;
       padding: 32px 36px 24px;
       max-width: 600px;
       width: 100%;
-      margin: 0 auto;
-      position: absolute;
       opacity: 0;
       transform: translateY(10px);
-      transition: opacity 0.25s ease, transform 0.25s ease;
+      transition: opacity 0.4s ease, transform 0.4s ease;
       pointer-events: none;
       text-align: left;
     }
@@ -1337,13 +1334,11 @@
     .reader-voices-card.is-leaving {
       opacity: 0;
       transform: translateY(-8px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     .reader-voices-card.is-active {
       opacity: 1;
       transform: translateY(0);
-      position: relative;
       pointer-events: auto;
     }
 
@@ -4415,15 +4410,13 @@
       function goTo(next) {
         if (next === current) return;
         const prev = current;
+        current = next;
         texts[prev].classList.remove('is-active');
         texts[prev].classList.add('is-leaving');
         dots[prev].classList.remove('is-active');
-        setTimeout(() => {
-          texts[prev].classList.remove('is-leaving');
-          current = next;
-          texts[current].classList.add('is-active');
-          dots[current].classList.add('is-active');
-        }, 300);
+        texts[current].classList.add('is-active');
+        dots[current].classList.add('is-active');
+        setTimeout(() => texts[prev].classList.remove('is-leaving'), 400);
       }
 
       let timer = setInterval(() => goTo((current + 1) % shuffled.length), 2000);
