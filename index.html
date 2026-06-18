@@ -1303,38 +1303,66 @@
 
     .reader-voices-quote {
       position: relative;
-      min-height: 80px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .reader-voices-text {
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(15px, 2vw, 18px);
-      font-weight: 400;
-      line-height: 2;
-      color: rgba(255,255,255,0.82);
-      max-width: 640px;
+    .reader-voices-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 32px 36px 24px;
+      max-width: 600px;
+      width: 100%;
       margin: 0 auto;
       position: absolute;
       opacity: 0;
       transform: translateY(10px);
       transition: opacity 0.25s ease, transform 0.25s ease;
       pointer-events: none;
+      text-align: left;
     }
 
-    .reader-voices-text.is-leaving {
+    .reader-voices-card::before {
+      content: '\201C';
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 56px;
+      line-height: 1;
+      color: rgba(255,255,255,0.15);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .reader-voices-card.is-leaving {
       opacity: 0;
       transform: translateY(-8px);
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
-    .reader-voices-text.is-active {
+    .reader-voices-card.is-active {
       opacity: 1;
       transform: translateY(0);
       position: relative;
       pointer-events: auto;
+    }
+
+    .review-body {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(14px, 2vw, 17px);
+      font-weight: 400;
+      line-height: 2;
+      color: rgba(255,255,255,0.82);
+    }
+
+    .review-footer {
+      margin-top: 20px;
+    }
+
+    .review-stars {
+      color: #e8c84a;
+      font-size: 13px;
+      letter-spacing: 3px;
     }
 
     .reader-voices-dots {
@@ -3381,8 +3409,8 @@
         padding: 0 16px;
       }
 
-      .reader-voices-text {
-        padding: 0 8px;
+      .reader-voices-card {
+        padding: 24px 20px 18px;
       }
 
       .hero-left {
@@ -4355,10 +4383,23 @@
       if (!quoteEl || !dotsEl) return;
 
       shuffled.forEach((text, i) => {
-        const p = document.createElement('p');
-        p.className = 'reader-voices-text' + (i === 0 ? ' is-active' : '');
-        p.textContent = text;
-        quoteEl.appendChild(p);
+        const card = document.createElement('div');
+        card.className = 'reader-voices-card' + (i === 0 ? ' is-active' : '');
+
+        const body = document.createElement('p');
+        body.className = 'review-body';
+        body.textContent = text;
+        card.appendChild(body);
+
+        const footer = document.createElement('div');
+        footer.className = 'review-footer';
+        const stars = document.createElement('span');
+        stars.className = 'review-stars';
+        stars.textContent = '★★★★★';
+        footer.appendChild(stars);
+        card.appendChild(footer);
+
+        quoteEl.appendChild(card);
 
         const dot = document.createElement('button');
         dot.className = 'reader-voices-dot' + (i === 0 ? ' is-active' : '');
@@ -4368,7 +4409,7 @@
       });
 
       let current = 0;
-      const texts = quoteEl.querySelectorAll('.reader-voices-text');
+      const texts = quoteEl.querySelectorAll('.reader-voices-card');
       const dots = dotsEl.querySelectorAll('.reader-voices-dot');
 
       function goTo(next) {
