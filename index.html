@@ -1360,6 +1360,38 @@
       letter-spacing: 3px;
     }
 
+    .reader-voices-nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .reader-voices-arrow {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+
+    .reader-voices-arrow:hover {
+      border-color: rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .reader-voices-arrow svg {
+      width: 16px;
+      height: 16px;
+    }
+
     .reader-voices-dots {
       display: flex;
       justify-content: center;
@@ -3717,7 +3749,15 @@
 
       <div class="reader-voices reveal">
         <p class="reader-voices-label">Readers' Voices</p>
-        <div class="reader-voices-quote" id="readerVoicesQuote"></div>
+        <div class="reader-voices-nav">
+          <button class="reader-voices-arrow" id="readerVoicesPrev" aria-label="前のレビュー">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <div class="reader-voices-quote" id="readerVoicesQuote"></div>
+          <button class="reader-voices-arrow" id="readerVoicesNext" aria-label="次のレビュー">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
         <div class="reader-voices-dots" id="readerVoicesDots"></div>
       </div>
 
@@ -4419,7 +4459,21 @@
         setTimeout(() => texts[prev].classList.remove('is-leaving'), 400);
       }
 
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(() => goTo((current + 1) % shuffled.length), 2000);
+      }
+
       let timer = setInterval(() => goTo((current + 1) % shuffled.length), 2000);
+
+      document.getElementById('readerVoicesPrev').addEventListener('click', () => {
+        goTo((current - 1 + shuffled.length) % shuffled.length);
+        resetTimer();
+      });
+      document.getElementById('readerVoicesNext').addEventListener('click', () => {
+        goTo((current + 1) % shuffled.length);
+        resetTimer();
+      });
 
       quoteEl.addEventListener('mouseenter', () => clearInterval(timer));
       quoteEl.addEventListener('mouseleave', () => {
