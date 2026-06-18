@@ -1326,8 +1326,8 @@
 
     .reader-voices-text.is-leaving {
       opacity: 0;
-      transform: translateY(-10px);
-      transition: opacity 0.2s ease, transform 0.2s ease;
+      transform: translateY(-8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     .reader-voices-text.is-active {
@@ -4372,22 +4372,24 @@
       const dots = dotsEl.querySelectorAll('.reader-voices-dot');
 
       function goTo(next) {
+        if (next === current) return;
         const prev = current;
+        texts[prev].classList.remove('is-active');
         texts[prev].classList.add('is-leaving');
         dots[prev].classList.remove('is-active');
         setTimeout(() => {
-          texts[prev].classList.remove('is-active', 'is-leaving');
+          texts[prev].classList.remove('is-leaving');
           current = next;
           texts[current].classList.add('is-active');
           dots[current].classList.add('is-active');
-        }, 200);
+        }, 300);
       }
 
-      let timer = setInterval(() => goTo((current + 1) % shuffled.length), 2500);
+      let timer = setInterval(() => goTo((current + 1) % shuffled.length), 2000);
 
       quoteEl.addEventListener('mouseenter', () => clearInterval(timer));
       quoteEl.addEventListener('mouseleave', () => {
-        timer = setInterval(() => goTo((current + 1) % shuffled.length), 5000);
+        timer = setInterval(() => goTo((current + 1) % shuffled.length), 2000);
       });
     })();
   </script>
