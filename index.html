@@ -1311,128 +1311,109 @@
       margin-top: 80px;
       padding-top: 64px;
       border-top: 1px solid rgba(255,255,255,0.08);
-      text-align: center;
     }
 
-    .reader-voices-label {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      color: rgba(255,255,255,0.35);
-      text-transform: uppercase;
-      margin-bottom: 32px;
-    }
-
-    .reader-voices-quote {
-      display: grid;
-      justify-items: center;
-    }
-
-    .reader-voices-card {
-      grid-area: 1 / 1;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 16px;
-      padding: 32px 36px 24px;
-      max-width: 600px;
-      width: 100%;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      pointer-events: none;
-      text-align: left;
-    }
-
-    .reader-voices-card::before {
-      content: '\201C';
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 56px;
-      line-height: 1;
-      color: rgba(255,255,255,0.15);
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .reader-voices-card.is-leaving {
-      opacity: 0;
-      transform: translateY(-8px);
-    }
-
-    .reader-voices-card.is-active {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    .review-body {
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(14px, 2vw, 17px);
-      font-weight: 400;
-      line-height: 2;
-      color: rgba(255,255,255,0.82);
-    }
-
-    .review-footer {
-      margin-top: 20px;
-    }
-
-    .review-stars {
-      color: #e8c84a;
-      font-size: 13px;
-      letter-spacing: 3px;
-    }
-
-    .reader-voices-nav {
+    .voices-vertical {
+      direction: rtl;
       display: flex;
-      align-items: center;
-      gap: 16px;
+      justify-content: center;
+      align-items: flex-start;
+      gap: clamp(20px, 3.5vw, 44px);
+      margin-top: 72px;
+      overflow-x: auto;
+      padding-bottom: 16px;
+      scrollbar-width: none;
     }
 
-    .reader-voices-arrow {
+    .voices-vertical::-webkit-scrollbar {
+      display: none;
+    }
+
+    .voice {
+      margin: 0;
       flex-shrink: 0;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.15);
-      background: rgba(255,255,255,0.05);
-      color: rgba(255,255,255,0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      direction: ltr;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      max-height: 420px;
     }
 
-    .reader-voices-arrow:hover {
-      border-color: rgba(255,255,255,0.4);
-      color: rgba(255,255,255,0.9);
-      background: rgba(255,255,255,0.1);
+    .voice p {
+      margin: 0;
+      word-break: keep-all;
+      text-wrap: balance;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 14px;
+      line-height: 2.3;
+      letter-spacing: 0.14em;
+      color: rgba(255, 255, 255, 0.85);
     }
 
-    .reader-voices-arrow svg {
-      width: 16px;
-      height: 16px;
+    .voice .tcy {
+      -webkit-text-combine: horizontal;
+      text-combine-upright: all;
     }
 
-    .reader-voices-dots {
-      display: flex;
-      justify-content: center;
-      gap: 6px;
-      margin-top: 28px;
+    .voice p::before {
+      content: '「';
+      color: var(--yellow);
     }
 
-    .reader-voices-dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      transition: background 0.4s;
-      cursor: pointer;
+    .voice p::after {
+      content: '」';
+      color: var(--yellow);
     }
 
-    .reader-voices-dot.is-active {
-      background: rgba(255,255,255,0.7);
+    .voice--featured {
+      max-height: 440px;
+    }
+
+    .voice--featured p {
+      font-size: 18px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .voice:nth-child(2) { margin-top: 48px; }
+    .voice:nth-child(3) { margin-top: 12px; }
+    .voice:nth-child(4) { margin-top: 68px; }
+    .voice:nth-child(5) { margin-top: 32px; }
+    .voice:nth-child(6) { margin-top: 80px; }
+    .voice:nth-child(7) { margin-top: 20px; }
+
+    .voices-source {
+      margin-top: 48px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      font-style: italic;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.35);
+    }
+
+    @media (max-width: 900px) {
+      .voices-vertical {
+        justify-content: flex-start;
+        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 5%, #000 95%, transparent 100%);
+                mask-image: linear-gradient(to right, transparent 0, #000 5%, #000 95%, transparent 100%);
+        padding-inline: 12px;
+      }
+
+      .voice {
+        max-height: 390px;
+      }
+
+      .voice p {
+        font-size: 13px;
+      }
+
+      .voice--featured {
+        max-height: 400px;
+      }
+
+      .voice--featured p {
+        font-size: 16px;
+      }
     }
 
     .book-review-links {
@@ -3628,10 +3609,6 @@
         padding: 0 16px;
       }
 
-      .reader-voices-card {
-        padding: 24px 20px 18px;
-      }
-
       .hero-left {
         padding: 64px 16px 36px;
       }
@@ -3970,17 +3947,31 @@
       </div>
 
       <div class="reader-voices reveal">
-        <p class="reader-voices-label">Readers' Voices</p>
-        <div class="reader-voices-nav">
-          <button class="reader-voices-arrow" id="readerVoicesPrev" aria-label="前のレビュー">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 19l-7-7 7-7"/></svg>
-          </button>
-          <div class="reader-voices-quote" id="readerVoicesQuote"></div>
-          <button class="reader-voices-arrow" id="readerVoicesNext" aria-label="次のレビュー">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
-          </button>
+        <div class="ranking-heading"><span>READERS' VOICES</span></div>
+        <div class="voices-vertical">
+          <blockquote class="voice voice--featured">
+            <p>そう！私は生活の中で<wbr><span class="tcy">AI</span>をどう使うのかが知りたかったのよ！<wbr>と思わず膝を打ちました。</p>
+          </blockquote>
+          <blockquote class="voice">
+            <p>この本のおかげで、<span class="tcy">AI</span>デビューできました。</p>
+          </blockquote>
+          <blockquote class="voice">
+            <p>こんな便利なものなら<wbr>早く使っていたらよかった。</p>
+          </blockquote>
+          <blockquote class="voice">
+            <p><span class="tcy">AI</span>を家事や子育てに<wbr>ここまで活用できるかと驚いた。</p>
+          </blockquote>
+          <blockquote class="voice">
+            <p>ビジネスではなく育児、家事の視点から<wbr><span class="tcy">AI</span>活用をされているので斬新でした！</p>
+          </blockquote>
+          <blockquote class="voice">
+            <p>家事で<span class="tcy">AI</span>を使うという発想が良かった。<wbr>全部自分で一から判断するのは時間がかかる。<wbr>選択肢を示してもらえるのは助かる。</p>
+          </blockquote>
+          <blockquote class="voice">
+            <p>これはかなり勉強になったし、<wbr><span class="tcy">AI</span>活用の糸口が見えて面白かった！</p>
+          </blockquote>
         </div>
-        <div class="reader-voices-dots" id="readerVoicesDots"></div>
+        <p class="voices-source">— 読者レビューより抜粋</p>
       </div>
 
       <div class="book-review-links reveal">
@@ -4664,95 +4655,6 @@
     });
   </script>
 
-  <script>
-    (function () {
-      const voices = [
-        'AIの勉強をする必要が出てきたので、まずは身近な家事に活用してみて、勉強モチベーションを上げようと思い読んだ。',
-        'こういう時代なのですね、すごい…。',
-        '時には間違えても60点でいいくらいの気持ちで試して付き合い方を覚えれば負担も少し軽くなりそうな気がしました。',
-        'これはかなり勉強になったし、AI活用の糸口が見えて面白かった！',
-        '具体的な活用方法も参考になるんだけど、AIとの付き合い方とか、子供にどう説明するかとか、使い方に関してのこともいっぱい書かれていて、AIとの上手な付き合い方を見つけて活用していきたいと感じました。',
-        '自分が思っているより技術進んでて本当にすごい。',
-        '家事でAIを使うという発想が良かった。全部自分で一から判断するのは時間がかかる。選択肢を示してもらえるのは助かる。',
-        'すでに仕事では活用していたのですが、家事には未導入だったので、具体例満載で早速役立てています。',
-        'この本のおかげで、AIデビューできました。',
-        'こんな便利なものなら早く使っていたらよかった。',
-        'お子さんの教育についても、子ども達がより学びやすくなるための個別最適化のツールとして使われているのに好感持ちました。',
-        'AIを家事や子育てにここまで活用できるかと驚いた。',
-        'そう！私は生活の中でAIをどう使うのかが知りたかったのよ！と思わず膝を打ちました。',
-        'ビジネスではなく育児、家事の視点からAI活用をされているので斬新でした！',
-        'AIを使いこなしたいけど、何から始めたらいいか分からない方にオススメです。',
-      ];
-
-      const shuffled = voices.slice().sort(() => Math.random() - 0.5);
-      const quoteEl = document.getElementById('readerVoicesQuote');
-      const dotsEl = document.getElementById('readerVoicesDots');
-      if (!quoteEl || !dotsEl) return;
-
-      shuffled.forEach((text, i) => {
-        const card = document.createElement('div');
-        card.className = 'reader-voices-card' + (i === 0 ? ' is-active' : '');
-
-        const body = document.createElement('p');
-        body.className = 'review-body';
-        body.textContent = text;
-        card.appendChild(body);
-
-        const footer = document.createElement('div');
-        footer.className = 'review-footer';
-        const stars = document.createElement('span');
-        stars.className = 'review-stars';
-        stars.textContent = '★★★★★';
-        footer.appendChild(stars);
-        card.appendChild(footer);
-
-        quoteEl.appendChild(card);
-
-        const dot = document.createElement('button');
-        dot.className = 'reader-voices-dot' + (i === 0 ? ' is-active' : '');
-        dot.setAttribute('aria-label', (i + 1) + '件目のレビュー');
-        dot.addEventListener('click', () => goTo(i));
-        dotsEl.appendChild(dot);
-      });
-
-      let current = 0;
-      const texts = quoteEl.querySelectorAll('.reader-voices-card');
-      const dots = dotsEl.querySelectorAll('.reader-voices-dot');
-
-      function goTo(next) {
-        if (next === current) return;
-        const prev = current;
-        current = next;
-        texts[prev].classList.remove('is-active');
-        texts[prev].classList.add('is-leaving');
-        dots[prev].classList.remove('is-active');
-        texts[current].classList.add('is-active');
-        dots[current].classList.add('is-active');
-        setTimeout(() => texts[prev].classList.remove('is-leaving'), 400);
-      }
-
-      function resetTimer() {
-        clearInterval(timer);
-        timer = setInterval(() => goTo((current + 1) % shuffled.length), 2000);
-      }
-
-      let timer = setInterval(() => goTo((current + 1) % shuffled.length), 2000);
-
-      document.getElementById('readerVoicesPrev').addEventListener('click', () => {
-        goTo((current - 1 + shuffled.length) % shuffled.length);
-        resetTimer();
-      });
-      document.getElementById('readerVoicesNext').addEventListener('click', () => {
-        goTo((current + 1) % shuffled.length);
-        resetTimer();
-      });
-
-      quoteEl.addEventListener('mouseenter', () => clearInterval(timer));
-      quoteEl.addEventListener('mouseleave', () => {
-        timer = setInterval(() => goTo((current + 1) % shuffled.length), 2000);
-      });
-    })();
-  </script>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
