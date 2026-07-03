@@ -2064,20 +2064,74 @@
       text-decoration-color: var(--yellow);
     }
 
-    /* Web記事アコーディオン（モバイル） */
+    /* Web記事アコーディオン */
     .web-media-header-toggle {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
+      gap: 18px;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
       cursor: pointer;
       user-select: none;
       -webkit-tap-highlight-color: transparent;
+      text-align: left;
+    }
+
+    .web-media-heading {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .web-media-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      margin-top: 12px;
+    }
+
+    .web-media-count,
+    .web-media-open-label {
+      display: inline-flex;
+      align-items: center;
+      border-radius: var(--radius-pill);
+      font-family: 'Shippori Mincho', serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .web-media-count {
+      padding: 6px 12px;
+      color: var(--dark);
+      background: rgba(212, 175, 55, 0.18);
+    }
+
+    .web-media-open-label {
+      color: var(--yellow-dark);
+    }
+
+    .web-media-preview {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--gray);
+      margin: 12px 0 0;
+    }
+
+    .web-media-block.is-open .web-media-preview {
+      display: none;
     }
 
     .web-media-chevron {
       flex-shrink: 0;
-      width: 30px;
-      height: 30px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       background: var(--dark);
       color: var(--white);
@@ -2093,29 +2147,31 @@
       background: var(--yellow-dark);
     }
 
-    .web-media-body--collapsed {
+    .web-media-block.is-collapsed .article-list {
       display: none !important;
     }
 
-    .web-media-show-more-btn {
-      display: block;
-      margin-top: 12px;
-      background: none;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      border-radius: var(--radius-pill);
-      padding: 8px 20px;
-      font-family: 'Shippori Mincho', serif;
-      font-size: 12px;
-      color: var(--gray);
-      cursor: pointer;
-      width: 100%;
-      text-align: center;
-      transition: background 0.2s, color 0.2s;
+    .web-media-block.is-open .article-list {
+      margin-top: 22px;
     }
 
-    .web-media-show-more-btn:hover {
-      background: rgba(0, 0, 0, 0.05);
-      color: var(--dark);
+    .web-media-header-toggle:hover .web-media-open-label {
+      text-decoration: underline;
+      text-decoration-color: var(--yellow);
+    }
+
+    @media (max-width: 600px) {
+      .web-media-header-toggle {
+        gap: 12px;
+      }
+
+      .web-media-block {
+        padding: 26px 22px;
+      }
+
+      .web-media-preview {
+        font-size: 12px;
+      }
     }
 
     /* コラム「もっと見る」ボタン */
@@ -2137,6 +2193,130 @@
 
     .column-show-more-btn:hover {
       background: rgba(255, 255, 255, 0.14);
+    }
+
+    /* Web記事: リード・媒体バンド・ピックアップ */
+    .web-media-lead {
+      text-align: center;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 14px;
+      color: var(--gray);
+      letter-spacing: 0.06em;
+      margin: 0 0 20px;
+    }
+
+    .media-outlets {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      column-gap: 14px;
+      row-gap: 10px;
+      padding: 22px 16px;
+      margin: 0 0 56px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .media-outlets span {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--charcoal);
+      white-space: nowrap;
+    }
+
+    .media-outlets span + span::before {
+      content: '／';
+      margin-right: 14px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.22);
+    }
+
+    .pickup-label {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--yellow-dark);
+      margin: 0 0 24px;
+    }
+
+    .pickup-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+
+    .pickup-card {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: var(--radius-lg);
+      padding: 26px 26px 22px;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pickup-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .pickup-outlet {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--yellow-dark);
+      margin: 0;
+    }
+
+    .pickup-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.9;
+      color: var(--charcoal);
+      margin: 10px 0 14px;
+      flex: 1;
+    }
+
+    .pickup-date {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      font-style: italic;
+      color: rgba(0, 0, 0, 0.35);
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .pickup-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .pickup-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .column-live-badge {
+      display: inline-block;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #1a1a1a;
+      background: var(--yellow);
+      border-radius: var(--radius-pill);
+      padding: 4px 14px;
+      margin-left: 12px;
+      vertical-align: middle;
     }
 
     /* コラム連載 */
@@ -4228,6 +4408,45 @@
           <h3 class="media-category-title">Web記事</h3>
         </div>
 
+        <p class="web-media-lead">執筆コラムから取材記事まで、これまでに8媒体・50本以上。</p>
+        <div class="media-outlets">
+          <span>集英社オンライン</span><span>講談社 with class</span><span>ハフポスト日本版</span><span>ESSE online</span><span>女子SPA!</span><span>マイナビ子育て</span><span>Salesforce Japan Blog</span>
+        </div>
+
+        <p class="pickup-label">Pick Up</p>
+        <div class="pickup-grid">
+          <a class="pickup-card" href="https://news.yahoo.co.jp/articles/dca1aa834ac1a4b0f5931ab8b38769740760cc3d" target="_blank" rel="noopener">
+            <p class="pickup-outlet">集英社オンライン</p>
+            <h4 class="pickup-title">親失格？ テレビ出演後に炎上しても、私が家庭でAIを使い続ける理由</h4>
+            <p class="pickup-date">2026.03.03</p>
+          </a>
+          <a class="pickup-card" href="https://withonline.jp/with-class/education/mamacolumn/PbiTi" target="_blank" rel="noopener">
+            <p class="pickup-outlet">講談社 with class mama</p>
+            <h4 class="pickup-title">「本を読みなさい」と言わないでも、子どもが月10冊読むようになった読書習慣づくり</h4>
+            <p class="pickup-date">2026.06.29</p>
+          </a>
+          <a class="pickup-card" href="https://joshi-spa.jp/1403359" target="_blank" rel="noopener">
+            <p class="pickup-outlet">女子SPA!</p>
+            <h4 class="pickup-title">「AIってなんで電気を使うの？」子どもの素朴な疑問にどう答える？AIを使い倒す3児ママの"納得の回答"</h4>
+            <p class="pickup-date">2026.03.02</p>
+          </a>
+          <a class="pickup-card" href="https://www.huffingtonpost.jp/entry/story_jp_6a019a36e4b06e786e3f3d19" target="_blank" rel="noopener">
+            <p class="pickup-outlet">ハフポスト日本版</p>
+            <h4 class="pickup-title">義母への手土産「3千円で高見えするものを…」AIに相談すべきワケ</h4>
+            <p class="pickup-date">2026.06.28</p>
+          </a>
+          <a class="pickup-card" href="https://withonline.jp/with-class/education/mamacolumn/zC0SX" target="_blank" rel="noopener">
+            <p class="pickup-outlet">講談社 with class mama</p>
+            <h4 class="pickup-title">「AI＝仕事用」だと思ってた理系主婦が、家事育児に一番活用している理由</h4>
+            <p class="pickup-date">2025.11.25</p>
+          </a>
+          <a class="pickup-card" href="https://www.salesforce.com/jp/blog/jp-how-to-create-a-multi-skilled-self-in-ai/" target="_blank" rel="noopener">
+            <p class="pickup-outlet">Salesforce Japan Blog</p>
+            <h4 class="pickup-title">仕事と家庭の両立も、兼業も。AI時代の「マルチな私」の作り方</h4>
+            <p class="pickup-date">2025.12.02</p>
+          </a>
+        </div>
+
         <div class="web-media-block">
           <p class="web-media-name">ハフポスト日本版</p>
           <ul class="article-list">
@@ -4425,7 +4644,7 @@
         </div>
         <div class="column-block">
           <p class="column-media-name"><a href="https://withonline.jp/authors/9miIK" target="_blank" rel="noopener"
-              style="color:inherit;text-decoration:none;border-bottom:1px solid currentColor;">講談社『with class mama』</a>
+              style="color:inherit;text-decoration:none;border-bottom:1px solid currentColor;">講談社『with class mama』</a><span class="column-live-badge">連載中</span>
           </p>
           <p class="column-media-note">コラムニスト（withonline.jp）</p>
           <ul class="column-list">
@@ -4848,27 +5067,57 @@
       });
     })();
 
-    // Web記事「他も見る」（スマホのみ）
-    if (window.innerWidth <= 768) {
-      const SHOW = 3;
+    // Web記事：媒体別に折りたたみ、閉じた状態でも本数と最新掲載を見せる
+    {
       document.querySelectorAll('.web-media-block').forEach(block => {
+        const name = block.querySelector('.web-media-name');
+        const list = block.querySelector('.article-list');
         const items = Array.from(block.querySelectorAll('.article-item'));
-        if (items.length <= SHOW) return;
+        if (!name || !list || !items.length) return;
 
-        // SHOW件より後を隠す
-        const hidden = items.slice(SHOW);
-        hidden.forEach(el => el.classList.add('web-media-body--collapsed'));
+        const latest = items.reduce((selected, item) => {
+          const currentDate = item.querySelector('.article-date')?.textContent?.trim() || '';
+          const selectedDate = selected.querySelector('.article-date')?.textContent?.trim() || '';
+          return currentDate > selectedDate ? item : selected;
+        }, items[0]);
 
-        // 「他も見る」ボタン
-        const btn = document.createElement('button');
-        btn.className = 'web-media-show-more-btn';
-        btn.textContent = `他 ${hidden.length} 件を見る ∨`;
-        block.querySelector('.article-list').after(btn);
+        const previewTitle = latest.querySelector('.article-title')?.textContent?.trim() || '';
+        const header = document.createElement('button');
+        header.type = 'button';
+        header.className = 'web-media-header-toggle';
+        header.setAttribute('aria-expanded', 'false');
 
-        btn.addEventListener('click', () => {
+        const heading = document.createElement('div');
+        heading.className = 'web-media-heading';
+        heading.appendChild(name);
+
+        const meta = document.createElement('div');
+        meta.className = 'web-media-meta';
+        meta.innerHTML = `<span class="web-media-count">${items.length}本掲載</span><span class="web-media-open-label">記事一覧を見る</span>`;
+        heading.appendChild(meta);
+
+        if (previewTitle) {
+          const preview = document.createElement('p');
+          preview.className = 'web-media-preview';
+          preview.textContent = `最新掲載：${previewTitle}`;
+          heading.appendChild(preview);
+        }
+
+        const chevron = document.createElement('span');
+        chevron.className = 'web-media-chevron';
+        chevron.setAttribute('aria-hidden', 'true');
+        chevron.textContent = '⌄';
+
+        header.append(heading, chevron);
+        block.insertBefore(header, list);
+        block.classList.add('is-collapsed');
+
+        header.addEventListener('click', () => {
           const expanded = block.classList.toggle('is-open');
-          hidden.forEach(el => el.classList.toggle('web-media-body--collapsed', !expanded));
-          btn.textContent = expanded ? `閉じる ∧` : `他 ${hidden.length} 件を見る ∨`;
+          block.classList.toggle('is-collapsed', !expanded);
+          header.setAttribute('aria-expanded', String(expanded));
+          const label = header.querySelector('.web-media-open-label');
+          if (label) label.textContent = expanded ? '閉じる' : '記事一覧を見る';
         });
       });
     }
