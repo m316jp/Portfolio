@@ -1284,19 +1284,27 @@
       display: block;
       text-align: center;
       padding: 14px 24px;
-      border-radius: var(--radius-md);
+      border: 1px solid transparent;
+      border-radius: var(--radius-pill);
       font-family: 'Shippori Mincho', serif;
       font-size: 15px;
       font-weight: 700;
       text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s, border-color 0.2s;
       background: var(--yellow);
       color: var(--black);
     }
 
     .book-buy-btn--rakuten {
+      background: transparent;
+      color: #e08a8a;
+      border-color: rgba(224, 110, 110, 0.5);
+    }
+
+    .book-buy-btn--rakuten:hover {
       background: #bf0000;
       color: #fff;
+      border-color: #bf0000;
     }
 
     .reader-voices {
@@ -2280,17 +2288,21 @@
       background: var(--white);
     }
 
-    .mokuji-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+    .mokuji-block {
       margin-top: 80px;
       padding-top: 64px;
       border-top: 1px solid rgba(255,255,255,0.08);
     }
 
+    .mokuji-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
     .mokuji-img {
       width: 100%;
+      border: 1px solid rgba(213, 180, 84, 0.3);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-md);
       display: block;
@@ -2379,25 +2391,55 @@
       color: rgba(255,255,255,0.4);
       margin-top: 6px;
       letter-spacing: 0.04em;
+      min-height: 2.9em;
+    }
+
+    .browser-frame {
+      border: 1px solid rgba(213, 180, 84, 0.3);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .browser-frame:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .browser-frame-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 14px;
+      background: #201f1c;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .browser-frame-bar span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .browser-frame-url {
+      margin-left: 10px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      font-style: italic;
+      letter-spacing: 0.04em;
+      color: rgba(255, 255, 255, 0.35);
     }
 
     .ranking-item-img-wrap {
       width: 100%;
       aspect-ratio: 4 / 3;
-      border-radius: var(--radius-md);
-      overflow: hidden;
       background: var(--light-gray);
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: zoom-in;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    .ranking-item-img-wrap:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lg);
     }
 
     .ranking-item img {
@@ -3872,17 +3914,18 @@
         </div>
       </div>
 
-      <div class="mokuji-grid reveal">
-        <img src="mokuji1.webp" alt="目次1" class="mokuji-img" loading="lazy">
-        <img src="mokuji2.webp" alt="目次2" class="mokuji-img" loading="lazy">
+      <div class="mokuji-block reveal">
+        <div class="ranking-heading"><span>CONTENTS</span></div>
+        <div class="mokuji-grid">
+          <img src="mokuji1.webp" alt="目次1" class="mokuji-img" loading="lazy">
+          <img src="mokuji2.webp" alt="目次2" class="mokuji-img" loading="lazy">
+        </div>
       </div>
 
       <div class="ranking-block reveal">
+        <div class="ranking-heading"><span>RANKING</span></div>
         <div class="ranking-grid">
           <div class="ranking-item">
-            <div class="ranking-item-img-wrap">
-              <img src="amazon_ranking_0602.png" alt="Amazon 整理・収納カテゴリ 4位" loading="lazy">
-            </div>
             <div>
               <div class="ranking-rank">
                 <span class="ranking-rank-num">4</span>
@@ -3890,17 +3933,32 @@
               </div>
               <p class="ranking-rank-platform">Amazon｜売れ筋ランキング 整理・収納カテゴリ（2026年6月2日）</p>
             </div>
+            <div class="browser-frame">
+              <div class="browser-frame-bar">
+                <span></span><span></span><span></span>
+                <em class="browser-frame-url">amazon.co.jp</em>
+              </div>
+              <div class="ranking-item-img-wrap">
+                <img src="amazon_ranking_0602.png" alt="Amazon 整理・収納カテゴリ 4位" loading="lazy">
+              </div>
+            </div>
           </div>
           <div class="ranking-item">
-            <div class="ranking-item-img-wrap">
-              <img src="0512楽天ランキング.png" alt="楽天ブックス 家事カテゴリ 2位" loading="lazy">
-            </div>
             <div>
               <div class="ranking-rank">
                 <span class="ranking-rank-num">2</span>
                 <span class="ranking-rank-suffix">位</span>
               </div>
               <p class="ranking-rank-platform">楽天ブックス｜美容・暮らし・健康・料理（家事）カテゴリ（2026年5月11日）</p>
+            </div>
+            <div class="browser-frame">
+              <div class="browser-frame-bar">
+                <span></span><span></span><span></span>
+                <em class="browser-frame-url">books.rakuten.co.jp</em>
+              </div>
+              <div class="ranking-item-img-wrap">
+                <img src="0512楽天ランキング.png" alt="楽天ブックス 家事カテゴリ 2位" loading="lazy">
+              </div>
             </div>
           </div>
         </div>
