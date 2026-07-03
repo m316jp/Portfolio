@@ -680,6 +680,69 @@
       text-underline-offset: 6px;
     }
 
+    /* AIタイピング演出 */
+    .hero-tagline strong.type-wrap {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--yellow-dark);
+      padding-bottom: 5px;
+    }
+
+    .type-ghost {
+      visibility: hidden;
+    }
+
+    .type-live {
+      position: absolute;
+      left: 0;
+      top: 0;
+      white-space: nowrap;
+    }
+
+    .type-caret {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: var(--yellow-dark);
+      margin-left: 3px;
+      vertical-align: -0.12em;
+      opacity: 0;
+    }
+
+    .type-caret.blink {
+      animation: caretBlink 1s steps(1) infinite;
+    }
+
+    /* 見出しの行単位リビール */
+    .section-title .line {
+      display: block;
+      overflow: hidden;
+    }
+
+    .section-title .line-inner {
+      display: inline-block;
+      transform: translateY(112%);
+      transition: transform 1.05s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+
+    .section-title.lines-in .line-inner {
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .section-title .line-inner {
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    @keyframes caretBlink {
+      0%, 55% { opacity: 1; }
+      56%, 100% { opacity: 0; }
+    }
+
     .hero-stats {
       display: flex;
       gap: 40px;
@@ -3208,7 +3271,7 @@
 
       to {
         opacity: 1;
-        transform: scale(1) rotate(-2deg);
+        transform: scale(1) rotate(-2deg) translateY(var(--para, 0px));
       }
     }
 
@@ -3973,8 +4036,8 @@
       <span class="hero-name-ruby">MIYAZAKI MARI</span>
       <p class="hero-tagline">
         毎日バタバタな3児ママが<br>
-        <strong>AIを使ってみたら</strong>、<br>
-        一人で悩む時間が消えた。
+        <strong class="type-wrap" aria-label="AIを使ってみたら"><span class="type-ghost" aria-hidden="true">AIを使ってみたら</span><span class="type-live" aria-hidden="true" id="typeLive">AIを使ってみたら<span class="type-caret"></span></span></strong><span id="typeAfter">、</span><br>
+        <span id="typeLine3">一人で悩む時間が消えた。</span>
       </p>
       <div class="hero-tv-badges">
         <p class="hero-tv-label">TV appearance</p>
@@ -4875,6 +4938,123 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     reveals.forEach(el => observer.observe(el));
+
+    // ヒーロー「AIを使ってみたら」タイピング演出
+    (function initTypewriter() {
+      const live = document.getElementById('typeLive');
+      const after = document.getElementById('typeAfter');
+      const line3 = document.getElementById('typeLine3');
+      if (!live || !after || !line3) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const caret = live.querySelector('.type-caret');
+      const textNode = live.firstChild;
+      const full = 'AIを使ってみたら';
+
+      textNode.textContent = '';
+      after.style.opacity = '0';
+      line3.style.opacity = '0';
+      line3.style.transform = 'translateY(8px)';
+      after.style.transition = 'opacity 0.8s ease';
+      line3.style.transition = 'opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1)';
+      caret.classList.add('blink');
+
+      let i = 0;
+      setTimeout(() => {
+        const iv = setInterval(() => {
+          i++;
+          textNode.textContent = full.slice(0, i);
+          if (i >= full.length) {
+            clearInterval(iv);
+            setTimeout(() => {
+              after.style.opacity = '1';
+              line3.style.opacity = '1';
+              line3.style.transform = 'translateY(0)';
+            }, 350);
+            setTimeout(() => {
+              caret.classList.remove('blink');
+              caret.style.transition = 'opacity 0.8s ease';
+              caret.style.opacity = '0';
+            }, 2800);
+          }
+        }, 130);
+      }, 1500);
+    })();
+
+    // スクロール演出：見出し行リビール・ヒーローパララックス・慣性スクロール
+    (function initScrollFeel() {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // 見出しを行ごとに分割し、マスクの下から立ち上げる
+      if (!reduce) {
+        document.querySelectorAll('.section-title').forEach(title => {
+          const lines = title.innerHTML.split(/<br\s*\/?>/i);
+          title.innerHTML = lines.map(l =>
+            '<span class="line"><span class="line-inner">' + l + '</span></span>'
+          ).join('');
+          title.querySelectorAll('.line-inner').forEach((el, i) => {
+            el.style.transitionDelay = (i * 0.12) + 's';
+          });
+        });
+        const titleObserver = new IntersectionObserver(entries => {
+          entries.forEach(en => {
+            if (en.isIntersecting) {
+              en.target.classList.add('lines-in');
+              titleObserver.unobserve(en.target);
+            }
+          });
+        }, { threshold: 0.3 });
+        document.querySelectorAll('.section-title').forEach(t => titleObserver.observe(t));
+      }
+
+      const finePointer = window.matchMedia('(pointer: fine)').matches;
+      if (reduce || !finePointer) return;
+
+      // ヒーローパララックス（本と文字がわずかに違う速度で沈む）
+      const heroLeft = document.querySelector('.hero-left');
+      let ticking = false;
+      function parallax() {
+        const y = window.scrollY;
+        if (y < window.innerHeight * 1.2) {
+          document.documentElement.style.setProperty('--para', (y * 0.12) + 'px');
+          if (heroLeft) heroLeft.style.transform = 'translateY(' + (y * 0.05) + 'px)';
+        }
+        ticking = false;
+      }
+      window.addEventListener('scroll', () => {
+        if (!ticking) { ticking = true; requestAnimationFrame(parallax); }
+      }, { passive: true });
+
+      // 慣性スクロール（ホイールのみ。タッチ・キーボードはネイティブのまま）
+      let target = window.scrollY;
+      let current = window.scrollY;
+      let animating = false;
+      const maxScroll = () => document.documentElement.scrollHeight - window.innerHeight;
+      function step() {
+        current += (target - current) * 0.105;
+        if (Math.abs(target - current) < 0.6) {
+          current = target;
+          window.scrollTo({ top: current, behavior: 'instant' });
+          animating = false;
+          return;
+        }
+        window.scrollTo({ top: current, behavior: 'instant' });
+        requestAnimationFrame(step);
+      }
+      window.addEventListener('wheel', e => {
+        if (e.ctrlKey) return; // ピンチズームは邪魔しない
+        const el = e.target instanceof Element ? e.target : null;
+        if (el && el.closest('.bookstore-scroll, .voices-vertical, textarea')) return; // 横スクロールUIと入力欄は素通し
+        e.preventDefault();
+        const delta = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaY;
+        if (!animating) { target = window.scrollY; current = target; }
+        target = Math.max(0, Math.min(maxScroll(), target + delta));
+        if (!animating) { animating = true; requestAnimationFrame(step); }
+      }, { passive: false });
+      window.addEventListener('scroll', () => {
+        if (!animating) { target = window.scrollY; current = target; }
+      }, { passive: true });
+    })();
 
     // TV・雑誌カードのstagger
     ['.tv-grid .tv-card', '.magazine-grid .magazine-card'].forEach(selector => {
