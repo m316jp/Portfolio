@@ -4685,8 +4685,8 @@
 
   <!-- Mobile Floating CTA -->
   <div class="mobile-floating-cta" id="mobile-cta">
-    <a href="https://amzn.to/40TOVFt" target="_blank" rel="noopener" class="floating-btn">
-      Amazonで見る
+    <a href="#contact" class="floating-btn">
+      お問い合わせ
     </a>
   </div>
 
@@ -4701,7 +4701,10 @@
     // Mobile CTA Visibility
     const mobileCta = document.getElementById('mobile-cta');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 500 && window.innerWidth <= 768) {
+      const contactEl = document.getElementById('contact');
+      const contactInView = contactEl &&
+        window.scrollY + window.innerHeight > contactEl.offsetTop + 120;
+      if (window.scrollY > 500 && window.innerWidth <= 768 && !contactInView) {
         mobileCta.classList.add('visible');
       } else {
         mobileCta.classList.remove('visible');
