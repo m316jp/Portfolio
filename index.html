@@ -1158,27 +1158,65 @@
 
     /* ===== PROFILE SCENES ===== */
     .profile-scenes {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-top: 56px;
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-top: 64px;
     }
 
-    .profile-scene-img {
+    .scene {
+      position: relative;
+      margin: 0;
+    }
+
+    .scene img {
       width: 100%;
-      aspect-ratio: 4 / 5;
       object-fit: cover;
-      object-position: center;
       border-radius: var(--radius-lg);
       display: block;
       box-shadow: var(--shadow-md);
     }
 
-    .profile-scenes .profile-scene-img:first-child {
-      object-position: 88% center;
+    .scene::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 38%;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent);
+      pointer-events: none;
+    }
+
+    .scene-caption {
+      position: absolute;
+      left: 24px;
+      bottom: 16px;
+      z-index: 1;
+      margin: 0;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.95);
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .scene--feature img {
+      aspect-ratio: 15 / 8;
+      object-position: center 35%;
+    }
+
+    .scene--sub {
+      margin: 20px 0 0 auto;
+      width: min(420px, 62%);
+    }
+
+    .scene--sub img {
+      aspect-ratio: 3 / 2;
+    }
+
+    .scene--sub .scene-caption {
+      left: 18px;
+      bottom: 12px;
+      font-size: 12px;
     }
 
     /* ===== BOOK ===== */
@@ -3339,8 +3377,13 @@
         justify-content: flex-start;
       }
 
-      .profile-scene-img {
-        aspect-ratio: 4 / 5;
+      .scene--feature img {
+        aspect-ratio: 3 / 2;
+        object-position: center 30%;
+      }
+
+      .scene--sub {
+        width: 78%;
       }
 
       /* Book */
@@ -3849,8 +3892,14 @@
       </div>
 
       <div class="profile-scenes reveal-scale">
-        <img src="風景１.jpg" alt="キッチンでAIを活用する宮崎真理" class="profile-scene-img" loading="lazy">
-        <img src="風景２.png" alt="家族でAIを活用する宮崎真理" class="profile-scene-img" loading="lazy">
+        <figure class="scene scene--feature">
+          <img src="scene_family.webp" alt="自宅で息子たちとAIを活用する宮崎真理" loading="lazy">
+          <figcaption class="scene-caption">自宅にて。息子たちと、AIのある日常。</figcaption>
+        </figure>
+        <figure class="scene scene--sub">
+          <img src="scene_kitchen.webp" alt="キッチンでAIに相談する宮崎真理" loading="lazy">
+          <figcaption class="scene-caption">献立の相談は、キッチンでAIと。</figcaption>
+        </figure>
       </div>
     </div>
   </section>
