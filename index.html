@@ -3100,6 +3100,13 @@
       .contact-form-row {
         grid-template-columns: 1fr;
       }
+
+      /* 16px未満だとiOSがフォーカス時に自動ズームするのを防ぐ */
+      .contact-form-group input,
+      .contact-form-group select,
+      .contact-form-group textarea {
+        font-size: 16px;
+      }
     }
 
     .contact-desc {
@@ -3634,6 +3641,20 @@
       .magazine-grid,
       .contents-grid {
         grid-template-columns: 1fr;
+      }
+
+      /* スマホでは各カードの高さを内容に合わせる（縦の空白を出さない） */
+      .tv-grid {
+        grid-auto-rows: auto;
+      }
+
+      .tv-card {
+        height: auto;
+        padding: 20px 18px;
+      }
+
+      .content-card {
+        padding: 24px 22px;
       }
 
       .contact-cards {
@@ -4331,7 +4352,7 @@
         </div>
         <div class="award-highlight-image">
           <a href="https://women-ai-initiative.jp/media/posts/miyazaki_award" target="_blank" rel="noopener">
-            <img src="woman_ai_award_2026.png" alt="WOMAN AI AWARD 2026 ファイナリスト選出">
+            <img src="award_2026.webp" alt="WOMAN AI AWARD 2026 ファイナリスト選出">
           </a>
         </div>
       </div>
@@ -4903,11 +4924,11 @@
           <div class="contact-form-row">
             <div class="contact-form-group">
               <label for="cf-name">お名前 <span>*</span></label>
-              <input type="text" id="cf-name" name="name" required placeholder="お名前">
+              <input type="text" id="cf-name" name="name" required placeholder="お名前" autocomplete="name">
             </div>
             <div class="contact-form-group">
               <label for="cf-email">メールアドレス <span>*</span></label>
-              <input type="email" id="cf-email" name="email" required placeholder="example@mail.com">
+              <input type="email" id="cf-email" name="email" required placeholder="example@mail.com" autocomplete="email">
             </div>
           </div>
           <div class="contact-form-group">
