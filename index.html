@@ -2521,9 +2521,10 @@
 
     .bookstore-card {
       flex: 0 0 200px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
     }
 
     .bookstore-card img {
@@ -2531,23 +2532,27 @@
       aspect-ratio: 3 / 4;
       object-fit: cover;
       object-position: center;
-      border-radius: var(--radius-md);
       display: block;
       cursor: zoom-in;
-      transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-      box-shadow: var(--shadow-sm);
+      transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
     .bookstore-card img:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
+      transform: scale(1.05);
     }
 
     .bookstore-name {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 28px 14px 10px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.72), transparent);
+      pointer-events: none;
       font-family: 'Cormorant Garamond', serif;
       font-size: 13px;
       font-style: italic;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255, 255, 255, 0.92);
       line-height: 1.6;
       letter-spacing: 0.04em;
     }
