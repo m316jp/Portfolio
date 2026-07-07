@@ -75,7 +75,10 @@
           "https://note.com/m316jp2"
         ],
         "knowsAbout": ["生成AI", "家事効率化", "育児", "AIライフスタイル"],
-        "award": "WOMAN AI AWARD 2026 ファイナリスト選出",
+        "award": [
+          "WOMAN AI AWARD 2026 ライフ・イノベーター賞 受賞",
+          "WOMAN AI AWARD 2026 ファイナリスト選出"
+        ],
         "author": {
           "@id": "https://m316jp.github.io/Portfolio/#book"
         }
@@ -2168,6 +2171,31 @@
       display: block;
     }
 
+    .award-highlight-card + .award-highlight-card {
+      margin-top: 20px;
+    }
+
+    .award-highlight-images {
+      flex-shrink: 0;
+      display: flex;
+      gap: 12px;
+    }
+
+    .award-highlight-images a {
+      display: block;
+      width: 200px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .award-highlight-images img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
     /* Web記事リスト */
     .web-media-block {
       background: var(--white);
@@ -3840,6 +3868,15 @@
         width: 100%;
       }
 
+      .award-highlight-images {
+        width: 100%;
+      }
+
+      .award-highlight-images a {
+        flex: 1;
+        width: auto;
+      }
+
       .magazine-card {
         padding: 20px;
       }
@@ -4331,7 +4368,7 @@
           <p>
             2026年3月、1000日以上の実践から厳選した60の活用例をまとめた
             初の著書『AI×家事』（扶桑社）を出版。
-            同年、<strong>「WOMAN AI AWARD 2026」ファイナリスト</strong>に選出。
+            同年、<strong>「WOMAN AI AWARD 2026」ライフ・イノベーター賞</strong>を受賞。
           </p>
           <div class="profile-sns">
             <a class="profile-sns-link" href="https://x.com/m316jp2" target="_blank" rel="noopener">
@@ -4558,6 +4595,23 @@
       <div class="award-highlight-card reveal">
         <div class="award-highlight-info">
           <span class="award-highlight-badge">New</span>
+          <p class="award-highlight-name">WOMAN AI AWARD 2026</p>
+          <p class="award-highlight-subtitle">ライフ・イノベーター賞 受賞</p>
+          <p class="award-highlight-desc">AIに挑戦し、自らの選択肢を広げた女性たちを称える「WOMAN AI AWARD 2026」にて、ライフ・イノベーター賞を受賞。</p>
+          <a class="award-highlight-link" href="https://prtimes.jp/main/html/rd/p/000000030.000162627.html" target="_blank" rel="noopener">受賞ニュースを読む →</a>
+        </div>
+        <div class="award-highlight-images">
+          <a href="https://prtimes.jp/main/html/rd/p/000000030.000162627.html" target="_blank" rel="noopener">
+            <img src="award_winner_2026_trophy.webp" alt="WOMAN AI AWARD 2026 ライフ・イノベーター賞 トロフィー授与の様子">
+          </a>
+          <a href="https://prtimes.jp/main/html/rd/p/000000030.000162627.html" target="_blank" rel="noopener">
+            <img src="award_winner_2026_speech.webp" alt="WOMAN AI AWARD 2026 授賞式でスピーチする宮崎真理">
+          </a>
+        </div>
+      </div>
+      <div class="award-highlight-card reveal">
+        <div class="award-highlight-info">
+          <span class="award-highlight-badge">Finalist</span>
           <p class="award-highlight-name">WOMAN AI AWARD 2026</p>
           <p class="award-highlight-subtitle">ファイナリスト選出</p>
           <p class="award-highlight-desc">AIに挑戦し、自らの選択肢を広げた女性たちを称える賞のファイナリストに選出。</p>
