@@ -15,7 +15,7 @@
     gtag('config', 'G-1WMFC152MS');
   </script>
   <title>宮崎真理｜『AI×家事』著者</title>
-  <meta name="description" content="3児の母であり、1000日以上AIを家事・育児に活用してきた宮崎真理のポートフォリオ。著書『AI×家事』（扶桑社）の紹介やメディア出演実績を掲載。">
+  <meta name="description" content="3児の母であり、1000日以上AIを家事・育児に活用してきた宮崎真理のポートフォリオ。著書『AI×家事』（扶桑社）の紹介やメディア出演実績を掲載。メディア出演・取材・執筆・講演のご依頼を受付中。">
   <meta name="keywords" content="宮崎真理, AI×家事, 生成AI, 家事効率化, 育児AI, 扶桑社">
 
   <!-- Favicon -->
@@ -1290,6 +1290,7 @@
       gap: 24px;
       max-width: 880px;
       margin: 0 auto;
+      align-items: start;
     }
 
     .ranking-item {
@@ -2548,6 +2549,181 @@
     }
 
     /* ============================================================
+       CONVERSION COMPONENTS
+       ============================================================ */
+    /* nav contact button */
+    .nav-links li:last-child a {
+      background: var(--ink);
+      color: var(--paper);
+      margin-left: 8px;
+    }
+
+    .nav-links li:last-child a:hover {
+      background: var(--accent);
+      color: var(--ink);
+    }
+
+    /* hero availability status */
+    .hero-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      align-self: flex-start;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      padding: 8px 18px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-pill);
+      margin-bottom: 32px;
+    }
+
+    .hero-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #3cb371;
+      box-shadow: 0 0 0 3px rgba(60, 179, 113, 0.2);
+      animation: statusPulse 2.4s ease infinite;
+    }
+
+    @keyframes statusPulse {
+      50% { box-shadow: 0 0 0 6px rgba(60, 179, 113, 0.08); }
+    }
+
+    /* works: offering bullets */
+    .work-list {
+      list-style: none;
+      margin-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .work-list li {
+      position: relative;
+      padding: 10px 0 10px 20px;
+      font-size: 13px;
+      line-height: 1.8;
+      letter-spacing: 0.03em;
+      color: var(--ink-soft);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .work-list li::before {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: 19px;
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+    }
+
+    /* CTA banner */
+    .cta-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 96px;
+      padding: clamp(32px, 4vw, 48px);
+      background: var(--night);
+      border-radius: var(--radius-md);
+      color: var(--night-text);
+    }
+
+    .cta-banner-title {
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: var(--white);
+    }
+
+    .cta-banner-btn {
+      flex: none;
+      background: var(--accent);
+      color: var(--ink);
+    }
+
+    .cta-banner-btn:hover {
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    /* contact: note / success / trust */
+    .contact-form-note {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: var(--gray);
+    }
+
+    .contact-form-btn:disabled {
+      opacity: 0.6;
+      cursor: wait;
+      transform: none;
+    }
+
+    .contact-success {
+      padding: 48px 32px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+
+    .contact-success-title {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    .contact-success-title::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 4px;
+      background: var(--accent);
+      margin: 0 auto 20px;
+    }
+
+    .contact-success-desc {
+      font-size: 14px;
+      line-height: 2.2;
+      letter-spacing: 0.05em;
+      color: var(--ink-soft);
+    }
+
+    .contact-success-desc a {
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .contact-trust {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-trust-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: var(--gray);
+      margin-bottom: 10px;
+    }
+
+    .contact-trust-names {
+      font-size: 13px;
+      line-height: 2;
+      letter-spacing: 0.08em;
+      color: var(--ink-soft);
+    }
+
+    /* ============================================================
        RESPONSIVE
        ============================================================ */
     @media (max-width: 1024px) {
@@ -2718,6 +2894,17 @@
       .article-item {
         flex-direction: column;
         gap: 4px;
+      }
+
+      .cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 64px;
+      }
+
+      .cta-banner-btn {
+        width: 100%;
+        text-align: center;
       }
 
       .mobile-floating-cta {
@@ -2916,6 +3103,7 @@
   <!-- HERO -->
   <section class="hero" id="top">
     <div class="hero-left">
+      <p class="hero-status"><span class="hero-status-dot" aria-hidden="true"></span>出演・執筆のご依頼を受付中</p>
       <h1 class="hero-name">宮崎 真理</h1>
       <span class="hero-name-ruby">MIYAZAKI MARI</span>
       <p class="hero-tagline">
@@ -2942,8 +3130,8 @@
         </div>
       </div>
       <div class="hero-cta">
-        <a href="#book" class="btn-primary">著書を見る →</a>
-        <a href="#contact" class="btn-secondary">お問い合わせ</a>
+        <a href="#contact" class="btn-primary" data-cta="hero">お仕事のご依頼 →</a>
+        <a href="#book" class="btn-secondary">著書を見る</a>
       </div>
 
     </div>
@@ -3109,6 +3297,7 @@
               rel="noopener">楽天ブックスで見る</a>
             <p class="book-buy-note">全国書店でも発売中。電子書籍（Kindle）でもお読みいただけます。</p>
             <p class="book-buy-news">2026年6月2日、Amazon Kindle日替わりセール対象に選ばれました。</p>
+            <p class="book-buy-news">2026年5月、マイナビ子育て様のプレゼントキャンペーン賞品に選ばれました。</p>
           </div>
         </div>
 
@@ -3408,7 +3597,7 @@
           <h3 class="media-category-title">イベント・ライブ配信</h3>
         </div>
         <a class="event-card event-card--visual" href="https://note.com/yosukeotsubo/n/n37301a94335e" target="_blank" rel="noopener">
-          <img class="event-image" src="IMG_9726.JPG" alt="だから、TSGはエントリーするだけで進む。 イベント告知">
+          <img class="event-image" src="IMG_9726.webp" alt="だから、TSGはエントリーするだけで進む。 イベント告知" loading="lazy">
           <div class="event-info">
             <p class="event-format">オンラインイベント登壇</p>
             <p class="event-host">TOKYO STARTUP GATEWAY (TSG) OBOG有志企画</p>
@@ -3426,7 +3615,7 @@
           </div>
         </div>
         <div class="event-card event-card--visual">
-          <img class="event-image event-image--mynavi" src="スクリーンショット 2026-07-12 23.33.43 2.png" alt="マイナビ子育て AI×家事 インスタライブ">
+          <img class="event-image event-image--mynavi" src="event_mynavi_live.webp" alt="マイナビ子育て AI×家事 インスタライブ" loading="lazy">
           <div class="event-info">
             <p class="event-format">インスタライブ配信</p>
             <p class="event-host">マイナビ子育て</p>
@@ -3825,6 +4014,14 @@
         </div>
       </div>
 
+      <!-- CTA banner -->
+      <div class="cta-banner reveal">
+        <div class="cta-banner-text">
+          <p class="cta-banner-title">出演・取材・執筆のご依頼を受付中です</p>
+        </div>
+        <a href="#contact" class="btn-primary cta-banner-btn" data-cta="media">ご依頼・ご相談する →</a>
+      </div>
+
     </div>
   </section>
 
@@ -3842,6 +4039,11 @@
           </div>
           <h3 class="work-title">メディア出演</h3>
           <p class="work-desc">テレビ・ラジオ・ポッドキャスト等、取材・出演のご依頼。</p>
+          <ul class="work-list">
+            <li>情報番組でのAI活用術の紹介・実演</li>
+            <li>「AI×家事・育児」テーマの取材・インタビュー</li>
+            <li>ラジオ・ポッドキャストへのゲスト出演</li>
+          </ul>
         </div>
         <div class="work-card reveal reveal-delay-2">
           <div class="work-icon">
@@ -3849,13 +4051,23 @@
           </div>
           <h3 class="work-title">執筆・コラム</h3>
           <p class="work-desc">生成AIの家庭活用をテーマにした記事・コラムの執筆。</p>
+          <ul class="work-list">
+            <li>Webメディア・雑誌への寄稿（単発・連載）</li>
+            <li>1000日以上の実体験にもとづく活用例の紹介</li>
+            <li>主婦・子育て層に届く、やさしい語り口の記事</li>
+          </ul>
         </div>
         <div class="work-card reveal reveal-delay-3">
           <div class="work-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"/></svg>
           </div>
           <h3 class="work-title">SNS・コラボレーション</h3>
-          <p class="work-desc">商品紹介・共同企画など。</p>
+          <p class="work-desc">講演・イベント登壇、商品紹介・共同企画など。</p>
+          <ul class="work-list">
+            <li>講演・セミナー・イベント登壇（オンライン可）</li>
+            <li>インスタライブ等のライブ配信企画</li>
+            <li>AI関連サービス・家事関連商品のタイアップ</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -3868,10 +4080,11 @@
         <span class="section-label">Contact</span>
         <h2 class="section-title">お問い合わせ</h2>
         <p class="contact-desc">
-          講演・メディア出演・執筆・コラボレーションなど<br>
-          お気軽にご連絡ください。
+          メディア出演・取材・執筆・講演・コラボレーションなど、お気軽にご連絡ください。
         </p>
-        <form class="contact-form" action="https://formspree.io/f/xvzwakrg" method="POST">
+        <form class="contact-form" action="https://formspree.io/f/xvzwakrg" method="POST" id="contact-form">
+          <input type="hidden" name="_subject" value="【ポートフォリオ】お問い合わせ">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="contact-form-row">
             <div class="contact-form-group">
               <label for="cf-name">お名前 <span>*</span></label>
@@ -3884,10 +4097,19 @@
           </div>
           <div class="contact-form-group">
             <label for="cf-message">メッセージ <span>*</span></label>
-            <textarea id="cf-message" name="message" required placeholder="お気軽にご連絡ください。" rows="5"></textarea>
+            <textarea id="cf-message" name="message" required placeholder="ご依頼・ご相談の内容をご記入ください。" rows="5"></textarea>
           </div>
-          <button type="submit" class="contact-form-btn">送信する →</button>
+          <button type="submit" class="contact-form-btn" id="contact-submit">送信する →</button>
+          <p class="contact-form-note">送信後、数日以内を目安にメールでご返信します。</p>
         </form>
+        <div class="contact-success" id="contact-success" hidden>
+          <p class="contact-success-title">送信ありがとうございました。</p>
+          <p class="contact-success-desc">内容を確認のうえ、数日以内を目安にメールでご返信します。<br>お急ぎの場合は <a href="https://x.com/m316jp2" target="_blank" rel="noopener">X（@m316jp2）</a>のDMでもご連絡いただけます。</p>
+        </div>
+        <div class="contact-trust">
+          <p class="contact-trust-label">これまでの出演・掲載</p>
+          <p class="contact-trust-names">NHK／日本テレビ／フジテレビ／講談社／扶桑社／集英社オンライン／ハフポスト日本版など</p>
+        </div>
       </div>
     </div>
   </section>
@@ -4273,6 +4495,48 @@
         });
       });
     }
+
+    // お問い合わせフォーム：ページ内で完結するAJAX送信＋計測
+    (function initContactForm() {
+      const form = document.getElementById('contact-form');
+      const success = document.getElementById('contact-success');
+      const submitBtn = document.getElementById('contact-submit');
+      if (!form || !success || !submitBtn) return;
+
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.textContent = '送信中…';
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+          });
+          if (!res.ok) throw new Error('formspree error');
+          form.hidden = true;
+          success.hidden = false;
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', { form_id: 'contact-form' });
+          }
+        } catch (err) {
+          // AJAXが失敗したら通常送信にフォールバック（submit()はこのハンドラを再発火しない）
+          submitBtn.disabled = false;
+          submitBtn.textContent = '送信する →';
+          form.submit();
+        }
+      });
+    })();
+
+    // CTAクリック計測
+    document.querySelectorAll('[data-cta]').forEach(el => {
+      el.addEventListener('click', () => {
+        if (typeof gtag === 'function') {
+          gtag('event', 'cta_click', { cta_location: el.dataset.cta });
+        }
+      });
+    });
 
     // コラム連載「もっと見る」（スマホのみ）
     if (window.innerWidth <= 768) {
