@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">AI×家事</title>
+  <rect width="512" height="512" rx="96" fill="#f2c40f"/>
+  <text x="58" y="236" fill="#141413" font-family="Space Grotesk, Helvetica Neue, Arial, sans-serif" font-size="190" font-weight="700" letter-spacing="-10">AI</text>
+  <circle cx="397" cy="127" r="57" fill="#141413"/>
+  <text x="397" y="158" fill="#ffffff" font-family="Helvetica Neue, Arial, sans-serif" font-size="86" font-weight="500" text-anchor="middle">×</text>
+  <text x="58" y="414" fill="#141413" font-family="Zen Kaku Gothic New, Hiragino Kaku Gothic ProN, Yu Gothic, sans-serif" font-size="144" font-weight="700" letter-spacing="8">家事</text>
+</svg>

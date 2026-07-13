@@ -19,8 +19,9 @@
   <meta name="keywords" content="宮崎真理, AI×家事, 生成AI, 家事効率化, 育児AI, 扶桑社">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="AItaizen_hyo1_0120.jpg">
-  <link rel="apple-touch-icon" href="AItaizen_hyo1_0120.jpg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
   <!-- OGP -->
   <meta property="og:site_name" content="宮崎真理 ポートフォリオ">
@@ -2497,23 +2498,26 @@
        LIGHTBOX / FLOATING UI
        ============================================================ */
     .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 200;
-      display: flex;
+      width: 100vw;
+      max-width: none;
+      height: 100vh;
+      max-height: none;
+      margin: 0;
+      border: 0;
+      display: none;
       align-items: center;
       justify-content: center;
       background: rgba(10, 10, 9, 0.94);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-      cursor: zoom-out;
       padding: 32px;
+      color: var(--white);
     }
 
-    .lightbox.active {
-      opacity: 1;
-      visibility: visible;
+    .lightbox[open] {
+      display: flex;
+    }
+
+    .lightbox::backdrop {
+      background: transparent;
     }
 
     .lightbox img {
@@ -2521,6 +2525,57 @@
       max-height: 92%;
       object-fit: contain;
       border-radius: var(--radius-sm);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: max(20px, env(safe-area-inset-top));
+      right: max(20px, env(safe-area-inset-right));
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      border-radius: 50%;
+      color: var(--white);
+      background: rgba(10, 10, 9, 0.72);
+      font: inherit;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+      transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .lightbox-close:hover {
+      color: var(--ink);
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .lightbox-close:focus-visible,
+    [data-lightbox-trigger]:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    [data-lightbox-trigger] {
+      cursor: zoom-in;
+    }
+
+    body.lightbox-open {
+      overflow: hidden;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .mobile-floating-cta {
@@ -4458,7 +4513,7 @@
 
       document.documentElement.addEventListener('mouseleave', () => dot.classList.remove('is-visible'));
 
-      const interactive = 'a, button, summary, input, textarea, label';
+      const interactive = 'a, button, summary, input, textarea, label, [role="button"]';
       document.addEventListener('mouseover', e => {
         if (e.target.closest(interactive)) dot.classList.add('is-active');
       });
@@ -4487,9 +4542,11 @@
 
 
   <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-title">
+    <h2 class="sr-only" id="lightbox-title">画像の拡大表示</h2>
     <img id="lightbox-img" src="" alt="">
-  </div>
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="拡大表示を閉じる">×</button>
+  </dialog>
 
   <!-- Mobile Floating CTA -->
   <div class="mobile-floating-cta" id="mobile-cta">
@@ -4521,12 +4578,42 @@
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    let lightboxTrigger = null;
 
-    document.querySelectorAll('.mokuji-img, .book-cover-large, .bookstore-card img').forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.classList.add('active');
+    function openLightbox(img) {
+      lightboxTrigger = img;
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt;
+      lightboxTitle.textContent = '拡大表示：' + (img.alt || '画像');
+      document.body.classList.add('lightbox-open');
+      lightbox.showModal();
+      lightboxClose.focus();
+    }
+
+    function closeLightbox() {
+      if (lightbox.open) lightbox.close();
+    }
+
+    const lightboxImages = document.querySelectorAll(
+      '.mokuji-img, .book-cover-large, .bookstore-card:not([aria-hidden="true"]) img, .ranking-item-img-wrap img'
+    );
+
+    lightboxImages.forEach(img => {
+      img.tabIndex = 0;
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-haspopup', 'dialog');
+      img.setAttribute('aria-controls', 'lightbox');
+      img.setAttribute('aria-label', '画像を拡大：' + (img.alt || '画像'));
+      img.dataset.lightboxTrigger = '';
+
+      img.addEventListener('click', () => openLightbox(img));
+      img.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox(img);
+        }
       });
     });
 
@@ -4616,22 +4703,24 @@
       requestAnimationFrame(step);
     })();
 
-    document.querySelectorAll('.ranking-item-img-wrap').forEach(wrap => {
-      wrap.addEventListener('click', () => {
-        const img = wrap.querySelector('img');
-        if (!img) return;
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.classList.add('active');
-      });
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) closeLightbox();
     });
 
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
+    lightbox.addEventListener('cancel', e => {
+      e.preventDefault();
+      closeLightbox();
     });
 
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') lightbox.classList.remove('active');
+    lightbox.addEventListener('close', () => {
+      document.body.classList.remove('lightbox-open');
+      lightboxImg.removeAttribute('src');
+      lightboxImg.alt = '';
+      lightboxTitle.textContent = '画像の拡大表示';
+      if (lightboxTrigger) lightboxTrigger.focus();
+      lightboxTrigger = null;
     });
 
     // Back to top
