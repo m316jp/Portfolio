@@ -1503,8 +1503,9 @@
 
     .bookstore-card img {
       width: 100%;
-      height: 150px;
-      object-fit: cover;
+      height: 290px;
+      object-fit: contain;
+      background: var(--night-card);
       cursor: zoom-in;
     }
 
@@ -2549,6 +2550,110 @@
     }
 
     /* ============================================================
+       PLAYFUL TOUCHES
+       ============================================================ */
+    /* 3. hand-drawn marker underline (SVG injected by JS) */
+    .marker-underline {
+      display: block;
+      width: 190px;
+      max-width: 46%;
+      height: 12px;
+      margin-top: 10px;
+      overflow: visible;
+    }
+
+    .marker-underline path {
+      stroke: var(--accent);
+      stroke-width: 5.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      transition: stroke-dashoffset 0.8s cubic-bezier(0.5, 0, 0.2, 1) 0.15s;
+    }
+
+    .marker-underline.drawn path {
+      stroke-dashoffset: 0;
+    }
+
+    .profile-text .marker-underline {
+      margin-top: -24px;
+      margin-bottom: 36px;
+    }
+
+    .contact-inner .marker-underline {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* 4. sticker-style photos */
+    .profile-photo-wrap::after {
+      content: none;
+    }
+
+    .profile-photo {
+      border: 10px solid var(--white);
+      border-radius: var(--radius-sm);
+      box-shadow: 0 20px 44px -20px rgba(20, 20, 19, 0.38);
+      transform: rotate(-1.6deg);
+      transition: transform 0.45s var(--ease-out);
+    }
+
+    .profile-photo-wrap:hover .profile-photo {
+      transform: rotate(0.4deg) translateY(-6px);
+    }
+
+    .scene {
+      border: 10px solid var(--white);
+      border-radius: var(--radius-sm);
+      box-shadow: 0 16px 36px -18px rgba(20, 20, 19, 0.32);
+      transition: transform 0.45s var(--ease-out);
+    }
+
+    .scene--feature {
+      transform: rotate(-0.9deg);
+    }
+
+    .scene--sub {
+      transform: rotate(1.4deg);
+    }
+
+    .scene:hover {
+      transform: rotate(0deg) translateY(-6px);
+    }
+
+    /* 6. custom cursor (fine pointers only) */
+    .cursor-dot {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      pointer-events: none;
+      z-index: 500;
+      opacity: 0;
+      transition: opacity 0.3s ease, width 0.25s ease, height 0.25s ease;
+    }
+
+    .cursor-dot.is-visible {
+      opacity: 0.9;
+    }
+
+    .cursor-dot.is-active {
+      width: 44px;
+      height: 44px;
+      opacity: 0.4;
+    }
+
+    @media (pointer: coarse) {
+      .cursor-dot {
+        display: none;
+      }
+    }
+
+    /* ============================================================
        CONVERSION COMPONENTS
        ============================================================ */
     /* nav contact button */
@@ -2955,7 +3060,7 @@
       }
 
       .bookstore-card img {
-        height: 124px;
+        height: 238px;
       }
     }
 
@@ -2982,11 +3087,21 @@
         opacity: 1;
         transform: none;
       }
+
+      .marker-underline path {
+        stroke-dashoffset: 0 !important;
+      }
+
+      .cursor-dot {
+        display: none;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
 
   <!-- NAV -->
   <nav>
@@ -3459,7 +3574,7 @@
         <div class="award-highlight-info">
           <span class="award-highlight-badge">New</span>
           <p class="award-highlight-name">WOMAN AI AWARD 2026</p>
-          <p class="award-highlight-subtitle">ライフ・イノベーター賞 受賞</p>
+          <p class="award-highlight-subtitle">ライフ・イノベーター賞を受賞</p>
           <p class="award-highlight-desc">AIに挑戦し、自らの選択肢を広げた女性たちを称える「WOMAN AI AWARD 2026」にて、ライフ・イノベーター賞を受賞。</p>
           <a class="award-highlight-link" href="https://prtimes.jp/main/html/rd/p/000000030.000162627.html" target="_blank" rel="noopener">受賞ニュースを読む →</a>
         </div>
@@ -4258,6 +4373,66 @@
         observer.observe(card);
       });
     });
+
+    // 見出しの手書きマーカー（スクロールで線が引かれる）
+    (function initMarkers() {
+      const titles = document.querySelectorAll('.section-title');
+      if (!titles.length) return;
+      const svgNS = 'http://www.w3.org/2000/svg';
+      titles.forEach(t => {
+        const svg = document.createElementNS(svgNS, 'svg');
+        svg.setAttribute('class', 'marker-underline');
+        svg.setAttribute('viewBox', '0 0 240 14');
+        svg.setAttribute('preserveAspectRatio', 'none');
+        svg.setAttribute('aria-hidden', 'true');
+        const path = document.createElementNS(svgNS, 'path');
+        path.setAttribute('d', 'M4 10 C 44 4, 78 12, 116 7 C 152 3, 196 6, 236 8');
+        path.setAttribute('pathLength', '1');
+        svg.appendChild(path);
+        t.insertAdjacentElement('afterend', svg);
+      });
+      const markerObserver = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (en.isIntersecting) {
+            en.target.classList.add('drawn');
+            markerObserver.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('.marker-underline').forEach(s => markerObserver.observe(s));
+    })();
+
+    // カスタムカーソル（PC・マウス操作時のみ）
+    (function initCursor() {
+      if (!window.matchMedia('(pointer: fine)').matches) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const dot = document.querySelector('.cursor-dot');
+      if (!dot) return;
+
+      let tx = -100, ty = -100, x = -100, y = -100;
+      window.addEventListener('mousemove', e => {
+        tx = e.clientX;
+        ty = e.clientY;
+        dot.classList.add('is-visible');
+      }, { passive: true });
+
+      document.documentElement.addEventListener('mouseleave', () => dot.classList.remove('is-visible'));
+
+      const interactive = 'a, button, summary, input, textarea, label';
+      document.addEventListener('mouseover', e => {
+        if (e.target.closest(interactive)) dot.classList.add('is-active');
+      });
+      document.addEventListener('mouseout', e => {
+        if (e.target.closest(interactive)) dot.classList.remove('is-active');
+      });
+
+      (function follow() {
+        x += (tx - x) * 0.22;
+        y += (ty - y) * 0.22;
+        dot.style.transform = 'translate(' + x + 'px,' + y + 'px) translate(-50%, -50%)';
+        requestAnimationFrame(follow);
+      })();
+    })();
 
     // Nav scroll effect
     const nav = document.querySelector('nav');
