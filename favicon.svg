@@ -1,7 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <rect width="512" height="512" rx="168" fill="#f2c40f"/>
-  <g fill="none" stroke="#141413" stroke-width="58" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M116 358 V252 Q116 182 186 182 Q256 182 256 252 V358"/>
-    <path d="M256 252 Q256 182 326 182 Q396 182 396 252 V358"/>
-  </g>
+  <!-- A bold geometric gothic M, optimized for small favicon sizes -->
+  <path fill="#141413" d="M92 380V132H169L256 276L343 132H420V380H350V250L285 352H227L162 250V380Z"/>
 </svg>
