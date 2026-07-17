@@ -1,7 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="宮崎真理 AI×家事">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="宮崎真理">
   <rect width="512" height="512" rx="150" fill="#f2c40f"/>
-  <g fill="none" stroke="#141413" stroke-width="44" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M128 268 L256 152 L384 268"/>
-    <path d="M172 252 V340 a32 32 0 0 0 32 32 h104 a32 32 0 0 0 32 -32 V252"/>
+  <g fill="#141413">
+    <circle cx="130" cy="232" r="52"/>
+    <path d="M65 372 a65 78 0 0 1 130 0 z"/>
+    <circle cx="245" cy="274" r="36"/>
+    <path d="M203 372 a42 52 0 0 1 84 0 z"/>
+    <circle cx="333" cy="284" r="32"/>
+    <path d="M295 372 a38 46 0 0 1 76 0 z"/>
+    <circle cx="413" cy="292" r="28"/>
+    <path d="M379 372 a34 42 0 0 1 68 0 z"/>
   </g>
 </svg>
