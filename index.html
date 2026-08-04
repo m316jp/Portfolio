@@ -1808,26 +1808,61 @@
     .media-archive-toggle {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+      gap: 20px;
       width: 100%;
-      padding: 22px 26px;
+      padding: 24px 28px;
       background: var(--white);
       border: 1px solid var(--line);
       border-radius: var(--radius-md);
       font-family: inherit;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      color: var(--ink-soft);
       text-align: left;
       cursor: pointer;
-      transition: background 0.25s ease, border-color 0.25s ease;
+      transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s var(--ease-out);
     }
 
     .media-archive-toggle:hover {
       background: var(--paper);
       border-color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    .media-archive-icon {
+      width: 40px;
+      height: 40px;
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      border-radius: var(--radius-md);
+    }
+
+    .media-archive-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--ink);
+    }
+
+    .media-archive-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .media-archive-title {
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+    }
+
+    .media-archive-sub {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--gray);
     }
 
     .media-archive-chevron {
@@ -1836,6 +1871,12 @@
       flex: none;
       color: var(--gray);
       transition: transform 0.3s var(--ease-out);
+    }
+
+    @media (max-width: 600px) {
+      .media-archive-sub {
+        display: none;
+      }
     }
 
     .media-archive-toggle[aria-expanded="true"] .media-archive-chevron {
@@ -3979,7 +4020,11 @@
       <!-- アーカイブ実績（雑誌・イベント・Web記事・コラム連載） -->
       <div class="media-archive reveal">
         <button type="button" class="media-archive-toggle" id="media-archive-toggle" aria-expanded="false" aria-controls="media-archive-body">
-          <span>その他のメディア実績を見る（雑誌・イベント・Web記事・コラム連載）</span>
+          <span class="media-archive-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 6h9.75M10.5 12h9.75M10.5 18h9.75M3.75 6h.007v.008H3.75V6Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 18h.007v.008H3.75V18Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/></svg></span>
+          <span class="media-archive-text">
+            <span class="media-archive-title">その他のメディア実績を見る</span>
+            <span class="media-archive-sub">雑誌掲載・イベント登壇・Web記事・連載コラム</span>
+          </span>
           <svg class="media-archive-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div class="media-archive-body" id="media-archive-body" hidden>
