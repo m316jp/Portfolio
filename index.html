@@ -1676,17 +1676,8 @@
     }
 
     /* ============================================================
-       AWARD
+       AWARD (highlight card, shown as the first Media category)
        ============================================================ */
-    .award {
-      padding: 130px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .award-header {
-      margin-bottom: 56px;
-    }
-
     .award-highlight-card {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
@@ -1807,6 +1798,55 @@
     }
 
     .media-category:last-child {
+      margin-bottom: 0;
+    }
+
+    .media-archive {
+      margin-bottom: 104px;
+    }
+
+    .media-archive-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      width: 100%;
+      padding: 22px 26px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--ink-soft);
+      text-align: left;
+      cursor: pointer;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .media-archive-toggle:hover {
+      background: var(--paper);
+      border-color: var(--ink);
+    }
+
+    .media-archive-chevron {
+      width: 18px;
+      height: 18px;
+      flex: none;
+      color: var(--gray);
+      transition: transform 0.3s var(--ease-out);
+    }
+
+    .media-archive-toggle[aria-expanded="true"] .media-archive-chevron {
+      transform: rotate(180deg);
+    }
+
+    .media-archive-body {
+      padding-top: 56px;
+    }
+
+    .media-archive-body .media-category:last-child {
       margin-bottom: 0;
     }
 
@@ -3849,40 +3889,39 @@
   </section>
 
   <!-- MEDIA -->
-  <section class="award" id="award">
-    <div class="container">
-      <div class="award-header reveal">
-        <span class="section-label">Award</span>
-        <h2 class="section-title">受賞・実績</h2>
-      </div>
-      <div class="award-highlight-card reveal">
-        <div class="award-highlight-info">
-          <span class="award-highlight-badge">New</span>
-          <p class="award-highlight-name">WOMAN AI AWARD 2026</p>
-          <p class="award-highlight-subtitle">ライフ・イノベーター賞を受賞</p>
-          <p class="award-highlight-desc">AIに挑戦し、自らの選択肢を広げた女性たちを称える「WOMAN AI AWARD 2026」にて、ファイナリスト選出を経てライフ・イノベーター賞を受賞。</p>
-          <div class="award-highlight-links">
-            <a class="award-highlight-link" href="https://prtimes.jp/main/html/rd/p/000000030.000162627.html" target="_blank" rel="noopener">受賞ニュースを読む →</a>
-            <a class="award-highlight-link" href="https://women-ai-initiative.jp/media/posts/miyazaki_award" target="_blank" rel="noopener">私のストーリーを読む →</a>
-          </div>
-        </div>
-        <div class="award-highlight-images">
-          <a href="https://prtimes.jp/main/html/rd/p/000000030.000162627.html" target="_blank" rel="noopener">
-            <img src="award_winner_2026_trophy.webp" alt="WOMAN AI AWARD 2026 ライフ・イノベーター賞 トロフィー授与の様子">
-          </a>
-          <a href="https://prtimes.jp/main/html/rd/p/000000030.000162627.html" target="_blank" rel="noopener">
-            <img src="award_winner_2026_speech.webp" alt="WOMAN AI AWARD 2026 授賞式でスピーチする宮崎真理">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="media" id="media">
     <div class="container">
       <div class="media-header reveal">
         <span class="section-label">Media</span>
         <h2 class="section-title">メディア実績</h2>
+      </div>
+
+      <!-- 受賞 -->
+      <div class="media-category reveal" id="award">
+        <div class="media-category-header">
+          <div class="media-category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-1.472 1.53m0 0-.6.35a6.75 6.75 0 0 1-3.257 0l-.6-.35m0 0a6.774 6.774 0 0 1-1.472-1.53"/></svg></div>
+          <h3 class="media-category-title">受賞</h3>
+        </div>
+        <div class="award-highlight-card">
+          <div class="award-highlight-info">
+            <span class="award-highlight-badge">New</span>
+            <p class="award-highlight-name">WOMAN AI AWARD 2026</p>
+            <p class="award-highlight-subtitle">ライフ・イノベーター賞を受賞</p>
+            <p class="award-highlight-desc">AIに挑戦し、自らの選択肢を広げた女性たちを称える「WOMAN AI AWARD 2026」にて、ファイナリスト選出を経てライフ・イノベーター賞を受賞。</p>
+            <div class="award-highlight-links">
+              <a class="award-highlight-link" href="https://prtimes.jp/main/html/rd/p/000000030.000162627.html" target="_blank" rel="noopener">受賞ニュースを読む →</a>
+              <a class="award-highlight-link" href="https://women-ai-initiative.jp/media/posts/miyazaki_award" target="_blank" rel="noopener">私のストーリーを読む →</a>
+            </div>
+          </div>
+          <div class="award-highlight-images">
+            <a href="https://prtimes.jp/main/html/rd/p/000000030.000162627.html" target="_blank" rel="noopener">
+              <img src="award_winner_2026_trophy.webp" alt="WOMAN AI AWARD 2026 ライフ・イノベーター賞 トロフィー授与の様子">
+            </a>
+            <a href="https://prtimes.jp/main/html/rd/p/000000030.000162627.html" target="_blank" rel="noopener">
+              <img src="award_winner_2026_speech.webp" alt="WOMAN AI AWARD 2026 授賞式でスピーチする宮崎真理">
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- テレビ出演 -->
@@ -3936,6 +3975,14 @@
           </div>
         </div>
       </div>
+
+      <!-- アーカイブ実績（雑誌・イベント・Web記事・コラム連載） -->
+      <div class="media-archive reveal">
+        <button type="button" class="media-archive-toggle" id="media-archive-toggle" aria-expanded="false" aria-controls="media-archive-body">
+          <span>その他のメディア実績を見る（雑誌・イベント・Web記事・コラム連載）</span>
+          <svg class="media-archive-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="media-archive-body" id="media-archive-body" hidden>
 
       <!-- 雑誌・広報誌掲載 -->
       <div class="media-category reveal">
@@ -4415,6 +4462,9 @@
           <a href="https://withonline.jp/authors/9miIK" target="_blank" rel="noopener" class="column-more-link">
             すべてのコラムを読む →
           </a>
+        </div>
+      </div>
+
         </div>
       </div>
 
@@ -5027,6 +5077,19 @@
       });
     })();
 
+    // メディア実績：アーカイブ（雑誌・イベント・Web記事・コラム連載）の開閉
+    {
+      const toggle = document.getElementById('media-archive-toggle');
+      const body = document.getElementById('media-archive-body');
+      if (toggle && body) {
+        toggle.addEventListener('click', () => {
+          const expanded = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!expanded));
+          body.hidden = expanded;
+        });
+      }
+    }
+
     // CTAクリック計測
     document.querySelectorAll('[data-cta]').forEach(el => {
       el.addEventListener('click', () => {
@@ -5036,8 +5099,8 @@
       });
     });
 
-    // コラム連載「もっと見る」（スマホのみ）
-    if (window.innerWidth <= 768) {
+    // コラム連載「もっと見る」
+    {
       const columnItems = Array.from(document.querySelectorAll('.column-list .column-item'));
       const SHOW = 3;
       if (columnItems.length > SHOW) {
