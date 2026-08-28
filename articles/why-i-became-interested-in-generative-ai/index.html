@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宮崎真理が生成AIに惹かれた理由｜家事×AIにたどり着くまで</title>
+  <meta name="description" content="気象予報の仕組み、生体計測工学、工場の消費電力データ、約10年間の子育て。宮崎真理が生成AIに惹かれ、家事×AIの活用を考えるようになるまでを紹介します。">
+  <link rel="canonical" href="https://m316jp.github.io/Portfolio/articles/why-i-became-interested-in-generative-ai/">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+
+  <!-- OGP -->
+  <meta property="og:site_name" content="宮崎真理 ポートフォリオ">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="宮崎真理が生成AIに惹かれた理由｜家事×AIにたどり着くまで">
+  <meta property="og:description" content="気象予報の仕組み、生体計測工学、工場の消費電力データ、約10年間の子育て。宮崎真理が生成AIに惹かれ、家事×AIの活用を考えるようになるまでを紹介します。">
+  <meta property="og:url" content="https://m316jp.github.io/Portfolio/articles/why-i-became-interested-in-generative-ai/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="宮崎真理が生成AIに惹かれた理由｜家事×AIにたどり着くまで">
+  <meta name="twitter:description" content="気象予報、生体計測工学、工場の消費電力データ、約10年間の子育て。宮崎真理が生成AIに惹かれるまでを紹介します。">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "私が生成AIに惹かれた理由——家事×AIにたどり着くまで",
+    "description": "気象予報の仕組み、生体計測工学、工場の消費電力データ、約10年間の子育て。宮崎真理が生成AIに惹かれ、家事×AIの活用を考えるようになるまでを紹介します。",
+    "author": {"@type": "Person", "name": "宮崎真理", "url": "https://m316jp.github.io/Portfolio/"},
+    "publisher": {"@type": "Person", "name": "宮崎真理"},
+    "mainEntityOfPage": "https://m316jp.github.io/Portfolio/articles/why-i-became-interested-in-generative-ai/"
+  }
+  </script>
+
+  <style>
+    :root {
+      --ink: #141413;
+      --ink-soft: #3c3c39;
+      --gray: #73736d;
+      --line: #e4e3dc;
+      --paper: #f7f6f2;
+      --white: #fff;
+      --night: #121211;
+      --accent: #f2c40f;
+      --font-en: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+      --font-jp: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--font-jp);
+      font-size: 15px;
+      line-height: 1.9;
+      letter-spacing: 0.025em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 64px;
+      padding: 12px clamp(20px, 5vw, 64px);
+      border-bottom: 1px solid var(--line);
+      background: rgba(247, 246, 242, 0.96);
+    }
+
+    .site-name {
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+
+    .back-link {
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    main {
+      width: min(720px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(48px, 8vw, 88px) 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--gray);
+      font-family: var(--font-en);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(26px, 4.6vw, 38px);
+      line-height: 1.55;
+      letter-spacing: 0.04em;
+    }
+
+    .byline {
+      margin: 20px 0 0;
+      color: var(--gray);
+      font-family: var(--font-en);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    article {
+      margin-top: clamp(40px, 7vw, 64px);
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    article > p:first-of-type {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--ink-soft);
+    }
+
+    article h2 {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+      font-size: 19px;
+      line-height: 1.6;
+      letter-spacing: 0.04em;
+    }
+
+    article h2:first-of-type {
+      margin-top: 40px;
+    }
+
+    article p { margin: 0 0 22px; }
+
+    article ul {
+      margin: 0 0 22px;
+      padding-left: 1.4em;
+    }
+
+    article li + li { margin-top: 8px; }
+
+    article a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .author-box {
+      margin-top: clamp(56px, 9vw, 88px);
+      padding: clamp(24px, 5vw, 36px);
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .author-box .eyebrow { margin-bottom: 8px; }
+
+    .author-box h3 {
+      margin: 0 0 12px;
+      font-size: 17px;
+      letter-spacing: 0.06em;
+    }
+
+    .author-box p { margin: 0 0 16px; font-size: 14px; line-height: 1.9; }
+
+    .author-links {
+      margin: 0;
+      padding-left: 1.2em;
+      font-size: 13px;
+    }
+
+    .author-links li + li { margin-top: 6px; }
+
+    .author-links a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .cta-box {
+      margin-top: 28px;
+      padding: clamp(24px, 5vw, 36px);
+      border: 2px solid var(--ink);
+      background: linear-gradient(135deg, var(--white) 0%, rgba(217, 255, 74, 0.16) 100%);
+      text-align: center;
+    }
+
+    .cta-box p {
+      margin: 0 0 16px;
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 28px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      border-radius: 999px;
+    }
+
+    footer {
+      padding: 28px 20px;
+      color: #8f8f88;
+      background: var(--night);
+      text-align: center;
+      font-family: var(--font-en);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+    }
+
+    @media (max-width: 600px) {
+      .site-header { align-items: flex-start; }
+      .site-name { font-size: 13px; }
+      .back-link { white-space: nowrap; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="../../index.html">宮崎 真理｜AI✕家事</a>
+    <a class="back-link" href="../../index.html">トップへ戻る →</a>
+  </header>
+
+  <main>
+    <p class="eyebrow">Column</p>
+    <h1>私が生成AIに惹かれた理由——家事×AIにたどり着くまで</h1>
+    <p class="byline">宮崎真理</p>
+
+    <article>
+      <p>私が生成AIに強く惹かれたのは、最初から家事に使えそうだと思ったからではありません。</p>
+
+      <p>振り返ると私は昔から、今あるデータをもとに、まだ見えていない変化や「次に起こること」を考える仕組みに興味を持ってきました。</p>
+
+      <p>気象予報、生体計測工学、工場の消費電力。そして、生成AI。</p>
+
+      <p>扱っている対象も、使われている技術もそれぞれ異なります。それでも私の中では、すべてが「データから次を考えること」への興味でつながっています。</p>
+
+      <h2>数学で未来を予測できることを初めて知った</h2>
+
+      <p>最初のきっかけは、大学生のころに知った気象予報の仕組みでした。</p>
+
+      <p>未来を予想する。当時まだ10代だった私にとって、それは占いや魔法に近いものでした。</p>
+
+      <p>ところが天気予報では、現在の気温や気圧、風などの観測データを使い、物理や数学によって、この先の大気の状態を計算していきます。</p>
+
+      <p>もちろん、未来を完全に当てられるわけではありません。それでも、まだ起きていないことを、数学によってかなりの精度で予測できる。その事実が、私には衝撃的でした。</p>
+
+      <p>「数学を学べば、目の前には存在しない未来にまで手を伸ばせるのか」</p>
+
+      <p>そう思うと、仕組みをもっと知りたくなりました。夢中になって勉強し、気象予報士試験も受験しました。最終的に資格取得には至りませんでしたが、学科試験の一般知識と専門知識には合格しました。</p>
+
+      <p>気象予報士になることが目的だったというより、数学で未来を予測する仕組みそのものがおもしろかったのだと思います。</p>
+
+      <h2>本人が気づく前の変化を、データから見つける</h2>
+
+      <p>大学で配属された研究室では、生体計測工学という分野に出会いました。</p>
+
+      <p>身体から得られるさまざまな信号を計測し、現在のデータからその後の身体変化を予測したり、異常を早く見つけたりする研究です。</p>
+
+      <p>これが、またおもしろかった。</p>
+
+      <p>とくに惹かれたのは、本人がまだ自覚していない段階でも、データにはすでに変化が現れていることでした。</p>
+
+      <p>人の目には同じように見えても、細かく計測して分析すると違いが見えてくる。その小さな変化から、身体の中で何が起きているのか、これから何が起こりそうなのかを考えることができます。</p>
+
+      <p>私は大学院へ進み、引き続きこの分野の研究に取り組みました。</p>
+
+      <h2>工場の消費電力から、無駄や異常を探した</h2>
+
+      <p>大学院を修了したのは、東日本大震災のすぐあとでした。</p>
+
+      <p>社会全体で節電が強く求められ、工場でも、どこなら電力を減らせるのか、どこに無駄があるのかを多くの人が探していた時期です。</p>
+
+      <p>私が入社したメーカーでは、工場などで使われる電力を計測するセンサーも作っていました。仕事を通して、さまざまな巨大工場で使われている電力を、データとして見ることになりました。</p>
+
+      <p>工場によって設備も違えば、電力の使われ方も異なります。</p>
+
+      <p>そこで、これまでのデータから通常の消費電力を予測し、実際の数値とのずれを見る。いつもと違う動きがあれば、そこに無駄や異常が隠れていないかを考える。</p>
+
+      <p>対象は天気から身体、そして電力へと変わりましたが、私はここでも、データの中から変化の兆しを見つける仕事に関わっていました。</p>
+
+      <h2>その後、約10年間、子育てをしていた</h2>
+
+      <p>そこから生成AIに出会うまでには、約10年の時間があります。</p>
+
+      <p>私は仕事を離れ、専業主婦として3人の子どもを育てていました。</p>
+
+      <p>気象予報、生体計測、工場の電力分析、そして生成AIへと、まっすぐ進んできたわけではありません。その間には、家事と育児に追われる毎日がありました。</p>
+
+      <p>食事を考える。予定を調整する。家族それぞれの事情を把握する。問題が起きれば、その都度対応を考える。</p>
+
+      <p>家庭の中では、数字として計測されることのない、小さな判断が次々に発生します。仕事や研究から離れていても、私は毎日、限られた情報から「次にどうするか」を考え続けていたのかもしれません。</p>
+
+      <h2>生成AIで、久しぶりに感じた驚き</h2>
+
+      <p>そして、生成AIが登場しました。</p>
+
+      <p>大規模言語モデルの基本的な仕組みの一つに、それまでの文脈をもとに、次に続く言葉を予測するという考え方があると知りました。</p>
+
+      <p>言葉や会話のような、人間にしか扱えないと思っていたものが、数値や確率によって処理され、まるで意味を理解しているような文章として返ってくる。</p>
+
+      <p>その仕組みを知ったとき、私は10代で気象予報に出会ったときと似た種類の驚きを覚えました。</p>
+
+      <p>未来を数学で予測できることに驚いたときと同じように、「言葉の続きまで計算できるのか」と思ったのです。</p>
+
+      <p>最初から家事や育児に使おうと考えていたわけではありません。ただ、仕組みがおもしろくて触っているうちに、使い方が少しずつ日常へ広がっていきました。</p>
+
+      <h2>専門的な技術が、普通の言葉で使えるようになった</h2>
+
+      <p>これまで私が触れてきた予測や分析の技術は、研究室や企業など、限られた場所で専門知識を持つ人が扱うものでした。</p>
+
+      <p>ところが生成AIは、使う側がプログラムを書かなくても、普通の言葉で条件や悩みを伝えられます。</p>
+
+      <p>しかも、あらかじめ用意された一つの正解を返すのではありません。家族構成やその日の予定、本人が大切にしたいことに合わせて、毎回答えを作り直してくれます。</p>
+
+      <p>それによって、これまで商品やサービスだけでは対応しにくかった、家庭ごとの細かな不便にも手が届くようになってきました。</p>
+
+      <p>私が生成AIを家事に使い始めたのは、この技術が「家事をしてくれる機械」だったからではありません。</p>
+
+      <p>考えを整理したり、選択肢を増やしたり、家庭に合う方法を一緒に探したりできる存在だったからです。</p>
+
+      <h2>生成AIへの興味は、突然始まったものではなかった</h2>
+
+      <p>現在、私は家事や育児における生成AIの活用について発信しています。</p>
+
+      <p>一見すると、研究や工場のデータ分析とはまったく違う活動に見えるかもしれません。</p>
+
+      <p>けれど、自分のこれまでを振り返ると、生成AIに惹かれたことも、それを家庭で使い始めたことも、突然起きた変化ではありませんでした。</p>
+
+      <p>気象予報の仕組みに驚いたこと。</p>
+
+      <p>身体の小さな変化をデータから見つけようとしたこと。</p>
+
+      <p>工場の消費電力から無駄や異常を探したこと。</p>
+
+      <p>そして、家事や育児の中で、毎日「次にどうするか」を考えてきたこと。</p>
+
+      <p>対象は変わっても、私はずっと、目の前にある情報から、その先を考えることに興味を持ち続けてきました。</p>
+
+      <p>生成AIとの出会いによって、その興味が、いま自分が暮らしている家庭の中につながったのだと思います。</p>
+    </article>
+
+    <div class="author-box">
+      <p class="eyebrow">関連記事・宮崎真理について</p>
+      <h3>宮崎真理</h3>
+      <p>家事・育児と生成AIをテーマに、家庭ごとに異なる悩みを整理し、自分に合う方法を考えるためのAI活用を発信しています。著書、活動実績、講演・執筆などのご相談は、プロフィールおよびお問い合わせページをご覧ください。</p>
+      <ul class="author-links">
+        <li><a href="../generative-ai-home-systems/">生成AIで家庭の不便を仕組みにする——家事に正解がなくても役立つ理由</a></li>
+        <li><a href="../what-to-ask-generative-ai/">生成AIに何を聞けばいい？日常の小さな質問から使い方を広げる方法</a></li>
+        <li><a href="../../index.html#profile">宮崎真理プロフィール</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <p>取材・講演・執筆・監修のご相談を承っています。</p>
+      <a class="cta-button" href="../../index.html#contact">お問い合わせはこちら →</a>
+    </div>
+  </main>
+
+  <footer>© 2026 Miyazaki Mari. All rights reserved.</footer>
+</body>
+</html>

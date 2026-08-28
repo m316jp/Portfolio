@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生成AIで家庭の不便を仕組みにする｜家事に正解がなくても役立つ理由</title>
+  <meta name="description" content="家庭ごとに正解が異なる家事でも、生成AIは選択肢を広げ、その家庭に合う仕組みづくりを支援できます。家庭で生成AIを1000日以上実践してきた著者が、従来の家電やサービスとの違いを解説します。">
+  <link rel="canonical" href="https://m316jp.github.io/Portfolio/articles/generative-ai-home-systems/">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+
+  <!-- OGP -->
+  <meta property="og:site_name" content="宮崎真理 ポートフォリオ">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="生成AIで家庭の不便を仕組みにする｜家事に正解がなくても役立つ理由">
+  <meta property="og:description" content="家庭ごとに正解が異なる家事でも、生成AIは選択肢を広げ、その家庭に合う仕組みづくりを支援できます。家庭で生成AIを1000日以上実践してきた著者が、従来の家電やサービスとの違いを解説します。">
+  <meta property="og:url" content="https://m316jp.github.io/Portfolio/articles/generative-ai-home-systems/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="生成AIで家庭の不便を仕組みにする｜家事に正解がなくても役立つ理由">
+  <meta name="twitter:description" content="家庭ごとに正解が異なる家事でも、生成AIは選択肢を広げ、その家庭に合う仕組みづくりを支援できます。">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "生成AIで家庭の不便を仕組みにする——家事に正解がなくても役立つ理由",
+    "description": "家庭ごとに正解が異なる家事でも、生成AIは選択肢を広げ、その家庭に合う仕組みづくりを支援できます。",
+    "author": {"@type": "Person", "name": "宮崎真理", "url": "https://m316jp.github.io/Portfolio/"},
+    "publisher": {"@type": "Person", "name": "宮崎真理"},
+    "mainEntityOfPage": "https://m316jp.github.io/Portfolio/articles/generative-ai-home-systems/"
+  }
+  </script>
+
+  <style>
+    :root {
+      --ink: #141413;
+      --ink-soft: #3c3c39;
+      --gray: #73736d;
+      --line: #e4e3dc;
+      --paper: #f7f6f2;
+      --white: #fff;
+      --night: #121211;
+      --accent: #f2c40f;
+      --font-en: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+      --font-jp: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--font-jp);
+      font-size: 15px;
+      line-height: 1.9;
+      letter-spacing: 0.025em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 64px;
+      padding: 12px clamp(20px, 5vw, 64px);
+      border-bottom: 1px solid var(--line);
+      background: rgba(247, 246, 242, 0.96);
+    }
+
+    .site-name {
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+
+    .back-link {
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    main {
+      width: min(720px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(48px, 8vw, 88px) 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--gray);
+      font-family: var(--font-en);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(26px, 4.6vw, 38px);
+      line-height: 1.55;
+      letter-spacing: 0.04em;
+    }
+
+    .byline {
+      margin: 20px 0 0;
+      color: var(--gray);
+      font-family: var(--font-en);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    article {
+      margin-top: clamp(40px, 7vw, 64px);
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    article > p:first-of-type {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--ink-soft);
+    }
+
+    article h2 {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+      font-size: 19px;
+      line-height: 1.6;
+      letter-spacing: 0.04em;
+    }
+
+    article h2:first-of-type {
+      margin-top: 40px;
+    }
+
+    article p { margin: 0 0 22px; }
+
+    .author-box {
+      margin-top: clamp(56px, 9vw, 88px);
+      padding: clamp(24px, 5vw, 36px);
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .author-box .eyebrow { margin-bottom: 8px; }
+
+    .author-box h3 {
+      margin: 0 0 12px;
+      font-size: 17px;
+      letter-spacing: 0.06em;
+    }
+
+    .author-box p { margin: 0 0 16px; font-size: 14px; line-height: 1.9; }
+
+    .author-links {
+      margin: 0;
+      padding-left: 1.2em;
+      font-size: 13px;
+    }
+
+    .author-links li + li { margin-top: 6px; }
+
+    .author-links a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .cta-box {
+      margin-top: 28px;
+      padding: clamp(24px, 5vw, 36px);
+      border: 2px solid var(--ink);
+      background: linear-gradient(135deg, var(--white) 0%, rgba(217, 255, 74, 0.16) 100%);
+      text-align: center;
+    }
+
+    .cta-box p {
+      margin: 0 0 16px;
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 28px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      border-radius: 999px;
+    }
+
+    footer {
+      padding: 28px 20px;
+      color: #8f8f88;
+      background: var(--night);
+      text-align: center;
+      font-family: var(--font-en);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+    }
+
+    @media (max-width: 600px) {
+      .site-header { align-items: flex-start; }
+      .site-name { font-size: 13px; }
+      .back-link { white-space: nowrap; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="../../index.html">宮崎 真理｜AI✕家事</a>
+    <a class="back-link" href="../../index.html">トップへ戻る →</a>
+  </header>
+
+  <main>
+    <p class="eyebrow">Column</p>
+    <h1>生成AIで家庭の不便を仕組みにする——家事に正解がなくても役立つ理由</h1>
+    <p class="byline">宮崎真理</p>
+
+    <article>
+      <p>生成AIによって、家庭ごとに異なる小さな不便を、生活者自身が仕組みに変えられるようになってきました。</p>
+
+      <p>AIが、その家庭にとっての正解を自動的に決めるわけではありません。家庭の事情を普通の言葉で伝えると、自分一人では思いつかなかった選択肢が返ってくる。その中から合うものを選び、試し、必要に応じて直していく。</p>
+
+      <p>この繰り返しによって、万人向けの商品では解決できなかった不便にも、自分の家庭に合う仕組みを作れるようになります。</p>
+
+      <h2>家庭の不便は、なぜ商品で解決しにくいのか</h2>
+
+      <p>家事を助ける技術は、これまでも数多く生まれてきました。</p>
+
+      <p>洗濯機は洗う作業を、食器洗い乾燥機は食器を洗う作業を、ロボット掃除機は床を掃除する作業を代わります。多くの家庭に共通する作業を切り出し、決められた機能として提供することで、家電は家事を大きく変えてきました。</p>
+
+      <p>一方、家庭の中には、既製品では扱いにくい不便もあります。</p>
+
+      <p>家族の人数や年齢、仕事の時間、住環境、予算は家庭ごとに違います。時短を優先したい人もいれば、健康、費用、家族の好みを大切にしたい人もいます。同じ家庭であっても、予定や体調によって、その日に適した方法は変わります。</p>
+
+      <p>このような不便には、一律の正解がありません。</p>
+
+      <p>多くの人に同じ解決策を提供する商品にはしにくく、一つの家庭のためだけに専用サービスを作ることも現実的ではありません。そのため、商品にならなかった細かな不便は、家庭の中で誰かがその都度考え、対処するものとして残ってきました。</p>
+
+      <h2>生成AIは、正解ではなく選択肢を作る</h2>
+
+      <p>生成AIが従来の商品と異なるのは、あらかじめ一つの解決方法を組み込む必要がないことです。</p>
+
+      <p>利用する人が、自分の家庭の事情を普通の言葉で伝える。AIは、その条件に応じて複数の選択肢を出す。利用者は、合うものを選び、違うと感じた部分を伝え直し、別の案を出してもらう。</p>
+
+      <p>AIが最終的な答えを決めるのではありません。</p>
+
+      <p>自分一人では作れなかった選択肢を増やし、止まっていた思考を別の方向へ動かす。その中から何を選ぶかは、利用する人に残されています。</p>
+
+      <p>家事に一律の正解がないことは、従来の商品にとっては難しさでした。しかし、選択肢をその都度作り直せる生成AIにとっては、必ずしも支援できない理由にはなりません。</p>
+
+      <h2>相談を重ねるうちに、家庭専用の仕組みが育つ</h2>
+
+      <p>ここでいう「仕組み」は、必ずしもアプリや自動化されたシステムだけを指しません。</p>
+
+      <p>同じ不便が起きたとき、毎回ゼロから考えなくてもよくなる方法。その家庭の状況が変わったら、条件を伝え直し、調整しながら使い続けられる方法も含みます。</p>
+
+      <p>私自身、最初から家庭の仕組みを作ろうと考えて、生成AIを使い始めたわけではありません。</p>
+
+      <p>目の前で困ったことを、その都度相談していました。一つ相談してみると、「これも聞いてよいのかもしれない」と思う。そうしてAIに相談できると思う範囲が、少しずつ広がっていきました。</p>
+
+      <p>振り返ると、バラバラの相談をしていたつもりが、同じ不便へ繰り返し対処しなくてよい方法が、家庭の中に少しずつ残っていました。</p>
+
+      <p>仕組みは、一度の相談で完成するとは限りません。</p>
+
+      <p>相談し、選び、試し、また相談する。その積み重ねによって、自分の家庭に合う形へ育っていきます。</p>
+
+      <h2>商品がないことと、解決できないことは同じではない</h2>
+
+      <p>従来は、自分に合う商品やサービスが見つからなければ、不便を受け入れるか、既存の商品に生活のほうを合わせる必要がありました。</p>
+
+      <p>生成AIでは、完成した商品がなくても、自分の事情から方法を考え始められます。</p>
+
+      <p>一人のためだけの商品を、企業が一つずつ作ることは難しい。しかし現在は、一人の生活者が、AIとのやり取りを通して、自分のための仕組みを作ることができます。</p>
+
+      <p>生成AIが家庭にもたらした変化は、便利な答えが増えたことだけではありません。</p>
+
+      <p>企業が用意した解決策を選ぶだけだった生活者が、自分の家庭に必要な仕組みを考え、育てられるようになってきたことです。</p>
+
+      <h2>AIに任せても、人間に残る役割</h2>
+
+      <p>生成AIがあれば、家庭の不便が自動的に解消されるわけではありません。</p>
+
+      <p>今のAIは、家庭の中で誰が何に困っているかを、すべて自動的に見つけてくれるわけではないからです。</p>
+
+      <p>まず人間が、不便に気づく必要があります。</p>
+
+      <p>そして、家族の状況や、自分が大切にしたいことを伝える必要があります。速さを優先するのか、費用を抑えたいのか、家族が無理なく続けられることを大切にするのか。こうした基準がなければ、その家庭に合う仕組みにはなりません。</p>
+
+      <p>AIは選択肢を広げられますが、何を不便と感じ、どの方向へ変えたいかを決める出発点は、生活者の側にあります。</p>
+
+      <h2>家事を変える技術は、予想とは違う方向から始まった</h2>
+
+      <p>私は以前、家事が大きく変わるのは、人間の代わりに物理作業をするロボットが登場したときだと思っていました。</p>
+
+      <p>生成AIとロボットのどちらが優れている、という話ではありません。</p>
+
+      <p>ただ、ロボットが幅広い家事を代行する未来より先に、生活者が自分の家庭の不便を仕組みに変えられるという、別の経路が生まれています。</p>
+
+      <p>家庭の中には、「こういうものだから」と受け入れている小さな不便が数多くあります。</p>
+
+      <p>それは、万人向けの商品にはならないかもしれません。しかし、商品が存在しないことと、変えられないことは、もう同じではありません。</p>
+
+      <p>まずは、自分が何を不便だと感じているかに気づくこと。</p>
+
+      <p>そこから、家庭に合う新しい仕組みを考え始められる時代になってきています。</p>
+    </article>
+
+    <div class="author-box">
+      <p class="eyebrow">著者について</p>
+      <h3>宮崎真理</h3>
+      <p>男子3兄弟を育てながら、家庭で生成AIを1000日以上実践。家事・育児での活用経験をもとに、著書『AI×家事』を執筆。テレビ、雑誌、Webメディア、講演などを通じて、生活者の視点から生成AIの家庭活用を発信しています。</p>
+      <ul class="author-links">
+        <li><a href="../what-to-ask-generative-ai/">生成AIに何を聞けばいい？日常の小さな質問から使い方を広げる方法</a></li>
+        <li><a href="../../index.html#book">著書『AI×家事』</a></li>
+        <li><a href="../../index.html#profile">宮崎真理プロフィール</a></li>
+        <li><a href="../../index.html#media">メディア出演・執筆実績</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <p>取材・講演・執筆・監修のご相談を承っています。</p>
+      <a class="cta-button" href="../../index.html#contact">お問い合わせはこちら →</a>
+    </div>
+  </main>
+
+  <footer>© 2026 Miyazaki Mari. All rights reserved.</footer>
+</body>
+</html>
