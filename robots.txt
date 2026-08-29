@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://m316jp.github.io/Portfolio/sitemap.xml
+Sitemap: https://miyazakimari.com/sitemap.xml
