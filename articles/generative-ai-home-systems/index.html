@@ -16,12 +16,20 @@
   <!-- OGP -->
   <meta property="og:site_name" content="宮崎真理 ポートフォリオ">
   <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="生成AIで家庭の不便を仕組みにする｜家事に正解がなくても役立つ理由">
   <meta property="og:description" content="家庭ごとに正解が異なる家事でも、生成AIは選択肢を広げ、その家庭に合う仕組みづくりを支援できます。家庭で生成AIを1000日以上実践してきた著者が、従来の家電やサービスとの違いを解説します。">
   <meta property="og:url" content="https://m316jp.github.io/Portfolio/articles/generative-ai-home-systems/">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://m316jp.github.io/Portfolio/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="article:published_time" content="2026-08-28">
+  <meta property="article:modified_time" content="2026-08-29">
+  <meta property="article:author" content="宮崎真理">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="生成AIで家庭の不便を仕組みにする｜家事に正解がなくても役立つ理由">
   <meta name="twitter:description" content="家庭ごとに正解が異なる家事でも、生成AIは選択肢を広げ、その家庭に合う仕組みづくりを支援できます。">
+  <meta name="twitter:image" content="https://m316jp.github.io/Portfolio/og-image.jpg">
 
   <script type="application/ld+json">
   {
@@ -29,9 +37,41 @@
     "@type": "Article",
     "headline": "生成AIで家庭の不便を仕組みにする——家事に正解がなくても役立つ理由",
     "description": "家庭ごとに正解が異なる家事でも、生成AIは選択肢を広げ、その家庭に合う仕組みづくりを支援できます。",
-    "author": {"@type": "Person", "name": "宮崎真理", "url": "https://m316jp.github.io/Portfolio/"},
-    "publisher": {"@type": "Person", "name": "宮崎真理"},
-    "mainEntityOfPage": "https://m316jp.github.io/Portfolio/articles/generative-ai-home-systems/"
+    "inLanguage": "ja",
+    "datePublished": "2026-08-28",
+    "dateModified": "2026-08-29",
+    "image": "https://m316jp.github.io/Portfolio/og-image.jpg",
+    "author": {
+      "@id": "https://m316jp.github.io/Portfolio/#person",
+      "@type": "Person",
+      "name": "宮崎真理",
+      "url": "https://m316jp.github.io/Portfolio/",
+      "jobTitle": "著者・AIライフスタイルコンサルタント",
+      "sameAs": [
+        "https://twitter.com/m316jp2",
+        "https://note.com/m316jp2"
+      ]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "宮崎真理",
+      "url": "https://m316jp.github.io/Portfolio/"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://m316jp.github.io/Portfolio/articles/generative-ai-home-systems/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://m316jp.github.io/Portfolio/"},
+      {"@type": "ListItem", "position": 2, "name": "生成AIと暮らしの話", "item": "https://m316jp.github.io/Portfolio/#articles"},
+      {"@type": "ListItem", "position": 3, "name": "生成AIで家庭の不便を仕組みにする"}
+    ]
   }
   </script>
 
@@ -112,12 +152,22 @@
     }
 
     .byline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 6px 16px;
       margin: 20px 0 0;
       color: var(--gray);
-      font-family: var(--font-en);
       font-size: 12px;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
     }
+
+    .byline .byline-name {
+      font-weight: 700;
+      color: var(--ink-soft);
+    }
+
+    .byline time { font-family: var(--font-en); letter-spacing: 0.04em; }
 
     article {
       margin-top: clamp(40px, 7vw, 64px);
@@ -126,18 +176,32 @@
     }
 
     article > p:first-of-type {
-      font-size: 17px;
+      margin-bottom: 30px;
+      font-size: 18px;
       font-weight: 500;
-      color: var(--ink-soft);
+      line-height: 1.9;
+      color: var(--ink);
     }
 
     article h2 {
-      margin: 48px 0 20px;
-      padding-top: 32px;
+      position: relative;
+      margin: 56px 0 20px;
+      padding-top: 34px;
       border-top: 1px solid var(--line);
-      font-size: 19px;
-      line-height: 1.6;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.65;
       letter-spacing: 0.04em;
+    }
+
+    article h2::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 44px;
+      height: 3px;
+      background: var(--accent);
     }
 
     article h2:first-of-type {
@@ -145,6 +209,36 @@
     }
 
     article p { margin: 0 0 22px; }
+
+    article strong {
+      font-weight: 700;
+      background: linear-gradient(transparent 62%, rgba(242, 196, 15, 0.42) 62%);
+    }
+
+    article ul {
+      margin: 0 0 22px;
+      padding-left: 1.3em;
+    }
+
+    article li { margin-bottom: 8px; }
+    article li::marker { color: var(--accent); }
+
+    article a {
+      text-underline-offset: 3px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .article-more {
+      margin: 26px 0;
+      padding: 16px 20px;
+      background: var(--white);
+      border-left: 3px solid var(--accent);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .article-more a { font-weight: 700; }
 
     .author-box {
       margin-top: clamp(56px, 9vw, 88px);
@@ -156,8 +250,15 @@
     .author-box .eyebrow { margin-bottom: 8px; }
 
     .author-box h3 {
-      margin: 0 0 12px;
+      margin: 0 0 4px;
       font-size: 17px;
+      letter-spacing: 0.06em;
+    }
+
+    .author-role {
+      margin: 0 0 16px;
+      color: var(--gray);
+      font-size: 12px;
       letter-spacing: 0.06em;
     }
 
@@ -181,8 +282,8 @@
     .cta-box {
       margin-top: 28px;
       padding: clamp(24px, 5vw, 36px);
-      border: 2px solid var(--ink);
-      background: linear-gradient(135deg, var(--white) 0%, rgba(217, 255, 74, 0.16) 100%);
+      border: 1px solid var(--ink);
+      background: rgba(242, 196, 15, 0.08);
       text-align: center;
     }
 
@@ -203,6 +304,28 @@
       text-decoration: none;
       border-radius: 999px;
     }
+
+    .breadcrumb {
+      margin: 0 0 clamp(28px, 6vw, 44px);
+      font-size: 12px;
+      color: var(--gray);
+      letter-spacing: 0.03em;
+    }
+
+    .breadcrumb ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .breadcrumb li { display: flex; align-items: center; gap: 4px 8px; }
+    .breadcrumb li + li::before { content: "/"; color: var(--line); }
+    .breadcrumb a { text-decoration: none; color: var(--gray); }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb [aria-current="page"] { color: var(--ink-soft); }
 
     footer {
       padding: 28px 20px;
@@ -228,9 +351,20 @@
   </header>
 
   <main>
-    <p class="eyebrow">Column</p>
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="../../index.html">ホーム</a></li>
+        <li><a href="../../index.html#articles">生成AIと暮らしの話</a></li>
+        <li><span aria-current="page">生成AIで家庭の不便を仕組みにする</span></li>
+      </ol>
+    </nav>
+    <p class="eyebrow">Essay</p>
     <h1>生成AIで家庭の不便を仕組みにする——家事に正解がなくても役立つ理由</h1>
-    <p class="byline">宮崎真理</p>
+    <p class="byline">
+      <span class="byline-name">宮崎真理</span>
+      <span>公開 <time datetime="2026-08-28">2026年8月28日</time></span>
+      <span>更新 <time datetime="2026-08-29">2026年8月29日</time></span>
+    </p>
 
     <article>
       <p>生成AIによって、家庭ごとに異なる小さな不便を、生活者自身が仕組みに変えられるようになってきました。</p>
@@ -274,6 +408,8 @@
       <p>私自身、最初から家庭の仕組みを作ろうと考えて、生成AIを使い始めたわけではありません。</p>
 
       <p>目の前で困ったことを、その都度相談していました。一つ相談してみると、「これも聞いてよいのかもしれない」と思う。そうしてAIに相談できると思う範囲が、少しずつ広がっていきました。</p>
+
+      <p class="article-more">何を、どんな言葉で聞き始めればいいのかは、<a href="../what-to-ask-generative-ai/">生成AIに何を聞けばいい？日常の小さな質問から使い方を広げる方法</a>で詳しく書いています。</p>
 
       <p>振り返ると、バラバラの相談をしていたつもりが、同じ不便へ繰り返し対処しなくてよい方法が、家庭の中に少しずつ残っていました。</p>
 
@@ -325,11 +461,13 @@
     <div class="author-box">
       <p class="eyebrow">著者について</p>
       <h3>宮崎真理</h3>
+      <p class="author-role">『AI×家事』著者</p>
       <p>神戸大学大学院で生体計測工学を専攻し、修了後はオムロン株式会社で技術職として勤務。出産を機に10年間の専業主婦生活を経て、2023年より生成AIを家事・子育てに取り入れ、暮らしの中での活用を実践している。</p>
       <p>WOMAN AI AWARD 2026 ライフ・イノベーター賞受賞。講談社「with class」でコラムを連載するほか、テレビ出演、雑誌・Webでの執筆・監修などを行う。</p>
       <p>3兄弟の母。1000日以上にわたる生成AIの実践経験をもとに、理系出身・元専業主婦の視点から、家庭という最もテクノロジーが遅れた場所を、生活者自身がアップデートしていく可能性を発信している。</p>
       <ul class="author-links">
         <li><a href="../what-to-ask-generative-ai/">生成AIに何を聞けばいい？日常の小さな質問から使い方を広げる方法</a></li>
+        <li><a href="../why-i-became-interested-in-generative-ai/">私が生成AIに惹かれた理由——家事×AIにたどり着くまで</a></li>
         <li><a href="../../index.html#book">著書『AI×家事』</a></li>
         <li><a href="../../index.html#profile">宮崎真理プロフィール</a></li>
         <li><a href="../../index.html#media">メディア出演・執筆実績</a></li>
