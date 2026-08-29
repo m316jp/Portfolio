@@ -88,7 +88,11 @@
         "@type": "Book",
         "@id": "https://m316jp.github.io/Portfolio/#book",
         "name": "AI×家事",
-        "url": "https://amazon.co.jp/dp/4594101909",
+        "url": "https://m316jp.github.io/Portfolio/book/",
+        "sameAs": [
+          "https://amazon.co.jp/dp/4594101909",
+          "https://books.rakuten.co.jp/rb/18539586/"
+        ],
         "isbn": "978-4594101909",
         "author": {
           "@id": "https://m316jp.github.io/Portfolio/#person"
@@ -1301,6 +1305,9 @@
       margin-bottom: 120px;
     }
 
+    .book-section--teaser { padding: 130px 0; }
+    .book-section--teaser .book-grid { margin-bottom: 0; }
+
     .book-subtitle {
       margin-top: 20px;
       font-size: 14px;
@@ -1422,6 +1429,30 @@
       letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--night-gray);
+    }
+
+    .book-more {
+      margin-top: 56px;
+      text-align: center;
+    }
+
+    .book-more a {
+      display: inline-block;
+      padding: 14px 30px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--night-text);
+      text-decoration: none;
+      border: 1px solid var(--night-gray);
+      border-radius: var(--radius-pill);
+      transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .book-more a:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--ink);
     }
 
     /* sub-section heading inside book */
@@ -2797,13 +2828,62 @@
        ============================================================ */
     footer {
       display: flex;
+      flex-direction: column;
+      gap: 32px;
+      padding: 56px 32px 40px;
+      background: var(--night);
+      color: var(--night-gray);
+    }
+
+    .footer-sitemap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 32px 24px;
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--night-line);
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-en);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--night-text);
+      margin-bottom: 4px;
+    }
+
+    .footer-col a {
+      color: var(--night-gray);
+      font-size: 12px;
+      line-height: 1.6;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 12px;
-      padding: 32px;
-      background: var(--night);
-      color: var(--night-gray);
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
     }
 
     .footer-name {
@@ -2811,26 +2891,6 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       color: var(--night-text);
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 10px 24px;
-    }
-
-    .footer-links a {
-      color: var(--night-gray);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      transition: color 0.25s ease;
-    }
-
-    .footer-links a:hover {
-      color: var(--accent);
     }
 
     .footer-copy {
@@ -3478,13 +3538,7 @@
       }
 
       footer {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 28px 20px;
-      }
-
-      .footer-links {
-        justify-content: flex-start;
+        padding: 44px 20px 32px;
       }
     }
 
@@ -3570,7 +3624,7 @@
       <li><a href="#news">お知らせ</a></li>
       <li><a href="#profile">プロフィール</a></li>
       <li><a href="#articles">読みもの</a></li>
-      <li><a href="#book">著書</a></li>
+      <li><a href="book/">著書</a></li>
       <li><a href="#award">受賞</a></li>
       <li><a href="#media">メディア実績</a></li>
       <li><a href="#contact">お問い合わせ</a></li>
@@ -3622,7 +3676,7 @@
           </a>
         </li>
         <li class="nav-overlay-item">
-          <a href="#book">
+          <a href="book/">
             <span class="nav-overlay-num">04</span>
             <span class="nav-overlay-text">
               <span class="nav-overlay-en">Book</span>
@@ -3719,7 +3773,7 @@
       </div>
       <div class="hero-cta">
         <a href="#contact" class="btn-primary" data-cta="hero">お仕事のご依頼 →</a>
-        <a href="#book" class="btn-secondary">著書を見る</a>
+        <a href="book/" class="btn-secondary">著書を見る</a>
       </div>
 
     </div>
@@ -3915,8 +3969,8 @@
     </div>
   </section>
 
-  <!-- BOOK -->
-  <section class="book-section" id="book">
+  <!-- BOOK (teaser → /book/) -->
+  <section class="book-section book-section--teaser" id="book">
     <div class="container">
       <div class="book-grid">
         <div class="book-info reveal-left">
@@ -3941,13 +3995,9 @@
             </div>
           </div>
           <div class="book-buy">
-            <a class="book-buy-btn" href="https://amazon.co.jp/dp/4594101909" target="_blank"
+            <a class="book-buy-btn" href="book/">著書について詳しく見る →</a>
+            <a class="book-buy-btn book-buy-btn--rakuten" href="https://amazon.co.jp/dp/4594101909" target="_blank"
               rel="noopener">Amazonで見る</a>
-            <a class="book-buy-btn book-buy-btn--rakuten" href="https://books.rakuten.co.jp/rb/18539586/" target="_blank"
-              rel="noopener">楽天ブックスで見る</a>
-            <p class="book-buy-note">全国書店でも発売中。電子書籍（Kindle）でもお読みいただけます。</p>
-            <p class="book-buy-news">2026年6月2日、Amazon Kindle日替わりセール対象に選ばれました。</p>
-            <p class="book-buy-news">2026年5月、マイナビ子育て様のプレゼントキャンペーン賞品に選ばれました。</p>
           </div>
         </div>
 
@@ -3957,144 +4007,9 @@
         </div>
       </div>
 
-      <div class="mokuji-block reveal">
-        <div class="ranking-heading"><span>CONTENTS</span></div>
-        <div class="mokuji-grid">
-          <img src="mokuji1.webp" alt="目次1" class="mokuji-img" loading="lazy">
-          <img src="mokuji2.webp" alt="目次2" class="mokuji-img" loading="lazy">
-        </div>
-      </div>
-
-      <div class="ranking-block reveal">
-        <div class="ranking-heading"><span>RANKING</span></div>
-        <div class="ranking-grid">
-          <div class="ranking-item">
-            <div class="ranking-rank">
-              <span class="ranking-rank-num">2</span>
-              <span class="ranking-rank-suffix">位</span>
-            </div>
-            <p class="ranking-platform">楽天ブックス</p>
-            <p class="ranking-category">美容・暮らし・健康・料理（家事）<br>日別ランキング</p>
-            <p class="ranking-date">2026.5.11</p>
-            <div class="ranking-thumb ranking-item-img-wrap">
-              <img src="ranking_rakuten.webp" alt="楽天ブックス 家事カテゴリ 2位" loading="lazy">
-            </div>
-          </div>
-          <div class="ranking-item">
-            <div class="ranking-rank">
-              <span class="ranking-rank-num">4</span>
-              <span class="ranking-rank-suffix">位</span>
-            </div>
-            <p class="ranking-platform">Amazon</p>
-            <p class="ranking-category">売れ筋ランキング<br>整理・収納カテゴリ</p>
-            <p class="ranking-date">2026.6.2</p>
-            <div class="ranking-thumb ranking-item-img-wrap">
-              <img src="ranking_amazon.webp" alt="Amazon 整理・収納カテゴリ 4位" loading="lazy">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="reader-voices reveal">
-        <div class="ranking-heading"><span>READERS' VOICES</span></div>
-        <div class="voices-vertical">
-          <blockquote class="voice voice--featured">
-            <p>そう！私は生活の中で<wbr><span class="tcy">AI</span>をどう使うのかが知りたかったのよ！<wbr>と思わず膝を打ちました。</p>
-          </blockquote>
-          <blockquote class="voice">
-            <p>この本のおかげで、<span class="tcy">AI</span>デビューできました。</p>
-          </blockquote>
-          <blockquote class="voice">
-            <p>こんな便利なものなら<wbr>早く使っていたらよかった。</p>
-          </blockquote>
-          <blockquote class="voice">
-            <p><span class="tcy">AI</span>を家事や子育てに<wbr>ここまで活用できるかと驚いた。</p>
-          </blockquote>
-          <blockquote class="voice">
-            <p>ビジネスではなく育児、家事の視点から<wbr><span class="tcy">AI</span>活用をされているので斬新でした！</p>
-          </blockquote>
-          <blockquote class="voice">
-            <p>家事で<span class="tcy">AI</span>を使うという発想が良かった。<wbr>全部自分で一から判断するのは時間がかかる。<wbr>選択肢を示してもらえるのは助かる。</p>
-          </blockquote>
-          <blockquote class="voice">
-            <p>これはかなり勉強になったし、<wbr><span class="tcy">AI</span>活用の糸口が見えて面白かった！</p>
-          </blockquote>
-        </div>
-        <p class="voices-source">— 読者レビューより抜粋</p>
-      </div>
-
-      <div class="book-review-links reveal">
-        <a href="https://www.amazon.co.jp/dp/4594101909#customerReviews" target="_blank" rel="noopener">Amazon のレビューを読む</a>
-        <a href="https://books.rakuten.co.jp/rb/18539586/#itemReview" target="_blank" rel="noopener">楽天ブックス のレビューを読む</a>
-        <a href="https://booklog.jp/item/1/4594101909" target="_blank" rel="noopener">ブクログ のレビューを読む</a>
-        <a href="https://bookmeter.com/books/23133257" target="_blank" rel="noopener">読書メーター のレビューを読む</a>
-      </div>
-
-      <div class="bookstore-gallery reveal">
-        <div class="bookstore-heading">
-          <span class="bookstore-eyebrow">Sightings</span>
-        </div>
-        <div class="bookstore-scroll">
-          <div class="bookstore-track">
-            <div class="bookstore-card">
-              <img src="bookstore_shinjuku1.webp" alt="紀伊國屋書店 新宿本店">
-              <p class="bookstore-name">紀伊國屋書店<br>新宿本店</p>
-            </div>
-            <div class="bookstore-card">
-              <img src="bookstore_shinjuku2.webp" alt="紀伊國屋書店 新宿本店">
-              <p class="bookstore-name">紀伊國屋書店<br>新宿本店</p>
-            </div>
-            <div class="bookstore-card">
-              <img src="bookstore_umeda.webp" alt="紀伊國屋書店 梅田本店">
-              <p class="bookstore-name">紀伊國屋書店<br>梅田本店</p>
-            </div>
-            <div class="bookstore-card">
-              <img src="bookstore_jimbocho.webp" alt="三省堂書店 神田神保町本店">
-              <p class="bookstore-name">三省堂書店<br>神田神保町本店</p>
-            </div>
-            <div class="bookstore-card">
-              <img src="bookstore_ikebukuro.webp" alt="ジュンク堂書店 池袋本店">
-              <p class="bookstore-name">ジュンク堂書店<br>池袋本店</p>
-            </div>
-            <div class="bookstore-card">
-              <img src="bookstore_osaka.webp" alt="ジュンク堂書店 大阪本店">
-              <p class="bookstore-name">ジュンク堂書店<br>大阪本店</p>
-            </div>
-            <div class="bookstore-card">
-              <img src="bookstore_sannomiya.webp" alt="ジュンク堂書店 三宮店">
-              <p class="bookstore-name">ジュンク堂書店<br>三宮店</p>
-            </div>
-            <div class="bookstore-card" aria-hidden="true">
-              <img src="bookstore_shinjuku1.webp" alt="">
-              <p class="bookstore-name">紀伊國屋書店<br>新宿本店</p>
-            </div>
-            <div class="bookstore-card" aria-hidden="true">
-              <img src="bookstore_shinjuku2.webp" alt="">
-              <p class="bookstore-name">紀伊國屋書店<br>新宿本店</p>
-            </div>
-            <div class="bookstore-card" aria-hidden="true">
-              <img src="bookstore_umeda.webp" alt="">
-              <p class="bookstore-name">紀伊國屋書店<br>梅田本店</p>
-            </div>
-            <div class="bookstore-card" aria-hidden="true">
-              <img src="bookstore_jimbocho.webp" alt="">
-              <p class="bookstore-name">三省堂書店<br>神田神保町本店</p>
-            </div>
-            <div class="bookstore-card" aria-hidden="true">
-              <img src="bookstore_ikebukuro.webp" alt="">
-              <p class="bookstore-name">ジュンク堂書店<br>池袋本店</p>
-            </div>
-            <div class="bookstore-card" aria-hidden="true">
-              <img src="bookstore_osaka.webp" alt="">
-              <p class="bookstore-name">ジュンク堂書店<br>大阪本店</p>
-            </div>
-            <div class="bookstore-card" aria-hidden="true">
-              <img src="bookstore_sannomiya.webp" alt="">
-              <p class="bookstore-name">ジュンク堂書店<br>三宮店</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p class="book-more reveal">
+        <a href="book/">目次・読者の声・ランキング・書店での取り扱いを見る →</a>
+      </p>
     </div>
   </section>
 
@@ -4810,13 +4725,34 @@
 
   <!-- FOOTER -->
   <footer>
-    <span class="footer-name">宮崎 真理 | AI✕家事</span>
-    <nav class="footer-links" aria-label="フッターリンク">
-      <a href="https://x.com/m316jp2" target="_blank" rel="noopener">X（Twitter）</a>
-      <a href="https://note.com/m316jp2" target="_blank" rel="noopener">note</a>
-      <a href="privacy.html">プライバシーポリシー</a>
+    <nav class="footer-sitemap" aria-label="サイト内リンク">
+      <div class="footer-col">
+        <p class="footer-col-title">サイト内</p>
+        <a href="#news">お知らせ</a>
+        <a href="#profile">プロフィール</a>
+        <a href="#articles">読みもの</a>
+        <a href="book/">著書『AI×家事』</a>
+        <a href="#media">メディア実績</a>
+        <a href="#works">お仕事について</a>
+        <a href="#contact">お問い合わせ</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">読みもの</p>
+        <a href="articles/generative-ai-home-systems/">生成AIは家事にどう使える？</a>
+        <a href="articles/what-to-ask-generative-ai/">生成AIに何を聞けばいい？</a>
+        <a href="articles/why-i-became-interested-in-generative-ai/">生成AIに惹かれた理由</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">SNS・その他</p>
+        <a href="https://x.com/m316jp2" target="_blank" rel="noopener">X（Twitter）</a>
+        <a href="https://note.com/m316jp2" target="_blank" rel="noopener">note</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+      </div>
     </nav>
-    <span class="footer-copy">© 2026 Miyazaki Mari. All rights reserved.</span>
+    <div class="footer-bottom">
+      <span class="footer-name">宮崎 真理 | AI✕家事</span>
+      <span class="footer-copy">© 2026 Miyazaki Mari. All rights reserved.</span>
+    </div>
   </footer>
 
   <script>
