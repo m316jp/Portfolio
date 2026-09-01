@@ -169,7 +169,7 @@
         "@type": "Event",
         "@id": "https://miyazakimari.com/#event-20260912",
         "name": "家事育児×AI活用アプデ女子会 ―みんなの\"推しAI\"、画面見せます―",
-        "description": "体験型AIフェス「WOMAN AI UPDATE 2026」DAY2（ライフ編）のセッション（SKILL × UPDATE）に、喜多尾衣利子・和田幸子・宮崎真理が登壇。",
+        "description": "体験型AIフェス「WOMAN AI UPDATE 2026」DAY2（ライフ編）のセッション（SKILL × UPDATE）に、高阪のぞみ・喜多尾衣利子・和田幸子・宮崎真理が登壇。",
         "url": "https://woman-ai-update.jp/",
         "startDate": "2026-09-12T12:40:00+09:00",
         "eventStatus": "https://schema.org/EventScheduled",
@@ -186,6 +186,7 @@
         },
         "performer": [
           {"@id": "https://miyazakimari.com/#person"},
+          {"@type": "Person", "name": "高阪のぞみ", "jobTitle": "株式会社メディアジーン執行役員 / Business Insider Japan ブランド編集長"},
           {"@type": "Person", "name": "喜多尾衣利子", "jobTitle": "株式会社ぴんぴんきらり 代表取締役CEO"},
           {"@type": "Person", "name": "和田幸子", "jobTitle": "株式会社タスカジ 代表取締役CEO & Founder"}
         ],
@@ -1440,30 +1441,6 @@
       color: var(--night-gray);
     }
 
-    .book-more {
-      margin-top: 56px;
-      text-align: center;
-    }
-
-    .book-more a {
-      display: inline-block;
-      padding: 14px 30px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      color: var(--night-text);
-      text-decoration: none;
-      border: 1px solid var(--night-gray);
-      border-radius: var(--radius-pill);
-      transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
-    }
-
-    .book-more a:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: var(--ink);
-    }
-
     /* sub-section heading inside book */
     .ranking-heading {
       display: flex;
@@ -2184,8 +2161,12 @@
 
     .event-image {
       width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
       border-radius: var(--radius-sm);
       border: 1px solid var(--line);
+      background: var(--paper);
     }
 
     .event-format {
@@ -2234,7 +2215,7 @@
 
     .event-card--upcoming {
       border: 2px solid var(--ink);
-      background: linear-gradient(135deg, var(--white) 0%, rgba(217, 255, 74, 0.16) 100%);
+      background: rgba(242, 196, 15, 0.08);
     }
 
     .event-card--upcoming .event-format {
@@ -3811,7 +3792,7 @@
         </div>
         <div class="news-featured-content">
           <span class="news-featured-badge">9.12 参加受付中</span>
-          <p class="news-featured-speakers">『AI×家事』著者 宮崎真理 × 喜多尾衣利子 × 和田幸子</p>
+          <p class="news-featured-speakers">『AI×家事』著者 宮崎真理 × 高阪のぞみ × 喜多尾衣利子 × 和田幸子</p>
           <h3 class="news-featured-title">家事育児×AI活用<br>アプデ女子会</h3>
           <p class="news-featured-description">「みんなの“推しAI”、画面見せます」。登壇者がそれぞれの実際のAI活用画面を見せながら語る、実演型のトークセッションです。</p>
           <p class="news-featured-meta">
@@ -3989,10 +3970,6 @@
           <p class="book-publisher">扶桑社 ／ 2026年3月発売</p>
         </div>
       </div>
-
-      <p class="book-more reveal">
-        <a href="book/">目次・読者の声・ランキング・書店での取り扱いを見る →</a>
-      </p>
     </div>
   </section>
 
@@ -4149,7 +4126,7 @@
           <img class="event-image" src="event_woman_ai_update_20260912.jpg" alt="『家事育児×AI活用アプデ女子会 ―みんなの推しAI、画面見せます―』告知ビジュアル。高阪のぞみ・喜多尾衣利子・和田幸子・宮崎真理が登壇｜WOMAN AI UPDATE 2026（SKILL × UPDATE）" loading="lazy">
           <div class="event-info">
             <p class="event-format">参加申込受付中</p>
-            <p class="event-host">WOMAN AI UPDATE 2026｜喜多尾衣利子 × 和田幸子 × 宮崎真理</p>
+            <p class="event-host">WOMAN AI UPDATE 2026｜高阪のぞみ × 喜多尾衣利子 × 和田幸子 × 宮崎真理</p>
             <p class="event-title">「家事育児×AI活用アプデ女子会<br>―みんなの"推しAI"、画面見せます―」（SKILL × UPDATE）</p>
             <p class="event-date">2026.9.12 SAT 12:40〜｜渋谷ストリームホール（渋谷駅直結）</p>
             <span class="event-read-link">イベント詳細・お申し込み →</span>
@@ -4175,16 +4152,8 @@
             <span class="event-read-link">イベントレポートを読む →</span>
           </div>
         </a>
-        <div class="event-card">
-          <div class="event-info">
-            <p class="event-format">ラジオ出演</p>
-            <p class="event-host">かわさきFM</p>
-            <p class="event-title">『親子ベンチャーラボ』</p>
-            <p class="event-date">2026.2.20</p>
-          </div>
-        </div>
         <div class="event-card event-card--visual">
-          <img class="event-image event-image--mynavi" src="event_mynavi_live.webp" alt="マイナビ子育て AI×家事 インスタライブ" loading="lazy">
+          <img class="event-image" src="event_mynavi_live.webp" alt="マイナビ子育て AI×家事 インスタライブ" loading="lazy">
           <div class="event-info">
             <p class="event-format">インスタライブ配信</p>
             <p class="event-host">マイナビ子育て</p>
