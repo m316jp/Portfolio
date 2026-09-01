@@ -13,3 +13,6 @@ note用記事/
 IMG_4848.JPG
 IMG_5272.JPG
 kindle日替わりセール.png
+
+# サムネイル書き出しの中間PNG（本番は articles/<slug>/cover.png を使用）
+thumbnails/*.png
