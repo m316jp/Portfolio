@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ページが見つかりません｜宮崎真理</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #141413;
+      --ink-soft: #3c3c39;
+      --gray: #73736d;
+      --gray-light: #a5a59e;
+      --line: #e4e3dc;
+      --paper: #f7f6f2;
+      --white: #fff;
+      --night: #121211;
+      --accent: #f2c40f;
+      --font-en: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+      --font-jp: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--font-jp);
+      font-size: 15px;
+      line-height: 1.9;
+      letter-spacing: 0.025em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 64px;
+      padding: 12px clamp(20px, 5vw, 64px);
+      border-bottom: 1px solid var(--line);
+      background: rgba(247, 246, 242, 0.96);
+    }
+
+    .site-name { font-weight: 900; letter-spacing: 0.08em; text-decoration: none; }
+
+    .back-link {
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(48px, 12vw, 120px) 20px;
+    }
+
+    .box {
+      width: min(560px, 100%);
+    }
+
+    .code {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--font-en);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .code::before { content: ""; width: 28px; height: 1px; background: var(--ink); }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(26px, 5vw, 38px);
+      line-height: 1.5;
+      letter-spacing: 0.03em;
+    }
+
+    .h1-mark {
+      background: linear-gradient(transparent 60%, rgba(242, 196, 15, 0.5) 60%);
+      padding: 0 .06em;
+    }
+
+    p.lead {
+      margin: 20px 0 0;
+      color: var(--ink-soft);
+      font-size: 15px;
+    }
+
+    .links {
+      margin: 36px 0 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .links li { border-bottom: 1px solid var(--line); }
+
+    .links a {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 4px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: padding 0.2s ease, background 0.2s ease;
+    }
+
+    .links a:hover { background: var(--white); padding-left: 12px; }
+
+    .links a span { font-family: var(--font-en); color: var(--gray-light); font-weight: 500; }
+
+    footer {
+      padding: 24px 20px;
+      color: #8f8f88;
+      background: var(--night);
+      text-align: center;
+      font-family: var(--font-en);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+    }
+
+    @media (max-width: 600px) {
+      .site-header { align-items: flex-start; }
+      .site-name { font-size: 13px; }
+      .back-link { white-space: nowrap; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="/">宮崎 真理｜AI✕家事</a>
+    <a class="back-link" href="/">トップへ戻る →</a>
+  </header>
+
+  <main>
+    <div class="box">
+      <p class="code">Error 404</p>
+      <h1>お探しのページは<br><span class="h1-mark">見つかりませんでした</span></h1>
+      <p class="lead">URLが変更されたか、削除された可能性があります。下のリンクからお探しください。</p>
+
+      <ul class="links">
+        <li><a href="/">トップページ <span>Home →</span></a></li>
+        <li><a href="/#profile">プロフィール <span>Profile →</span></a></li>
+        <li><a href="/#articles">生成AIと暮らしの話 <span>Reading →</span></a></li>
+        <li><a href="/book/">著書『AI×家事』 <span>Book →</span></a></li>
+        <li><a href="/#media">メディア実績 <span>Media →</span></a></li>
+        <li><a href="/#contact">お問い合わせ <span>Contact →</span></a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>© 2026 Miyazaki Mari. All rights reserved.</footer>
+</body>
+</html>
