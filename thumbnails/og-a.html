@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141413; --ink-soft:#3c3c39; --gray:#73736d; --gray-light:#a5a59e;
+    --line:#e4e3dc; --paper:#f7f6f2; --accent:#f2c40f;
+    --font-en:'Space Grotesk','Helvetica Neue',sans-serif;
+    --font-jp:'Zen Kaku Gothic New','Hiragino Kaku Gothic ProN',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1200px;height:630px;}
+  body{background:var(--paper);font-family:var(--font-jp);color:var(--ink);-webkit-font-smoothing:antialiased;}
+
+  .card{position:relative;width:1200px;height:630px;padding:70px 78px;
+    display:grid;grid-template-columns:1fr 272px;gap:56px;align-items:center;}
+  .card::before{content:"";position:absolute;inset:28px;border:1px solid var(--line);pointer-events:none;}
+
+  .col-text{display:flex;flex-direction:column;height:100%;padding:8px 0;}
+
+  .eyebrow{
+    display:flex;align-items:center;gap:14px;
+    font-family:var(--font-en);font-size:18px;font-weight:600;
+    letter-spacing:0.3em;text-transform:uppercase;color:var(--gray);
+  }
+  .eyebrow::before{content:"";width:38px;height:1px;background:var(--ink);flex:none;}
+
+  .headline{
+    margin-top:auto;
+    font-size:72px;font-weight:900;line-height:1.32;letter-spacing:0.02em;
+  }
+  .mark{background:linear-gradient(transparent 58%, rgba(242,196,15,0.55) 58%);padding:0 .08em;}
+
+  .sub{
+    margin-top:24px;
+    font-size:24px;font-weight:500;letter-spacing:0.04em;color:var(--ink-soft);
+  }
+
+  .foot{margin-top:auto;display:flex;align-items:baseline;gap:22px;}
+  .byline{font-size:19px;font-weight:700;letter-spacing:0.08em;}
+  .domain{font-family:var(--font-en);font-size:17px;letter-spacing:0.12em;color:var(--gray-light);}
+
+  .col-visual{display:flex;align-items:center;justify-content:center;}
+  .col-visual img{
+    width:272px;height:auto;
+    border-radius:3px;
+    box-shadow:0 22px 44px -18px rgba(0,0,0,.4);
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="col-text">
+      <p class="eyebrow">Miyazaki Mari</p>
+      <h1 class="headline">生成AIで、<br>暮らしを<span class="mark">ラクに</span>。</h1>
+      <p class="sub">『AI×家事』著者・宮崎真理</p>
+      <div class="foot">
+        <span class="byline">宮崎真理 ｜ AI×家事</span>
+        <span class="domain">miyazakimari.com</span>
+      </div>
+    </div>
+    <div class="col-visual">
+      <img src="../AI_kaji.webp" alt="">
+    </div>
+  </div>
+</body>
+</html>
