@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#14120f; --text:#ffffff; --text-dim:#b7b7ad; --accent:#f2c40f;
+    --font-gothic:'Zen Kaku Gothic New','Hiragino Kaku Gothic ProN',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1280px;height:670px;}
+  body{background:var(--night);font-family:var(--font-gothic);color:var(--text);-webkit-font-smoothing:antialiased;}
+
+  .card{position:relative;width:1280px;height:670px;padding:60px 64px;
+    display:flex;flex-direction:column;justify-content:center;}
+
+  .headline{
+    font-size:92px;font-weight:900;line-height:1.36;letter-spacing:0.01em;
+    color:#fff;
+  }
+  .headline .hl{color:var(--accent);}
+
+  .foot{
+    margin-top:40px;
+    display:flex;align-items:center;gap:22px;
+  }
+  .foot::before{content:"";width:52px;height:8px;background:var(--accent);flex:none;}
+  .byline{font-size:52px;font-weight:900;letter-spacing:0.02em;color:#f2f2ef;}
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1 class="headline">私はずっと、<br>データから<span class="hl">「次」</span>を<br>考えるのが好きだった</h1>
+
+    <div class="foot">
+      <span class="byline">宮崎真理　『AI×家事』著者</span>
+    </div>
+  </div>
+</body>
+</html>

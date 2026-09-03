@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<!-- サイト共通OGP画像（1200×630）。シェア時に出る画像。build.sh で書き出し -->
+<!-- サイト共通OGP画像（1200×630）。note のリンクカードは中央だけ切り出すため、要素は中央に寄せ左右に余白を取る。build.sh で書き出し -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
@@ -17,42 +17,53 @@
   html,body{width:1200px;height:630px;}
   body{background:var(--paper);font-family:var(--font-jp);color:var(--ink);-webkit-font-smoothing:antialiased;}
 
-  .card{position:relative;width:1200px;height:630px;padding:72px 80px;display:flex;flex-direction:column;}
-  .card::before{content:"";position:absolute;inset:28px;border:1px solid var(--line);pointer-events:none;}
+  .card{position:relative;width:1200px;height:630px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:54px;}
+
+  /* 中央セーフゾーン。note で切り出されても収まる幅 */
+  .inner{width:720px;display:flex;flex-direction:column;align-items:center;}
 
   .eyebrow{
     display:flex;align-items:center;gap:14px;
-    font-family:var(--font-en);font-size:19px;font-weight:600;
-    letter-spacing:0.3em;text-transform:uppercase;color:var(--gray);
+    font-family:var(--font-en);font-size:18px;font-weight:600;
+    letter-spacing:0.34em;text-transform:uppercase;color:var(--gray);
   }
-  .eyebrow::before{content:"";width:40px;height:1px;background:var(--ink);flex:none;}
+  .eyebrow::before,.eyebrow::after{content:"";width:34px;height:1px;background:var(--ink);flex:none;}
 
   .headline{
-    margin-top:auto;
-    font-size:80px;font-weight:900;line-height:1.32;letter-spacing:0.02em;
+    margin-top:30px;
+    font-size:56px;font-weight:900;line-height:1.36;letter-spacing:0.02em;
   }
   .mark{background:linear-gradient(transparent 58%, rgba(242,196,15,0.55) 58%);padding:0 .08em;}
 
-  .sub{
-    margin-top:26px;
-    font-size:25px;font-weight:500;line-height:1.7;letter-spacing:0.04em;color:var(--ink-soft);
+  .book{
+    margin-top:34px;
+    height:226px;width:auto;border-radius:4px;
+    box-shadow:0 20px 44px -20px rgba(0,0,0,.42);
   }
 
-  .foot{margin-top:44px;display:flex;align-items:baseline;justify-content:space-between;}
-  .byline{font-size:20px;font-weight:700;letter-spacing:0.08em;}
-  .domain{font-family:var(--font-en);font-size:18px;letter-spacing:0.12em;color:var(--gray-light);}
+  .foot{
+    margin-top:28px;
+    display:flex;align-items:center;gap:14px;
+    font-size:17px;letter-spacing:0.05em;color:var(--gray);
+  }
+  .foot .name{font-weight:700;color:var(--ink-soft);letter-spacing:0.08em;}
+  .foot .dot{width:4px;height:4px;border-radius:50%;background:var(--gray-light);}
+  .foot .domain{font-family:var(--font-en);letter-spacing:0.1em;color:var(--gray-light);}
 </style>
 </head>
 <body>
   <div class="card">
-    <p class="eyebrow">Miyazaki Mari</p>
-
-    <h1 class="headline">生成AIで、<br>暮らしを<span class="mark">ラクに</span>。</h1>
-    <p class="sub">『AI×家事』著者・宮崎真理</p>
-
-    <div class="foot">
-      <span class="byline">宮崎真理 ｜ AI×家事</span>
-      <span class="domain">miyazakimari.com</span>
+    <div class="inner">
+      <p class="eyebrow">Miyazaki Mari</p>
+      <h1 class="headline">生成AIで、<br>暮らしを<span class="mark">ラクに</span>。</h1>
+      <img class="book" src="../AI_kaji.webp" alt="">
+      <div class="foot">
+        <span class="name">『AI×家事』著者・宮崎真理</span>
+        <span class="dot"></span>
+        <span class="domain">miyazakimari.com</span>
+      </div>
     </div>
   </div>
 </body>
