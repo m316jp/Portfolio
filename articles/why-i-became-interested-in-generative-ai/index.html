@@ -301,6 +301,31 @@
       text-decoration-thickness: 2px;
     }
 
+    .related {
+      margin-top: clamp(48px, 8vw, 72px);
+      padding: clamp(20px, 4vw, 28px) clamp(22px, 5vw, 32px);
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .related .eyebrow { margin-bottom: 12px; }
+
+    .related ul {
+      margin: 0;
+      padding-left: 1.2em;
+      font-size: 13px;
+    }
+
+    .related li + li { margin-top: 8px; }
+    .related li::marker { color: var(--accent); }
+
+    .related a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
     .cta-box {
       margin-top: 28px;
       padding: clamp(24px, 5vw, 36px);
@@ -506,6 +531,15 @@
       <p>生成AIとの出会いによって、その興味が、いま自分が暮らしている家庭の中につながったのだと思います。</p>
     </article>
 
+    <div class="related">
+      <p class="eyebrow">関連記事</p>
+      <ul>
+        <li><a href="../generative-ai-beyond-time-saving/">時短もいいけれど。「続かなかったこと」をAIと考える</a></li>
+        <li><a href="../generative-ai-home-systems/">生成AIで家庭の不便を仕組みにする——家事に正解がなくても役立つ理由</a></li>
+        <li><a href="../what-to-ask-generative-ai/">生成AIに何を聞けばいい？日常の小さな質問から使い方を広げる方法</a></li>
+      </ul>
+    </div>
+
     <div class="author-box">
       <p class="eyebrow">著者について</p>
       <h3>宮崎真理</h3>
@@ -514,8 +548,6 @@
       <p>WOMAN AI AWARD 2026 ライフ・イノベーター賞受賞。講談社「with class」でコラムを連載するほか、テレビ出演、雑誌・Webでの執筆・監修などを行う。</p>
       <p>3兄弟の母。1000日以上にわたる生成AIの実践経験をもとに、理系出身・元専業主婦の視点から、家庭という最もテクノロジーが遅れた場所を、生活者自身がアップデートしていく可能性を発信している。</p>
       <ul class="author-links">
-        <li><a href="../generative-ai-home-systems/">生成AIで家庭の不便を仕組みにする——家事に正解がなくても役立つ理由</a></li>
-        <li><a href="../what-to-ask-generative-ai/">生成AIに何を聞けばいい？日常の小さな質問から使い方を広げる方法</a></li>
         <li><a href="../../index.html#book">著書『AI×家事』</a></li>
         <li><a href="../../index.html#profile">宮崎真理プロフィール</a></li>
         <li><a href="../../index.html#media">メディア出演・執筆実績</a></li>
