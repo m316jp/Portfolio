@@ -2269,6 +2269,13 @@
       color: var(--ink-soft);
     }
 
+    .media-outlets span.media-outlets-more {
+      background: none;
+      border: none;
+      padding: 6px 0;
+      color: var(--gray);
+    }
+
     .pickup-label {
       font-family: var(--font-en);
       font-size: 12px;
@@ -4206,7 +4213,7 @@
 
         <p class="web-media-lead">執筆コラムから取材記事まで、これまでに9媒体・50本以上。</p>
         <div class="media-outlets">
-          <span>集英社オンライン</span><span>講談社 with class</span><span>ハフポスト日本版</span><span>ESSE online</span><span>女子SPA!</span><span>マイナビ子育て</span><span>クロワッサン オンライン</span><span>Salesforce Japan Blog</span>
+          <span>集英社オンライン</span><span>講談社 with class</span><span>ハフポスト日本版</span><span>ESSE online</span><span>女子SPA!</span><span>マイナビ子育て</span><span>クロワッサン オンライン</span><span>Salesforce Japan Blog</span><span>note公式</span><span class="media-outlets-more">ほか</span>
         </div>
 
         <p class="pickup-label">Pick Up</p>
@@ -5182,7 +5189,13 @@
           return currentDate > selectedDate ? item : selected;
         }, items[0]);
 
-        const previewTitle = latest.querySelector('.article-title')?.textContent?.trim() || '';
+        const titleEl = latest.querySelector('.article-title');
+        let previewTitle = '';
+        if (titleEl) {
+          const titleClone = titleEl.cloneNode(true);
+          titleClone.querySelectorAll('.sr-only').forEach(el => el.remove());
+          previewTitle = titleClone.textContent.trim();
+        }
         const header = document.createElement('button');
         header.type = 'button';
         header.className = 'web-media-header-toggle';
