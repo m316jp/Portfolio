@@ -106,7 +106,7 @@
     img { max-width: 100%; display: block; }
     a { color: inherit; }
     ::selection { background: var(--accent); color: var(--ink); }
-    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    :focus-visible { outline: none; box-shadow: 0 0 0 2px var(--ink), 0 0 0 5px var(--accent); }
 
     .container {
       max-width: 1160px;
@@ -612,7 +612,7 @@
     }
 
     .lightbox-close:hover { color: var(--ink); background: var(--accent); border-color: var(--accent); }
-    .lightbox-close:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .lightbox-close:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--ink), 0 0 0 6px var(--accent); }
     body.lightbox-open { overflow: hidden; }
 
     .sr-only {
@@ -701,8 +701,8 @@
               </div>
             </div>
             <div class="book-buy">
-              <a class="book-buy-btn" href="https://amazon.co.jp/dp/4594101909" target="_blank" rel="noopener">Amazonで見る</a>
-              <a class="book-buy-btn book-buy-btn--rakuten" href="https://books.rakuten.co.jp/rb/18539586/" target="_blank" rel="noopener">楽天ブックスで見る</a>
+              <a class="book-buy-btn" href="https://amazon.co.jp/dp/4594101909" target="_blank" rel="noopener">Amazonで見る<span class="sr-only">（新しいタブで開きます）</span></a>
+              <a class="book-buy-btn book-buy-btn--rakuten" href="https://books.rakuten.co.jp/rb/18539586/" target="_blank" rel="noopener">楽天ブックスで見る<span class="sr-only">（新しいタブで開きます）</span></a>
               <p class="book-buy-note">全国書店でも発売中。電子書籍（Kindle）でもお読みいただけます。</p>
               <p class="book-buy-news">2026年6月2日、Amazon Kindle日替わりセール対象に選ばれました。</p>
               <p class="book-buy-news">2026年5月、マイナビ子育て様のプレゼントキャンペーン賞品に選ばれました。</p>
@@ -792,10 +792,10 @@
     <div class="book-block">
       <div class="container">
         <div class="book-review-links">
-          <a href="https://www.amazon.co.jp/dp/4594101909#customerReviews" target="_blank" rel="noopener">Amazon のレビューを読む</a>
-          <a href="https://books.rakuten.co.jp/rb/18539586/#itemReview" target="_blank" rel="noopener">楽天ブックス のレビューを読む</a>
-          <a href="https://booklog.jp/item/1/4594101909" target="_blank" rel="noopener">ブクログ のレビューを読む</a>
-          <a href="https://bookmeter.com/books/23133257" target="_blank" rel="noopener">読書メーター のレビューを読む</a>
+          <a href="https://www.amazon.co.jp/dp/4594101909#customerReviews" target="_blank" rel="noopener">Amazon のレビューを読む<span class="sr-only">（新しいタブで開きます）</span></a>
+          <a href="https://books.rakuten.co.jp/rb/18539586/#itemReview" target="_blank" rel="noopener">楽天ブックス のレビューを読む<span class="sr-only">（新しいタブで開きます）</span></a>
+          <a href="https://booklog.jp/item/1/4594101909" target="_blank" rel="noopener">ブクログ のレビューを読む<span class="sr-only">（新しいタブで開きます）</span></a>
+          <a href="https://bookmeter.com/books/23133257" target="_blank" rel="noopener">読書メーター のレビューを読む<span class="sr-only">（新しいタブで開きます）</span></a>
         </div>
       </div>
     </div>

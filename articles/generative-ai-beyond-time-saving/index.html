@@ -79,7 +79,7 @@
     :root {
       --ink: #141413;
       --ink-soft: #3c3c39;
-      --gray: #73736d;
+      --gray: #5f5f5b;
       --line: #e4e3dc;
       --paper: #f7f6f2;
       --white: #fff;
@@ -87,6 +87,17 @@
       --accent: #f2c40f;
       --font-en: 'Space Grotesk', 'Helvetica Neue', sans-serif;
       --font-jp: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
+      --space-4: 4px;
+      --space-8: 8px;
+      --space-12: 12px;
+      --space-16: 16px;
+      --space-20: 20px;
+      --space-24: 24px;
+      --space-28: 28px;
+      --space-32: 32px;
+      --space-40: 40px;
+      --space-56: 56px;
+      --space-64: 64px;
       --fs-display: clamp(26px, 4.6vw, 38px);
       --fs-headline: 20px;
       --fs-title: 17px;
@@ -113,14 +124,15 @@
     }
 
     a { color: inherit; }
+    :focus-visible { outline: none; box-shadow: 0 0 0 2px var(--ink), 0 0 0 5px var(--accent); }
 
     .site-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: var(--space-24);
       min-height: 64px;
-      padding: 12px clamp(20px, 5vw, 64px);
+      padding: var(--space-12) clamp(20px, 5vw, 64px);
       border-bottom: 1px solid var(--line);
       background: rgba(247, 246, 242, 0.96);
     }
@@ -145,7 +157,7 @@
     }
 
     .eyebrow {
-      margin: 0 0 12px;
+      margin: 0 0 var(--space-12);
       color: var(--gray);
       font-family: var(--font-en);
       font-size: var(--fs-label-sm);
@@ -165,8 +177,8 @@
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
-      gap: 6px 16px;
-      margin: 20px 0 0;
+      gap: var(--space-8) var(--space-16);
+      margin: var(--space-20) 0 0;
       color: var(--gray);
       font-size: var(--fs-label-sm);
       letter-spacing: 0.06em;
@@ -194,7 +206,7 @@
     }
 
     article > p:first-of-type {
-      margin-bottom: 30px;
+      margin-bottom: var(--space-32);
       font-size: var(--fs-body-lg);
       font-weight: 500;
       line-height: 1.9;
@@ -203,8 +215,8 @@
 
     article h2 {
       position: relative;
-      margin: 56px 0 20px;
-      padding-top: 34px;
+      margin: var(--space-56) 0 var(--space-20);
+      padding-top: var(--space-32);
       border-top: 1px solid var(--line);
       font-size: var(--fs-headline);
       font-weight: 700;
@@ -223,7 +235,7 @@
     }
 
     article h2:first-of-type {
-      margin-top: 40px;
+      margin-top: var(--space-40);
     }
 
     article p { margin: 0 0 22px; }
@@ -235,7 +247,7 @@
 
     article ul,
     article ol {
-      margin: 0 0 22px;
+      margin: 0 0 var(--space-24);
       padding-left: 1.4em;
     }
 
@@ -244,8 +256,8 @@
     article ol li::marker { font-weight: 700; }
 
     article blockquote {
-      margin: 0 0 22px;
-      padding: 16px 20px;
+      margin: 0 0 var(--space-24);
+      padding: var(--space-16) var(--space-20);
       background: var(--white);
       border-left: 3px solid var(--accent);
       font-size: var(--fs-body-base);
@@ -263,8 +275,8 @@
     }
 
     .article-more {
-      margin: 26px 0;
-      padding: 16px 20px;
+      margin: var(--space-28) 0;
+      padding: var(--space-16) var(--space-20);
       background: var(--white);
       border-left: 3px solid var(--accent);
       font-size: var(--fs-body-sm);
@@ -283,13 +295,13 @@
     .author-box .eyebrow { margin-bottom: 8px; }
 
     .author-box h3 {
-      margin: 0 0 4px;
+      margin: 0 0 var(--space-4);
       font-size: var(--fs-title);
       letter-spacing: 0.06em;
     }
 
     .author-role {
-      margin: 0 0 16px;
+      margin: 0 0 var(--space-16);
       color: var(--gray);
       font-size: var(--fs-label-sm);
       letter-spacing: 0.06em;
@@ -338,7 +350,7 @@
     }
 
     .cta-box {
-      margin-top: 28px;
+      margin-top: var(--space-28);
       padding: clamp(24px, 5vw, 36px);
       border: 1px solid var(--ink);
       background: rgba(242, 196, 15, 0.08);
@@ -346,14 +358,14 @@
     }
 
     .cta-box p {
-      margin: 0 0 16px;
+      margin: 0 0 var(--space-16);
       font-size: var(--fs-body-sm);
       color: var(--ink-soft);
     }
 
     .cta-button {
       display: inline-block;
-      padding: 12px 28px;
+      padding: var(--space-12) var(--space-28);
       background: var(--ink);
       color: var(--paper);
       font-size: var(--fs-label);
@@ -373,7 +385,7 @@
     .breadcrumb ol {
       display: flex;
       flex-wrap: wrap;
-      gap: 4px 8px;
+      gap: var(--space-4) var(--space-8);
       margin: 0;
       padding: 0;
       list-style: none;
@@ -385,8 +397,20 @@
     .breadcrumb a:hover { color: var(--ink); }
     .breadcrumb [aria-current="page"] { color: var(--ink-soft); }
 
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     footer {
-      padding: 28px 20px;
+      padding: var(--space-28) var(--space-20);
       color: #8f8f88;
       background: var(--night);
       text-align: center;
@@ -459,7 +483,7 @@
 
       <p>最初から作り方を知っていたわけではありません。AIに相談して方法を教えてもらい、試して、動かなければまた相談する。その繰り返しでした。</p>
 
-      <p>実際の画面や詳しい使い方は、<a href="https://withonline.jp/with-class/education/mamacolumn/PbiTi" target="_blank" rel="noopener">with classの図書館活用コラム</a>で紹介しています。</p>
+      <p>実際の画面や詳しい使い方は、<a href="https://withonline.jp/with-class/education/mamacolumn/PbiTi" target="_blank" rel="noopener">with classの図書館活用コラム<span class="sr-only">（新しいタブで開きます）</span></a>で紹介しています。</p>
 
       <p>仕組みを作ること自体には、時間がかかっています。だから、使い始めてすぐに「何分得をした」と説明できるものではありません。</p>
 

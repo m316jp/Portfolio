@@ -15,8 +15,8 @@
     :root {
       --ink: #141413;
       --ink-soft: #3c3c39;
-      --gray: #73736d;
-      --gray-light: #a5a59e;
+      --gray: #5f5f5b;
+      --gray-light: #6e6e69;
       --line: #e4e3dc;
       --paper: #f7f6f2;
       --white: #fff;
@@ -46,6 +46,7 @@
     }
 
     a { color: inherit; }
+    :focus-visible { outline: none; box-shadow: 0 0 0 2px var(--ink), 0 0 0 5px var(--accent); }
 
     .site-header {
       display: flex;
