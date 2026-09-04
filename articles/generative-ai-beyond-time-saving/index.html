@@ -87,6 +87,16 @@
       --accent: #f2c40f;
       --font-en: 'Space Grotesk', 'Helvetica Neue', sans-serif;
       --font-jp: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
+      --fs-display: clamp(26px, 4.6vw, 38px);
+      --fs-headline: 20px;
+      --fs-title: 17px;
+      --fs-body-lg: 18px;
+      --fs-body: 16px;
+      --fs-body-base: 15px;
+      --fs-body-sm: 14px;
+      --fs-label: 13px;
+      --fs-label-sm: 12px;
+      --fs-caption: 11px;
     }
 
     * { box-sizing: border-box; }
@@ -96,7 +106,7 @@
       color: var(--ink);
       background: var(--paper);
       font-family: var(--font-jp);
-      font-size: 15px;
+      font-size: var(--fs-body-base);
       line-height: 1.9;
       letter-spacing: 0.025em;
       -webkit-font-smoothing: antialiased;
@@ -122,7 +132,7 @@
     }
 
     .back-link {
-      font-size: 13px;
+      font-size: var(--fs-label);
       font-weight: 700;
       text-decoration: none;
       border-bottom: 2px solid var(--accent);
@@ -138,7 +148,7 @@
       margin: 0 0 12px;
       color: var(--gray);
       font-family: var(--font-en);
-      font-size: 12px;
+      font-size: var(--fs-label-sm);
       font-weight: 700;
       letter-spacing: 0.25em;
       text-transform: uppercase;
@@ -146,7 +156,7 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(26px, 4.6vw, 38px);
+      font-size: var(--fs-display);
       line-height: 1.55;
       letter-spacing: 0.04em;
     }
@@ -158,7 +168,7 @@
       gap: 6px 16px;
       margin: 20px 0 0;
       color: var(--gray);
-      font-size: 12px;
+      font-size: var(--fs-label-sm);
       letter-spacing: 0.06em;
     }
 
@@ -179,13 +189,13 @@
 
     article {
       margin-top: clamp(40px, 7vw, 64px);
-      font-size: 16px;
+      font-size: var(--fs-body);
       line-height: 2;
     }
 
     article > p:first-of-type {
       margin-bottom: 30px;
-      font-size: 18px;
+      font-size: var(--fs-body-lg);
       font-weight: 500;
       line-height: 1.9;
       color: var(--ink);
@@ -196,7 +206,7 @@
       margin: 56px 0 20px;
       padding-top: 34px;
       border-top: 1px solid var(--line);
-      font-size: 20px;
+      font-size: var(--fs-headline);
       font-weight: 700;
       line-height: 1.65;
       letter-spacing: 0.04em;
@@ -238,7 +248,7 @@
       padding: 16px 20px;
       background: var(--white);
       border-left: 3px solid var(--accent);
-      font-size: 15px;
+      font-size: var(--fs-body-base);
       line-height: 1.9;
       color: var(--ink-soft);
     }
@@ -257,7 +267,7 @@
       padding: 16px 20px;
       background: var(--white);
       border-left: 3px solid var(--accent);
-      font-size: 14px;
+      font-size: var(--fs-body-sm);
       line-height: 1.8;
     }
 
@@ -274,23 +284,23 @@
 
     .author-box h3 {
       margin: 0 0 4px;
-      font-size: 17px;
+      font-size: var(--fs-title);
       letter-spacing: 0.06em;
     }
 
     .author-role {
       margin: 0 0 16px;
       color: var(--gray);
-      font-size: 12px;
+      font-size: var(--fs-label-sm);
       letter-spacing: 0.06em;
     }
 
-    .author-box p { margin: 0 0 16px; font-size: 14px; line-height: 1.9; }
+    .author-box p { margin: 0 0 16px; font-size: var(--fs-body-sm); line-height: 1.9; }
 
     .author-links {
       margin: 0;
       padding-left: 1.2em;
-      font-size: 13px;
+      font-size: var(--fs-label);
     }
 
     .author-links li + li { margin-top: 6px; }
@@ -314,7 +324,7 @@
     .related ul {
       margin: 0;
       padding-left: 1.2em;
-      font-size: 13px;
+      font-size: var(--fs-label);
     }
 
     .related li + li { margin-top: 8px; }
@@ -337,7 +347,7 @@
 
     .cta-box p {
       margin: 0 0 16px;
-      font-size: 14px;
+      font-size: var(--fs-body-sm);
       color: var(--ink-soft);
     }
 
@@ -346,7 +356,7 @@
       padding: 12px 28px;
       background: var(--ink);
       color: var(--paper);
-      font-size: 13px;
+      font-size: var(--fs-label);
       font-weight: 700;
       letter-spacing: 0.08em;
       text-decoration: none;
@@ -355,7 +365,7 @@
 
     .breadcrumb {
       margin: 0 0 clamp(28px, 6vw, 44px);
-      font-size: 12px;
+      font-size: var(--fs-label-sm);
       color: var(--gray);
       letter-spacing: 0.03em;
     }
@@ -381,13 +391,13 @@
       background: var(--night);
       text-align: center;
       font-family: var(--font-en);
-      font-size: 11px;
+      font-size: var(--fs-caption);
       letter-spacing: 0.12em;
     }
 
     @media (max-width: 600px) {
       .site-header { align-items: flex-start; }
-      .site-name { font-size: 13px; }
+      .site-name { font-size: var(--fs-label); }
       .back-link { white-space: nowrap; }
     }
   </style>

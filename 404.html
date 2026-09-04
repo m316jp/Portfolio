@@ -22,6 +22,9 @@
       --white: #fff;
       --night: #121211;
       --accent: #f2c40f;
+      --dur-fast: 0.2s;
+      --dur-base: 0.35s;
+      --dur-slow: 0.65s;
       --font-en: 'Space Grotesk', 'Helvetica Neue', sans-serif;
       --font-jp: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
     }
@@ -126,7 +129,7 @@
       padding: 16px 4px;
       text-decoration: none;
       font-weight: 700;
-      transition: padding 0.2s ease, background 0.2s ease;
+      transition: padding var(--dur-fast) ease, background var(--dur-fast) ease;
     }
 
     .links a:hover { background: var(--white); padding-left: 12px; }
