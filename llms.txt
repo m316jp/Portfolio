@@ -24,6 +24,7 @@ NHK・日本テレビ・フジテレビをはじめとするテレビ番組に�
 
 ## 読みもの（生成AIと暮らしの考え方）
 
+- [母の手は、よくふさがっている。家庭のAI活用に音声入力が合った理由](https://miyazakimari.com/articles/voice-input-for-ai-at-home/): 家事や育児で文字を打つ余裕がないとき、生成AIへの入力だけを声にする使い方。AIで話し言葉を整える音声入力アプリで、家庭の事情まで省かず伝える実践例。
 - [時短もいいけれど。「続かなかったこと」をAIと考える](https://miyazakimari.com/articles/generative-ai-beyond-time-saving/): 生成AI活用の成果を時短だけで測らず、手間が多くて続かなかったことを続けやすくなったかで見る視点。家族5人の図書館利用を支える仕組みづくりを例に紹介。
 - [生成AIは家事にどう使える？家庭の不便を仕組みに変える方法](https://miyazakimari.com/articles/generative-ai-home-systems/): 家庭ごとに正解が異なる家事でも、生成AIは選択肢を広げ、その家庭に合う仕組みづくりを支援できるという考え方。
 - [生成AIに何を聞けばいい？初心者が日常で使い始める方法](https://miyazakimari.com/articles/what-to-ask-generative-ai/): すごい活用法を探す前に、日常の小さな疑問から始める理由と、生成AIに相談できる範囲の広げ方。
