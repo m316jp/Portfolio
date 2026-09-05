@@ -3,21 +3,9 @@
 .claude/
 node_modules/
 
-# 記事の下書き（公開前のワーキングフォルダ、サイトには含めない）
-ポートフォリオ用記事/
-note用記事/
+# 公開前の原稿・再編集用の元写真（ローカル保管）
+/drafts/
+/archive/
 
-# 作業用に置いただけの写真・スクリーンショット（サイトでは未使用）
-スクリーンショット*
-26C152FD-E1EF-4D32-B3D7-613D4304E5C2 2.PNG
-IMG_4848.JPG
-IMG_5272.JPG
-kindle日替わりセール.png
-
-# サムネイル書き出しの中間PNG（本番は articles/<slug>/cover.png を使用）
-thumbnails/*.png
-
-# カメラ撮影のオリジナル写真（サイトでは webp を使用）
-IMG_*.JPG
-IMG_*.jpeg
-IMG_*.PNG
+# サムネイルの書き出し先（公開用画像は各記事の cover.png）
+/design/exports/

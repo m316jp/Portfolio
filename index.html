@@ -80,8 +80,8 @@
         "url": "https://miyazakimari.com/",
         "image": {
           "@type": "ImageObject",
-          "url": "https://miyazakimari.com/MariSaimu.jpg",
-          "contentUrl": "https://miyazakimari.com/MariSaimu.jpg"
+          "url": "https://miyazakimari.com/assets/images/profile/mari-miyazaki-portrait.jpg",
+          "contentUrl": "https://miyazakimari.com/assets/images/profile/mari-miyazaki-portrait.jpg"
         },
         "description": "3児の母。1000日以上AIを家事・育児に活用し、初の著書『AI×家事』（扶桑社）を出版。生成AIで暮らしをラクにする実践的な活用術を発信。",
         "jobTitle": "著者・AIライフスタイルコンサルタント",
@@ -124,7 +124,7 @@
         "datePublished": "2026-03-01",
         "numberOfPages": 176,
         "inLanguage": "ja",
-        "image": "https://miyazakimari.com/AItaizen_hyo1_0120.jpg",
+        "image": "https://miyazakimari.com/assets/images/book/ai-kaji-cover.webp",
         "description": "1000日以上の実践から厳選した60の活用例をまとめた、生成AIを家事・育児に活かすための実践書。",
         "genre": ["生活", "家事", "AI活用", "育児"],
         "bookFormat": "https://schema.org/Paperback",
@@ -148,7 +148,7 @@
         "name": "まさか私が、出馬。まさか私が、出版。3児の母ふたりが語る、AI時代のキャリアと選択肢",
         "description": "『AI×家事』著者・宮崎真理とWomen AI Initiative Japan統括マネージャー・平理沙子が、母になってからのキャリア、出版・出馬までの迷いや選択、AIが広げた可能性を語るトークイベント。",
         "url": "https://www.sanctuarybooks.jp/event/detail/3782",
-        "image": "https://miyazakimari.com/event_sanctuary_20260831.jpg",
+        "image": "https://miyazakimari.com/assets/images/events/event-sanctuary-20260831.jpg",
         "startDate": "2026-08-31T19:30:00+09:00",
         "endDate": "2026-08-31T21:00:00+09:00",
         "doorTime": "2026-08-31T19:00:00+09:00",
@@ -189,7 +189,7 @@
         "name": "家事育児×AI活用アプデ女子会 ―みんなの\"推しAI\"、画面見せます―",
         "description": "体験型AIフェス「WOMAN AI UPDATE 2026」DAY2（ライフ編）のセッション（SKILL × UPDATE）に、高阪のぞみ・喜多尾衣利子・和田幸子・宮崎真理が登壇。",
         "url": "https://woman-ai-update.jp/",
-        "image": "https://miyazakimari.com/event_woman_ai_update_20260912.jpg",
+        "image": "https://miyazakimari.com/assets/images/events/event-woman-ai-update-20260912.jpg",
         "inLanguage": "ja",
         "startDate": "2026-09-12T12:40:00+09:00",
         "endDate": "2026-09-12T13:10:00+09:00",
@@ -747,6 +747,28 @@
     .hero-tagline strong {
       font-weight: 900;
       background: linear-gradient(transparent 62%, var(--accent) 62%);
+    }
+
+    .hero-expertise {
+      font-size: clamp(14px, 1.3vw, 17px);
+      font-weight: 700;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    .hero-expertise span {
+      font-size: clamp(13px, 1.1vw, 15px);
+    }
+
+    .hero-tagline {
+      margin-bottom: 18px;
+    }
+
+    .hero-intro {
+      max-width: 36em;
+      font-size: 14px;
+      line-height: 2;
+      margin-bottom: 28px;
     }
 
     /* typewriter mechanics */
@@ -3778,13 +3800,13 @@
   <!-- HERO -->
   <section class="hero" id="top">
     <div class="hero-left">
-      <p class="hero-status"><span class="hero-status-dot" aria-hidden="true"></span>出演・執筆のご依頼を受付中</p>
+      <p class="hero-status"><span class="hero-status-dot" aria-hidden="true"></span>取材・出演のご相談受付中</p>
       <h1 class="hero-name">宮崎 真理</h1>
       <span class="hero-name-ruby">MIYAZAKI MARI</span>
-      <p class="hero-tagline">
-        毎日バタバタな3児ママが<br>
-        <strong class="type-wrap" aria-label="AIを使ってみたら"><span class="type-ghost" aria-hidden="true">AIを使ってみたら</span><span class="type-live" aria-hidden="true" id="typeLive">AIを使ってみたら<span class="type-caret"></span></span></strong><span id="typeAfter">、</span><br>
-        <span id="typeLine3">一人で悩む時間が消えた。</span>
+      <p class="hero-expertise">『AI×家事』著者<br><span>家事・子育て・家庭学習の生成AI活用</span></p>
+      <p class="hero-tagline"><strong>生成AIで、暮らしをラクに。</strong></p>
+      <p class="hero-intro">3児の母として見つける、家庭の小さな困りごと。<br>
+        技術職の経験と日々の実践をもとに、暮らしに役立つ生成AIの使い方を、執筆やメディア出演、対談・イベント登壇を通じて伝えています。
       </p>
       <div class="hero-tv-badges">
         <div class="hero-tv-cards">
@@ -3804,15 +3826,15 @@
         </div>
       </div>
       <div class="hero-cta">
-        <a href="#contact" class="btn-primary" data-cta="hero">お仕事のご依頼 →</a>
-        <a href="book/" class="btn-secondary">著書を見る</a>
+        <a href="#contact" class="btn-primary" data-cta="hero">取材・出演・執筆・登壇を相談する →</a>
+        <a href="#media" class="btn-secondary">実績を見る</a>
       </div>
 
     </div>
 
     <div class="hero-right">
       <div class="book-wrapper">
-        <img src="AItaizen_hyo1_0120.webp" alt="AI×家事 書影" class="book-cover">
+        <img src="assets/images/book/ai-kaji-cover.webp" alt="AI×家事 書影" class="book-cover">
         <div class="book-caption">
           <span class="book-caption-mark">New Release</span>
           <span class="book-caption-title">AI × 家事</span>
@@ -3832,7 +3854,7 @@
       </div>
       <a class="news-featured-event reveal" href="https://woman-ai-update.jp/" target="_blank" rel="noopener">
         <div class="news-featured-image-wrap">
-          <img class="news-featured-image" src="event_woman_ai_update_20260912.jpg" alt="『家事育児×AI活用アプデ女子会 ―みんなの推しAI、画面見せます―』告知ビジュアル。高阪のぞみ・喜多尾衣利子・和田幸子・宮崎真理が登壇｜WOMAN AI UPDATE 2026（SKILL × UPDATE）">
+          <img class="news-featured-image" src="assets/images/events/event-woman-ai-update-20260912.jpg" alt="『家事育児×AI活用アプデ女子会 ―みんなの推しAI、画面見せます―』告知ビジュアル。高阪のぞみ・喜多尾衣利子・和田幸子・宮崎真理が登壇｜WOMAN AI UPDATE 2026（SKILL × UPDATE）">
         </div>
         <div class="news-featured-content">
           <span class="news-featured-badge">9.12 参加受付中</span>
@@ -3900,19 +3922,21 @@
           <span class="section-label">Profile</span>
           <h2 class="section-title">生成AIで、<br>暮らしをラクに。</h2>
           <p>
+            <strong>『AI×家事』（扶桑社）著者。3兄弟の母。</strong>
             神戸大学・大学院卒業後、オムロン株式会社で技術職を経験。
-            結婚・出産を経て、東京で男子3兄弟を育てながら、
-            生成AIを家事・育児に本格活用し始めたのは2023年のこと。
+            現在は家事・子育て・家庭学習を中心に、生成AIを日々の暮らしに取り入れています。
           </p>
           <p>
-            「難しそう」「専門的な知識が必要」と思われがちなAIを、
-            普通のママ目線で実践・発信したことで大きな反響を呼び、
-            <strong>NHK・日本テレビ・フジテレビ</strong>をはじめ多数のメディアに出演。
+            献立を考える、子どもの勉強を手伝う。そんな毎日の場面が、AIを試すきっかけです。
+            技術職としての経験と、家庭の困りごとを知る当事者の視点から、自分たちに合う使い方を試行錯誤。
+            2023年から重ねてきた実践は、2026年3月、60の活用例を収めた一冊になりました。
           </p>
           <p>
-            2026年3月、1000日以上の実践から厳選した60の活用例をまとめた
-            初の著書『AI×家事』（扶桑社）を出版。
-            同年、<strong>「WOMAN AI AWARD 2026」ライフ・イノベーター賞</strong>を受賞。
+            こうした家庭での実体験をもとに、記事の執筆やテレビ・雑誌の取材、動画での対談、トークイベントなどで活動。
+            <strong>NHK・日本テレビ・フジテレビ</strong>をはじめ、多数のメディアに出演しています。
+          </p>
+          <p>
+            2026年、<strong>「WOMAN AI AWARD 2026」ライフ・イノベーター賞</strong>を受賞。
           </p>
           <div class="profile-sns">
             <a class="profile-sns-link" href="https://x.com/m316jp2" target="_blank" rel="noopener">
@@ -3930,17 +3954,17 @@
         </div>
 
         <div class="profile-photo-wrap reveal-right reveal-delay-2">
-          <img src="MariSaimu.jpg" alt="宮崎真理" class="profile-photo" loading="lazy">
+          <img src="assets/images/profile/mari-miyazaki-portrait.jpg" alt="宮崎真理" class="profile-photo" loading="lazy">
         </div>
       </div>
 
       <div class="profile-scenes reveal-scale">
         <figure class="scene scene--feature">
-          <img src="scene_family.webp" alt="自宅で息子たちとAIを活用する宮崎真理" loading="lazy">
+          <img src="assets/images/profile/ai-at-home-with-children.webp" alt="自宅で息子たちとAIを活用する宮崎真理" loading="lazy">
           <figcaption class="scene-caption">自宅にて。息子たちと、AIのある日常。</figcaption>
         </figure>
         <figure class="scene scene--sub">
-          <img src="scene_kitchen.webp" alt="キッチンでAIに相談する宮崎真理" loading="lazy">
+          <img src="assets/images/profile/ai-in-the-kitchen.webp" alt="キッチンでAIに相談する宮崎真理" loading="lazy">
           <figcaption class="scene-caption">献立の相談は、キッチンでAIと。</figcaption>
         </figure>
       </div>
@@ -4032,7 +4056,7 @@
         </div>
 
         <div class="book-visual reveal-right reveal-delay-2">
-          <img src="AI_kaji.webp" alt="AI×家事 書影" class="book-cover-large" loading="lazy">
+          <img src="assets/images/book/ai-kaji-cover-with-band.webp" alt="AI×家事 書影" class="book-cover-large" loading="lazy">
           <p class="book-publisher">扶桑社 ／ 2026年3月発売</p>
         </div>
       </div>
@@ -4066,10 +4090,10 @@
           </div>
           <div class="award-highlight-images">
             <a href="https://prtimes.jp/main/html/rd/p/000000030.000162627.html" target="_blank" rel="noopener">
-              <img src="award_winner_2026_trophy.webp" alt="WOMAN AI AWARD 2026 ライフ・イノベーター賞 トロフィー授与の様子">
+              <img src="assets/images/awards/award-winner-2026-trophy.webp" alt="WOMAN AI AWARD 2026 ライフ・イノベーター賞 トロフィー授与の様子">
             <span class="sr-only">（新しいタブで開きます）</span></a>
             <a href="https://prtimes.jp/main/html/rd/p/000000030.000162627.html" target="_blank" rel="noopener">
-              <img src="award_winner_2026_speech.webp" alt="WOMAN AI AWARD 2026 授賞式でスピーチする宮崎真理">
+              <img src="assets/images/awards/award-winner-2026-speech.webp" alt="WOMAN AI AWARD 2026 授賞式でスピーチする宮崎真理">
             <span class="sr-only">（新しいタブで開きます）</span></a>
           </div>
         </div>
@@ -4189,7 +4213,7 @@
           <h3 class="media-category-title">イベント・ライブ配信</h3>
         </div>
         <a class="event-card event-card--upcoming event-card--visual" href="https://woman-ai-update.jp/" target="_blank" rel="noopener">
-          <img class="event-image" src="event_woman_ai_update_20260912.jpg" alt="『家事育児×AI活用アプデ女子会 ―みんなの推しAI、画面見せます―』告知ビジュアル。高阪のぞみ・喜多尾衣利子・和田幸子・宮崎真理が登壇｜WOMAN AI UPDATE 2026（SKILL × UPDATE）" loading="lazy">
+          <img class="event-image" src="assets/images/events/event-woman-ai-update-20260912.jpg" alt="『家事育児×AI活用アプデ女子会 ―みんなの推しAI、画面見せます―』告知ビジュアル。高阪のぞみ・喜多尾衣利子・和田幸子・宮崎真理が登壇｜WOMAN AI UPDATE 2026（SKILL × UPDATE）" loading="lazy">
           <div class="event-info">
             <p class="event-format">参加申込受付中</p>
             <p class="event-host">WOMAN AI UPDATE 2026｜高阪のぞみ × 喜多尾衣利子 × 和田幸子 × 宮崎真理</p>
@@ -4199,7 +4223,7 @@
           </div>
         <span class="sr-only">（新しいタブで開きます）</span></a>
         <a class="event-card event-card--visual" href="https://www.sanctuarybooks.jp/event/detail/3782" target="_blank" rel="noopener">
-          <img class="event-image" src="event_sanctuary_20260831.jpg" alt="宮崎真理と平理沙子のトークイベント『まさか私が、出版。まさか私が、出馬。』2026年8月31日開催" loading="lazy">
+          <img class="event-image" src="assets/images/events/event-sanctuary-20260831.jpg" alt="宮崎真理と平理沙子のトークイベント『まさか私が、出版。まさか私が、出馬。』2026年8月31日開催" loading="lazy">
           <div class="event-info">
             <p class="event-format">トークイベント登壇</p>
             <p class="event-host">サンクチュアリ出版「人生を変える授業」｜宮崎真理 × 平理沙子</p>
@@ -4209,7 +4233,7 @@
           </div>
         <span class="sr-only">（新しいタブで開きます）</span></a>
         <a class="event-card event-card--visual" href="https://note.com/yosukeotsubo/n/n37301a94335e" target="_blank" rel="noopener">
-          <img class="event-image" src="IMG_9726.webp" alt="だから、TSGはエントリーするだけで進む。 イベント告知" loading="lazy">
+          <img class="event-image" src="assets/images/events/tsg-entry-talk.webp" alt="だから、TSGはエントリーするだけで進む。 イベント告知" loading="lazy">
           <div class="event-info">
             <p class="event-format">オンラインイベント登壇</p>
             <p class="event-host">TOKYO STARTUP GATEWAY (TSG) OBOG有志企画</p>
@@ -4219,7 +4243,7 @@
           </div>
         <span class="sr-only">（新しいタブで開きます）</span></a>
         <div class="event-card event-card--visual">
-          <img class="event-image" src="event_mynavi_live.webp" alt="マイナビ子育て AI×家事 インスタライブ" loading="lazy">
+          <img class="event-image" src="assets/images/events/event-mynavi-live.webp" alt="マイナビ子育て AI×家事 インスタライブ" loading="lazy">
           <div class="event-info">
             <p class="event-format">インスタライブ配信</p>
             <p class="event-host">マイナビ子育て</p>
