@@ -79,13 +79,10 @@
     .group-title { margin:0; font-size:clamp(22px,2.5vw,30px); line-height:1.5; letter-spacing:.04em; }
     .group-note { margin:16px 0 0; color:var(--gray); font-size:13px; line-height:1.9; }
     .article-grid { border-top:1px solid var(--ink); border-bottom:1px solid var(--line); }
-    .article-card { display:grid; grid-template-columns:minmax(200px,240px) minmax(0,1fr); gap:clamp(24px,4vw,48px); align-items:center; min-width:0; padding:24px 12px; border-bottom:1px solid var(--line); color:var(--ink); text-decoration:none; transition:background-color .25s ease; }
+    .article-card { display:block; min-width:0; padding:32px 20px 36px; border-bottom:1px solid var(--line); color:var(--ink); text-decoration:none; transition:background-color .25s ease; }
     .article-card:last-child { border-bottom:0; }
     .article-card:hover { background:var(--white); }
-    .cover-wrap { position:relative; overflow:hidden; border:1px solid var(--line); background:var(--white); }
-    .article-cover { display:block; width:100%; height:auto; transition:transform .35s ease; }
-    .article-card:hover .article-cover { transform:scale(1.025); }
-    .article-info { display:block; padding-right:8px; }
+    .article-info { display:block; max-width:680px; padding-right:8px; }
     .article-meta { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; color:var(--gray-light); font-family:var(--font-en); font-size:11px; letter-spacing:.1em; }
     .article-number { color:var(--ink); font-weight:700; }
     .article-title { display:block; overflow-wrap:anywhere; font-size:clamp(18px,2.2vw,24px); font-weight:900; line-height:1.65; letter-spacing:.03em; }
@@ -95,7 +92,6 @@
       .essay-group { display:block; }
       .group-heading { position:static; display:grid; grid-template-columns:48px minmax(0,1fr); gap:16px; margin-bottom:36px; }
       .group-number { margin:4px 0 0; }
-      .article-card { grid-template-columns:minmax(200px,240px) minmax(0,1fr); gap:28px; }
       .article-title { font-size:20px; }
     }
     @media (max-width:700px) {
@@ -108,7 +104,7 @@
       .essay-group + .essay-group { padding-top:64px; }
       .group-heading { display:block; margin-bottom:32px; padding-top:18px; }
       .group-number { margin-bottom:14px; }
-      .article-card { grid-template-columns:1fr; gap:18px; padding:28px 0 32px; }
+      .article-card { padding:28px 0 32px; }
       .article-info { padding-right:0; }
       .article-title { font-size:18px; }
     }
@@ -130,13 +126,13 @@
       <div class="group-heading"><span class="group-number">01</span><div><h2 class="group-title">家事と生成AIの出発点</h2><p class="group-note">家庭で使うからこそ見えてきた、考え方と背景。</p></div></div>
       <div class="article-grid article-grid--core">
       <a class="article-card" href="generative-ai-home-systems/">
-        <span class="cover-wrap"><img class="article-cover" src="generative-ai-home-systems/cover.png" alt="生成AIで家庭の不便を仕組みにする記事の表紙" width="1200" height="630"></span><span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 01</span><time datetime="2026-08-28">2026.08.28</time></span><span class="article-title">生成AIで家庭の不便を仕組みにする——家事に正解がなくても役立つ理由</span><span class="article-excerpt">家庭ごとに正解が異なる家事でも、生成AIとその家庭に合う仕組みを考える実践です。</span></span>
+        <span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 01</span><time datetime="2026-08-28">2026.08.28</time></span><span class="article-title">生成AIで家庭の不便を仕組みにする——家事に正解がなくても役立つ理由</span><span class="article-excerpt">家庭ごとに正解が異なる家事でも、生成AIとその家庭に合う仕組みを考える実践です。</span></span>
       </a>
       <a class="article-card" href="what-to-ask-generative-ai/">
-        <span class="cover-wrap"><img class="article-cover" src="what-to-ask-generative-ai/cover.png" alt="生成AIに何を聞けばいいかを考える記事の表紙" width="1200" height="630" loading="lazy"></span><span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 02</span><time datetime="2026-08-28">2026.08.28</time></span><span class="article-title">生成AIに何を聞けばいい？日常の小さな質問から使い方を広げる方法</span><span class="article-excerpt">日常の小さな疑問から、相談できる範囲を広げた過程。</span></span>
+        <span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 02</span><time datetime="2026-08-28">2026.08.28</time></span><span class="article-title">生成AIに何を聞けばいい？日常の小さな質問から使い方を広げる方法</span><span class="article-excerpt">日常の小さな疑問から、相談できる範囲を広げた過程。</span></span>
       </a>
       <a class="article-card" href="why-i-became-interested-in-generative-ai/">
-        <span class="cover-wrap"><img class="article-cover" src="why-i-became-interested-in-generative-ai/cover.png" alt="私が生成AIに惹かれた理由をたどる記事の表紙" width="1200" height="630" loading="lazy"></span><span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 03</span><time datetime="2026-08-28">2026.08.28</time></span><span class="article-title">私が生成AIに惹かれた理由——家事×AIにたどり着くまで</span><span class="article-excerpt">データへの関心と約10年間の子育てから、生成AIへ。</span></span>
+        <span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 03</span><time datetime="2026-08-28">2026.08.28</time></span><span class="article-title">私が生成AIに惹かれた理由——家事×AIにたどり着くまで</span><span class="article-excerpt">データへの関心と約10年間の子育てから、生成AIへ。</span></span>
       </a>
       </div>
     </section>
@@ -144,13 +140,13 @@
       <div class="group-heading"><span class="group-number">02</span><div><h2 class="group-title">使いながら見つけたこと</h2><p class="group-note">入力、継続、趣味へ。実践から少しずつ広がった話。</p></div></div>
       <div class="article-grid">
       <a class="article-card" href="generative-ai-beyond-time-saving/">
-        <span class="cover-wrap"><img class="article-cover" src="generative-ai-beyond-time-saving/cover.png" alt="時短の先にある生成AIの価値を考える記事の表紙" width="1200" height="630" loading="lazy"></span><span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 04</span><time datetime="2026-09-03">2026.09.03</time></span><span class="article-title">時短もいいけれど。「続かなかったこと」をAIと考える</span><span class="article-excerpt">図書館の本の管理を例に、時短だけではない変化を考えます。</span></span>
+        <span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 04</span><time datetime="2026-09-03">2026.09.03</time></span><span class="article-title">時短もいいけれど。「続かなかったこと」をAIと考える</span><span class="article-excerpt">図書館の本の管理を例に、時短だけではない変化を考えます。</span></span>
       </a>
       <a class="article-card" href="voice-input-for-ai-at-home/">
-        <span class="cover-wrap"><img class="article-cover" src="voice-input-for-ai-at-home/cover.png" alt="家庭の生成AI活用と音声入力についての記事の表紙" width="1200" height="630" loading="lazy"></span><span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 05</span><time datetime="2026-09-05">2026.09.05</time></span><span class="article-title">母の手は、よくふさがっている。家庭のAI活用に音声入力が合った理由</span><span class="article-excerpt">文字を打つ余裕がない家事・育児の合間に、入力だけを声へ。</span></span>
+        <span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 05</span><time datetime="2026-09-05">2026.09.05</time></span><span class="article-title">母の手は、よくふさがっている。家庭のAI活用に音声入力が合った理由</span><span class="article-excerpt">文字を打つ余裕がない家事・育児の合間に、入力だけを声へ。</span></span>
       </a>
       <a class="article-card" href="ai-personal-running-system/">
-        <span class="cover-wrap"><img class="article-cover" src="ai-personal-running-system/cover.png" alt="AIと自分用の仕組みを作る楽しみについての記事の表紙" width="1200" height="630" loading="lazy"></span><span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 06</span><time datetime="2026-09-07">2026.09.07</time></span><span class="article-title">知りたいことが、毎日届く。家事から趣味へ、AIと仕組みを作る楽しみ</span><span class="article-excerpt">図書館管理からランニングへ。AIと仕組みを作り育てる実践です。</span></span>
+        <span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 06</span><time datetime="2026-09-07">2026.09.07</time></span><span class="article-title">知りたいことが、毎日届く。家事から趣味へ、AIと仕組みを作る楽しみ</span><span class="article-excerpt">図書館管理からランニングへ。AIと仕組みを作り育てる実践です。</span></span>
       </a>
       </div>
     </section>
