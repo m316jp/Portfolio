@@ -50,7 +50,6 @@ main > .byline {
 
 main > .article-cover {
   margin-top: clamp(44px, 7vw, 72px);
-  box-shadow: 18px 18px 0 rgba(242, 196, 15, .55);
 }
 
 article {
@@ -59,15 +58,6 @@ article {
   font-size: 17px;
   line-height: 2.15;
   counter-reset: article-section;
-}
-
-article > p:first-of-type {
-  margin-bottom: 48px;
-  padding: 24px 0 24px 28px;
-  border-left: 5px solid var(--accent);
-  font-size: clamp(18px, 2vw, 21px);
-  font-weight: 700;
-  line-height: 2;
 }
 
 article h2 {
@@ -186,18 +176,12 @@ article blockquote,
 
   main > .article-cover {
     margin-top: 38px;
-    box-shadow: 8px 8px 0 rgba(242, 196, 15, .62);
   }
 
   article {
     margin-top: 68px;
     font-size: 16px;
     line-height: 2.05;
-  }
-
-  article > p:first-of-type {
-    padding: 18px 0 18px 18px;
-    font-size: 17px;
   }
 
   article h2 {
