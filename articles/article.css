@@ -48,10 +48,6 @@ main > .byline {
   border-top: 1px solid var(--ink);
 }
 
-main > .article-cover {
-  margin-top: clamp(44px, 7vw, 72px);
-}
-
 article {
   width: min(700px, 100%);
   margin: clamp(72px, 10vw, 112px) auto 0;
@@ -172,10 +168,6 @@ article blockquote,
     font-size: 31px;
     line-height: 1.5;
     overflow-wrap: anywhere;
-  }
-
-  main > .article-cover {
-    margin-top: 38px;
   }
 
   article {
