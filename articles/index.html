@@ -60,34 +60,51 @@
     .site-header { display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:64px; padding:12px clamp(20px,5vw,64px); border-bottom:1px solid var(--line); background:rgba(247,246,242,.96); }
     .site-name { font-weight:900; letter-spacing:.08em; text-decoration:none; }
     .back-link { font-size:13px; font-weight:700; text-decoration:none; border-bottom:2px solid var(--accent); }
-    main { width:min(1040px,calc(100% - 40px)); margin:0 auto; padding:clamp(56px,8vw,96px) 0 clamp(80px,10vw,128px); }
+    main { width:min(1120px,calc(100% - 40px)); margin:0 auto; padding:clamp(56px,8vw,96px) 0 clamp(80px,10vw,128px); }
     .breadcrumb { margin:0 0 clamp(36px,6vw,56px); font-size:12px; color:var(--gray); }
     .breadcrumb ol { display:flex; flex-wrap:wrap; gap:4px 8px; margin:0; padding:0; list-style:none; }
     .breadcrumb li { display:flex; align-items:center; gap:4px 8px; }
     .breadcrumb li + li::before { content:"/"; color:var(--line); }
     .breadcrumb a { text-decoration:none; }
     .eyebrow { margin:0 0 12px; color:var(--gray); font-family:var(--font-en); font-size:12px; font-weight:700; letter-spacing:.25em; text-transform:uppercase; }
-    h1 { margin:0; font-size:clamp(32px,5vw,52px); line-height:1.35; letter-spacing:.05em; }
-    .lead { max-width:48em; margin:20px 0 0; color:var(--ink-soft); font-size:15px; line-height:2; }
-    .article-list { margin-top:clamp(48px,7vw,72px); border-top:1px solid var(--line); }
-    .article-card { display:grid; grid-template-columns:240px 1fr 32px; align-items:center; gap:clamp(24px,4vw,48px); padding:32px 8px; border-bottom:1px solid var(--line); color:var(--ink); text-decoration:none; transition:background .2s ease,padding .2s ease; }
-    .article-card:hover { padding-left:20px; background:var(--white); }
-    .article-cover { display:block; width:100%; height:auto; border:1px solid var(--line); }
-    .article-card > span:nth-child(2) { min-width:0; }
-    .article-date { display:block; margin-bottom:10px; color:var(--gray-light); font-family:var(--font-en); font-size:11px; letter-spacing:.1em; }
-    .article-title { margin:0; overflow-wrap:anywhere; font-size:19px; font-weight:900; line-height:1.65; letter-spacing:.03em; }
-    .article-excerpt { margin:12px 0 0; color:var(--gray); font-size:13px; line-height:1.9; }
-    .article-arrow { color:var(--gray-light); font-size:22px; transition:transform .2s ease,color .2s ease; }
-    .article-card:hover .article-arrow { color:var(--ink); transform:translateX(5px); }
+    .hero { position:relative; display:grid; grid-template-columns:1fr minmax(220px,320px); gap:48px; align-items:end; padding:24px 0 clamp(64px,9vw,108px); }
+    .hero::after { content:"06"; color:rgba(242,196,15,.72); font-family:var(--font-en); font-size:clamp(96px,15vw,180px); font-weight:700; line-height:.8; text-align:right; }
+    h1 { max-width:8em; margin:0; font-size:clamp(42px,6.5vw,76px); line-height:1.22; letter-spacing:.045em; }
+    .lead { max-width:46em; margin:28px 0 0; color:var(--ink-soft); font-size:15px; line-height:2.1; }
+    .essay-group { padding:clamp(56px,8vw,88px) 0; border-top:1px solid var(--ink); }
+    .group-heading { display:grid; grid-template-columns:56px 1fr; gap:20px; align-items:start; margin-bottom:36px; }
+    .group-number { color:var(--gray-light); font-family:var(--font-en); font-size:13px; font-weight:700; letter-spacing:.12em; }
+    .group-title { margin:0; font-size:clamp(24px,3vw,34px); line-height:1.45; letter-spacing:.04em; }
+    .group-note { margin:8px 0 0; color:var(--gray); font-size:13px; }
+    .article-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+    .article-card { position:relative; min-width:0; color:var(--ink); text-decoration:none; }
+    .cover-wrap { position:relative; overflow:hidden; border:1px solid var(--line); background:var(--white); }
+    .cover-wrap::after { content:"読む →"; position:absolute; right:16px; bottom:16px; padding:8px 14px; border-radius:999px; background:var(--ink); color:var(--paper); font-size:11px; font-weight:700; letter-spacing:.08em; opacity:0; transform:translateY(6px); transition:.25s ease; }
+    .article-cover { display:block; width:100%; height:auto; transition:transform .35s ease; }
+    .article-card:hover .article-cover { transform:scale(1.025); }
+    .article-card:hover .cover-wrap::after { opacity:1; transform:none; }
+    .article-info { display:block; padding:20px 4px 0; }
+    .article-meta { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:10px; color:var(--gray-light); font-family:var(--font-en); font-size:11px; letter-spacing:.1em; }
+    .article-number { color:var(--ink); font-weight:700; }
+    .article-title { display:block; overflow-wrap:anywhere; font-size:17px; font-weight:900; line-height:1.7; letter-spacing:.03em; }
+    .article-excerpt { display:block; margin:12px 0 0; color:var(--gray); font-size:13px; line-height:1.9; }
+    .article-grid--core .article-card:first-child { grid-column:span 2; }
+    .article-grid--core .article-card:first-child .article-title { font-size:22px; }
+    .article-grid--core .article-card:first-child .article-info { max-width:42em; }
     footer { padding:28px 20px; color:#8f8f88; background:var(--night); text-align:center; font-family:var(--font-en); font-size:11px; letter-spacing:.12em; }
     @media (max-width:700px) {
-      .site-header { align-items:flex-start; }
-      .site-name { font-size:13px; }
-      .back-link { white-space:nowrap; }
-      .article-card { grid-template-columns:96px 1fr 18px; gap:16px; padding:24px 0; }
-      .article-card:hover { padding-left:0; }
-      .article-title { font-size:15px; line-height:1.65; }
-      .article-excerpt { display:none; }
+      .site-header { align-items:center; gap:12px; }
+      .site-name { min-width:0; font-size:12px; letter-spacing:.03em; }
+      .back-link { display:none; }
+      .hero { display:block; padding-bottom:64px; }
+      .hero::after { display:block; margin-top:40px; text-align:left; }
+      .essay-group { padding:52px 0; }
+      .group-heading { grid-template-columns:38px 1fr; gap:10px; }
+      .article-grid { grid-template-columns:1fr; gap:44px; }
+      .article-grid--core .article-card:first-child { grid-column:auto; }
+      .article-grid--core .article-card:first-child .article-title { font-size:18px; }
+      .article-title { font-size:18px; }
+      .cover-wrap::after { display:none; }
     }
   </style>
 </head>
@@ -100,35 +117,37 @@
     <nav class="breadcrumb" aria-label="パンくずリスト">
       <ol><li><a href="../index.html">ホーム</a></li><li><span aria-current="page">生成AIと暮らしの記事一覧</span></li></ol>
     </nav>
-    <p class="eyebrow">Essays</p>
-    <h1>生成AIと暮らしの話</h1>
-    <p class="lead">生成AIを家事や子育てに取り入れて1000日以上。うまくいった方法だけでなく、続かなかったことや、使いながら気づいたことを、暮らしの実例から書いています。</p>
-    <div class="article-list">
+    <div class="hero">
+      <div><p class="eyebrow">Essays</p><h1>生成AIと<br>暮らしの話</h1><p class="lead">生成AIを家事や子育てに取り入れて1000日以上。うまくいった方法だけでなく、続かなかったことや、使いながら気づいたことを、暮らしの実例から書いています。</p></div>
+    </div>
+    <section class="essay-group">
+      <div class="group-heading"><span class="group-number">01</span><div><h2 class="group-title">家事と生成AIの出発点</h2><p class="group-note">家庭で使うからこそ見えてきた、考え方と背景。</p></div></div>
+      <div class="article-grid article-grid--core">
       <a class="article-card" href="generative-ai-home-systems/">
-        <img class="article-cover" src="generative-ai-home-systems/cover.png" alt="生成AIで家庭の不便を仕組みにする記事の表紙" width="1200" height="630">
-        <span><time class="article-date" datetime="2026-08-28">2026.08.28</time><span class="article-title">生成AIで家庭の不便を仕組みにする——家事に正解がなくても役立つ理由</span><span class="article-excerpt">家庭ごとに正解が異なる家事でも、生成AIとその家庭に合う仕組みを考える実践です。</span></span><span class="article-arrow" aria-hidden="true">→</span>
+        <span class="cover-wrap"><img class="article-cover" src="generative-ai-home-systems/cover.png" alt="生成AIで家庭の不便を仕組みにする記事の表紙" width="1200" height="630"></span><span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 01</span><time datetime="2026-08-28">2026.08.28</time></span><span class="article-title">生成AIで家庭の不便を仕組みにする——家事に正解がなくても役立つ理由</span><span class="article-excerpt">家庭ごとに正解が異なる家事でも、生成AIとその家庭に合う仕組みを考える実践です。</span></span>
       </a>
       <a class="article-card" href="what-to-ask-generative-ai/">
-        <img class="article-cover" src="what-to-ask-generative-ai/cover.png" alt="生成AIに何を聞けばいいかを考える記事の表紙" width="1200" height="630" loading="lazy">
-        <span><time class="article-date" datetime="2026-08-28">2026.08.28</time><span class="article-title">生成AIに何を聞けばいい？日常の小さな質問から使い方を広げる方法</span><span class="article-excerpt">すごい活用法を探す前に、日常の小さな疑問から相談できる範囲を広げた過程を紹介します。</span></span><span class="article-arrow" aria-hidden="true">→</span>
+        <span class="cover-wrap"><img class="article-cover" src="what-to-ask-generative-ai/cover.png" alt="生成AIに何を聞けばいいかを考える記事の表紙" width="1200" height="630" loading="lazy"></span><span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 02</span><time datetime="2026-08-28">2026.08.28</time></span><span class="article-title">生成AIに何を聞けばいい？日常の小さな質問から使い方を広げる方法</span><span class="article-excerpt">日常の小さな疑問から、相談できる範囲を広げた過程。</span></span>
       </a>
       <a class="article-card" href="why-i-became-interested-in-generative-ai/">
-        <img class="article-cover" src="why-i-became-interested-in-generative-ai/cover.png" alt="私が生成AIに惹かれた理由をたどる記事の表紙" width="1200" height="630" loading="lazy">
-        <span><time class="article-date" datetime="2026-08-28">2026.08.28</time><span class="article-title">私が生成AIに惹かれた理由——家事×AIにたどり着くまで</span><span class="article-excerpt">気象予報、生体計測工学、工場のデータ、約10年間の子育てから、生成AIへ関心がつながるまで。</span></span><span class="article-arrow" aria-hidden="true">→</span>
+        <span class="cover-wrap"><img class="article-cover" src="why-i-became-interested-in-generative-ai/cover.png" alt="私が生成AIに惹かれた理由をたどる記事の表紙" width="1200" height="630" loading="lazy"></span><span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 03</span><time datetime="2026-08-28">2026.08.28</time></span><span class="article-title">私が生成AIに惹かれた理由——家事×AIにたどり着くまで</span><span class="article-excerpt">データへの関心と約10年間の子育てから、生成AIへ。</span></span>
       </a>
+      </div>
+    </section>
+    <section class="essay-group">
+      <div class="group-heading"><span class="group-number">02</span><div><h2 class="group-title">使いながら見つけたこと</h2><p class="group-note">入力、継続、趣味へ。実践から少しずつ広がった話。</p></div></div>
+      <div class="article-grid">
       <a class="article-card" href="generative-ai-beyond-time-saving/">
-        <img class="article-cover" src="generative-ai-beyond-time-saving/cover.png" alt="時短の先にある生成AIの価値を考える記事の表紙" width="1200" height="630" loading="lazy">
-        <span><time class="article-date" datetime="2026-09-03">2026.09.03</time><span class="article-title">時短もいいけれど。「続かなかったこと」をAIと考える</span><span class="article-excerpt">手間が多くて続かなかった図書館の本の管理を例に、時短だけではない変化を考えます。</span></span><span class="article-arrow" aria-hidden="true">→</span>
+        <span class="cover-wrap"><img class="article-cover" src="generative-ai-beyond-time-saving/cover.png" alt="時短の先にある生成AIの価値を考える記事の表紙" width="1200" height="630" loading="lazy"></span><span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 04</span><time datetime="2026-09-03">2026.09.03</time></span><span class="article-title">時短もいいけれど。「続かなかったこと」をAIと考える</span><span class="article-excerpt">図書館の本の管理を例に、時短だけではない変化を考えます。</span></span>
       </a>
       <a class="article-card" href="voice-input-for-ai-at-home/">
-        <img class="article-cover" src="voice-input-for-ai-at-home/cover.png" alt="家庭の生成AI活用と音声入力についての記事の表紙" width="1200" height="630" loading="lazy">
-        <span><time class="article-date" datetime="2026-09-05">2026.09.05</time><span class="article-title">母の手は、よくふさがっている。家庭のAI活用に音声入力が合った理由</span><span class="article-excerpt">文字を打つ余裕がない家事・育児の合間に、入力だけを声へ変えた実践です。</span></span><span class="article-arrow" aria-hidden="true">→</span>
+        <span class="cover-wrap"><img class="article-cover" src="voice-input-for-ai-at-home/cover.png" alt="家庭の生成AI活用と音声入力についての記事の表紙" width="1200" height="630" loading="lazy"></span><span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 05</span><time datetime="2026-09-05">2026.09.05</time></span><span class="article-title">母の手は、よくふさがっている。家庭のAI活用に音声入力が合った理由</span><span class="article-excerpt">文字を打つ余裕がない家事・育児の合間に、入力だけを声へ。</span></span>
       </a>
       <a class="article-card" href="ai-personal-running-system/">
-        <img class="article-cover" src="ai-personal-running-system/cover.png" alt="AIと自分用の仕組みを作る楽しみについての記事の表紙" width="1200" height="630" loading="lazy">
-        <span><time class="article-date" datetime="2026-09-07">2026.09.07</time><span class="article-title">知りたいことが、毎日届く。家事から趣味へ、AIと仕組みを作る楽しみ</span><span class="article-excerpt">家族の図書館管理からランニングへ。知りたい情報が届く仕組みを、AIと作り育てる実践です。</span></span><span class="article-arrow" aria-hidden="true">→</span>
+        <span class="cover-wrap"><img class="article-cover" src="ai-personal-running-system/cover.png" alt="AIと自分用の仕組みを作る楽しみについての記事の表紙" width="1200" height="630" loading="lazy"></span><span class="article-info"><span class="article-meta"><span class="article-number">ESSAY 06</span><time datetime="2026-09-07">2026.09.07</time></span><span class="article-title">知りたいことが、毎日届く。家事から趣味へ、AIと仕組みを作る楽しみ</span><span class="article-excerpt">図書館管理からランニングへ。AIと仕組みを作り育てる実践です。</span></span>
       </a>
-    </div>
+      </div>
+    </section>
   </main>
   <footer>© 2026 Miyazaki Mari. All rights reserved.</footer>
 </body>
