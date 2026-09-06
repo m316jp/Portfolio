@@ -33,3 +33,17 @@
 - `2026-09-07_PC_記事本文共通デザイン変更後.png`
 - `2026-09-07_スマホ_記事本文共通デザイン変更前.png`
 - `2026-09-07_スマホ_記事本文共通デザイン変更後.png`
+
+## 2026-09-07 記事一覧の文字組み・配色の刷新
+
+温かい白と深緑、明朝体の見出し、全幅の目次へ変更。記事6本は古い順のまま、画像なし。テーマへのページ内リンクを追加。
+
+- 2026-09-07 PC・変更前: `2026-09-07_archive-typography-before-PC.png`
+- 2026-09-07 スマホ・変更前: `2026-09-07_archive-typography-before-mobile.png`
+- 2026-09-07 PC・初回確認: `2026-09-07_archive-typography-after-PC.png`
+- 2026-09-07 スマホ・初回確認: `2026-09-07_archive-typography-after-mobile.png`
+- 2026-09-07 PC・変更後確定: `2026-09-07_archive-typography-after-final-PC.png`
+- 2026-09-07 スマホ・変更後確定: `2026-09-07_archive-typography-after-final-mobile.png`
+
+ブラウザーのビューポートを明示的に設定し、幅320・390・768・900・1024・1440pxで全6記事の表示と横はみ出しなしを確認。スクリーンショットは全ページを記録。
+参考: [Squarespace 2026 Archival Index](https://www.squarespace.com/blog/web-design-trends)。
