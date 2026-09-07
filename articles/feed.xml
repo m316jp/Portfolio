@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>生成AIと暮らしの話｜宮崎真理</title>
+    <link>https://miyazakimari.com/articles/</link>
+    <description>生成AIを家事や子育てに取り入れて1000日以上。うまくいった方法だけでなく、続かなかったことや、使いながら気づいたことを、暮らしの実例から。『AI×家事』著者・宮崎真理。</description>
+    <language>ja</language>
+    <copyright>© 2026 Miyazaki Mari</copyright>
+    <atom:link href="https://miyazakimari.com/articles/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Mon, 07 Sep 2026 00:00:00 +0900</lastBuildDate>
+
+    <item>
+      <title>知りたいことが、毎日届く。家事から趣味へ、AIと仕組みを作る楽しみ</title>
+      <link>https://miyazakimari.com/articles/ai-personal-running-system/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/ai-personal-running-system/</guid>
+      <pubDate>Mon, 07 Sep 2026 00:00:00 +0900</pubDate>
+      <category>趣味とAI</category>
+      <description>『AI×家事』著者・宮崎真理が、家族の図書館管理からランニングの振り返りへ広がった生成AIの実践を紹介。知りたいことが毎日届く仕組みと、使いながら自分に合う道具へ直していく楽しさをつづります。</description>
+    </item>
+
+    <item>
+      <title>母の手は、よくふさがっている。家庭のAI活用に音声入力が合った理由</title>
+      <link>https://miyazakimari.com/articles/voice-input-for-ai-at-home/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/voice-input-for-ai-at-home/</guid>
+      <pubDate>Sat, 05 Sep 2026 00:00:00 +0900</pubDate>
+      <category>音声入力</category>
+      <description>家事や育児で文字を打つ余裕がないとき、生成AIへの入力だけを声にする使い方を紹介。AI音声入力で話し言葉を整え、家庭の事情まで伝える3児の母の実践です。</description>
+    </item>
+
+    <item>
+      <title>時短もいいけれど。「続かなかったこと」をAIと考える</title>
+      <link>https://miyazakimari.com/articles/generative-ai-beyond-time-saving/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/generative-ai-beyond-time-saving/</guid>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0900</pubDate>
+      <category>続ける工夫</category>
+      <description>生成AIに何を頼めばいい？ 家族5人の図書館利用を支える仕組みを作った宮崎真理が、時短だけではないAIの価値と、「手間が多くて続かなかったこと」から暮らしの使い道を見つける視点を紹介します。</description>
+    </item>
+
+    <item>
+      <title>生成AIで家庭の不便を仕組みにする——家事に正解がなくても役立つ理由</title>
+      <link>https://miyazakimari.com/articles/generative-ai-home-systems/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/generative-ai-home-systems/</guid>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0900</pubDate>
+      <category>家事の仕組み</category>
+      <description>家庭ごとに正解が異なる家事でも、生成AIは選択肢を広げ、その家庭に合う仕組みづくりを支援できます。家庭で生成AIを1000日以上実践してきた著者が、従来の家電やサービスとの違いを解説します。</description>
+    </item>
+
+    <item>
+      <title>生成AIに何を聞けばいい？日常の小さな質問から使い方を広げる方法</title>
+      <link>https://miyazakimari.com/articles/what-to-ask-generative-ai/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/what-to-ask-generative-ai/</guid>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0900</pubDate>
+      <category>はじめかた</category>
+      <description>生成AIを使ってみたいけれど、何を聞けばいいかわからない人へ。すごい活用法を探す前に、日常の小さな疑問から始める理由と、AIに相談できる範囲を広げる方法を解説します。</description>
+    </item>
+
+    <item>
+      <title>私が生成AIに惹かれた理由——家事×AIにたどり着くまで</title>
+      <link>https://miyazakimari.com/articles/why-i-became-interested-in-generative-ai/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/why-i-became-interested-in-generative-ai/</guid>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0900</pubDate>
+      <category>きっかけ</category>
+      <description>気象予報の仕組み、生体計測工学、工場の消費電力データ、約10年間の子育て。宮崎真理が生成AIに惹かれ、家事×AIの活用を考えるようになるまでを紹介します。</description>
+    </item>
+
+  </channel>
+</rss>
