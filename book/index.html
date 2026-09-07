@@ -154,12 +154,28 @@
       color: var(--night-text);
     }
 
-    .back-link {
-      font-size: 13px;
-      font-weight: 700;
+    .site-nav {
+      display: flex;
+      gap: 24px;
+      font-size: 12px;
+    }
+
+    .site-nav a {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
       text-decoration: none;
+      color: var(--night-gray);
+    }
+
+    .site-nav a:hover { color: var(--night-text); }
+
+    .site-nav [aria-current] {
       color: var(--night-text);
-      border-bottom: 2px solid var(--accent);
+      text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 6px;
     }
 
     .breadcrumb {
@@ -657,7 +673,8 @@
     @media (max-width: 600px) {
       .site-header { align-items: flex-start; }
       .site-name { font-size: 13px; }
-      .back-link { white-space: nowrap; }
+      .site-nav { gap: 16px; }
+      .site-nav .nav-profile { display: none; }
       .book-meta { gap: 32px; }
       .mokuji-grid, .ranking-grid { grid-template-columns: 1fr; }
       .ranking-rank-num { font-size: 64px; }
@@ -679,7 +696,7 @@
 <body>
   <header class="site-header">
     <a class="site-name" href="../index.html">宮崎 真理｜AI✕家事</a>
-    <a class="back-link" href="../index.html">トップへ戻る →</a>
+    <nav class="site-nav" aria-label="サイトナビゲーション"><a class="nav-profile" href="../index.html">プロフィール</a><a href="../articles/">読みもの</a><a href="./" aria-current="true">書籍</a></nav>
   </header>
 
   <div class="container">

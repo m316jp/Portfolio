@@ -150,13 +150,6 @@
       text-decoration: none;
     }
 
-    .back-link {
-      font-size: var(--fs-label);
-      font-weight: 700;
-      text-decoration: none;
-      border-bottom: 2px solid var(--accent);
-    }
-
     main {
       width: min(720px, calc(100% - 40px));
       margin: 0 auto;
@@ -429,7 +422,6 @@
     @media (max-width: 600px) {
       .site-header { align-items: flex-start; }
       .site-name { font-size: var(--fs-label); }
-      .back-link { white-space: nowrap; }
     }
   </style>
   <link rel="stylesheet" href="../article.css">
@@ -437,7 +429,7 @@
 <body>
   <header class="site-header">
     <a class="site-name" href="../../index.html">宮崎 真理｜AI✕家事</a>
-    <a class="back-link" href="../../index.html">トップへ戻る →</a>
+    <nav class="site-nav" aria-label="サイトナビゲーション"><a class="nav-profile" href="../../index.html">プロフィール</a><a href="../" aria-current="true">読みもの</a><a href="../../book/">書籍</a></nav>
   </header>
 
   <main>
@@ -525,6 +517,7 @@
         <li><a href="../generative-ai-beyond-time-saving/">時短もいいけれど。「続かなかったこと」をAIと考える</a></li>
         <li><a href="../why-i-became-interested-in-generative-ai/">私が生成AIに惹かれた理由——家事×AIにたどり着くまで</a></li>
       </ul>
+      <a class="related-all" href="../">すべての記事を見る →</a>
     </div>
 
     <div class="author-box">
