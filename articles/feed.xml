@@ -7,7 +7,16 @@
     <language>ja</language>
     <copyright>© 2026 Miyazaki Mari</copyright>
     <atom:link href="https://miyazakimari.com/articles/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 07 Sep 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 12:00:00 +0900</lastBuildDate>
+
+    <item>
+      <title>子どもと生成AI。心配しながら、それでも楽しみにしていること</title>
+      <link>https://miyazakimari.com/articles/using-generative-ai-with-children/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/using-generative-ai-with-children/</guid>
+      <pubDate>Thu, 10 Sep 2026 12:00:00 +0900</pubDate>
+      <category>子どもとAI</category>
+      <description>毎日AIを使う3児の母が、息子の誤情報体験や親子での料理・学習を手がかりに、子どもの生成AI利用への慎重さと期待の間で考えていることを綴ります。</description>
+    </item>
 
     <item>
       <title>生成AIはキャリアの選択肢をどう広げるか——10年の専業主婦経験が仕事になるまで</title>
