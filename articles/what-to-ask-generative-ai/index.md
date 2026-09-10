@@ -122,7 +122,7 @@ AIに詳しい人が見せる完成された成果より、ほかの人が日常
 ほかの記事:
 
 - [知りたいことが、毎日届く。家事から趣味へ、AIと仕組みを作る楽しみ](https://miyazakimari.com/articles/ai-personal-running-system/)
-- [母の手は、よくふさがっている。家庭のAI活用に音声入力が合った理由](https://miyazakimari.com/articles/voice-input-for-ai-at-home/)
+- [家庭の生成AI活用に音声入力が合う理由｜家事・育児での実践例](https://miyazakimari.com/articles/voice-input-for-ai-at-home/)
 - [時短もいいけれど。「続かなかったこと」をAIと考える](https://miyazakimari.com/articles/generative-ai-beyond-time-saving/)
 - [生成AIで家庭の不便を仕組みにする——家事に正解がなくても役立つ理由](https://miyazakimari.com/articles/generative-ai-home-systems/)
 - [私が生成AIに惹かれた理由——家事×AIにたどり着くまで](https://miyazakimari.com/articles/why-i-became-interested-in-generative-ai/)

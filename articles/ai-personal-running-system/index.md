@@ -95,7 +95,7 @@ AIの評価は一つの見方として受け取り、痛みや強い疲労があ
 
 ほかの記事:
 
-- [母の手は、よくふさがっている。家庭のAI活用に音声入力が合った理由](https://miyazakimari.com/articles/voice-input-for-ai-at-home/)
+- [家庭の生成AI活用に音声入力が合う理由｜家事・育児での実践例](https://miyazakimari.com/articles/voice-input-for-ai-at-home/)
 - [時短もいいけれど。「続かなかったこと」をAIと考える](https://miyazakimari.com/articles/generative-ai-beyond-time-saving/)
 - [生成AIで家庭の不便を仕組みにする——家事に正解がなくても役立つ理由](https://miyazakimari.com/articles/generative-ai-home-systems/)
 - [生成AIに何を聞けばいい？日常の小さな質問から使い方を広げる方法](https://miyazakimari.com/articles/what-to-ask-generative-ai/)
