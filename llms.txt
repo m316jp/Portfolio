@@ -25,6 +25,7 @@ NHK・日本テレビ・フジテレビをはじめとするテレビ番組に�
 ## 読みもの（生成AIと暮らしの考え方）
 
 - [読みもの一覧](https://miyazakimari.com/articles/): 宮崎真理が家庭で生成AIを使い続けて得た発見と実践の記事一覧。
+- [ChatGPTのスレッド一覧をToDoリストにしたら、「管理」より「前に進む」が残った](https://miyazakimari.com/articles/chatgpt-thread-todo-list/): 一つのやることに一つのスレッドを作り、思いついた時点でAIと少し考えておく使い方。仕事・家事・子どもの予定が混ざる暮らしの中で、ToDoを管理するより前へ進めるという発見。
 - [子どもと生成AI。心配しながら、それでも楽しみにしていること](https://miyazakimari.com/articles/using-generative-ai-with-children/): 中学生、小学生、幼稚園児の3人の子どもとは生成AIを一緒に使う宮崎真理が、誤情報に気づいた息子との会話や、料理・学習での実践から、答えのあとに何が始まるかを考える。
 - [生成AIはキャリアの選択肢をどう広げるか——10年の専業主婦経験が仕事になるまで](https://miyazakimari.com/articles/generative-ai-and-career/): 10年間の専業主婦生活と技術職の経験が、生成AIを使い続けるうちに「家庭の課題を観察し、整理し、仕組みに変える」専門領域になった過程。AIが挑戦の初期コストを下げ、過去の経験を新しい価値へ変える視点。
 - [知りたいことが、毎日届く。家事から趣味へ、AIと仕組みを作る楽しみ](https://miyazakimari.com/articles/ai-personal-running-system/): 家族の図書館管理からランニングへ広がった仕組みづくり。走行記録や睡眠データを集め、本人の目標や事情と合わせて振り返る道具をAIと作り、使いながら育てる実践。
