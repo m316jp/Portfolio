@@ -7,7 +7,16 @@
     <language>ja</language>
     <copyright>© 2026 Miyazaki Mari</copyright>
     <atom:link href="https://miyazakimari.com/articles/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Thu, 10 Sep 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 12:00:00 +0900</lastBuildDate>
+
+    <item>
+      <title>ChatGPTのスレッド一覧をToDoリストにしたら、「管理」より「前に進む」が残った</title>
+      <link>https://miyazakimari.com/articles/chatgpt-thread-todo-list/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/chatgpt-thread-todo-list/</guid>
+      <pubDate>Fri, 11 Sep 2026 12:00:00 +0900</pubDate>
+      <category>AIとの付き合い方</category>
+      <description>ToDoリストを作っても、なかなか着手できない。そんな私が、ChatGPTのスレッドを1つのやること単位で作り、ToDoリスト代わりに使うようになった理由を紹介します。考える場所とやることを書く場所を同じにした、家庭でのAI活用実践です。</description>
+    </item>
 
     <item>
       <title>子どもと生成AI。心配しながら、それでも楽しみにしていること</title>
