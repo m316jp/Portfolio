@@ -9,3 +9,6 @@ node_modules/
 
 # サムネイルの書き出し先（公開用画像は各記事の cover.png）
 /design/exports/
+
+# サムネイル制作用HTML（GitHub Pagesでそのまま公開されてしまうため非公開に）
+/design/thumbnails/**/*.html
