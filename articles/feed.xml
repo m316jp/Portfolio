@@ -7,7 +7,16 @@
     <language>ja</language>
     <copyright>© 2026 Miyazaki Mari</copyright>
     <atom:link href="https://miyazakimari.com/articles/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Thu, 17 Sep 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 12:00:00 +0900</lastBuildDate>
+
+    <item>
+      <title>生成AIとの会話が、私の外部記憶になり始めた</title>
+      <link>https://miyazakimari.com/articles/ai-conversations-as-external-memory/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/ai-conversations-as-external-memory/</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 +0900</pubDate>
+      <category>AIとの付き合い方</category>
+      <description>記録するつもりのなかったAIとの会話が、3年後の自分へ当時の言葉を返した。生成AIとの対話が外部記憶のようになり始めた体験をつづります。</description>
+    </item>
 
     <item>
       <title>生成AIは、自分固有の「面倒」を条件にできる</title>
