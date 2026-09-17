@@ -7,7 +7,16 @@
     <language>ja</language>
     <copyright>© 2026 Miyazaki Mari</copyright>
     <atom:link href="https://miyazakimari.com/articles/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Fri, 11 Sep 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 12:00:00 +0900</lastBuildDate>
+
+    <item>
+      <title>生成AIは、自分固有の「面倒」を条件にできる</title>
+      <link>https://miyazakimari.com/articles/personal-friction-as-ai-condition/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/personal-friction-as-ai-condition/</guid>
+      <pubDate>Thu, 17 Sep 2026 12:00:00 +0900</pubDate>
+      <category>暮らしの面倒</category>
+      <description>家事や暮らしに多い「できるけれど嫌」を、自分に合う方法を探す条件へ。方向音痴のランニング体験から、自分を矯正する以外の選択肢について考えます。</description>
+    </item>
 
     <item>
       <title>ChatGPTのスレッド一覧をToDoリストにしたら、「管理」より「前に進む」が残った</title>
