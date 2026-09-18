@@ -30,7 +30,7 @@ NHK・日本テレビ・フジテレビをはじめとするテレビ番組に�
 - [ChatGPTのスレッド一覧をToDoリストにしたら、「管理」より「前に進む」が残った](https://miyazakimari.com/articles/chatgpt-thread-todo-list/): 一つのやることに一つのスレッドを作り、思いついた時点でAIと少し考えておく使い方。仕事・家事・子どもの予定が混ざる暮らしの中で、ToDoを管理するより前へ進めるという発見。
 - [子どもと生成AI。心配しながら、それでも楽しみにしていること](https://miyazakimari.com/articles/using-generative-ai-with-children/): 中学生、小学生、幼稚園児の3人の子どもと生成AIを一緒に使う宮崎真理が、正しい答えかを監督するだけでなく、AIの答えを見た子どもが何に驚き、何を考えたのかを話すという家庭での関わり方を、誤情報・料理・学習の実例から考える。
 - [生成AIはキャリアの選択肢をどう広げるか——10年の専業主婦経験が仕事になるまで](https://miyazakimari.com/articles/generative-ai-and-career/): 10年間の専業主婦生活と技術職の経験が、生成AIを使い続けるうちに「家庭の課題を観察し、整理し、仕組みに変える」専門領域になった過程。AIが挑戦の初期コストを下げ、過去の経験を新しい価値へ変える視点。
-- [知りたいことが、毎日届く。家事から趣味へ、AIと仕組みを作る楽しみ](https://miyazakimari.com/articles/ai-personal-running-system/): 家族の図書館管理からランニングへ広がった仕組みづくり。走行記録や睡眠データを集め、本人の目標や事情と合わせて振り返る道具をAIと作り、使いながら育てる実践。
+- [知りたいことが、毎日届く。家事から趣味へ、AIと仕組みを作る楽しみ](https://miyazakimari.com/articles/ai-personal-running-system/): 自分のためのAIの仕組みはどう作り育てるのか。家族の図書館管理とランニングの振り返りを例に、データだけでなく本人の目標や数字に残らない事情も渡し、届いたものを自分が読める形へ使いながら直すことで、暮らしに合う道具へ育てた実践。
 - [家庭の生成AI活用に音声入力が合う理由｜家事・育児での実践例](https://miyazakimari.com/articles/voice-input-for-ai-at-home/): 家事や育児で文字を打つ余裕がないとき、生成AIへの入力だけを声にする使い方。AIで話し言葉を整える音声入力アプリで、家庭の事情まで省かず伝える実践例。
 - [時短もいいけれど。「続かなかったこと」をAIと考える](https://miyazakimari.com/articles/generative-ai-beyond-time-saving/): 生成AI活用の成果を時短だけで測らず、手間が多くて続かなかったことを続けやすくなったかで見る視点。家族5人の図書館利用を支える仕組みづくりを例に紹介。
 - [生成AIは家事にどう使える？家庭の不便を仕組みに変える方法](https://miyazakimari.com/articles/generative-ai-home-systems/): 家庭ごとに正解が異なる家事でも、生成AIは選択肢を広げ、その家庭に合う仕組みづくりを支援できるという考え方。
