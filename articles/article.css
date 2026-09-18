@@ -238,6 +238,19 @@ article blockquote,
   text-decoration-color: var(--accent);
 }
 
+.related-question {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.related-title {
+  display: block;
+}
+
 .related-all {
   display: inline-block;
   margin-top: 24px;

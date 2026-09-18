@@ -114,6 +114,21 @@
     .hero-note { padding-bottom:10px; max-width:380px; }
     .lead { margin:0; font-size:14px; line-height:2.1; color:var(--muted); }
     .signature { margin:24px 0 0; font-size:12px; letter-spacing:.08em; color:var(--ink-soft); }
+    .reading-map { margin:12px 0 72px; padding:36px; border:1px solid var(--ink); background:var(--white); }
+    .reading-map-head { display:flex; justify-content:space-between; gap:32px; align-items:end; margin-bottom:28px; }
+    .reading-map-head h2 { margin:0; font-size:clamp(24px,3vw,34px); line-height:1.45; letter-spacing:.04em; }
+    .reading-map-head p { max-width:420px; margin:0; color:var(--muted); font-size:13px; }
+    .reading-map-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+    .reading-path { padding:24px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .reading-path-num { display:block; margin-bottom:8px; font:700 11px/1.4 var(--en); color:var(--muted); letter-spacing:.16em; }
+    .reading-path h3 { margin:0 0 12px; font-size:17px; line-height:1.6; }
+    .reading-path ol { margin:0; padding:0; list-style:none; counter-reset:path; }
+    .reading-path li { position:relative; padding-left:22px; counter-increment:path; font-size:12px; line-height:1.7; }
+    .reading-path li + li { margin-top:7px; }
+    .reading-path li::before { content:counter(path); position:absolute; left:0; top:.1em; color:var(--accent); font:700 11px/1.7 var(--en); }
+    .reading-path a { text-decoration:none; }
+    .reading-path a:hover { text-decoration:underline; text-decoration-color:var(--accent); text-decoration-thickness:2px; }
+    .latest-heading { margin:0; font-size:13px; letter-spacing:.16em; text-transform:uppercase; }
     .article-grid { margin-top:20px; border-top:1px solid var(--ink); }
     .article-card { display:block; padding:30px 0; border-bottom:1px solid var(--line); text-decoration:none; transition:background-color .18s ease; }
     .article-info { display:grid; grid-template-columns:minmax(0,1fr) 104px; column-gap:28px; align-items:start; }
@@ -149,6 +164,11 @@
       .hero-note { padding:0; margin-top:26px; max-width:none; }
       .lead { font-size:13px; line-height:2; overflow-wrap:anywhere; }
       .signature { margin-top:16px; font-size:11px; }
+      .reading-map { margin:0 0 48px; padding:22px; }
+      .reading-map-head { display:block; margin-bottom:22px; }
+      .reading-map-head p { margin-top:10px; }
+      .reading-map-grid { grid-template-columns:1fr; }
+      .reading-path { padding:20px; }
       .article-grid { margin-top:16px; }
       .article-card { padding:22px 0 26px; }
       .article-info { grid-template-columns:minmax(0,1fr); gap:0; }
@@ -186,7 +206,51 @@
         <p class="signature">宮崎真理 · 『AI×家事』著者</p>
       </div>
     </header>
-    <div class="article-grid" id="articles">
+    <section class="reading-map" aria-labelledby="reading-map-title">
+      <div class="reading-map-head">
+        <h2 id="reading-map-title">気になるところから読む</h2>
+        <p>生成AIを使い始めるところから、暮らし・家族・仕事へ。今の関心に近い道筋を選べます。</p>
+      </div>
+      <div class="reading-map-grid">
+        <section class="reading-path">
+          <span class="reading-path-num">PATH 01</span>
+          <h3>まず使ってみたい</h3>
+          <ol>
+            <li><a href="what-to-ask-generative-ai/">生成AIに何を聞けばいい？</a></li>
+            <li><a href="voice-input-for-ai-at-home/">家庭で音声入力が合う理由</a></li>
+          </ol>
+        </section>
+        <section class="reading-path">
+          <span class="reading-path-num">PATH 02</span>
+          <h3>AIと考え、あとから続けたい</h3>
+          <ol>
+            <li><a href="chatgpt-thread-todo-list/">スレッド一覧をToDoリストにする</a></li>
+            <li><a href="ai-conversations-as-external-memory/">AIとの会話が外部記憶になる</a></li>
+          </ol>
+        </section>
+        <section class="reading-path">
+          <span class="reading-path-num">PATH 03</span>
+          <h3>暮らしを自分に合わせたい</h3>
+          <ol>
+            <li><a href="personal-friction-as-ai-condition/">「できるけれど嫌」を条件にする</a></li>
+            <li><a href="generative-ai-beyond-time-saving/">「続かなかったこと」をAIと考える</a></li>
+            <li><a href="generative-ai-home-systems/">家庭の不便を仕組みにする</a></li>
+            <li><a href="ai-personal-running-system/">AIと仕組みを作る楽しみ</a></li>
+          </ol>
+        </section>
+        <section class="reading-path">
+          <span class="reading-path-num">PATH 04</span>
+          <h3>家族・経験・仕事へ広げたい</h3>
+          <ol>
+            <li><a href="using-generative-ai-with-children/">子どもと生成AI</a></li>
+            <li><a href="why-i-became-interested-in-generative-ai/">生成AIに惹かれた理由</a></li>
+            <li><a href="generative-ai-and-career/">専業主婦経験が仕事になるまで</a></li>
+          </ol>
+        </section>
+      </div>
+    </section>
+    <h2 class="latest-heading" id="articles">新着順</h2>
+    <div class="article-grid">
       <a class="article-card" href="ai-conversations-as-external-memory/">
         <div class="article-info"><span class="article-meta"><span class="article-tag">AIとの付き合い方</span><time datetime="2026-09-18">2026.09.18</time></span><h2 class="article-title">生成AIとの会話が、私の外部記憶になり始めた</h2><p class="article-excerpt">記録するつもりのなかった会話が、3年後の自分へ当時の言葉を返した。</p></div>
       </a>
