@@ -19,6 +19,9 @@
 
 - [ ] `<title>` は本文見出し（H1）とは別に、他記事と同程度の長さ（15〜36文字程度）で作る。H1をそのままコピーすると長くなりすぎて検索結果で切れる。
 - [ ] `<meta name="description">` は120〜160文字程度。**文字数を確認する時は `wc -m` ではなく `python3 -c "print(len(open('f').read()))"` を使う**（このリポジトリのシェル環境は `LANG=C` なので `wc -m` は日本語をバイト数で数えてしまい、実際の3倍近い数字が出て見誤る）。
+- [ ] 冒頭の2〜3段落だけで「読者の問い → 宮崎真理の一次体験に基づく答え → この記事でしか読めない発見」が分かるようにする。情景や問題提起だけで始めず、答えを本文後半まで隠さない。
+- [ ] 冒頭で示した答えは、本文の実例が実際に支えている範囲に限定する。「誰が・いつ・どのような条件で」のうち必要な情報を含め、製品の一般機能と本人の体験を混同しない。
+- [ ] 冒頭で問いと答えを明示した後は、本文中で同じ説明を言い直さない。後半の各節には、実例、理由、比較、変化など別の役割を持たせる。
 - [ ] OGP一式（og:site_name / og:type=article / og:locale / og:title / og:description / og:url / og:image / og:image:width,height / article:published_time / article:modified_time / article:author）と、Twitterカード一式（twitter:card / title / description / image）。
 - [ ] `<link rel="alternate" type="application/rss+xml" href="/articles/feed.xml" title="生成AIと暮らしの話">` をheadに入れる。
 - [ ] JSON-LD `Article`：headline / description / inLanguage / articleSection / wordCount / about / datePublished / dateModified / image / **author（@id, @type, name, url, jobTitle, sameAsを5件フルで入れる。名前とurlだけの省略形にしない）** / publisher / mainEntityOfPage。author.sameAsの5件は `https://x.com/m316jp2`, `https://note.com/m316jp2`, `https://withonline.jp/authors/9miIK`, `https://women-ai-initiative.jp/media/posts/miyazaki_award`, `https://shueisha.online/list/persons/698d552bb5762297e9000000`（**twitter.comではなくx.com**）。
