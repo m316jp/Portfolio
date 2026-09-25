@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Showreel 2026 — 宮崎真理</title>
+<!-- 15秒ショーリールの描画ソース。render.mjs が render(t) を1コマずつ呼び出して書き出す。 -->
+<!-- 書き出し環境に左右されないよう、サイトと同じ書体（OFL）を fonts/ に同梱して読み込む -->
+<style>
+@font-face { font-family: 'Space Grotesk'; src: url(fonts/SpaceGrotesk-Variable.ttf) format('truetype'); font-weight: 300 700; font-display: block; }
+@font-face { font-family: 'Zen Kaku Gothic New'; src: url(fonts/ZenKakuGothicNew-Medium.ttf) format('truetype'); font-weight: 500; font-display: block; }
+@font-face { font-family: 'Zen Kaku Gothic New'; src: url(fonts/ZenKakuGothicNew-Bold.ttf) format('truetype'); font-weight: 700; font-display: block; }
+@font-face { font-family: 'Zen Kaku Gothic New'; src: url(fonts/ZenKakuGothicNew-Black.ttf) format('truetype'); font-weight: 900; font-display: block; }
+:root {
+  --ink: #141413;
+  --ink-soft: #3c3c39;
+  --paper: #f7f6f2;
+  --y: #f2c40f;
+  --y-deep: #e0b200;
+  --night: #121211;
+  --night-line: #2c2c29;
+  --night-gray: #8f8f88;
+  --en: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+  --jp: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #000; overflow: hidden; }
+#stage {
+  position: relative; width: 1920px; height: 1080px; overflow: hidden;
+  background: var(--ink); color: var(--ink); font-family: var(--jp);
+  -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision;
+}
+.scene { position: absolute; inset: 0; overflow: hidden; visibility: hidden; }
+.abs { position: absolute; }
+.cm { display: inline-block; overflow: hidden; vertical-align: top; padding: 0.06em 0 0.1em; margin: -0.06em 0 -0.1em; }
+.ch { display: inline-block; will-change: transform; }
+.circle { position: absolute; border-radius: 50%; }
+.en { font-family: var(--en); }
+
+/* ---------- 01 INTRO ---------- */
+#s1 { background: var(--ink); }
+#s1-grid { position: absolute; inset: 0; }
+#s1-grid line { stroke: var(--night-line); stroke-width: 1; }
+#s1-burst { width: 100px; height: 100px; background: var(--y); transform: scale(0); }
+#s1-group { position: absolute; inset: 0; }
+.s1-mask { position: absolute; top: 340px; height: 400px; width: 900px; overflow: hidden; }
+#s1-ai { font: 700 330px/400px var(--en); color: var(--paper); text-align: right; letter-spacing: -0.02em; }
+#s1-kaji { font: 900 290px/400px var(--jp); color: var(--paper); }
+#s1-x { position: absolute; top: 540px; width: 0; height: 0; }
+#s1-x i, .xmark i { position: absolute; left: 0; top: 0; background: var(--y); border-radius: 999px; }
+.s1-cap { position: absolute; font: 500 22px/1 var(--en); letter-spacing: 0.42em; color: var(--night-gray); white-space: nowrap; }
+
+/* ---------- 02 TAGLINE ---------- */
+#s2 { background: var(--y); }
+#s2-text { position: absolute; left: 170px; top: 250px; }
+.s2-line { font: 900 170px/1.18 var(--jp); letter-spacing: 0.01em; white-space: nowrap; color: var(--ink); }
+#s2-hlw { position: relative; display: inline-block; }
+#s2-hl { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+#s2-hl > i { position: absolute; left: -0.06em; right: -0.06em; top: 0.1em; bottom: 0.02em; background: var(--ink); }
+#s2-hl > span { position: absolute; left: 0; top: 0; white-space: nowrap; color: var(--y); }
+#s2-sub { margin-top: 46px; display: flex; align-items: center; gap: 28px; }
+#s2-sub i { display: block; height: 4px; width: 120px; background: var(--ink); transform-origin: left; }
+#s2-sub span { font: 700 42px/1.2 var(--jp); letter-spacing: 0.06em; }
+#s2-badge { position: absolute; left: 1400px; top: 90px; width: 400px; height: 400px; }
+#s2-badge text { font: 500 25px var(--en); letter-spacing: 0.24em; fill: var(--ink); }
+.s2-panel { position: absolute; left: -200px; width: 2320px; height: 1500px; top: 1200px; }
+
+/* ---------- 03 PROFILE ---------- */
+#s3 { background: var(--paper); }
+#s3-blob { width: 460px; height: 460px; background: var(--y); left: 900px; top: 610px; }
+#s3-ring { width: 170px; height: 170px; border: 3px solid var(--ink); left: 1660px; top: 90px; }
+#s3-frame { position: absolute; left: 1120px; top: 130px; width: 600px; height: 800px; overflow: hidden; border-radius: 300px 300px 18px 18px; }
+#s3-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; }
+#s3-label { position: absolute; left: 170px; top: 238px; display: flex; align-items: center; gap: 18px; font: 500 22px/1 var(--en); letter-spacing: 0.36em; }
+#s3-label i { display: block; width: 64px; height: 4px; background: var(--ink); transform-origin: left; }
+#s3-name { position: absolute; left: 158px; top: 300px; font: 900 186px/1.2 var(--jp); letter-spacing: 0.04em; white-space: nowrap; }
+#s3-roman { position: absolute; left: 172px; top: 548px; font: 500 50px/1 var(--en); letter-spacing: 0.34em; white-space: pre; }
+#s3-pills { position: absolute; left: 170px; top: 660px; width: 900px; display: flex; flex-wrap: wrap; gap: 16px 14px; }
+#s3-pills span { display: inline-block; border: 3px solid var(--ink); border-radius: 999px; padding: 12px 28px 14px; font: 700 32px/1 var(--jp); letter-spacing: 0.04em; background: var(--paper); }
+#s3-pills span:first-child { background: var(--ink); color: var(--y); }
+#s3-flood { width: 100px; height: 100px; background: var(--y); left: 1370px; top: 480px; transform: scale(0); }
+
+/* ---------- 04 BOOK ---------- */
+#s4 { background: var(--y); }
+#s4-shapes > * { position: absolute; }
+.sticker { background: var(--paper); border: 4px solid var(--ink); border-radius: 50%; box-shadow: 0 0 0 10px var(--paper); }
+.ring { border: 4px solid var(--ink); border-radius: 50%; }
+.dot { background: var(--ink); border-radius: 50%; }
+#s4-left { position: absolute; left: 170px; top: 170px; }
+#s4-label { font: 500 22px/1 var(--en); letter-spacing: 0.36em; display: flex; gap: 18px; align-items: center; }
+#s4-label i { display: block; width: 64px; height: 4px; background: var(--ink); transform-origin: left; }
+#s4-title { font: 900 150px/1.2 var(--jp); margin-top: 22px; white-space: nowrap; }
+.s4-stat { display: flex; align-items: flex-end; gap: 26px; margin-top: 26px; }
+.s4-stat b { font: 700 210px/0.82 var(--en); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; display: inline-block; text-align: right; }
+.s4-stat span { font: 700 44px/1.3 var(--jp); padding-bottom: 4px; }
+#s4-n1 { width: 520px; }
+#s4-n2 { width: 520px; }
+#s4-meta { position: absolute; left: 170px; top: 930px; font: 500 24px/1 var(--en); letter-spacing: 0.2em; }
+#s4-3d { position: absolute; left: 1100px; top: 190px; width: 460px; height: 652px; perspective: 2000px; }
+#s4-book { position: absolute; inset: 0; transform-style: preserve-3d; }
+#s4-book > div { position: absolute; backface-visibility: hidden; }
+#s4-front { inset: 0; transform: translateZ(22px); overflow: hidden; border-radius: 2px 6px 6px 2px; }
+#s4-front img { width: 100%; height: 100%; display: block; }
+#s4-front::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.18), rgba(0,0,0,0) 6%, rgba(255,255,255,.12) 7.5%, rgba(255,255,255,0) 14%); }
+#s4-back { inset: 0; transform: rotateY(180deg) translateZ(22px); background: var(--y-deep); display: flex; align-items: flex-end; justify-content: flex-end; padding: 40px; font: 700 28px var(--jp); }
+#s4-spine { width: 44px; height: 100%; left: 208px; transform: rotateY(-90deg) translateZ(230px); background: var(--y-deep); display: flex; flex-direction: column; align-items: center; padding-top: 40px; gap: 18px; font: 900 26px/1 var(--jp); writing-mode: vertical-rl; }
+#s4-pages { width: 44px; height: calc(100% - 8px); top: 4px; left: 208px; transform: rotateY(90deg) translateZ(226px); background: repeating-linear-gradient(90deg, #fbfaf5 0 2px, #e6e3d8 2px 3px); }
+#s4-shadow { position: absolute; left: 30px; top: 610px; width: 420px; height: 80px; border-radius: 50%; background: radial-gradient(closest-side, rgba(60,45,0,.45), rgba(60,45,0,0)); }
+#s4-flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+
+/* ---------- 05 MEDIA ---------- */
+#s5 { background: var(--ink); }
+#s5-cut { position: absolute; inset: 0; }
+#s5-word { position: absolute; left: 0; right: 0; top: 540px; text-align: center; font-family: var(--jp); font-weight: 900; line-height: 1; white-space: nowrap; }
+#s5-cat { position: absolute; left: 170px; top: 170px; font: 500 24px/1 var(--en); letter-spacing: 0.4em; }
+#s5-prog { position: absolute; left: 170px; top: 850px; font: 700 34px/1.3 var(--jp); letter-spacing: 0.04em; }
+#s5-idx { position: absolute; right: 170px; top: 170px; font: 700 24px/1 var(--en); letter-spacing: 0.2em; }
+#s5-stat { position: absolute; inset: 0; background: var(--ink); visibility: hidden; }
+.s5-row { position: absolute; left: 0; white-space: nowrap; font: 900 120px/1 var(--jp); color: transparent; -webkit-text-stroke: 2px #302f2c; }
+#s5-big { position: absolute; left: 0; right: 0; top: 250px; text-align: center; font: 700 440px/1 var(--en); color: var(--y); letter-spacing: -0.04em; }
+#s5-cap { position: absolute; left: 0; right: 0; top: 730px; text-align: center; font: 700 44px/1.4 var(--jp); color: var(--paper); letter-spacing: 0.08em; }
+#s5-cap2 { position: absolute; left: 0; right: 0; top: 810px; text-align: center; font: 500 24px/1 var(--en); color: var(--night-gray); letter-spacing: 0.4em; }
+
+/* ---------- 06 AWARD ---------- */
+#s6 { background: var(--night); }
+#s6-spot { position: absolute; inset: 0; background: radial-gradient(900px 700px at 1350px 470px, rgba(242,196,15,.22), rgba(242,196,15,0) 70%); }
+#s6-rays { position: absolute; left: 1380px; top: 540px; width: 0; height: 0; }
+#s6-rays i { position: absolute; left: 0; top: -1px; height: 2px; width: 1400px; transform-origin: 0 50%; background: linear-gradient(90deg, rgba(242,196,15,.35), rgba(242,196,15,0)); }
+#s6-photo { position: absolute; left: 1100px; top: 110px; width: 660px; height: 860px; }
+.s6-slat { position: absolute; top: 0; height: 100%; overflow: hidden; }
+.s6-slat .ph { position: absolute; top: 0; height: 100%; background-size: cover; }
+.s6-slat .yl { position: absolute; inset: 0; background: var(--y); }
+#s6-label { position: absolute; left: 170px; top: 200px; display: flex; gap: 18px; align-items: center; font: 500 22px/1 var(--en); letter-spacing: 0.36em; color: var(--y); }
+#s6-label i { display: block; width: 64px; height: 4px; background: var(--y); transform-origin: left; }
+#s6-year { position: absolute; left: 150px; top: 250px; font: 700 300px/1 var(--en); color: transparent; -webkit-text-stroke: 3px var(--y); letter-spacing: -0.02em; }
+#s6-event { position: absolute; left: 172px; top: 590px; font: 700 54px/1 var(--en); color: var(--paper); letter-spacing: 0.08em; white-space: nowrap; }
+#s6-prize { position: absolute; left: 164px; top: 690px; font: 900 82px/1.2 var(--jp); white-space: nowrap; color: var(--y); }
+#s6-prize .ch { background: linear-gradient(100deg, var(--y) 0%, var(--y) 40%, #fff6c9 50%, var(--y) 60%, var(--y) 100%); background-size: 1100px 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+#s6-stamp { position: absolute; left: 1620px; top: 770px; width: 230px; height: 230px; border-radius: 50%; background: var(--y); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 0 0 8px var(--night), 0 0 0 11px var(--y); }
+#s6-stamp b { font: 900 76px/1 var(--jp); }
+#s6-stamp small { font: 700 16px/1 var(--en); letter-spacing: 0.24em; margin-top: 10px; }
+#s6-spark { position: absolute; inset: 0; }
+#s6-vig { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,.55)); }
+.s6-bar { position: absolute; top: 0; height: 100%; background: var(--y); transform-origin: left; transform: scaleX(0); }
+
+/* ---------- 07 OUTRO ---------- */
+#s7 { background: var(--y); }
+#s7-cam { position: absolute; left: 0; top: 0; width: 0; height: 0; perspective: 2400px; }
+#s7-grid { position: absolute; left: 0; top: 0; transform-style: preserve-3d; }
+.tile { position: absolute; width: 400px; height: 240px; overflow: hidden; border-radius: 10px; background: var(--ink); backface-visibility: hidden; }
+.tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tile.word { display: flex; align-items: center; justify-content: center; font: 900 84px/1 var(--jp); color: var(--y); letter-spacing: 0.06em; }
+.tile.word.light { background: var(--paper); color: var(--ink); }
+.tile.center { border-radius: 0; }
+#s7-lock { position: absolute; inset: 0; background: var(--ink); visibility: hidden; }
+#s7-grid-bg { position: absolute; inset: 0; }
+#s7-grid-bg line { stroke: #22221f; stroke-width: 1; }
+#s7-glow { position: absolute; inset: 0; background: radial-gradient(700px 420px at 960px 560px, rgba(242,196,15,.10), rgba(242,196,15,0)); }
+#s7-x { position: absolute; left: 960px; top: 540px; width: 0; height: 0; }
+#s7-kicker { position: absolute; left: 0; right: 0; top: 332px; text-align: center; font: 700 30px/1 var(--jp); color: var(--night-gray); letter-spacing: 0.2em; }
+#s7-name { position: absolute; left: 0; right: 0; top: 380px; text-align: center; font: 900 176px/1.2 var(--jp); color: var(--paper); letter-spacing: 0.08em; white-space: nowrap; }
+#s7-roman { position: absolute; left: 0; right: 0; top: 612px; text-align: center; font: 500 40px/1 var(--en); color: var(--paper); letter-spacing: 0.5em; white-space: pre; padding-left: 0.5em; }
+#s7-line { position: absolute; left: 700px; top: 690px; width: 520px; height: 3px; background: var(--y); transform-origin: center; }
+#s7-svc { position: absolute; left: 0; right: 0; top: 730px; text-align: center; font: 700 32px/1 var(--jp); color: var(--paper); letter-spacing: 0.1em; }
+#s7-svc em { font-style: normal; color: var(--night-gray); padding: 0 0.7em; }
+#s7-url { position: absolute; left: 0; right: 0; top: 820px; text-align: center; font: 700 56px/1 var(--en); color: var(--y); letter-spacing: 0.04em; white-space: pre; }
+
+/* ---------- HUD ---------- */
+#hud { position: absolute; inset: 0; pointer-events: none; font: 500 17px/1 var(--en); letter-spacing: 0.3em; }
+#hud > div { position: absolute; white-space: nowrap; }
+#hud-tl { left: 56px; top: 50px; }
+#hud-tr { right: 56px; top: 50px; }
+#hud-bl { left: 56px; bottom: 46px; overflow: hidden; height: 20px; }
+#hud-br { right: 56px; bottom: 46px; font-variant-numeric: tabular-nums; letter-spacing: 0.16em; }
+.crop { position: absolute; width: 22px; height: 22px; border-color: currentColor; border-style: solid; border-width: 0; opacity: .7; }
+#grain { position: absolute; left: 0; top: 0; pointer-events: none; opacity: .07; mix-blend-mode: overlay; }
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <div class="scene" id="s1">
+    <svg id="s1-grid" width="1920" height="1080"></svg>
+    <div id="s1-burst" class="circle"></div>
+    <div id="s1-group">
+      <div class="s1-mask" id="s1-mask-l"><div id="s1-ai">AI</div></div>
+      <div id="s1-x"><i id="s1-b1"></i><i id="s1-b2"></i></div>
+      <div class="s1-mask" id="s1-mask-r"><div id="s1-kaji">家事</div></div>
+    </div>
+    <div class="s1-cap" id="s1-cap-a" style="left:170px;top:250px">SHOWREEL</div>
+    <div class="s1-cap" id="s1-cap-b" style="right:170px;top:250px">2026</div>
+    <div class="s1-cap" id="s1-cap-c" style="left:0;right:0;top:810px;text-align:center">GENERATIVE AI — FOR EVERYDAY LIFE</div>
+  </div>
+
+  <div class="scene" id="s2">
+    <div id="s2-text">
+      <div class="s2-line" id="s2-l1"></div>
+      <div class="s2-line" id="s2-l2"></div>
+      <div id="s2-sub"><i></i><span class="cm"><span class="ch">家事・子育て・家庭学習の生成AI活用</span></span></div>
+    </div>
+    <svg id="s2-badge" viewBox="0 0 400 400">
+      <defs><path id="s2-circ" d="M200,200 m-160,0 a160,160 0 1,1 320,0 a160,160 0 1,1 -320,0"/></defs>
+      <g id="s2-badge-rot"><text><textPath href="#s2-circ">GENERATIVE AI · FOR EVERYDAY LIFE · SINCE 2023 ·</textPath></text></g>
+      <circle cx="200" cy="200" r="104" fill="#141413"/>
+      <g stroke="#f2c40f" stroke-width="22" stroke-linecap="round"><line x1="166" y1="166" x2="234" y2="234"/><line x1="234" y1="166" x2="166" y2="234"/></g>
+    </svg>
+    <div class="s2-panel" id="s2-p1" style="background:var(--ink)"></div>
+    <div class="s2-panel" id="s2-p2" style="background:var(--paper)"></div>
+  </div>
+
+  <div class="scene" id="s3">
+    <div id="s3-blob" class="circle"></div>
+    <div id="s3-ring" class="circle"></div>
+    <div id="s3-frame"><img id="s3-img" src="../../assets/images/profile/mari-miyazaki-portrait.jpg" alt=""></div>
+    <div id="s3-label"><i></i><span>PROFILE</span></div>
+    <div id="s3-name"></div>
+    <div id="s3-roman">MIYAZAKI MARI</div>
+    <div id="s3-pills"><span>『AI×家事』著者</span><span>3児の母</span><span>元・メーカー技術職</span><span>2023年から実践</span></div>
+    <div id="s3-flood" class="circle"></div>
+  </div>
+
+  <div class="scene" id="s4">
+    <div id="s4-shapes"></div>
+    <div id="s4-left">
+      <div id="s4-label"><i></i><span>NEW RELEASE</span></div>
+      <div id="s4-title"></div>
+      <div class="s4-stat" id="s4-st1"><b id="s4-n1">0</b><span>日間、<br>使い倒して。</span></div>
+      <div class="s4-stat" id="s4-st2"><b id="s4-n2">0</b><span>の活用例を<br>一冊に。</span></div>
+    </div>
+    <div id="s4-meta">扶桑社 ／ 2026.03 ／ 176 PAGES</div>
+    <div id="s4-3d">
+      <div id="s4-shadow"></div>
+      <div id="s4-book">
+        <div id="s4-front"><img src="../../assets/images/book/ai-kaji-cover.webp" alt=""></div>
+        <div id="s4-back">扶桑社</div>
+        <div id="s4-spine"><span>AI×家事</span><span style="font-size:18px;font-weight:700">宮崎真理</span></div>
+        <div id="s4-pages"></div>
+      </div>
+    </div>
+    <div id="s4-flash"></div>
+  </div>
+
+  <div class="scene" id="s5">
+    <div id="s5-cut"><div id="s5-cat"></div><div id="s5-idx"></div><div id="s5-word"></div><div id="s5-prog"></div></div>
+    <div id="s5-stat">
+      <div class="s5-row" id="s5-r1" style="top:40px"></div>
+      <div class="s5-row" id="s5-r2" style="top:470px;-webkit-text-stroke-color:#22221f"></div>
+      <div class="s5-row" id="s5-r3" style="top:900px"></div>
+      <div id="s5-big">0</div>
+      <div id="s5-cap">Web記事 50本以上 ／ テレビ・雑誌にも出演</div>
+      <div id="s5-cap2">TV · MAGAZINE · WEB · EVENT</div>
+    </div>
+  </div>
+
+  <div class="scene" id="s6">
+    <div id="s6-spot"></div>
+    <div id="s6-rays"></div>
+    <canvas id="s6-spark" width="1920" height="1080"></canvas>
+    <div id="s6-photo"></div>
+    <div id="s6-label"><i></i><span>AWARD</span></div>
+    <div id="s6-year">2026</div>
+    <div id="s6-event">WOMAN AI AWARD 2026</div>
+    <div id="s6-prize"></div>
+    <div id="s6-stamp"><b>受賞</b><small>LIFE INNOVATOR</small></div>
+    <div id="s6-vig"></div>
+    <div id="s6-bars"></div>
+  </div>
+
+  <div class="scene" id="s7">
+    <div id="s7-cam"><div id="s7-grid"></div></div>
+    <div id="s7-lock">
+      <svg id="s7-grid-bg" width="1920" height="1080"></svg>
+      <div id="s7-glow"></div>
+      <div id="s7-kicker">『AI×家事』著者</div>
+      <div id="s7-x" class="xmark"><i></i><i></i></div>
+      <div id="s7-name"></div>
+      <div id="s7-roman">MIYAZAKI MARI</div>
+      <div id="s7-line"></div>
+      <div id="s7-svc">取材・メディア出演<em>／</em>執筆・コラム<em>／</em>対談・登壇</div>
+      <div id="s7-url"></div>
+    </div>
+  </div>
+
+  <div id="hud">
+    <div id="hud-tl">MIYAZAKI MARI</div>
+    <div id="hud-tr">SHOWREEL — 2026</div>
+    <div id="hud-bl"><div id="hud-bl-in"></div></div>
+    <div id="hud-br"></div>
+    <i class="crop" style="left:28px;top:28px;border-left-width:2px;border-top-width:2px"></i>
+    <i class="crop" style="right:28px;top:28px;border-right-width:2px;border-top-width:2px"></i>
+    <i class="crop" style="left:28px;bottom:28px;border-left-width:2px;border-bottom-width:2px"></i>
+    <i class="crop" style="right:28px;bottom:28px;border-right-width:2px;border-bottom-width:2px"></i>
+  </div>
+  <canvas id="grain" width="2176" height="1336"></canvas>
+</div>
+
+<script>
+'use strict';
+const FPS = 60, DURATION = 15;
+const $ = id => document.getElementById(id);
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const lerp = (a, b, p) => a + (b - a) * p;
+const E = {
+  lin: x => x,
+  outCubic: x => 1 - Math.pow(1 - x, 3),
+  outQuart: x => 1 - Math.pow(1 - x, 4),
+  outQuint: x => 1 - Math.pow(1 - x, 5),
+  outExpo: x => x >= 1 ? 1 : 1 - Math.pow(2, -10 * x),
+  inExpo: x => x <= 0 ? 0 : Math.pow(2, 10 * x - 10),
+  inCubic: x => x * x * x,
+  inQuart: x => x * x * x * x,
+  inOutCubic: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  inOutExpo: x => x <= 0 ? 0 : x >= 1 ? 1 : x < .5 ? Math.pow(2, 20 * x - 10) / 2 : (2 - Math.pow(2, -20 * x + 10)) / 2,
+  inOutQuint: x => x < .5 ? 16 * x ** 5 : 1 - Math.pow(-2 * x + 2, 5) / 2,
+  outBack: (x, s = 1.9) => 1 + (s + 1) * Math.pow(x - 1, 3) + s * Math.pow(x - 1, 2),
+  outElastic: x => x <= 0 ? 0 : x >= 1 ? 1 : Math.pow(2, -10 * x) * Math.sin((x * 10 - .75) * (2 * Math.PI) / 3) + 1,
+};
+// progress of t in [a,b] through easing
+const P = (t, a, b, e = E.lin) => e(clamp((t - a) / (b - a)));
+const hash = (n) => { const s = Math.sin(n * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
+function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let r = Math.imul(s ^ (s >>> 15), 1 | s); r ^= r + Math.imul(r ^ (r >>> 7), 61 | r); return ((r ^ (r >>> 14)) >>> 0) / 4294967296; }; }
+const st = (el, css) => { for (const k in css) el.style[k] = css[k]; };
+
+function addChars(parent, text) {
+  const out = [];
+  for (const c of [...text]) {
+    const m = document.createElement('span'); m.className = 'cm';
+    const ch = document.createElement('span'); ch.className = 'ch';
+    ch.textContent = c === ' ' ? ' ' : c;
+    m.appendChild(ch); parent.appendChild(m); out.push(ch);
+  }
+  return out;
+}
+// characters rising out of their masks, staggered
+function rise(chars, t, t0, stagger, dur = .55, from = 112, rot = 0) {
+  chars.forEach((c, i) => {
+    const p = P(t, t0 + i * stagger, t0 + i * stagger + dur, E.outExpo);
+    c.style.transform = `translateY(${(1 - p) * from}%) rotate(${(1 - p) * rot}deg)`;
+  });
+}
+function fall(chars, t, t0, stagger, dur = .35, to = -112) {
+  chars.forEach((c, i) => {
+    const p = P(t, t0 + i * stagger, t0 + i * stagger + dur, E.inExpo);
+    if (p > 0) c.style.transform = `translateY(${p * to}%)`;
+  });
+}
+const GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#×/+*';
+function scramble(text, p, frame, seed = 0) {
+  const n = text.length; let out = '';
+  for (let i = 0; i < n; i++) {
+    const ch = text[i];
+    const resolveAt = i / n * 0.75 + 0.25;
+    if (ch === ' ' || p >= resolveAt) out += ch;
+    else if (p < i / n * 0.5) out += ' ';
+    else out += GLYPHS[Math.floor(hash(frame * 13 + i * 7 + seed) * GLYPHS.length)];
+  }
+  return out;
+}
+function xmark(el, size, thick, rot = 0, spread = 1) {
+  const [a, b] = el.querySelectorAll('i');
+  for (const [bar, r] of [[a, 45 * spread], [b, -45 * spread]]) {
+    st(bar, { width: size + 'px', height: thick + 'px', transform: `translate(-50%,-50%) rotate(${r + rot}deg)` });
+  }
+}
+
+/* ------------ build ------------ */
+const XC = 855; // center of the intro ×
+function build() {
+  // intro grid
+  const svg = $('s1-grid'); let g = '';
+  for (let i = 0; i <= 12; i++) g += `<line data-k="${i}" x1="${i * 160}" y1="0" x2="${i * 160}" y2="1080"/>`;
+  for (let j = 0; j <= 7; j++) g += `<line data-k="${j + 13}" x1="0" y1="${j * 160 - 20}" x2="1920" y2="${j * 160 - 20}"/>`;
+  svg.innerHTML = g;
+  $('s7-grid-bg').innerHTML = g;
+  st($('s1-mask-l'), { left: (XC - 150 - 900) + 'px' });
+  st($('s1-mask-r'), { left: (XC + 150) + 'px' });
+  st($('s1-x'), { left: XC + 'px' });
+  st($('s1-burst'), { left: (XC - 50) + 'px', top: '490px' });
+
+  // tagline
+  S.l1 = addChars($('s2-l1'), '生成AIで、');
+  const l2 = $('s2-l2');
+  S.l2 = addChars(l2, '暮らしを');
+  const hw = document.createElement('span'); hw.id = 's2-hlw';
+  S.l2.push(...addChars(hw, 'ラクに'));
+  const hl = document.createElement('span'); hl.id = 's2-hl';
+  const rect = document.createElement('i'); const copy = document.createElement('span');
+  addChars(copy, 'ラクに'); hl.append(rect, copy); hw.append(hl); l2.append(hw);
+  S.l2.push(...addChars(l2, '。'));
+
+  S.name3 = addChars($('s3-name'), '宮崎 真理');
+  S.title4 = addChars($('s4-title'), '『AI×家事』');
+  S.prize = addChars($('s6-prize'), 'ライフ・イノベーター賞');
+  S.name7 = addChars($('s7-name'), '宮崎 真理');
+
+  // book stickers
+  const r = rng(7), shapes = $('s4-shapes');
+  const spots = [[980, 120, 90, 'sticker'], [1680, 150, 120, 'sticker'], [1760, 520, 70, 'ring'], [1660, 820, 150, 'sticker'], [1000, 820, 60, 'ring'],
+    [1060, 990, 26, 'dot'], [1800, 330, 20, 'dot'], [1580, 60, 24, 'dot'], [1180, 930, 34, 'ring'], [1500, 960, 22, 'dot'], [1830, 690, 40, 'ring']];
+  S.shapes = spots.map(([x, y, s, cls], i) => {
+    const d = document.createElement('div'); d.className = cls;
+    st(d, { left: x - s / 2 + 'px', top: y - s / 2 + 'px', width: s + 'px', height: s + 'px' });
+    shapes.appendChild(d);
+    return { el: d, delay: r() * .4, ph: r() * 6.28, amp: 8 + r() * 14 };
+  });
+
+  // media cuts
+  S.cuts = [
+    { w: 'NHK', cat: 'TV', prog: '週刊情報チャージ！チルシル', bg: 'ink', en: true },
+    { w: '日本テレビ', cat: 'TV', prog: 'DayDay.／カズレーザーと学ぶ。', bg: 'y' },
+    { w: 'フジテレビ', cat: 'TV', prog: 'ノンストップ！', bg: 'paper' },
+    { w: 'クロワッサン', cat: 'MAGAZINE', prog: 'マガジンハウス 2026年8月号', bg: 'ink' },
+    { w: '集英社オンライン', cat: 'WEB', prog: '取材記事・インタビュー', bg: 'y' },
+    { w: 'ハフポスト', cat: 'WEB', prog: 'ハフポスト日本版', bg: 'paper' },
+    { w: 'ESSE online', cat: 'WEB', prog: '扶桑社', bg: 'ink', en: true },
+    { w: 'with class', cat: 'WEB', prog: '講談社', bg: 'y', en: true },
+  ];
+  const word = $('s5-word');
+  for (const c of S.cuts) {
+    word.style.fontFamily = c.en ? 'var(--en)' : 'var(--jp)';
+    word.style.fontSize = '300px'; word.textContent = c.w;
+    const range = document.createRange(); range.selectNodeContents(word);
+    const w = range.getBoundingClientRect().width;
+    c.size = Math.min(300, 300 * 1480 / w);
+  }
+  const media = ['NHK', '日本テレビ', 'フジテレビ', 'クロワッサン', 'ESSE', 'LDK', '集英社オンライン', 'with class', 'ハフポスト', '女子SPA!', 'マイナビ子育て', 'note'];
+  ['s5-r1', 's5-r2', 's5-r3'].forEach((id, i) => {
+    const list = media.slice(i * 4).concat(media.slice(0, i * 4));
+    $(id).textContent = (list.join('　・　') + '　・　').repeat(3);
+  });
+
+  // award photo slats
+  const N = 6, W = 660, H = 860, photo = $('s6-photo');
+  S.slats = [];
+  for (let i = 0; i < N; i++) {
+    const s = document.createElement('div'); s.className = 's6-slat';
+    st(s, { left: i * W / N + 'px', width: W / N + 1 + 'px' });
+    const ph = document.createElement('div'); ph.className = 'ph';
+    // trophy photo 1200x800 scaled to 1290x860, framed on the winner holding the trophy
+    st(ph, { left: -i * W / N + 'px', width: W + 'px', backgroundImage: 'url(../../assets/images/awards/award-winner-2026-trophy.webp)', backgroundSize: '1290px 860px', backgroundPosition: '-575px 0' });
+    const yl = document.createElement('div'); yl.className = 'yl';
+    s.append(ph, yl); photo.appendChild(s); S.slats.push({ ph, yl });
+  }
+  const rays = $('s6-rays');
+  for (let i = 0; i < 14; i++) { const ray = document.createElement('i'); ray.style.transform = `rotate(${i * 360 / 14}deg)`; rays.appendChild(ray); }
+  S.bars = [];
+  for (let i = 0; i < 8; i++) { const b = document.createElement('div'); b.className = 's6-bar'; st(b, { left: i * 240 + 'px', width: '242px' }); $('s6-bars').appendChild(b); S.bars.push(b); }
+  const sr = rng(42);
+  S.sparks = Array.from({ length: 46 }, () => ({ x: sr() * 1920, y: sr() * 1080, s: 3 + sr() * 11, ph: sr() * 6.28, sp: 4 + sr() * 7, d: sr() * .8 }));
+
+  // outro mosaic 5x5
+  const img = p => `../../assets/images/${p}`;
+  const pics = ['profile/ai-in-the-kitchen.webp', 'events/event-woman-ai-update-20260912.jpg', 'book/ai-kaji-contents-01.webp', 'bookstores/bookstore-shinjuku1.webp', 'awards/award-winner-2026-speech.webp',
+    'profile/ai-at-home-with-children.webp', 'events/event-kidsna-talk-20260911.jpg', 'bookstores/bookstore-umeda.webp', 'events/event-sanctuary-20260831.jpg', 'book/ai-kaji-contents-02.webp',
+    'events/event-mynavi-live.webp', 'bookstores/bookstore-jimbocho.webp', 'profile/mari-miyazaki-portrait.jpg', 'events/tsg-entry-talk.webp', 'bookstores/bookstore-osaka.webp',
+    'bookstores/bookstore-ikebukuro.webp', 'book/ai-kaji-cover-with-band.webp', 'awards/award-winner-2026-trophy.webp'];
+  const words = [['取材', ''], ['執筆', 'light'], ['対談', ''], ['登壇', 'light'], ['出演', ''], ['コラム', 'light']];
+  const grid = $('s7-grid'); S.tiles = [];
+  let pi = 0, wi = 0;
+  const order = [0, 1, 'w', 2, 3, 'w', 4, 5, 6, 'w', 7, 8, 'C', 9, 'w', 10, 11, 'w', 12, 13, 14, 15, 'w', 16, 17];
+  for (let r2 = 0; r2 < 5; r2++) for (let c = 0; c < 5; c++) {
+    const k = order[r2 * 5 + c];
+    const tile = document.createElement('div'); tile.className = 'tile';
+    st(tile, { left: c * 424 + 'px', top: r2 * 264 + 'px' });
+    if (k === 'C') { tile.classList.add('center'); tile.innerHTML = '<div class="xmark" style="position:absolute;left:200px;top:120px"><i></i><i></i></div>'; xmark(tile.querySelector('.xmark'), 70, 16); }
+    else if (k === 'w') { const [txt, cls] = words[wi++ % words.length]; tile.classList.add('word'); if (cls) tile.classList.add(cls); tile.textContent = txt; }
+    else { tile.innerHTML = `<img src="${img(pics[pi++ % pics.length])}" alt="">`; }
+    grid.appendChild(tile); S.tiles.push({ el: tile, c, r: r2, center: k === 'C' });
+  }
+
+  // grain tile
+  const cv = document.createElement('canvas'); cv.width = cv.height = 256;
+  const cx = cv.getContext('2d'), id = cx.createImageData(256, 256), gr = rng(3);
+  for (let i = 0; i < id.data.length; i += 4) { const v = gr() * 255; id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 255; }
+  cx.putImageData(id, 0, 0);
+  const gc = $('grain').getContext('2d'); gc.fillStyle = gc.createPattern(cv, 'repeat'); gc.fillRect(0, 0, 2176, 1336);
+}
+const S = {};
+
+/* ------------ scenes ------------ */
+const SCENES = [
+  ['s1', 0, 2, '01 — INTRO'], ['s2', 2, 4, '02 — MESSAGE'], ['s3', 4, 6, '03 — PROFILE'], ['s4', 6, 8, '04 — BOOK'],
+  ['s5', 8, 10, '05 — MEDIA'], ['s6', 10, 12, '06 — AWARD'], ['s7', 12, 15.01, '07 — CONTACT'],
+];
+
+function s1(t, f) {
+  // grid draws in
+  document.querySelectorAll('#s1-grid line').forEach((l, i) => {
+    const p = P(t, .05 + i * .025, .65 + i * .025, E.outCubic);
+    const len = 2200;
+    l.style.strokeDasharray = len; l.style.strokeDashoffset = (1 - p) * len;
+    l.style.opacity = 1 - P(t, 1.4, 1.8);
+  });
+  const b1 = $('s1-b1'), b2 = $('s1-b2');
+  // line sweeps open, then folds into ×
+  const open = P(t, .02, .42, E.outExpo);
+  const fold = P(t, .42, .82, E.outBack);
+  const len = lerp(open * 1300, 250, P(t, .42, .78, E.outExpo));
+  const thick = lerp(5, 38, fold);
+  const r1 = 45 * fold, r2 = -45 * fold;
+  // exit: × spins and explodes
+  const out = P(t, 1.62, 2.0, E.inExpo);
+  const spin = 180 * P(t, 1.55, 2.0, E.inOutCubic);
+  const sc = 1 + out * 9;
+  st(b1, { width: len * sc + 'px', height: thick * sc + 'px', transform: `translate(-50%,-50%) rotate(${r1 + spin}deg)` });
+  st(b2, { width: len * sc + 'px', height: thick * sc + 'px', transform: `translate(-50%,-50%) rotate(${r2 + spin}deg)`, opacity: fold > 0.01 ? 1 : 0 });
+  $('s1-burst').style.transform = `scale(${P(t, 1.72, 2.0, E.inExpo) * 48})`;
+  // words slide out from behind the ×
+  const inL = P(t, .6, 1.05, E.outExpo), outL = P(t, 1.5, 1.8, E.inExpo);
+  $('s1-ai').style.transform = `translateX(${(1 - inL) * 100 + outL * -110}%)`;
+  $('s1-kaji').style.transform = `translateX(${-(1 - inL) * 100 + outL * 110}%)`;
+  $('s1-group').style.transform = `scale(${1 + P(t, .6, 1.8, E.outCubic) * 0.05})`;
+  // captions type on
+  [['s1-cap-a', 'SHOWREEL', .9], ['s1-cap-b', '2026', 1.0], ['s1-cap-c', 'GENERATIVE AI — FOR EVERYDAY LIFE', 1.05]].forEach(([id, txt, t0]) => {
+    const p = P(t, t0, t0 + .4), o = 1 - P(t, 1.55, 1.7);
+    $(id).textContent = scramble(txt, p, f, t0 * 10); $(id).style.opacity = o;
+  });
+}
+
+function s2(t) {
+  rise(S.l1, t, 2.0, .035, .6, 115, 6);
+  rise(S.l2, t, 2.14, .035, .6, 115, 6);
+  // highlight wipe over ラクに
+  const hw = $('s2-hlw'), W = hw.offsetWidth + 40;
+  const p = P(t, 2.72, 3.02, E.inOutExpo);
+  $('s2-hl').style.clipPath = `inset(-40px ${W - p * W - 20}px -40px -20px)`;
+  const sub = $('s2-sub');
+  sub.querySelector('i').style.transform = `scaleX(${P(t, 2.9, 3.3, E.outExpo)})`;
+  sub.querySelector('.ch').style.transform = `translateY(${(1 - P(t, 2.98, 3.5, E.outExpo)) * 110}%)`;
+  // badge
+  const bp = P(t, 2.35, 2.95, E.outBack);
+  $('s2-badge').style.transform = `scale(${bp}) rotate(${(1 - bp) * -90}deg)`;
+  $('s2-badge-rot').setAttribute('transform', `rotate(${t * 55} 200 200)`);
+  // exit: text lifts, layered panels wipe up
+  const ex = P(t, 3.55, 3.95, E.inExpo);
+  $('s2-text').style.transform = `translateY(${-ex * 260}px)`;
+  $('s2-badge').style.translate = `0 ${-ex * 420}px`;
+  const p1 = P(t, 3.5, 3.88, E.inOutQuint), p2 = P(t, 3.6, 4.0, E.inOutQuint);
+  $('s2-p1').style.transform = `translateY(${-p1 * 1350}px) skewY(${-7 * (1 - p1)}deg)`;
+  $('s2-p2').style.transform = `translateY(${-p2 * 1350}px) skewY(${-7 * (1 - p2)}deg)`;
+}
+
+function s3(t, f) {
+  const rev = P(t, 4.0, 4.6, E.outExpo);
+  $('s3-frame').style.clipPath = `inset(${(1 - rev) * 100}% 0 0 0 round 300px 300px 18px 18px)`;
+  $('s3-img').style.transform = `scale(${lerp(1.35, 1.04, P(t, 4.0, 6.0, E.outCubic))}) translateY(${(1 - rev) * 60}px)`;
+  const drift = P(t, 4.0, 6.0, E.lin);
+  $('s3-frame').style.transform = `translateY(${-drift * 24}px)`;
+  const bp = P(t, 4.12, 4.62, E.outBack);
+  $('s3-blob').style.transform = `translate(${drift * -40}px, ${drift * -60}px) scale(${bp})`;
+  $('s3-ring').style.transform = `translate(${drift * 30}px, ${drift * 50}px) scale(${P(t, 4.3, 4.8, E.outBack)})`;
+  $('s3-label').querySelector('i').style.transform = `scaleX(${P(t, 4.05, 4.4, E.outExpo)})`;
+  $('s3-label').querySelector('span').style.opacity = P(t, 4.15, 4.35);
+  rise(S.name3, t, 4.1, .055, .6, 115, 0);
+  const rp = P(t, 4.35, 4.95);
+  $('s3-roman').textContent = scramble('MIYAZAKI MARI', rp, f, 3);
+  $('s3-roman').style.letterSpacing = lerp(0.8, 0.34, P(t, 4.35, 5.0, E.outExpo)) + 'em';
+  [...$('s3-pills').children].forEach((el, i) => {
+    const p = P(t, 4.62 + i * .08, 5.02 + i * .08, E.outBack);
+    st(el, { transform: `translateY(${(1 - p) * 40}px) scale(${lerp(.6, 1, p)})`, opacity: clamp(p * 3) });
+  });
+  // exit: yellow flood from the portrait
+  const ex = P(t, 5.62, 6.0, E.inExpo);
+  $('s3-flood').style.transform = `scale(${ex * 48})`;
+  const lift = P(t, 5.55, 5.95, E.inExpo);
+  ['s3-name', 's3-roman', 's3-pills', 's3-label'].forEach((id, i) => { $(id).style.translate = `${-lift * (600 + i * 120)}px 0`; });
+}
+
+function s4(t, f) {
+  // stickers pop & float
+  S.shapes.forEach((s, i) => {
+    const p = P(t, 6.05 + s.delay, 6.5 + s.delay, E.outBack);
+    const fl = Math.sin(t * 2.2 + s.ph) * s.amp;
+    const ex = P(t, 7.7, 8.0, E.inExpo);
+    s.el.style.transform = `translate(${ex * (i % 2 ? 300 : -300)}px, ${fl - ex * 200}px) scale(${p})`;
+  });
+  $('s4-label').querySelector('i').style.transform = `scaleX(${P(t, 6.05, 6.4, E.outExpo)})`;
+  $('s4-label').querySelector('span').style.opacity = P(t, 6.12, 6.3);
+  rise(S.title4, t, 6.08, .04, .55, 115, 8);
+  // counters
+  const c1 = P(t, 6.3, 7.0, E.outQuart), c2 = P(t, 6.72, 7.3, E.outQuart);
+  $('s4-n1').textContent = Math.round(c1 * 1000);
+  $('s4-n2').textContent = Math.round(c2 * 60);
+  const a1 = P(t, 6.25, 6.6, E.outExpo), a2 = P(t, 6.68, 7.0, E.outExpo);
+  st($('s4-st1'), { transform: `translateY(${(1 - a1) * 60}px)`, opacity: a1 });
+  st($('s4-st2'), { transform: `translateY(${(1 - a2) * 60}px)`, opacity: a2 });
+  $('s4-meta').style.opacity = P(t, 7.0, 7.3);
+  $('s4-meta').textContent = scramble('扶桑社 ／ 2026.03 ／ 176 PAGES', P(t, 7.0, 7.4), f, 9);
+  // book: flies in spinning, then gently floats
+  const bi = P(t, 6.0, 6.85, E.outExpo);
+  const ry = lerp(-200, 24, bi) + P(t, 6.85, 7.75, E.inOutCubic) * -8;
+  const rx = lerp(18, 4, bi);
+  const z = lerp(-1600, 0, bi);
+  const ex = P(t, 7.72, 8.0, E.inExpo);
+  const float = Math.sin((t - 6) * 2.4) * 10 * P(t, 6.6, 7.0);
+  $('s4-book').style.transform = `translate3d(${ex * 900}px, ${float}px, ${z}px) rotateY(${ry + ex * 110}deg) rotateX(${rx}deg) rotateZ(${lerp(-12, -3, bi)}deg)`;
+  $('s4-shadow').style.opacity = bi * (1 - ex);
+  $('s4-shadow').style.transform = `scale(${lerp(.3, 1, bi) - float * .004})`;
+  $('s4-left').style.transform = `translateX(${-ex * 400}px)`;
+  $('s4-left').style.opacity = 1 - ex;
+  $('s4-flash').style.opacity = t > 7.96 ? 1 : P(t, 7.85, 7.96, E.inCubic) * .8;
+}
+
+const BG = { ink: ['#141413', '#f7f6f2', '#f2c40f'], y: ['#f2c40f', '#141413', '#141413'], paper: ['#f7f6f2', '#141413', '#141413'] };
+function s5(t, f) {
+  const cutDur = .125, n = S.cuts.length;
+  const i = Math.floor((t - 8) / cutDur);
+  const inCuts = i < n;
+  $('s5-cut').style.visibility = inCuts ? 'visible' : 'hidden';
+  $('s5-stat').style.visibility = inCuts ? 'hidden' : 'visible';
+  if (inCuts) {
+    const c = S.cuts[i], lt = (t - 8 - i * cutDur) / cutDur;
+    const [bg, fg, accent] = BG[c.bg];
+    $('s5-cut').style.background = bg;
+    const w = $('s5-word');
+    w.textContent = c.w;
+    const punch = 1 + (1 - E.outExpo(clamp(lt))) * 0.16;
+    st(w, { fontFamily: c.en ? 'var(--en)' : 'var(--jp)', fontSize: c.size + 'px', color: accent, marginTop: -c.size * 0.52 + 'px', transform: `scale(${punch}) translateX(${(i % 2 ? -1 : 1) * (1 - E.outExpo(lt)) * 40}px)`, letterSpacing: c.en ? '-0.02em' : '0.02em' });
+    st($('s5-cat'), { color: fg }); $('s5-cat').textContent = c.cat;
+    st($('s5-idx'), { color: fg }); $('s5-idx').textContent = String(i + 1).padStart(2, '0') + ' / ' + String(n).padStart(2, '0');
+    st($('s5-prog'), { color: fg }); $('s5-prog').textContent = c.prog;
+  } else {
+    const t0 = 8 + n * cutDur, lt = t - t0;
+    const sp = [1, -1.3, .8];
+    ['s5-r1', 's5-r2', 's5-r3'].forEach((id, k) => {
+      const speed = 900 * (1 - .75 * P(t, t0, t0 + .6, E.outCubic)) + P(t, 9.75, 10, E.inExpo) * 3000;
+      const x = ((lt * speed * sp[k]) % 1400) - 1400 + (k * 330);
+      $(id).style.transform = `translateX(${x}px)`;
+      $(id).style.opacity = P(t, t0, t0 + .15);
+    });
+    const cp = P(t, t0, t0 + .55, E.outExpo);
+    const outp = P(t, 9.78, 10.0, E.inExpo);
+    $('s5-big').textContent = Math.round(cp * 50) + '+';
+    $('s5-big').style.transform = `scale(${lerp(1.5, 1, E.outExpo(clamp(lt / .35))) * (1 - outp)})`;
+    const capP = P(t, t0 + .2, t0 + .5, E.outExpo);
+    st($('s5-cap'), { opacity: capP * (1 - outp), transform: `translateY(${(1 - capP) * 30}px)` });
+    $('s5-cap2').textContent = scramble('TV · MAGAZINE · WEB · EVENT', P(t, t0 + .25, t0 + .7), f, 5);
+    $('s5-cap2').style.opacity = 1 - outp;
+  }
+}
+
+function s6(t, f) {
+  const on = P(t, 10.0, 10.25);
+  const flick = t < 10.3 ? (hash(f) > .35 ? 1 : .4) : 1;
+  $('s6-spot').style.opacity = on * flick * (0.85 + 0.15 * Math.sin(t * 9));
+  $('s6-rays').style.transform = `rotate(${t * 14}deg)`;
+  $('s6-rays').style.opacity = P(t, 10.1, 10.6) * .9;
+  S.slats.forEach((s, i) => {
+    const a = 10.02 + i * .045;
+    const cover = P(t, a, a + .2, E.inOutCubic), uncover = P(t, a + .22, a + .5, E.inOutExpo);
+    s.yl.style.transformOrigin = i % 2 ? '50% 0' : '50% 100%';
+    s.yl.style.transform = `scaleY(${cover * (1 - uncover)})`;
+    s.yl.style.transformOrigin = uncover > 0 ? (i % 2 ? '50% 100%' : '50% 0') : (i % 2 ? '50% 0' : '50% 100%');
+    s.ph.style.visibility = cover >= 1 ? 'visible' : 'hidden';
+    s.ph.style.transform = `scale(${lerp(1.18, 1.02, P(t, 10.2, 12, E.outCubic))})`;
+  });
+  $('s6-label').querySelector('i').style.transform = `scaleX(${P(t, 10.1, 10.45, E.outExpo)})`;
+  $('s6-label').querySelector('span').style.opacity = P(t, 10.15, 10.35);
+  const yp = P(t, 10.12, 10.8, E.outExpo);
+  st($('s6-year'), { opacity: yp, transform: `translateX(${(1 - yp) * -80}px)`, letterSpacing: lerp(0.2, -0.02, yp) + 'em' });
+  $('s6-event').textContent = scramble('WOMAN AI AWARD 2026', P(t, 10.3, 10.8), f, 11);
+  rise(S.prize, t, 10.45, .035, .55, 115, 0);
+  const sh = P(t, 10.95, 11.7, E.inOutCubic);
+  S.prize.forEach((c, i) => { c.style.backgroundPosition = `${lerp(900, -700, sh) - i * 100}px 0`; });
+  const sp = P(t, 10.85, 11.25, E.outBack);
+  $('s6-stamp').style.transform = `scale(${lerp(2.4, 1, sp)}) rotate(${lerp(-40, -10, sp)}deg)`;
+  $('s6-stamp').style.opacity = clamp(sp * 4);
+  // sparkles
+  const cv = $('s6-spark'), cx = cv.getContext('2d');
+  cx.clearRect(0, 0, 1920, 1080);
+  for (const s of S.sparks) {
+    const a = clamp(Math.sin(t * s.sp + s.ph) * .6 + .4) * P(t, 10.2 + s.d, 10.6 + s.d);
+    if (a <= 0) continue;
+    const r = s.s * (0.6 + a * .6);
+    cx.save(); cx.translate(s.x, s.y - (t - 10) * 20); cx.globalAlpha = a; cx.fillStyle = '#f2c40f';
+    cx.beginPath();
+    for (let k = 0; k < 8; k++) { const rr = k % 2 ? r * .22 : r; const an = k * Math.PI / 4; cx.lineTo(Math.cos(an) * rr, Math.sin(an) * rr); }
+    cx.closePath(); cx.fill(); cx.restore();
+  }
+  // exit bars
+  S.bars.forEach((b, i) => { b.style.transform = `scaleX(${P(t, 11.62 + i * .035, 11.86 + i * .035, E.inOutCubic)})`; });
+}
+
+function s7(t, f) {
+  const TW = 400, TH = 240, GX = 424, GY = 264;
+  const ccx = 2 * GX + TW / 2, ccy = 2 * GY + TH / 2;
+  S.tiles.forEach(({ el, c, r, center }) => {
+    const d = (c + r) * .035;
+    const p = P(t, 12.0 + d, 12.45 + d, E.outCubic);
+    const burst = P(t, 12.95, 13.45, E.inExpo);
+    const dx = (c - 2) * burst * 260, dy = (r - 2) * burst * 200;
+    el.style.transform = center ? `rotateX(${(1 - p) * -90}deg)` : `translate3d(${dx}px, ${dy}px, ${-burst * 200}px) rotateX(${(1 - p) * -90}deg)`;
+    el.style.opacity = center ? 1 : 1 - burst * .6;
+  });
+  // camera: slow drift, then dive into the center tile
+  const zoom = P(t, 12.95, 13.5, E.inOutExpo);
+  const drift = P(t, 12, 13.2, E.outCubic);
+  const scale = lerp(lerp(1.0, 1.12, drift), 1080 / TH * 1.02, zoom);
+  const rot = lerp(-7, 0, zoom);
+  const panX = lerp(lerp(160, 40, drift), 0, zoom), panY = lerp(lerp(90, 20, drift), 0, zoom);
+  $('s7-grid').style.transform = `translate(${960 + panX}px, ${540 + panY}px) rotate(${rot}deg) scale(${scale}) translate(${-ccx}px, ${-ccy}px)`;
+  const lockOn = t >= 13.5;
+  $('s7-lock').style.visibility = lockOn ? 'visible' : 'hidden';
+  if (!lockOn) return;
+  // × travels from the tile to its place above the name
+  const xm = P(t, 13.5, 14.0, E.outExpo);
+  const size = lerp(70 * 1080 / TH * 1.02, 70, xm), thick = lerp(16 * 1080 / TH * 1.02, 16, xm);
+  const xEl = $('s7-x');
+  xEl.style.transform = `translate(0, ${lerp(0, -300, xm)}px)`;
+  xmark(xEl, size, thick, xm * 90);
+  const kp = P(t, 13.85, 14.25, E.outExpo);
+  st($('s7-kicker'), { opacity: kp, transform: `translateY(${(1 - kp) * 20}px)` });
+  rise(S.name7, t, 13.55, .05, .6, 115, 0);
+  $('s7-roman').textContent = scramble('MIYAZAKI MARI', P(t, 13.75, 14.25), f, 21);
+  $('s7-line').style.transform = `scaleX(${P(t, 13.9, 14.35, E.outExpo)})`;
+  const sp = P(t, 14.0, 14.4, E.outExpo);
+  st($('s7-svc'), { opacity: sp, transform: `translateY(${(1 - sp) * 24}px)` });
+  const url = 'miyazakimari.com', up = P(t, 14.1, 14.5);
+  const n = Math.round(up * url.length);
+  $('s7-url').textContent = url.slice(0, n) + (up < 1 || (Math.floor(t * 4) % 2 === 0) ? '_' : ' ');
+  document.querySelectorAll('#s7-grid-bg line').forEach((l, i) => { const p = P(t, 13.55 + i * .02, 14.3 + i * .02, E.outCubic); l.style.strokeDasharray = 2200; l.style.strokeDashoffset = (1 - p) * 2200; });
+  $('s7-lock').style.transform = `scale(${1 + P(t, 13.5, 15, E.outCubic) * .03})`;
+}
+
+const RUN = { s1, s2, s3, s4, s5, s6, s7 };
+function bgTone(t) {
+  if (t < 2 || (t >= 9 && t < 12) || t >= 13.5) return 'dark';
+  if (t >= 8 && t < 9) return S.cuts[Math.floor((t - 8) / .125)].bg === 'ink' ? 'dark' : 'light';
+  return 'light';
+}
+
+function render(t) {
+  const f = Math.round(t * FPS);
+  for (const [id, a, b, label] of SCENES) {
+    const on = t >= a && t < b;
+    $(id).style.visibility = on ? 'visible' : 'hidden';
+    if (on) {
+      RUN[id](t, f);
+      const lp = P(t, a, a + .35, E.outExpo);
+      $('hud-bl-in').textContent = label;
+      $('hud-bl-in').style.transform = `translateY(${(1 - lp) * 100}%)`;
+    }
+  }
+  const dark = bgTone(t) === 'dark';
+  $('hud').style.color = dark ? 'rgba(232,231,226,.62)' : 'rgba(20,20,19,.62)';
+  $('hud').style.opacity = P(t, .9, 1.2) * (1 - P(t, 14.2, 14.6) * .0);
+  const sec = Math.floor(t), fr = f % FPS;
+  $('hud-br').textContent = `00:00:${String(sec).padStart(2, '0')}:${String(fr).padStart(2, '0')}`;
+  const g = hash(f * 3.1);
+  $('grain').style.transform = `translate(${-Math.floor(g * 256)}px, ${-Math.floor(hash(f * 7.7) * 256)}px)`;
+  $('grain').style.opacity = dark ? .09 : .06;
+}
+
+async function init() {
+  build();
+  const all = [...document.querySelectorAll('#stage *')].map(e => e.childNodes).flatMap(n => [...n]).filter(n => n.nodeType === 3).map(n => n.textContent).join('') + 'MIYAZAKI0123456789_+扶桑社 ／ PAGES';
+  await Promise.all([
+    document.fonts.load('900 100px "Zen Kaku Gothic New"', all), document.fonts.load('700 100px "Zen Kaku Gothic New"', all), document.fonts.load('500 100px "Zen Kaku Gothic New"', all),
+    document.fonts.load('700 100px "Space Grotesk"', all), document.fonts.load('500 100px "Space Grotesk"', all),
+  ]);
+  await document.fonts.ready;
+  build2();
+  await Promise.all([...document.images].map(i => i.decode().catch(() => {})));
+  const pre = new Image(); pre.src = '../../assets/images/awards/award-winner-2026-trophy.webp'; await pre.decode().catch(() => {});
+  render(0);
+  window.READY = true;
+}
+// re-measure things that depend on font metrics
+function build2() {
+  const word = $('s5-word');
+  for (const c of S.cuts) {
+    word.style.fontFamily = c.en ? 'var(--en)' : 'var(--jp)';
+    word.style.fontSize = '300px'; word.textContent = c.w;
+    const range = document.createRange(); range.selectNodeContents(word);
+    c.size = Math.min(300, 300 * 1480 / range.getBoundingClientRect().width);
+  }
+}
+window.render = render;
+window.DURATION = DURATION; window.FPS = FPS;
+init();
+// preview: ?t=3.2 renders a still, ?play plays in real time
+const q = new URLSearchParams(location.search);
+if (q.has('play')) { const s = performance.now(); const loop = () => { if (window.READY) render(((performance.now() - s) / 1000) % DURATION); requestAnimationFrame(loop); }; loop(); }
+</script>
+</body>
+</html>
