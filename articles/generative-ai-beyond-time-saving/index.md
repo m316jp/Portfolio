@@ -3,7 +3,7 @@ title: "時短もいいけれど。「続かなかったこと」をAIと考え�
 description: "生成AIに何を頼めばいい？ 家族5人の図書館利用を支える仕組みを作った宮崎真理が、時短だけではないAIの価値と、「手間が多くて続かなかったこと」から暮らしの使い道を見つける視点を紹介します。"
 url: https://miyazakimari.com/articles/generative-ai-beyond-time-saving/
 date: 2026-09-03
-updated: 2026-09-03
+updated: 2026-09-18
 section: "続ける工夫"
 author: 宮崎真理
 site: https://miyazakimari.com/
@@ -11,7 +11,7 @@ site: https://miyazakimari.com/
 
 # 時短もいいけれど。「続かなかったこと」をAIと考える
 
-『AI×家事』（扶桑社）著者・宮崎真理／公開 2026-09-03
+『AI×家事』（扶桑社）著者・宮崎真理／公開 2026-09-03・更新 2026-09-18
 
 暮らしの中で生成AIを使ってみたい。でも、何を頼めば役に立つのかわからない。
 

@@ -3,7 +3,7 @@ title: "家庭の生成AI活用に音声入力が合う理由｜家事・育児�
 description: "家事や育児で文字を打つ余裕がないとき、生成AIへの入力だけを声にする使い方を紹介。AI音声入力で話し言葉を整え、家庭の事情まで伝える3児の母の実践です。"
 url: https://miyazakimari.com/articles/voice-input-for-ai-at-home/
 date: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-18
 section: "音声入力"
 author: 宮崎真理
 site: https://miyazakimari.com/
@@ -13,7 +13,7 @@ site: https://miyazakimari.com/
 
 **母の手は、よくふさがっている。**
 
-『AI×家事』（扶桑社）著者・宮崎真理／公開 2026-09-05
+『AI×家事』（扶桑社）著者・宮崎真理／公開 2026-09-05・更新 2026-09-18
 
 私が家庭で生成AIに相談したくなるのは、たいてい机の前ではない。
 

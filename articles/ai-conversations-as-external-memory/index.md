@@ -1,4 +1,17 @@
+---
+title: "生成AIとの会話が、私の外部記憶になり始めた"
+description: "生成AIとの会話には、公開するために整える前の悩みや、考えている途中の言葉が残ります。3年前、専業主婦として3人の子どもを育てていた頃のChatGPTとの会話を読み返した体験から、記録するつもりのなかった対話が未来の自分へ当時の言葉を返す、外部記憶のような役割を考えます。"
+url: https://miyazakimari.com/articles/ai-conversations-as-external-memory/
+date: 2026-09-18
+updated: 2026-09-18
+section: "AIとの付き合い方"
+author: 宮崎真理
+site: https://miyazakimari.com/
+---
+
 # 生成AIとの会話が、私の外部記憶になり始めた
+
+『AI×家事』（扶桑社）著者・宮崎真理／公開 2026-09-18
 
 生成AIとの会話履歴は、あとからどんな記録になるのだろう。
 
