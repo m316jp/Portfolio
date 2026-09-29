@@ -24,7 +24,7 @@
 - [ ] 冒頭で問いと答えを明示した後は、本文中で同じ説明を言い直さない。後半の各節には、実例、理由、比較、変化など別の役割を持たせる。
 - [ ] OGP一式（og:site_name / og:type=article / og:locale / og:title / og:description / og:url / og:image / og:image:width,height / article:published_time / article:modified_time / article:author）と、Twitterカード一式（twitter:card / title / description / image）。
 - [ ] `<link rel="alternate" type="application/rss+xml" href="/articles/feed.xml" title="生成AIと暮らしの話">` をheadに入れる。
-- [ ] JSON-LD `Article`：headline / description / inLanguage / articleSection / wordCount / about / datePublished / dateModified / image / **author（@id, @type, name, url, jobTitle, sameAsを5件フルで入れる。名前とurlだけの省略形にしない）** / publisher / mainEntityOfPage。author.sameAsの5件は `https://x.com/m316jp2`, `https://note.com/m316jp2`, `https://withonline.jp/authors/9miIK`, `https://women-ai-initiative.jp/media/posts/miyazaki_award`, `https://shueisha.online/list/persons/698d552bb5762297e9000000`（**twitter.comではなくx.com**）。
+- [ ] JSON-LD `Article`：headline / description / inLanguage / articleSection / wordCount / about / datePublished / dateModified / image / **author（@id, @type, name, url, jobTitle, sameAsを4件フルで入れる。名前とurlだけの省略形にしない）** / publisher / mainEntityOfPage。author.sameAsの4件は `https://x.com/m316jp2`, `https://note.com/m316jp2`, `https://withonline.jp/authors/9miIK`, `https://shueisha.online/list/persons/698d552bb5762297e9000000`（**twitter.comではなくx.com**）。sameAsに入れるのは「宮崎真理」の人物プロフィールとして成立しているページのみ（経歴・肩書き等の人物情報が主体）。単なる記事一覧・タグ一覧や、サイト全体のコンテンツが大半を占めるページは外す。
 - [ ] JSON-LD `BreadcrumbList`。
 - [ ] 本文末尾に「Xでシェア」ボタン（`<p class="article-share">`）。
 - [ ] 著者アイコン画像は `alt="宮崎真理"`（`alt=""` にしない）。
