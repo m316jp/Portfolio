@@ -333,3 +333,22 @@ article blockquote,
     padding: 26px 22px;
   }
 }
+
+/* 本文中の画像（スクリーンショットなど） */
+.article-figure {
+  margin: 32px 0 36px;
+}
+
+.article-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line, #e4e3dc);
+}
+
+.article-figure figcaption {
+  margin-top: 10px;
+  color: var(--gray, #5f5f5b);
+  font-size: 13px;
+  line-height: 1.8;
+}

@@ -3,7 +3,7 @@ title: "知りたいことが、毎日届く。家事から趣味へ、AIと仕�
 description: "『AI×家事』著者・宮崎真理が、家族の図書館管理からランニングの振り返りへ広がった生成AIの実践を紹介。知りたいことが毎日届く仕組みと、使いながら自分に合う道具へ直していく楽しさをつづります。"
 url: https://miyazakimari.com/articles/ai-personal-running-system/
 date: 2026-09-07
-updated: 2026-09-18
+updated: 2026-10-01
 section: "趣味とAI"
 author: 宮崎真理
 site: https://miyazakimari.com/
@@ -11,7 +11,7 @@ site: https://miyazakimari.com/
 
 # 知りたいことが、毎日届く。家事から趣味へ、AIと仕組みを作る楽しみ
 
-『AI×家事』（扶桑社）著者・宮崎真理／公開 2026-09-07
+『AI×家事』（扶桑社）著者・宮崎真理／公開 2026-09-07・更新 2026-10-01
 
 自分のためのAIの仕組みは、どう作り、どう育てればよいのだろう。
 
@@ -80,6 +80,8 @@ AIの評価は一つの見方として受け取り、痛みや強い疲労があ
 私は大学院で生体計測工学を学び、身体から得られるデータを扱っていた。そのころの関心は、[私が生成AIに惹かれた理由](https://miyazakimari.com/articles/why-i-became-interested-in-generative-ai/)でも振り返っている。
 
 今、その興味の対象にあるのが、自分の走った記録だ。以前は距離と速さしか見ていなかったのに、AIと振り返るうちに、走ることと同じくらい、データを見ることにもはまり始めている。
+
+1か月分の記録をまとめてAIと読み返し、睡眠と回復の関係に気づいた話は、[8年分のスマートウォッチデータを、AIと読み始めた](https://miyazakimari.com/articles/reading-smartwatch-data-with-ai/)で書いています。
 
 図書館の仕組みでは、本を借り続けるための手間が減った。ランニングでは、記録を振り返るための手間が減り、そこから考える楽しみが増えた。[時短もいいけれど。「続かなかったこと」をAIと考える](https://miyazakimari.com/articles/generative-ai-beyond-time-saving/)で書いたように、作業が短くなることの先にも、変化があると感じている。
 

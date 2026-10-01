@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1WMFC152MS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1WMFC152MS');
+  </script>
+  <title>スマートウォッチのデータを生成AIで読む｜8年分の記録から</title>
+  <meta name="description" content="スマートウォッチの記録を、生成AIと一緒に読むと何が見えるのか。GarminやApple Watchで8年分のデータをためてきた『AI×家事』著者・宮崎真理が、「9月の私はどうだった？」と自分の言葉で聞いて気づいた睡眠と回復の関係と、データの見方が変わっていった過程をつづります。">
+  <link rel="canonical" href="https://miyazakimari.com/articles/reading-smartwatch-data-with-ai/">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+  <link rel="alternate" type="text/markdown" href="index.md" title="Markdown版">
+  <link rel="alternate" type="application/rss+xml" href="/articles/feed.xml" title="生成AIと暮らしの話">
+
+  <!-- OGP -->
+  <meta property="og:site_name" content="宮崎真理 ポートフォリオ">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="8年分のスマートウォッチデータを、AIと読み始めた｜宮崎真理">
+  <meta property="og:description" content="スマートウォッチの記録を、生成AIと一緒に読むと何が見えるのか。「9月の私はどうだった？」と自分の言葉で聞いて気づいた、睡眠と回復の関係をつづります。">
+  <meta property="og:url" content="https://miyazakimari.com/articles/reading-smartwatch-data-with-ai/">
+  <meta property="og:image" content="https://miyazakimari.com/articles/reading-smartwatch-data-with-ai/cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="article:published_time" content="2026-10-01">
+  <meta property="article:modified_time" content="2026-10-01">
+  <meta property="article:author" content="宮崎真理">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="8年分のスマートウォッチデータを、AIと読み始めた｜宮崎真理">
+  <meta name="twitter:description" content="スマートウォッチの記録を、生成AIと一緒に読むと何が見えるのか。自分の言葉で聞いて気づいた、睡眠と回復の関係をつづります。">
+  <meta name="twitter:image" content="https://miyazakimari.com/articles/reading-smartwatch-data-with-ai/cover.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "8年分のスマートウォッチデータを、AIと読み始めた",
+    "description": "スマートウォッチの記録を、生成AIと一緒に読むと何が見えるのか。8年分のデータを自分の言葉で聞き直して気づいた、睡眠と回復の関係と、データの見方が変わった過程をつづります。",
+    "inLanguage": "ja",
+    "articleSection": "趣味とAI",
+    "wordCount": 2910,
+    "about": [
+      {"@type": "Thing", "name": "生成AI"},
+      {"@type": "Thing", "name": "スマートウォッチ"},
+      {"@type": "Thing", "name": "睡眠"},
+      {"@type": "Thing", "name": "ランニング"}
+    ],
+    "datePublished": "2026-10-01",
+    "dateModified": "2026-10-01",
+    "image": "https://miyazakimari.com/articles/reading-smartwatch-data-with-ai/cover.png",
+    "author": {
+      "@id": "https://miyazakimari.com/#person",
+      "@type": "Person",
+      "name": "宮崎真理",
+      "url": "https://miyazakimari.com/",
+      "jobTitle": "著者・AIライフスタイルコンサルタント",
+      "sameAs": [
+        "https://x.com/m316jp2",
+        "https://note.com/m316jp2",
+        "https://withonline.jp/authors/9miIK",
+        "https://shueisha.online/list/persons/698d552bb5762297e9000000"
+      ]
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://miyazakimari.com/#organization",
+      "name": "宮崎真理 ポートフォリオ",
+      "url": "https://miyazakimari.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://miyazakimari.com/apple-touch-icon.png",
+        "width": 180,
+        "height": 180
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://miyazakimari.com/articles/reading-smartwatch-data-with-ai/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://miyazakimari.com/"},
+      {"@type": "ListItem", "position": 2, "name": "生成AIと暮らしの話", "item": "https://miyazakimari.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "8年分のスマートウォッチデータを、AIと読み始めた"}
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --ink: #141413;
+      --ink-soft: #3c3c39;
+      --gray: #5f5f5b;
+      --line: #e4e3dc;
+      --paper: #f7f6f2;
+      --white: #fff;
+      --night: #121211;
+      --accent: #f2c40f;
+      --font-en: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+      --font-jp: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
+      --space-4: 4px;
+      --space-8: 8px;
+      --space-12: 12px;
+      --space-16: 16px;
+      --space-20: 20px;
+      --space-24: 24px;
+      --space-28: 28px;
+      --space-32: 32px;
+      --space-40: 40px;
+      --space-56: 56px;
+      --space-64: 64px;
+      --fs-display: clamp(26px, 4.6vw, 38px);
+      --fs-headline: 20px;
+      --fs-title: 17px;
+      --fs-body-lg: 18px;
+      --fs-body: 16px;
+      --fs-body-base: 15px;
+      --fs-body-sm: 14px;
+      --fs-label: 13px;
+      --fs-label-sm: 12px;
+      --fs-caption: 11px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--font-jp);
+      font-size: var(--fs-body-base);
+      line-height: 1.9;
+      letter-spacing: 0.025em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+    :focus-visible { outline: none; box-shadow: 0 0 0 2px var(--ink), 0 0 0 5px var(--accent); }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-24);
+      min-height: 64px;
+      padding: var(--space-12) clamp(20px, 5vw, 64px);
+      border-bottom: 1px solid var(--line);
+      background: rgba(247, 246, 242, 0.96);
+    }
+
+    .site-name {
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+
+    main {
+      width: min(720px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(48px, 8vw, 88px) 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 var(--space-12);
+      color: var(--gray);
+      font-family: var(--font-en);
+      font-size: var(--fs-label-sm);
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: var(--fs-display);
+      line-height: 1.55;
+      letter-spacing: 0.04em;
+    }
+
+    .byline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: var(--space-8) var(--space-16);
+      margin: var(--space-20) 0 0;
+      color: var(--gray);
+      font-size: var(--fs-label-sm);
+      letter-spacing: 0.06em;
+    }
+
+    .byline .byline-name {
+      font-weight: 700;
+      color: var(--ink-soft);
+    }
+
+    .byline time { font-family: var(--font-en); letter-spacing: 0.04em; }
+
+    .article-cover {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: clamp(28px, 5vw, 40px) 0 0;
+      border: 1px solid var(--line);
+    }
+
+    article {
+      margin-top: clamp(40px, 7vw, 64px);
+      font-size: var(--fs-body);
+      line-height: 2;
+    }
+
+    article > p:first-of-type {
+      margin-bottom: var(--space-32);
+      font-size: var(--fs-body-lg);
+      font-weight: 500;
+      line-height: 1.9;
+      color: var(--ink);
+    }
+
+    article h2 {
+      position: relative;
+      margin: var(--space-56) 0 var(--space-20);
+      padding-top: var(--space-32);
+      border-top: 1px solid var(--line);
+      font-size: var(--fs-headline);
+      font-weight: 700;
+      line-height: 1.65;
+      letter-spacing: 0.04em;
+    }
+
+    article h2::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 44px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    article h2:first-of-type {
+      margin-top: var(--space-40);
+    }
+
+    article p { margin: 0 0 22px; }
+
+    article strong {
+      font-weight: 700;
+      background: linear-gradient(transparent 62%, rgba(242, 196, 15, 0.42) 62%);
+    }
+
+    article ul {
+      margin: 0 0 var(--space-24);
+      padding-left: 1.3em;
+    }
+
+    article li { margin-bottom: 8px; }
+    article li::marker { color: var(--accent); }
+
+    article a {
+      text-underline-offset: 3px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .article-more {
+      margin: var(--space-28) 0;
+      padding: var(--space-16) var(--space-20);
+      background: var(--white);
+      border-left: 3px solid var(--accent);
+      font-size: var(--fs-body-sm);
+      line-height: 1.8;
+    }
+
+    .article-more a { font-weight: 700; }
+
+    article ul {
+      margin: 0 0 var(--space-24);
+      padding-left: 1.4em;
+    }
+
+    article li + li { margin-top: 8px; }
+
+    article a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .author-box {
+      margin-top: clamp(56px, 9vw, 88px);
+      padding: clamp(24px, 5vw, 36px);
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .author-box .eyebrow { margin-bottom: 8px; }
+
+    .author-box h3 {
+      margin: 0 0 var(--space-4);
+      font-size: var(--fs-title);
+      letter-spacing: 0.06em;
+    }
+
+    .author-role {
+      margin: 0 0 var(--space-16);
+      color: var(--gray);
+      font-size: var(--fs-label-sm);
+      letter-spacing: 0.06em;
+    }
+
+    .author-box p { margin: 0 0 16px; font-size: var(--fs-body-sm); line-height: 1.9; }
+
+    .author-links {
+      margin: 0;
+      padding-left: 1.2em;
+      font-size: var(--fs-label);
+    }
+
+    .author-links li + li { margin-top: 6px; }
+
+    .author-links a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .related {
+      margin-top: clamp(48px, 8vw, 72px);
+      padding: clamp(20px, 4vw, 28px) clamp(22px, 5vw, 32px);
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .related .eyebrow { margin-bottom: 12px; }
+
+    .related ul {
+      margin: 0;
+      padding-left: 1.2em;
+      font-size: var(--fs-label);
+    }
+
+    .related li + li { margin-top: 8px; }
+    .related li::marker { color: var(--accent); }
+
+    .related a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .cta-box {
+      margin-top: var(--space-28);
+      padding: clamp(24px, 5vw, 36px);
+      border: 1px solid var(--ink);
+      background: rgba(242, 196, 15, 0.08);
+      text-align: center;
+    }
+
+    .cta-box p {
+      margin: 0 0 var(--space-16);
+      font-size: var(--fs-body-sm);
+      color: var(--ink-soft);
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: var(--space-12) var(--space-28);
+      background: var(--ink);
+      color: var(--paper);
+      font-size: var(--fs-label);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      border-radius: 999px;
+    }
+
+    .breadcrumb {
+      margin: 0 0 clamp(28px, 6vw, 44px);
+      font-size: var(--fs-label-sm);
+      color: var(--gray);
+      letter-spacing: 0.03em;
+    }
+
+    .breadcrumb ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4) var(--space-8);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .breadcrumb li { display: flex; align-items: center; gap: 4px 8px; }
+    .breadcrumb li + li::before { content: "/"; color: var(--line); }
+    .breadcrumb a { text-decoration: none; color: var(--gray); }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb [aria-current="page"] { color: var(--ink-soft); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    footer {
+      padding: var(--space-28) var(--space-20);
+      color: #8f8f88;
+      background: var(--night);
+      text-align: center;
+      font-family: var(--font-en);
+      font-size: var(--fs-caption);
+      letter-spacing: 0.12em;
+    }
+
+    @media (max-width: 600px) {
+      .site-header { align-items: flex-start; }
+      .site-name { font-size: var(--fs-label); }
+    }
+  </style>
+  <link rel="stylesheet" href="../article.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="../../index.html">宮崎 真理｜AI✕家事</a>
+    <nav class="site-nav" aria-label="サイトナビゲーション"><a class="nav-profile" href="../../index.html">プロフィール</a><a href="../" aria-current="true">読みもの</a><a href="../../book/">書籍</a></nav>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="../../index.html">ホーム</a></li>
+        <li><a href="../">生成AIと暮らしの話</a></li>
+        <li><span aria-current="page">8年分のスマートウォッチデータを、AIと読み始めた</span></li>
+      </ol>
+    </nav>
+    <p class="eyebrow">Essay</p>
+    <h1>8年分のスマートウォッチデータを、AIと読み始めた</h1>
+    <div class="byline">
+      <img class="byline-avatar" src="../../assets/images/profile/mari-miyazaki-avatar.webp" alt="宮崎真理" width="44" height="44">
+      <span class="byline-name">宮崎真理</span>
+      <span>公開 <time datetime="2026-10-01">2026年10月1日</time></span>
+    </div>
+
+    <article>
+      <p>スマートウォッチをつけていても、歩数や睡眠スコアをちらっと見るくらいで、たまったデータをじっくり見返すことは少ないのではないでしょうか。私もそうでした。GarminやApple Watchを8年ほどつけてきたのに、記録はほとんど眺めるだけでした。</p>
+
+      <p>そのデータを生成AIに読ませて、自分の言葉で質問するようになってから、見えるものが変わりました。「今月の私は、どんな感じだった？」と聞くと、1か月分の記録をまたいで、自分では気づいていなかった変化を拾ってくれます。</p>
+
+      <p>たとえば2026年9月。趣味のランニングで、予定より2割以上多く走った週が2回ありました。同じように走りすぎたのに、平均睡眠が6.3時間だった週は体の回復を示す数字が大きく落ち、7.6時間だった週は比較的よく戻っていました。これだけで睡眠が原因だとは言えません。それでも、走る量ばかり気にしていた私が、睡眠にも目を向けるようになるきっかけになりました。</p>
+
+      <h2>8年間測ってもらっていたのに、見ていたのは距離とタイムだけだった</h2>
+
+      <p>私は男子3人を育てながら、月に200kmほど走っています。次の目標は、2027年冬のフルマラソンで3時間30分を切ることです。</p>
+
+      <p>一方で、ここ数年は家庭で生成AIをどう使えるかを試してきました。献立を考える、学校のプリントから予定を拾う、子どもに合わせた学習ツールを作る。そうした試行錯誤が『AI×家事』という本になりました。</p>
+
+      <p>大学院では生体計測工学を学びました。ただし、医師でも運動生理学の研究者でもありません。ここで書くのは診断の話ではなく、自分の身体データを私がどう読んでいるかという、個人的な実践です。</p>
+
+      <p>そんな私ですが、スマートウォッチのデータは長いあいだ、ほとんど使えていませんでした。</p>
+
+      <p>走った日は距離とタイムを見る。速ければうれしい。遅ければ残念。睡眠スコアが良ければ少し喜び、悪ければそっと閉じる。</p>
+
+      <p>心拍数、睡眠時間、VO2max、HRV、接地時間。時計は毎日かなり細かく測ってくれていたのに、私はその一部しか見ていませんでした。生体計測工学専攻とは何だったのか、と自分でも思います。</p>
+
+      <h2>「この数字、何？」から、1か月単位の質問へ</h2>
+
+      <p>変わり始めたのは、生成AIを使うようになってからです。</p>
+
+      <p>最初にやったのは簡単なことでした。Garminに表示されたHRVという数字を見て、「これ、どういう意味？」とAIに聞く。そのうち、画面をスクリーンショットして「今日のデータはどう見ればいい？」と聞くようになりました。それだけでも、素通りしていた数字が少しずつ読めるようになります。</p>
+
+      <p>ただ、続けていると次の疑問が出てきました。今日の心拍が高いか低いかより、1か月前と比べてどうなのか。調子が悪い時期の前に、睡眠やHRVに何か変化はなかったのか。1日分を説明してもらうだけでは、足りなくなってきたのです。</p>
+
+      <p>そこで2026年の春から、Garminの記録を毎晩AIに読ませる仕組みを作っています。走行距離、ペース、心拍数、睡眠、HRVなどを過去の記録や練習計画と一緒に渡し、AIが書いた振り返りがDiscordに届きます。「脚が重かった」「トレッドミルに変更した理由は雨」といった時計に残らないことは、私が短く書き足します。</p>
+
+      <p class="article-more">この仕組みをどう作り、使いながらどう直してきたかは、<a href="../ai-personal-running-system/">知りたいことが、毎日届く。家事から趣味へ、AIと仕組みを作る楽しみ</a>で書いています。</p>
+
+      <p>最初から、こんな仕組みを作るつもりだったわけではありません。「この数字は何？」から始まり、「今日を見てほしい」「昨日と比べたい」「1か月単位で見たい」と、知りたいことが増えるたびに、仕組みのほうが変わってきました。</p>
+
+      <h2>「9月の私は、どんな感じだった？」と聞いて見えたこと</h2>
+
+      <p>9月末に、1か月分のデータをまとめてAIに見てもらいました。聞いたのは、かなりざっくりしたことです。</p>
+
+      <p>「9月の私は、どんな感じだった？」</p>
+
+      <p>返ってきたのは、ハーフマラソンに向けて積み重ねてきた練習が、いくつもの数字に表れているという振り返りでした。VO2maxは上がり、Garminの予測タイムも縮まっていました。走り方に関する指標にも変化がありました。</p>
+
+      <figure class="article-figure">
+        <img src="../../assets/images/articles/smartwatch-ai-monthly-review-2026-09-summary.webp" alt="AIがまとめた2026年9月の振り返りの画面。冒頭に「走力ははっきり伸びた。体は中旬に一度ぎりぎりまで追い込まれ、下旬に持ち直した月」とあり、月間走行距離、VO2max、ハーフとフルの予測タイムの変化が並んでいる" loading="lazy">
+        <figcaption>AIがまとめた2026年9月の振り返り（冒頭部分）。数字の読み方はAIによる解釈です。</figcaption>
+      </figure>
+
+      <p>日々の感覚としては、「今月もけっこう走ったな」くらいです。1か月分を並べて見て、ちゃんと力はついてきているらしいと、初めて少し実感できました。</p>
+
+      <p>その中で、いちばん気になったのが睡眠でした。</p>
+
+      <p>9月には、計画より多く走った週が2回ありました。どちらも予定より2割以上多く走ったのに、一方では回復の状態がかなり落ち、もう一方では比較的よく戻っていました。平均睡眠時間は、前者が6.3時間、後者が7.6時間でした。</p>
+
+      <figure class="article-figure">
+        <img src="../../assets/images/articles/smartwatch-ai-monthly-review-2026-09-sleep.webp" alt="同じ振り返りの健康の項目。夜間HRVや安静時心拍の8月から9月への変化と、週ごとの計画距離と実際の距離、睡眠時間、HRV、回復の指標が並び、9月14日の週が月の谷だったと示されている" loading="lazy">
+        <figcaption>同じ振り返りの健康の部分。週ごとに、予定と実際の距離、平均睡眠、HRV、回復の指標（Readiness）が並んでいます。</figcaption>
+      </figure>
+
+      <p>もちろん、これだけで睡眠が原因だったとは言えません。運動の強度も生活上の負荷も違いますし、Garminの回復に関する指標には、睡眠を計算に使うものもあります。数字同士が連動して見えるのは、ある意味で当然の部分もあります。</p>
+
+      <p>それでも私は、走る量ばかり気にしていたけれど、走り続けるためには睡眠もかなり大事だなと思いました。</p>
+
+      <p>「睡眠は大事」と言われれば、それは知っています。でも、自分のデータを並べて、眠れていた週と眠れていなかった週ではこう違う、と見せられると、受け取り方が変わります。<strong>一般論として知っていたことが、自分の話になりました</strong>。</p>
+
+      <h2>メーカーの画面には、私の質問が用意されていない</h2>
+
+      <p>振り返ると、ここ数年でスマートウォッチそのものが急に便利になったわけではありません。8年前から、データはかなり取れていました。</p>
+
+      <p>スマートウォッチのアプリには、メーカーが用意したグラフや指標があります。それぞれはよくできています。ただ、そこに並んでいるのはメーカーが想定した問いへの答えで、私が知りたいことがいつもその画面にあるとは限りません。</p>
+
+      <ul>
+        <li>9月の私はどうだった？</li>
+        <li>8月と何が違う？</li>
+        <li>睡眠が短かった時期には、ほかに何が起きていた？</li>
+        <li>最近の変化で、私が見落としていそうなものはある？</li>
+      </ul>
+
+      <p>こうした質問は、睡眠と走行、今月と先月のように、画面や期間をまたぎます。生成AIを使うと、こんな聞き方でも手元のデータをたどりながら一緒に考えてくれます。私にとっての変化は、新しい数字が手に入ったことではなく、もともとあった数字に自分の言葉で質問できるようになったことでした。</p>
+
+      <p>AIの読みは一つの見方として受け取っています。痛みや強い疲労があるときは、数字より自分の身体の感覚を優先しています。</p>
+
+      <h2>8年分の記録に、まだ聞いていないことがある</h2>
+
+      <p>これはランナーに限った話でもないと思います。睡眠を測っている人なら、平日と休日で違いがあるのか。運動した日のほうが眠れているのか。忙しかった週にはどんな変化が出ていたのか。</p>
+
+      <p>私自身も、まだそこまで見られていません。8年分のデータはありますが、季節でどう変わるのかもよく分かっていません。仕事が立て込んだ時期に何が起きているのかも知りたい。自分では調子がいいと思っている日に、数字の上でも何か違いがあるのかも気になります。</p>
+
+      <p>最近は、データを見るたびに、答えより次の質問が増えます。</p>
+
+      <p>8年分もあるので、まだしばらく遊べそうです。</p>
+    </article>
+
+    <p class="article-share"><a href="https://twitter.com/intent/tweet?text=8%E5%B9%B4%E5%88%86%E3%81%AE%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%A6%E3%82%A9%E3%83%83%E3%83%81%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%80%81AI%E3%81%A8%E8%AA%AD%E3%81%BF%E5%A7%8B%E3%82%81%E3%81%9F&amp;url=https%3A//miyazakimari.com/articles/reading-smartwatch-data-with-ai/&amp;via=m316jp2" target="_blank" rel="noopener">Xでシェア<span class="sr-only">（新しいタブで開きます）</span></a></p>
+
+    <div class="related" id="continue-reading">
+      <p class="eyebrow">この続きを読む</p>
+      <ul>
+        <li><a href="../why-i-became-interested-in-generative-ai/"><span class="related-question">データから変化を見つける面白さの原点は</span><span class="related-title">私が生成AIに惹かれた理由</span></a></li>
+        <li><a href="../ai-conversations-as-external-memory/"><span class="related-question">数字ではなく、言葉の記録を読み返すと</span><span class="related-title">生成AIとの会話が、私の外部記憶になり始めた</span></a></li>
+      </ul>
+      <a class="related-all" href="../">すべての記事を見る →</a>
+    </div>
+
+    <div class="author-box">
+      <p class="eyebrow">著者について</p>
+      <h3>宮崎真理</h3>
+      <p class="author-role">『AI×家事』著者</p>
+      <p>神戸大学大学院で生体計測工学を専攻し、修了後はオムロン株式会社で技術職として勤務。出産を機に10年間の専業主婦生活を経て、2023年より生成AIを家事・子育てに取り入れ、暮らしの中での活用を実践している。</p>
+      <p>WOMAN AI AWARD 2026 ライフ・イノベーター賞受賞。講談社「with class」でコラムを連載するほか、テレビ出演、雑誌・Webでの執筆・監修などを行う。</p>
+      <p>3兄弟の母。1000日以上にわたる生成AIの実践経験をもとに、理系出身・元専業主婦の視点から、家庭という最もテクノロジーが遅れた場所を、生活者自身がアップデートしていく可能性を発信している。</p>
+      <ul class="author-links">
+        <li><a href="../../index.html#book">著書『AI×家事』</a></li>
+        <li><a href="../../profile/">宮崎真理プロフィール</a></li>
+        <li><a href="../../index.html#media">メディア出演・執筆実績</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <p>取材・メディア出演・対談・執筆・監修のご相談を承っています。</p>
+      <a class="cta-button" href="../../index.html#contact">お問い合わせはこちら →</a>
+    </div>
+  </main>
+
+  <footer>© 2026 Miyazaki Mari. All rights reserved.</footer>
+</body>
+</html>
