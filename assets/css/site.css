@@ -1,6 +1,6 @@
 /* ============================================================
-   日本語の文字組み（全ページ共通）
-   各ページの<style>より後に読み込み、文字組みだけを上書きする。
+   全ページ共通の仕上げ（文字組み・選択色・フォーカス・ページ遷移）
+   各ページの<style>より後に読み込み、共通部分だけを上書きする。
    ============================================================ */
 
 /* 約物（「」、。など）だけを Noto Sans JP で表示する。
@@ -130,5 +130,42 @@ h2 {
   article p,
   article li {
     text-align: justify;
+  }
+}
+
+/* ============================================================
+   細部の統一
+   ============================================================ */
+
+/* 文字を選択したときの色 */
+::selection {
+  background: var(--accent, #f2c40f);
+  color: var(--ink, #141413);
+}
+
+/* キーボード操作時のフォーカス表示（黒＋黄の二重リング） */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ink, #141413), 0 0 0 5px var(--accent, #f2c40f);
+}
+
+html {
+  /* フォームのチェックボックスなどもブランドの黄色に */
+  accent-color: var(--accent, #f2c40f);
+  /* スマホでタップしたときの灰色の点滅を、淡い黄色に */
+  -webkit-tap-highlight-color: rgba(242, 196, 15, 0.25);
+}
+
+/* ページを移動するときに、白く途切れずにふわっと切り替える
+   （対応ブラウザのみ。動きを減らす設定の人には適用しない） */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.32s;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   }
 }

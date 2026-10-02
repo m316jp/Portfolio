@@ -43,7 +43,7 @@
 
 # 新しいHTMLページ全般（記事に限らず）で必須のもの
 
-- [ ] `</head>` の直前（ページ内の `<style>` や `article.css` より後）に `<link rel="stylesheet" href="/assets/css/typography.css">` を入れる。日本語の文字組み（文節改行・約物詰め・禁則・和欧間）を全ページ共通で管理している。見出し・タイトル用のクラスを新しく作ったら、このCSSの対象セレクタにも追加する。
+- [ ] `</head>` の直前（ページ内の `<style>` や `article.css` より後）に `<link rel="stylesheet" href="/assets/css/site.css">` を入れる。日本語の文字組み（文節改行・約物詰め・禁則・和欧間）と、選択色・フォーカス表示・ページ遷移を全ページ共通で管理している。faviconの下に `<link rel="manifest" href="/site.webmanifest">` と `<meta name="theme-color">` も入れる。見出し・タイトル用のクラスを新しく作ったら、このCSSの対象セレクタにも追加する。
 
 - [ ] Google Analytics（`G-1WMFC152MS`）のタグをheadに入れる。過去にトップページ以外の全ページ（記事・書籍・404・privacy）で丸ごと抜けていて、記事へのアクセスがGA4に一切計測されていなかったことがある。新規ページは必ず入っているか確認する。
 - [ ] `<meta name="description">` は上記と同じく実文字数で120〜160文字程度（`wc -m`は使わない）。
