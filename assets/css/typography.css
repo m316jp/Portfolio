@@ -1,0 +1,134 @@
+/* ============================================================
+   日本語の文字組み（全ページ共通）
+   各ページの<style>より後に読み込み、文字組みだけを上書きする。
+   ============================================================ */
+
+/* 約物（「」、。など）だけを Noto Sans JP で表示する。
+   Zen Kaku Gothic New には約物を詰める機能（palt / halt）が無いため、
+   約物の字形だけ差し替えて text-spacing-trim と palt を効かせる。
+   フォントは SIL Open Font License 1.1（assets/fonts/yakumono/OFL.txt）。 */
+@font-face {
+  font-family: "Mari Yakumono";
+  src: url("/assets/fonts/yakumono/noto-sans-jp-yakumono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+3001-3002, U+3008-3011, U+3014-3015, U+30FB, U+FF01, U+FF08-FF09, U+FF0C, U+FF0E, U+FF1A-FF1B, U+FF1F, U+FF3B, U+FF3D, U+FF5B, U+FF5D;
+}
+
+@font-face {
+  font-family: "Mari Yakumono";
+  src: url("/assets/fonts/yakumono/noto-sans-jp-yakumono-500.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  unicode-range: U+3001-3002, U+3008-3011, U+3014-3015, U+30FB, U+FF01, U+FF08-FF09, U+FF0C, U+FF0E, U+FF1A-FF1B, U+FF1F, U+FF3B, U+FF3D, U+FF5B, U+FF5D;
+}
+
+@font-face {
+  font-family: "Mari Yakumono";
+  src: url("/assets/fonts/yakumono/noto-sans-jp-yakumono-700.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+3001-3002, U+3008-3011, U+3014-3015, U+30FB, U+FF01, U+FF08-FF09, U+FF0C, U+FF0E, U+FF1A-FF1B, U+FF1F, U+FF3B, U+FF3D, U+FF5B, U+FF5D;
+}
+
+@font-face {
+  font-family: "Mari Yakumono";
+  src: url("/assets/fonts/yakumono/noto-sans-jp-yakumono-900.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+  unicode-range: U+3001-3002, U+3008-3011, U+3014-3015, U+30FB, U+FF01, U+FF08-FF09, U+FF0C, U+FF0E, U+FF1A-FF1B, U+FF1F, U+FF3B, U+FF3D, U+FF5B, U+FF5D;
+}
+
+:root {
+  --font-jp: "Mari Yakumono", 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+  --font-en: 'Space Grotesk', "Mari Yakumono", 'Zen Kaku Gothic New', 'Helvetica Neue', sans-serif;
+  /* articles/index.html の変数名 */
+  --sans: var(--font-jp);
+}
+
+/* ---------- 全体（本文の基本） ---------- */
+html {
+  /* 行頭に「ッ」「ー」「ぁ」などを置かない */
+  line-break: strict;
+  /* 和文と英字の間に1/8em のアキを自動で入れる（「Garminや」「生成AIで」など）。
+     数字は「2026年10月」が間延びするため対象外 */
+  text-autospace: ideograph-alpha;
+  /* 連続する約物（」、 や 。」）のアキを詰め、行頭の括弧を揃える */
+  text-spacing-trim: trim-start;
+  font-kerning: normal;
+  overflow-wrap: break-word;
+}
+
+/* 段落の最終行に1〜2文字だけ残る「泣き別れ」を防ぐ */
+p,
+li,
+dd,
+figcaption,
+blockquote {
+  text-wrap: pretty;
+}
+
+/* 数字の桁をそろえる（日付・一覧の並び） */
+time,
+.article-date,
+.column-date,
+.event-date,
+.news-date,
+.pickup-date,
+.tv-date,
+.ranking-date {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 見出し・タイトル ---------- */
+/* 文節の途中で改行しない（「データ／を、」のような折り返しを防ぐ）、
+   行の長さをそろえる。 */
+h1,
+h2,
+h3,
+h4,
+.article-title,
+.related-title,
+.read-next-title,
+.news-title,
+.event-title,
+.cta-banner-title,
+.contact-success-title,
+.media-archive-title,
+.award-highlight-name,
+.award-highlight-subtitle,
+.book-catch,
+.book-subtitle,
+.hero-tagline,
+.hero-expertise {
+  word-break: auto-phrase;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+/* 大きな見出しだけ約物を詰める（小さい文字で詰めると窮屈になる） */
+h1,
+h2 {
+  font-feature-settings: "palt";
+}
+
+/* 2〜3行の短いリード文は文節改行のみ（約物は本文と同じベタ組み）。
+   長い段落に balance を掛けると右側が不揃いになるため対象にしない */
+.lead,
+.hero-intro,
+.web-media-lead,
+.related-question {
+  word-break: auto-phrase;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+/* ---------- 記事本文 ---------- */
+/* 右端をそろえる（最終行は左寄せのまま）。
+   スマホ幅では1行の字数が少なく字間の伸びが目立つため左寄せのまま */
+@media (min-width: 768px) {
+  article p,
+  article li {
+    text-align: justify;
+  }
+}
