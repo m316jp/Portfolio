@@ -912,11 +912,6 @@ body.nav-open .nav-toggle-icon::after { transform: rotate(-45deg); }
   margin-top: 0;
 }
 
-.news-more--note {
-  color: var(--ink-soft);
-  border-bottom-color: var(--line);
-}
-
 /* ============================================================
    PROFILE
    ============================================================ */
