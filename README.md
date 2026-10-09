@@ -6,7 +6,9 @@
 
 | 場所 | 内容 |
 |---|---|
-| `index.html` | トップページ。スタイルとJavaScriptもこの中 |
+| `index.html` | トップページ。メディア実績は要約だけ |
+| `media/` | メディア実績の全件一覧（イベント・媒体別Web記事・コラム連載を含む） |
+| `assets/css/home.css`・`assets/js/home.js` | トップページと実績ページ共通のスタイルとJavaScript |
 | `book/` | 著書紹介ページ |
 | `articles/` | 公開記事。記事ごとに `index.html` と `cover.png` |
 | `assets/images/` | 公開画像。書籍・人物・イベント・受賞・書店・ランキング別 |
