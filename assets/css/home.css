@@ -3513,21 +3513,45 @@ body.lightbox-open {
   margin-top: 72px;
 }
 
+.works-topic-groups {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.works-topic-group {
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.works-topic-label {
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid var(--accent);
+}
+
 .works-topic-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
   list-style: none;
   padding: 0;
 }
 
 .works-topic-list li {
-  padding: 8px 16px;
+  padding: 6px 0;
   font-size: 13px;
-  letter-spacing: 0.04em;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-pill);
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 1024px) {
+  .works-topic-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .works-flow {
@@ -3619,8 +3643,16 @@ body.lightbox-open {
     margin-top: 56px;
   }
 
+  .works-topic-groups {
+    gap: 12px;
+  }
+
+  .works-topic-group {
+    padding: 18px 16px;
+  }
+
   .works-topic-list li {
-    padding: 6px 14px;
+    padding: 4px 0;
     font-size: 12px;
   }
 }
