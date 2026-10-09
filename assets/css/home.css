@@ -3570,35 +3570,8 @@ body.lightbox-open {
   color: var(--ink-soft);
 }
 
-.works-notes {
-  margin: 28px 0 36px;
-  padding: 0;
-  list-style: none;
-}
-
-.works-notes li {
-  position: relative;
-  padding-left: 20px;
-  font-size: 13px;
-  line-height: 2.1;
-  color: var(--ink-soft);
-}
-
-.works-notes li::before {
-  content: '';
-  position: absolute;
-  left: 2px;
-  top: 13px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-}
-
-.works-notes a {
-  color: var(--ink);
-  border-bottom: 1px solid var(--ink);
-  text-decoration: none;
+.works-cta {
+  margin-top: 32px;
 }
 
 @media (max-width: 768px) {
