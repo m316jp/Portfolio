@@ -628,24 +628,6 @@ body.nav-open .nav-toggle-icon::after { transform: rotate(-45deg); }
   overflow: hidden;
 }
 
-.hero-right::before {
-  content: 'AI \00d7 KAJI';
-  position: absolute;
-  left: 50%;
-  bottom: 4%;
-  transform: translateX(-50%);
-  font-family: var(--font-en);
-  font-size: clamp(80px, 9.5vw, 132px);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  line-height: 1;
-  white-space: nowrap;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--night-line);
-  pointer-events: none;
-  user-select: none;
-}
-
 .book-wrapper {
   position: relative;
   z-index: 1;
@@ -3203,10 +3185,6 @@ body.lightbox-open {
     min-height: 460px;
   }
 
-  .hero-right::before {
-    font-size: 64px;
-  }
-
   .news-featured-event {
     grid-template-columns: 1fr;
     margin-bottom: 48px;
@@ -3471,6 +3449,16 @@ body.lightbox-open {
   }
 
   .magazine-read-link {
-    font-size: 12px;
+    font-size: 11px;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+}
+
+/* スマホでは横からのリビールをやめ、待機中に右へはみ出さないようにする */
+@media (max-width: 768px) {
+  .reveal-left,
+  .reveal-right {
+    transform: translateY(28px);
   }
 }
