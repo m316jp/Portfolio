@@ -710,7 +710,7 @@
 <body>
   <header class="site-header">
     <a class="site-name" href="/">宮崎 真理｜AI✕家事</a>
-    <nav class="site-nav" aria-label="サイトナビゲーション"><a class="nav-profile" href="/">プロフィール</a><a href="../articles/">読みもの</a><a href="./" aria-current="true">書籍</a></nav>
+    <nav class="site-nav" aria-label="サイトナビゲーション"><a class="nav-profile" href="/profile/">プロフィール</a><a href="/articles/">読みもの</a><a href="/book/" aria-current="page">著書</a><a href="/media/">実績</a><a href="/#contact">お問い合わせ</a></nav>
   </header>
 
   <div class="container">
@@ -932,7 +932,10 @@
       images.forEach(function (img) {
         img.tabIndex = 0;
         img.setAttribute('role', 'button');
+        img.setAttribute('aria-haspopup', 'dialog');
+        img.setAttribute('aria-controls', 'lightbox');
         img.setAttribute('aria-label', '画像を拡大：' + (img.alt || '画像'));
+        img.dataset.lightboxTrigger = '';
         img.addEventListener('click', function () { open(img); });
         img.addEventListener('keydown', function (e) {
           if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); }
@@ -950,5 +953,6 @@
       });
     })();
   </script>
+  <script src="/assets/js/image-zoom.js"></script>
 </body>
 </html>

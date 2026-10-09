@@ -160,38 +160,6 @@ reveals.forEach(el => observer.observe(el));
   document.querySelectorAll('.marker-underline').forEach(s => markerObserver.observe(s));
 })();
 
-// カスタムカーソル（PC・マウス操作時のみ）
-(function initCursor() {
-  if (!window.matchMedia('(pointer: fine)').matches) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const dot = document.querySelector('.cursor-dot');
-  if (!dot) return;
-
-  let tx = -100, ty = -100, x = -100, y = -100;
-  window.addEventListener('mousemove', e => {
-    tx = e.clientX;
-    ty = e.clientY;
-    dot.classList.add('is-visible');
-  }, { passive: true });
-
-  document.documentElement.addEventListener('mouseleave', () => dot.classList.remove('is-visible'));
-
-  const interactive = 'a, button, summary, input, textarea, label, [role="button"]';
-  document.addEventListener('mouseover', e => {
-    if (e.target.closest(interactive)) dot.classList.add('is-active');
-  });
-  document.addEventListener('mouseout', e => {
-    if (e.target.closest(interactive)) dot.classList.remove('is-active');
-  });
-
-  (function follow() {
-    x += (tx - x) * 0.22;
-    y += (ty - y) * 0.22;
-    dot.style.transform = 'translate(' + x + 'px,' + y + 'px) translate(-50%, -50%)';
-    requestAnimationFrame(follow);
-  })();
-})();
-
 // Nav scroll effect
 const nav = document.querySelector('body > nav');
 window.addEventListener('scroll', () => {
