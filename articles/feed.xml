@@ -7,7 +7,16 @@
     <language>ja</language>
     <copyright>© 2026 Miyazaki Mari</copyright>
     <atom:link href="https://miyazakimari.com/articles/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Thu, 01 Oct 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 12:00:00 +0900</lastBuildDate>
+
+    <item>
+      <title>AIは、学習の小さな障壁を取り除くだけでも価値がある</title>
+      <link>https://miyazakimari.com/articles/ai-removing-learning-barriers/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/ai-removing-learning-barriers/</guid>
+      <pubDate>Tue, 13 Oct 2026 12:00:00 +0900</pubDate>
+      <category>家庭学習とAI</category>
+      <description>家庭学習に生成AIを使う価値は、個別最適化だけでしょうか。中学1年生の息子の英単語アプリを半年ほど作ってきた宮崎真理が、書く練習の中で発音を聞く姿から気づいたこと。漢字プリント作りも例に、教材を使う手間や準備を減らすことが、学習の中身にも関わる理由を考えます。</description>
+    </item>
 
     <item>
       <title>8年分のスマートウォッチデータを、AIと読み始めた</title>
