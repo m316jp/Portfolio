@@ -137,10 +137,10 @@
     .article-grid { margin-top:14px; border-top:1px solid var(--ink); }
     .article-card { display:block; padding:24px 0; border-bottom:1px solid var(--line); text-decoration:none; transition:background-color .18s ease; }
     .article-info { display:grid; grid-template-columns:minmax(0,1fr) 104px; column-gap:28px; align-items:start; }
-    .article-tags { grid-column:1; grid-row:2; display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
-    .article-tag { padding:1px 8px; border:1px solid var(--line); border-radius:2px; font-size:11px; font-weight:500; line-height:1.7; letter-spacing:.04em; color:var(--muted); }
-    .article-info time { grid-column:2; grid-row:1 / span 2; padding-top:6px; font:400 11px/1.5 var(--en); color:var(--muted); text-align:right; }
-    .article-title { grid-column:1; grid-row:1; margin:0; max-width:34em; font-family:var(--sans); font-size:clamp(18px,1.7vw,22px); font-weight:700; line-height:1.6; letter-spacing:.03em; overflow-wrap:break-word; text-wrap:balance; }
+    .article-meta { display:contents; }
+    .article-tag { grid-column:1; grid-row:1; margin:0 0 10px; font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--accent); }
+    .article-meta time { grid-column:2; grid-row:1 / span 3; padding-top:3px; font:400 11px/1.5 var(--en); color:var(--muted); text-align:right; }
+    .article-title { grid-column:1; grid-row:2; margin:0; max-width:34em; font-family:var(--sans); font-size:clamp(18px,1.7vw,22px); font-weight:700; line-height:1.6; letter-spacing:.03em; overflow-wrap:break-word; text-wrap:balance; }
     .article-card:hover, .article-card:focus-visible { background:var(--white); }
     .article-card:hover .article-title, .article-card:focus-visible .article-title { text-decoration:underline; text-decoration-thickness:2px; text-decoration-color:var(--accent); text-underline-offset:7px; }
     .archive-end { display:flex; justify-content:space-between; gap:24px; margin-top:64px; padding:32px 0 56px; font-size:12px; }
@@ -179,10 +179,10 @@
       .article-grid { margin-top:16px; }
       .article-card { padding:18px 0 20px; }
       .article-info { grid-template-columns:minmax(0,1fr); gap:0; }
-      .article-info time { grid-column:1; grid-row:1; padding:0; margin-bottom:6px; font-size:10px; text-align:left; }
+      .article-meta { display:flex; justify-content:space-between; align-items:baseline; grid-column:1; grid-row:1; margin-bottom:10px; }
+      .article-tag { margin:0; font-size:10px; }
+      .article-meta time { grid-column:auto; grid-row:auto; padding:0; font-size:10px; }
       .article-title { grid-column:1; grid-row:2; font-size:18px; line-height:1.65; }
-      .article-tags { grid-row:3; margin-top:8px; }
-      .article-tag { font-size:10px; }
       .archive-end { display:block; margin-top:32px; padding:20px 0 32px; }
       .archive-end a { margin-top:12px; }
     }
@@ -232,10 +232,10 @@
       </div>
       <div class="article-grid">
       <a class="article-card" href="what-to-ask-generative-ai/">
-        <div class="article-info"><time datetime="2026-08-28">2026.08.28</time><h3 class="article-title">生成AIに何を聞けばいい？</h3><span class="article-tags"><span class="article-tag">日常の小さな迷い</span><span class="article-tag">使いはじめ</span></span></div>
+        <div class="article-info"><span class="article-meta"><span class="article-tag">はじめかた</span><time datetime="2026-08-28">2026.08.28</time></span><h3 class="article-title">生成AIに何を聞けばいい？</h3></div>
       </a>
       <a class="article-card" href="voice-input-for-ai-at-home/">
-        <div class="article-info"><time datetime="2026-09-05">2026.09.05</time><h3 class="article-title">家庭の生成AI活用に音声入力が合う理由</h3><span class="article-tags"><span class="article-tag">音声入力</span><span class="article-tag">料理中</span><span class="article-tag">手がふさがるとき</span></span></div>
+        <div class="article-info"><span class="article-meta"><span class="article-tag">音声入力</span><time datetime="2026-09-05">2026.09.05</time></span><h3 class="article-title">家庭の生成AI活用に音声入力が合う理由</h3></div>
       </a>
       </div>
     </section>
@@ -246,13 +246,13 @@
       </div>
       <div class="article-grid">
       <a class="article-card" href="personal-friction-as-ai-condition/">
-        <div class="article-info"><time datetime="2026-09-17">2026.09.17</time><h3 class="article-title">生成AIは、自分固有の「面倒」を条件にできる</h3><span class="article-tags"><span class="article-tag">「できるけれど嫌」</span><span class="article-tag">家事</span></span></div>
+        <div class="article-info"><span class="article-meta"><span class="article-tag">暮らしの面倒</span><time datetime="2026-09-17">2026.09.17</time></span><h3 class="article-title">生成AIは、自分固有の「面倒」を条件にできる</h3></div>
       </a>
       <a class="article-card" href="generative-ai-home-systems/">
-        <div class="article-info"><time datetime="2026-08-28">2026.08.28</time><h3 class="article-title">生成AIで家庭の不便を仕組みにする</h3><span class="article-tags"><span class="article-tag">家庭ごとの不便</span><span class="article-tag">仕組みづくり</span></span></div>
+        <div class="article-info"><span class="article-meta"><span class="article-tag">家事の仕組み</span><time datetime="2026-08-28">2026.08.28</time></span><h3 class="article-title">生成AIで家庭の不便を仕組みにする</h3></div>
       </a>
       <a class="article-card" href="generative-ai-beyond-time-saving/">
-        <div class="article-info"><time datetime="2026-09-03">2026.09.03</time><h3 class="article-title">時短もいいけれど。「続かなかったこと」をAIと考える</h3><span class="article-tags"><span class="article-tag">図書館の本</span><span class="article-tag">時短</span><span class="article-tag">続ける工夫</span></span></div>
+        <div class="article-info"><span class="article-meta"><span class="article-tag">続ける工夫</span><time datetime="2026-09-03">2026.09.03</time></span><h3 class="article-title">時短もいいけれど。「続かなかったこと」をAIと考える</h3></div>
       </a>
       </div>
     </section>
@@ -263,10 +263,10 @@
       </div>
       <div class="article-grid">
       <a class="article-card" href="ai-conversations-as-external-memory/">
-        <div class="article-info"><time datetime="2026-09-18">2026.09.18</time><h3 class="article-title">生成AIとの会話が、私の外部記憶になり始めた</h3><span class="article-tags"><span class="article-tag">会話の記録</span><span class="article-tag">3年前の言葉</span></span></div>
+        <div class="article-info"><span class="article-meta"><span class="article-tag">AIとの付き合い方</span><time datetime="2026-09-18">2026.09.18</time></span><h3 class="article-title">生成AIとの会話が、私の外部記憶になり始めた</h3></div>
       </a>
       <a class="article-card" href="chatgpt-thread-todo-list/">
-        <div class="article-info"><time datetime="2026-09-11">2026.09.11</time><h3 class="article-title">ChatGPTのスレッド一覧をToDoリストにしたら、「管理」より「前に進む」が残った</h3><span class="article-tags"><span class="article-tag">ChatGPT</span><span class="article-tag">スレッド一覧</span><span class="article-tag">ToDoリスト</span></span></div>
+        <div class="article-info"><span class="article-meta"><span class="article-tag">AIとの付き合い方</span><time datetime="2026-09-11">2026.09.11</time></span><h3 class="article-title">ChatGPTのスレッド一覧をToDoリストにしたら、「管理」より「前に進む」が残った</h3></div>
       </a>
       </div>
     </section>
@@ -277,10 +277,10 @@
       </div>
       <div class="article-grid">
       <a class="article-card" href="ai-removing-learning-barriers/">
-        <div class="article-info"><time datetime="2026-10-13">2026.10.13</time><h3 class="article-title">AIは、学習の小さな障壁を取り除くだけでも価値がある</h3><span class="article-tags"><span class="article-tag">英単語アプリ</span><span class="article-tag">漢字プリント</span><span class="article-tag">中学生</span></span></div>
+        <div class="article-info"><span class="article-meta"><span class="article-tag">家庭学習とAI</span><time datetime="2026-10-13">2026.10.13</time></span><h3 class="article-title">AIは、学習の小さな障壁を取り除くだけでも価値がある</h3></div>
       </a>
       <a class="article-card" href="using-generative-ai-with-children/">
-        <div class="article-info"><time datetime="2026-09-10">2026.09.10</time><h3 class="article-title">子どもと生成AI。心配しながら、それでも楽しみにしていること</h3><span class="article-tags"><span class="article-tag">子どものAI利用</span><span class="article-tag">親子の会話</span></span></div>
+        <div class="article-info"><span class="article-meta"><span class="article-tag">子どもとAI</span><time datetime="2026-09-10">2026.09.10</time></span><h3 class="article-title">子どもと生成AI。心配しながら、それでも楽しみにしていること</h3></div>
       </a>
       </div>
     </section>
@@ -291,10 +291,10 @@
       </div>
       <div class="article-grid">
       <a class="article-card" href="reading-smartwatch-data-with-ai/">
-        <div class="article-info"><time datetime="2026-10-01">2026.10.01</time><h3 class="article-title">8年分のスマートウォッチデータを、AIと読み始めた</h3><span class="article-tags"><span class="article-tag">スマートウォッチ</span><span class="article-tag">睡眠</span><span class="article-tag">ランニング</span></span></div>
+        <div class="article-info"><span class="article-meta"><span class="article-tag">趣味とAI</span><time datetime="2026-10-01">2026.10.01</time></span><h3 class="article-title">8年分のスマートウォッチデータを、AIと読み始めた</h3></div>
       </a>
       <a class="article-card" href="ai-personal-running-system/">
-        <div class="article-info"><time datetime="2026-09-07">2026.09.07</time><h3 class="article-title">知りたいことが、毎日届く。家事から趣味へ、AIと仕組みを作る楽しみ</h3><span class="article-tags"><span class="article-tag">ランニング</span><span class="article-tag">図書館の本</span><span class="article-tag">仕組みづくり</span></span></div>
+        <div class="article-info"><span class="article-meta"><span class="article-tag">趣味とAI</span><time datetime="2026-09-07">2026.09.07</time></span><h3 class="article-title">知りたいことが、毎日届く。家事から趣味へ、AIと仕組みを作る楽しみ</h3></div>
       </a>
       </div>
     </section>
@@ -305,10 +305,10 @@
       </div>
       <div class="article-grid">
       <a class="article-card" href="why-i-became-interested-in-generative-ai/">
-        <div class="article-info"><time datetime="2026-08-28">2026.08.28</time><h3 class="article-title">私が生成AIに惹かれた理由</h3><span class="article-tags"><span class="article-tag">データへの関心</span><span class="article-tag">生体計測工学</span><span class="article-tag">子育て</span></span></div>
+        <div class="article-info"><span class="article-meta"><span class="article-tag">きっかけ</span><time datetime="2026-08-28">2026.08.28</time></span><h3 class="article-title">私が生成AIに惹かれた理由</h3></div>
       </a>
       <a class="article-card" href="generative-ai-and-career/">
-        <div class="article-info"><time datetime="2026-09-07">2026.09.07</time><h3 class="article-title">10年の専業主婦経験は、生成AIでどう仕事につながったか</h3><span class="article-tags"><span class="article-tag">専業主婦10年</span><span class="article-tag">技術職</span><span class="article-tag">仕事</span></span></div>
+        <div class="article-info"><span class="article-meta"><span class="article-tag">キャリア</span><time datetime="2026-09-07">2026.09.07</time></span><h3 class="article-title">10年の専業主婦経験は、生成AIでどう仕事につながったか</h3></div>
       </a>
       </div>
     </section>
