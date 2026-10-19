@@ -12,6 +12,7 @@ index.html の <article> 内と index.md の本文を書き換える。
 下書きの書き方:
   ## 見出し / **太字** / [リンク](URL) / 表 / > 引用 / - 箇条書き
   ![代替テキスト](/assets/images/articles/xxx.webp "キャプション")  → 画像
+  画像の行を空行なしで2つ続ける     → 2枚並べて表示（スマホでは縦に並ぶ）
   *【画像：…】*                     → まだ画像がない目印。公開ページには出さない
   表の直後の *…* だけの行           → 表の注記
   <!-- more --> の次の段落          → 枠付きの「関連記事」段落
@@ -24,6 +25,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+IMG = re.compile(r'!\[([^\]]*)\]\((\S+)(?: "([^"]*)")?\)')
 SITE = "https://miyazakimari.com"
 
 
@@ -104,14 +106,22 @@ def to_html(body):
                 f"  <p>{inline(' '.join(p.split()))}</p>" for p in paras) + "\n</blockquote>")
         elif all(re.match(r"[-*] ", l) for l in lines):
             out.append("<ul>\n" + "\n".join(f"  <li>{inline(l[2:].strip())}</li>" for l in lines) + "\n</ul>")
-        elif re.fullmatch(r'!\[([^\]]*)\]\((\S+)(?: "([^"]*)")?\)', b.strip()):
-            alt, src, cap = re.fullmatch(r'!\[([^\]]*)\]\((\S+)(?: "([^"]*)")?\)', b.strip()).groups()
-            fig = [f'<figure class="article-figure">',
-                   f'  <img src="{html.escape(html_href(src)[0])}" alt="{html.escape(alt)}" loading="lazy">']
-            if cap:
-                fig.append(f"  <figcaption>{inline(cap)}</figcaption>")
-            fig.append("</figure>")
-            out.append("\n".join(fig))
+        elif all(IMG.fullmatch(l.strip()) for l in lines):
+            imgs = [IMG.fullmatch(l.strip()).groups() for l in lines]
+
+            def one(alt, src, cap, tag):
+                f = [f'<{tag} class="article-figure">',
+                     f'  <img src="{html.escape(html_href(src)[0])}" alt="{html.escape(alt)}" loading="lazy">']
+                if cap:
+                    f.append(f"  <figcaption>{inline(cap)}</figcaption>")
+                f.append(f"</{tag}>")
+                return f
+
+            if len(imgs) == 1:
+                out.append("\n".join(one(*imgs[0], "figure")))
+            else:
+                inner = [l for g in imgs for l in one(*g, "figure")]
+                out.append('<div class="article-figure-pair">\n' + "\n".join("  " + l for l in inner) + "\n</div>")
         else:
             cls = ' class="article-more"' if more else ""
             out.append(f"<p{cls}>{inline(''.join(l.strip() for l in lines))}</p>")

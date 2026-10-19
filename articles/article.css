@@ -392,3 +392,23 @@ article blockquote,
   font-size: 13px;
   line-height: 1.8;
 }
+
+/* 画像を2枚並べる */
+.article-figure-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+  margin: 32px 0 36px;
+}
+
+.article-figure-pair .article-figure {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .article-figure-pair {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
