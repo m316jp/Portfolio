@@ -12,6 +12,7 @@
 - 記事の公開URLは `articles/<slug>/`、書籍ページは `book/` を維持する。
 - ファイルの移動後は `python3 scripts/check_site.py` で参照を確認する。
 - 詳細は `README.md` と `docs/2026-09-05-file-organization.md` を参照。
+- 公開済み記事の本文は、`drafts/portfolio/` の下書き（フロントマターに `slug:`）を編集し、`python3 scripts/sync_draft.py <下書き> [--updated]` で `articles/<slug>/index.html` の本文と `index.md` に反映できる。タイトル・説明文・関連記事は対象外なので手で直す。書き方はスクリプト冒頭のコメントを参照。
 
 # 新しい記事を公開するときのチェックリスト
 
