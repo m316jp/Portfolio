@@ -149,9 +149,9 @@ AIは、疲れが抜けていない可能性や体調を崩しかけている可
 ![GarminのVO2max推定値のグラフ。7月28日の50.4から上がり続け、10月上旬に53.4、10月19日は53.1](https://miyazakimari.com/articles/garmin-ai-first-half-marathon//assets/images/articles/garmin-ai-first-half-marathon-vo2max.webp "GarminのVO₂max推定値（7月28日〜10月19日）")
 ![Garminのハーフマラソン予測ペースのグラフ。5月31日の1kmあたり約5分から、10月19日の約4分33秒まで月ごとに速くなっている](https://miyazakimari.com/articles/garmin-ai-first-half-marathon//assets/images/articles/garmin-ai-first-half-marathon-half-prediction.webp "Garminのハーフ予測ペース（1kmあたり、5月31日〜10月19日）")
 
-## 試すなら、スクショに目標と一行メモを添える
-
 最初から自動化しなくても、スクショで試せます。走行記録とラップ、手元にある睡眠・HRV・安静時心拍数の画面に、目標とその日の事情を添えます。
+
+AIの読み取りには間違いもあるので、走って安全かどうかは自分の体の感覚で判断しています。
 
 次は、2027年2月の京都マラソンで3時間30分切りを目指します。これからも毎晩の振り返りを読み、自分の体調と照らし合わせて、練習を調整していくつもりです。
 
