@@ -14,7 +14,7 @@ index.html の <article> 内と index.md の本文を書き換える。
   ![代替テキスト](/assets/images/articles/xxx.webp "キャプション")  → 画像
   画像の行を空行なしで2つ続ける     → 2枚並べて表示（スマホでは縦に並ぶ）
   *【画像：…】*                     → まだ画像がない目印。公開ページには出さない
-  表の直後の *…* だけの行           → 表の注記
+  *…* だけの段落                   → 小さな字の注記（表の注記など）
   <!-- more --> の次の段落          → 枠付きの「関連記事」段落
 """
 import datetime
@@ -97,7 +97,7 @@ def to_html(body):
             out.append("\n".join(t))
             prev_table = True
             continue
-        elif prev_table and re.fullmatch(r"\*[^*].*\*", b.strip()):
+        elif re.fullmatch(r"\*[^*].*[^*]\*", b.strip()):
             out.append(f'<p class="article-note">{inline(b.strip()[1:-1])}</p>')
         elif all(l.startswith(">") for l in lines):
             inner = "\n".join(re.sub(r"^> ?", "", l) for l in lines)
