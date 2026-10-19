@@ -26,10 +26,17 @@
   </url>
   <url>
     <loc>https://miyazakimari.com/articles/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://miyazakimari.com/articles/garmin-ai-first-half-marathon/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <url>
     <loc>https://miyazakimari.com/articles/ai-removing-learning-barriers/</loc>
     <lastmod>2026-10-13</lastmod>
@@ -38,7 +45,7 @@
   </url>
   <url>
     <loc>https://miyazakimari.com/articles/reading-smartwatch-data-with-ai/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -80,7 +87,7 @@
   </url>
   <url>
     <loc>https://miyazakimari.com/articles/ai-personal-running-system/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

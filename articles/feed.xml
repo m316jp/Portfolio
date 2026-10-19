@@ -7,7 +7,16 @@
     <language>ja</language>
     <copyright>© 2026 Miyazaki Mari</copyright>
     <atom:link href="https://miyazakimari.com/articles/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 13 Oct 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0900</lastBuildDate>
+
+    <item>
+      <title>Garminのデータを毎日AIで分析。初ハーフで1時間38分32秒</title>
+      <link>https://miyazakimari.com/articles/garmin-ai-first-half-marathon/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/garmin-ai-first-half-marathon/</guid>
+      <pubDate>Mon, 19 Oct 2026 12:00:00 +0900</pubDate>
+      <category>趣味とAI</category>
+      <description>Garminの走行記録と睡眠・HRVを毎晩AIで分析し、初めてのハーフマラソンを1時間38分32秒で完走した記録。休むのが苦手な私が、理由の説明で休めるようになった変化をつづります。</description>
+    </item>
 
     <item>
       <title>AIは、学習の小さな障壁を取り除くだけでも価値がある</title>

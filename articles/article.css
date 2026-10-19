@@ -352,3 +352,43 @@ article blockquote,
   font-size: 13px;
   line-height: 1.8;
 }
+
+/* 本文中の表 */
+.article-table {
+  margin: 28px 0 0;
+  overflow-x: auto;
+}
+
+.article-table table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.article-table th,
+.article-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line, #e4e3dc);
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-table thead th {
+  border-bottom: 1px solid var(--ink, #141413);
+  color: var(--gray, #5f5f5b);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.article-table tbody th {
+  font-weight: 700;
+}
+
+.article-note {
+  margin: 10px 0 28px;
+  color: var(--gray, #5f5f5b);
+  font-size: 13px;
+  line-height: 1.8;
+}

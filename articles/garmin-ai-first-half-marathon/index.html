@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1WMFC152MS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1WMFC152MS');
+  </script>
+  <title>GarminのデータとAIで、初ハーフ1時間38分</title>
+  <meta name="description" content="Garminの走行記録と睡眠・HRVを毎晩AIで分析し、初めてのハーフマラソンを1時間38分32秒で完走した宮崎真理の記録。スクショを送る手間を自動化した仕組み、ラップと一行メモで具体的になった振り返り、休むのが苦手な自分が理由の説明で休めるようになった変化をつづります。">
+  <link rel="canonical" href="https://miyazakimari.com/articles/garmin-ai-first-half-marathon/">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#f7f6f2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+  <link rel="alternate" type="text/markdown" href="index.md" title="Markdown版">
+  <link rel="alternate" type="application/rss+xml" href="/articles/feed.xml" title="生成AIと暮らしの話">
+
+  <!-- OGP -->
+  <meta property="og:site_name" content="宮崎真理 ポートフォリオ">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="Garminのデータを毎日AIで分析。初ハーフで1時間38分32秒">
+  <meta property="og:description" content="Garminの走行記録と睡眠・HRVを毎晩AIで分析し、初めてのハーフマラソンを1時間38分32秒で完走した宮崎真理の記録。スクショを送る手間を自動化した仕組み、ラップと一行メモで具体的になった振り返り、休むのが苦手な自分が理由の説明で休めるようになった変化をつづります。">
+  <meta property="og:url" content="https://miyazakimari.com/articles/garmin-ai-first-half-marathon/">
+  <meta property="og:image" content="https://miyazakimari.com/assets/images/articles/garmin-ai-first-half-marathon-cover.png">
+  <meta property="og:image:alt" content="初ハーフ1:38:32。毎晩のAI分析で、休む理由まで分かった。宮崎真理｜AI×家事">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="article:published_time" content="2026-10-19">
+  <meta property="article:modified_time" content="2026-10-19">
+  <meta property="article:author" content="宮崎真理">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Garminのデータを毎日AIで分析。初ハーフで1時間38分32秒">
+  <meta name="twitter:description" content="Garminの走行記録と睡眠・HRVを毎晩AIで分析し、初めてのハーフマラソンを1時間38分32秒で完走した宮崎真理の記録。スクショを送る手間を自動化した仕組み、ラップと一行メモで具体的になった振り返り、休むのが苦手な自分が理由の説明で休めるようになった変化をつづります。">
+  <meta name="twitter:image:alt" content="初ハーフ1:38:32。毎晩のAI分析で、休む理由まで分かった。宮崎真理｜AI×家事">
+  <meta name="twitter:image" content="https://miyazakimari.com/assets/images/articles/garmin-ai-first-half-marathon-cover.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Garminのデータを毎日AIで分析。初ハーフで1時間38分32秒",
+  "description": "Garminの走行記録と睡眠・HRVを毎晩AIで分析し、初めてのハーフマラソンを1時間38分32秒で完走した宮崎真理の記録。スクショを送る手間を自動化した仕組み、ラップと一行メモで具体的になった振り返り、休むのが苦手な自分が理由の説明で休めるようになった変化をつづります。",
+  "inLanguage": "ja",
+  "articleSection": "趣味とAI",
+  "wordCount": 2570,
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "生成AI"
+    },
+    {
+      "@type": "Thing",
+      "name": "ランニング"
+    },
+    {
+      "@type": "Thing",
+      "name": "ハーフマラソン"
+    },
+    {
+      "@type": "Thing",
+      "name": "Garmin"
+    },
+    {
+      "@type": "Thing",
+      "name": "HRV"
+    }
+  ],
+  "datePublished": "2026-10-19",
+  "dateModified": "2026-10-19",
+  "image": "https://miyazakimari.com/assets/images/articles/garmin-ai-first-half-marathon-cover.png",
+  "author": {
+    "@id": "https://miyazakimari.com/#person",
+    "@type": "Person",
+    "name": "宮崎真理",
+    "url": "https://miyazakimari.com/",
+    "jobTitle": "著者・AIライフスタイルコンサルタント",
+    "sameAs": [
+      "https://x.com/m316jp2",
+      "https://note.com/m316jp2",
+      "https://withonline.jp/authors/9miIK",
+      "https://shueisha.online/list/persons/698d552bb5762297e9000000"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://miyazakimari.com/#organization",
+    "name": "宮崎真理 ポートフォリオ",
+    "url": "https://miyazakimari.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://miyazakimari.com/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://miyazakimari.com/articles/garmin-ai-first-half-marathon/"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://miyazakimari.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "生成AIと暮らしの話",
+      "item": "https://miyazakimari.com/articles/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "GarminとAIで初ハーフ"
+    }
+  ]
+}
+  </script>
+
+  <style>
+    :root {
+      --ink: #141413;
+      --ink-soft: #3c3c39;
+      --gray: #5f5f5b;
+      --line: #e4e3dc;
+      --paper: #f7f6f2;
+      --white: #fff;
+      --night: #121211;
+      --accent: #f2c40f;
+      --font-en: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+      --font-jp: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
+      --space-4: 4px;
+      --space-8: 8px;
+      --space-12: 12px;
+      --space-16: 16px;
+      --space-20: 20px;
+      --space-24: 24px;
+      --space-28: 28px;
+      --space-32: 32px;
+      --space-40: 40px;
+      --space-56: 56px;
+      --space-64: 64px;
+      --fs-display: clamp(26px, 4.6vw, 38px);
+      --fs-headline: 20px;
+      --fs-title: 17px;
+      --fs-body-lg: 18px;
+      --fs-body: 16px;
+      --fs-body-base: 15px;
+      --fs-body-sm: 14px;
+      --fs-label: 13px;
+      --fs-label-sm: 12px;
+      --fs-caption: 11px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--font-jp);
+      font-size: var(--fs-body-base);
+      line-height: 1.9;
+      letter-spacing: 0.025em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+    :focus-visible { outline: none; box-shadow: 0 0 0 2px var(--ink), 0 0 0 5px var(--accent); }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-24);
+      min-height: 64px;
+      padding: var(--space-12) clamp(20px, 5vw, 64px);
+      border-bottom: 1px solid var(--line);
+      background: rgba(247, 246, 242, 0.96);
+    }
+
+    .site-name {
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+
+    main {
+      width: min(720px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(48px, 8vw, 88px) 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 var(--space-12);
+      color: var(--gray);
+      font-family: var(--font-en);
+      font-size: var(--fs-label-sm);
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: var(--fs-display);
+      line-height: 1.55;
+      letter-spacing: 0.04em;
+    }
+
+    .byline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: var(--space-8) var(--space-16);
+      margin: var(--space-20) 0 0;
+      color: var(--gray);
+      font-size: var(--fs-label-sm);
+      letter-spacing: 0.06em;
+    }
+
+    .byline .byline-name {
+      font-weight: 700;
+      color: var(--ink-soft);
+    }
+
+    .byline time { font-family: var(--font-en); letter-spacing: 0.04em; }
+
+    .article-cover {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: clamp(28px, 5vw, 40px) 0 0;
+      border: 1px solid var(--line);
+    }
+
+    article {
+      margin-top: clamp(40px, 7vw, 64px);
+      font-size: var(--fs-body);
+      line-height: 2;
+    }
+
+    article > p:first-of-type {
+      margin-bottom: var(--space-32);
+      font-size: var(--fs-body-lg);
+      font-weight: 500;
+      line-height: 1.9;
+      color: var(--ink);
+    }
+
+    article h2 {
+      position: relative;
+      margin: var(--space-56) 0 var(--space-20);
+      padding-top: var(--space-32);
+      border-top: 1px solid var(--line);
+      font-size: var(--fs-headline);
+      font-weight: 700;
+      line-height: 1.65;
+      letter-spacing: 0.04em;
+    }
+
+    article h2::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 44px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    article h2:first-of-type {
+      margin-top: var(--space-40);
+    }
+
+    article p { margin: 0 0 22px; }
+
+    article strong {
+      font-weight: 700;
+      background: linear-gradient(transparent 62%, rgba(242, 196, 15, 0.42) 62%);
+    }
+
+    article ul {
+      margin: 0 0 var(--space-24);
+      padding-left: 1.3em;
+    }
+
+    article li { margin-bottom: 8px; }
+    article li::marker { color: var(--accent); }
+
+    article a {
+      text-underline-offset: 3px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .article-more {
+      margin: var(--space-28) 0;
+      padding: var(--space-16) var(--space-20);
+      background: var(--white);
+      border-left: 3px solid var(--accent);
+      font-size: var(--fs-body-sm);
+      line-height: 1.8;
+    }
+
+    .article-more a { font-weight: 700; }
+
+    article ul {
+      margin: 0 0 var(--space-24);
+      padding-left: 1.4em;
+    }
+
+    article li + li { margin-top: 8px; }
+
+    article a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .author-box {
+      margin-top: clamp(56px, 9vw, 88px);
+      padding: clamp(24px, 5vw, 36px);
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .author-box .eyebrow { margin-bottom: 8px; }
+
+    .author-box h3 {
+      margin: 0 0 var(--space-4);
+      font-size: var(--fs-title);
+      letter-spacing: 0.06em;
+    }
+
+    .author-role {
+      margin: 0 0 var(--space-16);
+      color: var(--gray);
+      font-size: var(--fs-label-sm);
+      letter-spacing: 0.06em;
+    }
+
+    .author-box p { margin: 0 0 16px; font-size: var(--fs-body-sm); line-height: 1.9; }
+
+    .author-links {
+      margin: 0;
+      padding-left: 1.2em;
+      font-size: var(--fs-label);
+    }
+
+    .author-links li + li { margin-top: 6px; }
+
+    .author-links a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .related {
+      margin-top: clamp(48px, 8vw, 72px);
+      padding: clamp(20px, 4vw, 28px) clamp(22px, 5vw, 32px);
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .related .eyebrow { margin-bottom: 12px; }
+
+    .related ul {
+      margin: 0;
+      padding-left: 1.2em;
+      font-size: var(--fs-label);
+    }
+
+    .related li + li { margin-top: 8px; }
+    .related li::marker { color: var(--accent); }
+
+    .related a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .cta-box {
+      margin-top: var(--space-28);
+      padding: clamp(24px, 5vw, 36px);
+      border: 1px solid var(--ink);
+      background: rgba(242, 196, 15, 0.08);
+      text-align: center;
+    }
+
+    .cta-box p {
+      margin: 0 0 var(--space-16);
+      font-size: var(--fs-body-sm);
+      color: var(--ink-soft);
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: var(--space-12) var(--space-28);
+      background: var(--ink);
+      color: var(--paper);
+      font-size: var(--fs-label);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      border-radius: 999px;
+    }
+
+    .breadcrumb {
+      margin: 0 0 clamp(28px, 6vw, 44px);
+      font-size: var(--fs-label-sm);
+      color: var(--gray);
+      letter-spacing: 0.03em;
+    }
+
+    .breadcrumb ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4) var(--space-8);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .breadcrumb li { display: flex; align-items: center; gap: 4px 8px; }
+    .breadcrumb li + li::before { content: "/"; color: var(--line); }
+    .breadcrumb a { text-decoration: none; color: var(--gray); }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb [aria-current="page"] { color: var(--ink-soft); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    footer {
+      padding: var(--space-28) var(--space-20);
+      color: #8f8f88;
+      background: var(--night);
+      text-align: center;
+      font-family: var(--font-en);
+      font-size: var(--fs-caption);
+      letter-spacing: 0.12em;
+    }
+
+    @media (max-width: 600px) {
+      .site-header { align-items: flex-start; }
+      .site-name { font-size: var(--fs-label); }
+    }
+  </style>
+  <link rel="stylesheet" href="../article.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="/">宮崎 真理｜AI✕家事</a>
+    <nav class="site-nav" aria-label="サイトナビゲーション"><a class="nav-profile" href="/profile/">プロフィール</a><a href="/articles/" aria-current="page">読みもの</a><a href="/book/">著書</a><a href="/media/">実績</a><a href="/#contact">お問い合わせ</a></nav>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="/">ホーム</a></li>
+        <li><a href="../">生成AIと暮らしの話</a></li>
+        <li><span aria-current="page">GarminとAIで初ハーフ</span></li>
+      </ol>
+    </nav>
+    <p class="eyebrow">Essay</p>
+    <h1>Garminのデータを毎日AIで分析。初ハーフで1時間38分32秒</h1>
+    <div class="byline">
+      <img class="byline-avatar" src="../../assets/images/profile/mari-miyazaki-avatar.webp" alt="宮崎真理" width="44" height="44">
+      <span class="byline-name">宮崎真理</span>
+      <span>公開 <time datetime="2026-10-19">2026年10月19日</time></span>
+      <span>更新 <time datetime="2026-10-19">2026年10月19日</time></span>
+    </div>
+
+    <article>
+      <p>2026年10月18日、東京レガシーハーフマラソン。初めてのハーフを、ネットタイム1時間38分32秒で完走しました。目標の1時間40分切りを達成です。</p>
+
+      <p>40歳、3児の母です。家事や育児の合間に走りながら、約5か月、Garminのデータを毎晩AIに分析させてきました。</p>
+
+      <p>走った距離やペース、1kmごとのラップ、睡眠、HRV、安静時心拍数。それらを目標や練習計画と一緒に渡し、翌日の練習を考える材料にしていました。</p>
+
+      <p><strong>特に役立ったのは、休む理由を説明してくれたことです。走るのは大好きですが、休むのは苦手なので。</strong></p>
+
+      <p>記録は<a href="https://result.one.runnet.jp/races/390713/athletes/13797?type=tokyo" target="_blank" rel="noopener">大会公式速報<span class="sr-only">（新しいタブで開きます）</span></a>でも確認できます。</p>
+
+      <h2>スクショを送るのが面倒で、自動化した</h2>
+
+      <p>最初は、走ったあとのGarminの画面をスクリーンショットして、AIに見せていました。「この数字はどういう意味？」「今日の練習はどうだった？」と聞くだけです。2026年2月の京都マラソンも、この方法で準備し、3時間37分で完走しました。</p>
+
+      <p>ただ、毎回スクショを撮り、AIを開き、状況を説明して貼るのは面倒です。分析は面白いのに、その準備が続きませんでした。</p>
+
+      <p>そこで5月、Claude Codeを使って、データを自動で集める仕組みを作り始めました。プログラミングの知識は多少ありましたが、一人で作れるほどではありません。「こういうことがしたい」と日本語で伝え、エラーが出たら相談して直しました。</p>
+
+      <p>今は、Garminの記録と翌日の天気予報を自動で取得し、練習計画や目標タイムと一緒にAIへ渡しています。振り返りのコメントは毎晩、Discordというチャットアプリに届きます。</p>
+
+      <p>データを取り出して送る作業がなくなると、振り返りを続けやすくなりました。</p>
+
+      <p class="article-more">仕組みを作り、使いながら直してきた話は、<a href="../ai-personal-running-system/">知りたいことが、毎日届く。家事から趣味へ、AIと仕組みを作る楽しみ</a>にまとめています。</p>
+
+      <h2>ラップと一行メモを足すと、振り返りが具体的になった</h2>
+
+      <p>平均ペースだけでは、走っている間の変化がわかりません。1kmごとのラップを渡すと、目標ペースにいつ乗れたか、後半に上げたか、どこで落ちたかまで振り返れます。</p>
+
+      <p>ただ、ラップにも残らないことがあります。夕食の直後だった。仕事が忙しすぎた。右膝が痛かった。数字だけでは、ゆっくり走った理由も、休んだ理由もわかりません。</p>
+
+      <p>だから私は、その日の事情を一行のメモにして、一緒に渡しています。睡眠やHRVも添えると、練習内容と回復の状態を合わせて考えられるようになりました。</p>
+
+      <h2>予定どおりに走りたい私が、休めるようになった</h2>
+
+      <p>練習計画を立てたら、多少疲れていてもそのとおりに走りたい。休めば、そのぶん遅れる気がする。私はそういうタイプです。</p>
+
+      <p>調子がよければ、予定にない練習まで足します。レース10日前にも1km×4本のスピード練習を入れて、AIに怒られました。</p>
+
+      <p>でも、体が軽く感じる日でも、回復に関する数字がよいとは限りません。</p>
+
+      <p>Garminが示す練習への準備状態の目安「トレーニングレディネス」は、10月10日に85点、翌11日には60点。睡眠スコアも最近では最も低くなりました。その日、私は走りませんでした。</p>
+
+      <p>夜に届いたコメントの見出しは「今日の0kmが一番正しい判断だった一日」。14日にはレディネスが34点まで下がり、AIはレースまで休養を重視するよう勧めてきました。</p>
+
+      <p>計画を立てたのは自分なので、休むと計画を破った気がします。それでも、睡眠やHRVの変化と一緒に理由を説明されると、納得して休めました。</p>
+
+      <p><strong>休んだことまで含めて練習を振り返れた。私にとっては、これが大きな変化でした。</strong></p>
+
+      <h2>レース前日、AIは1時間42分を提案した</h2>
+
+      <p>直前には、気になる変化もありました。普段は43〜44回/分の安静時心拍数が、レース前日には49回に上昇。HRVも、自分の基準範囲の下限付近でした。</p>
+
+      <p>AIは、疲れが抜けていない可能性や体調を崩しかけている可能性を挙げ、1時間42分程度を目安に走ることを提案しました。</p>
+
+      <p>この数か月、1時間40分を切るために準備してきたのに。迷いました。</p>
+
+      <p>当日の朝は、思っていたより体が軽く感じました。私は1時間40分のペーサーについていくと決め、3km付近で追いついてからは、そのペースで走りました。</p>
+
+      <p>ところが18km付近、給水のあとに吐き気がきました。寒さと鳥肌も止まらず、ペーサーから離れてしまいました。上り坂が終わるころに症状がいったん落ち着き、再びペースを上げてゴール。ネットタイムは1時間38分32秒でした。</p>
+
+      <p>無事、目標を達成することができました。</p>
+
+      <h2>練習量も、Garminの予測タイムも変わった</h2>
+
+      <div class="article-table">
+        <table>
+          <thead>
+            <tr><th scope="col">指標</th><th scope="col">以前</th><th scope="col">レース前までの変化</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Garminのハーフ予測タイム</th><td>7月8日：1時間46分16秒</td><td>10月17日：1時間36分17秒</td></tr>
+            <tr><th scope="row">GarminのVO₂max推定値</th><td>7月末：49</td><td>レース前：53</td></tr>
+            <tr><th scope="row">月間走行距離</th><td>3・4月：各月55km前後</td><td>8月：241km、9月：228km</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="article-note">いずれも2026年の記録。予測タイムはGarminの推定値で、実走記録とは別です。</p>
+
+      <p>走行距離も増えているので、AIを使った効果だけを取り出すことはできません。私が実感しているのは、練習の記録と体調を見直し、無理に計画を守ろうとする自分の判断を変えるのに役立ったことです。</p>
+
+      <h2>試すなら、スクショに目標と一行メモを添える</h2>
+
+      <p>最初から自動化しなくても、スクショで試せます。走行記録とラップ、手元にある睡眠・HRV・安静時心拍数の画面に、目標とその日の事情を添えます。</p>
+
+      <p>私の使い方をもとにした入力例です。</p>
+
+      <blockquote>
+        <p>目標は［レース名・日付・タイム］です。今日の練習の狙いは［内容］、体の感覚や事情は［一行メモ］です。</p>
+        <p>添付したGarminのラップや睡眠などを、目標と普段の傾向に照らして振り返ってください。練習の狙いに合っていた点と、次に調整を考えたい点を教えてください。読めた事実と推測を分け、足りない情報は確認してください。</p>
+      </blockquote>
+
+      <p>HRVは心拍の間隔の揺らぎを示す値で、<a href="https://www.garmin.com/en-IE/garmin-technology/health-science/hrv-status/" target="_blank" rel="noopener">本人の普段の範囲と比べて見るもの<span class="sr-only">（新しいタブで開きます）</span></a>です。AIの読み取りや解釈にも間違いがあり、走って安全かどうかの判定には使えません。</p>
+
+      <p>次は、2027年2月の京都マラソンで3時間30分切りを目指します。これからも毎晩の振り返りを読み、自分の体調と照らし合わせて、練習を調整していくつもりです。</p>
+    </article>
+
+    <p class="article-share"><a href="https://twitter.com/intent/tweet?text=Garmin%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%AF%8E%E6%97%A5AI%E3%81%A7%E5%88%86%E6%9E%90%E3%80%82%E5%88%9D%E3%83%8F%E3%83%BC%E3%83%95%E3%81%A71%E6%99%82%E9%96%9338%E5%88%8632%E7%A7%92&amp;url=https%3A%2F%2Fmiyazakimari.com%2Farticles%2Fgarmin-ai-first-half-marathon%2F&amp;via=m316jp2" target="_blank" rel="noopener">Xでシェア<span class="sr-only">（新しいタブで開きます）</span></a></p>
+
+    <div class="related" id="continue-reading">
+      <p class="eyebrow">この続きを読む</p>
+      <ul>
+        <li><a href="../reading-smartwatch-data-with-ai/"><span class="related-question">睡眠と回復の関係を、1か月分の記録で読むなら</span><span class="related-title">8年分のスマートウォッチデータを、AIと読み始めた</span></a></li>
+        <li><a href="../generative-ai-beyond-time-saving/"><span class="related-question">面倒で続かなかったことを、続けられる形にするなら</span><span class="related-title">時短もいいけれど。「続かなかったこと」をAIと考える</span></a></li>
+      </ul>
+      <a class="related-all" href="../">すべての記事を見る →</a>
+    </div>
+
+    <div class="author-box">
+      <p class="eyebrow">著者について</p>
+      <h3>宮崎真理</h3>
+      <p class="author-role">『AI×家事』著者</p>
+      <p>神戸大学大学院で生体計測工学を専攻し、修了後はオムロン株式会社で技術職として勤務。出産を機に10年間の専業主婦生活を経て、2023年より生成AIを家事・子育てに取り入れ、暮らしの中での活用を実践している。</p>
+      <p>WOMAN AI AWARD 2026 ライフ・イノベーター賞受賞。講談社「with class」でコラムを連載するほか、テレビ出演、雑誌・Webでの執筆・監修などを行う。</p>
+      <p>3兄弟の母。1000日以上にわたる生成AIの実践経験をもとに、理系出身・元専業主婦の視点から、家庭という最もテクノロジーが遅れた場所を、生活者自身がアップデートしていく可能性を発信している。</p>
+      <ul class="author-links">
+        <li><a href="/book/">著書『AI×家事』</a></li>
+        <li><a href="../../profile/">宮崎真理プロフィール</a></li>
+        <li><a href="/media/">メディア出演・執筆実績</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <p>取材・メディア出演・対談・執筆・監修のご相談を承っています。</p>
+      <a class="cta-button" href="/#contact">お問い合わせはこちら →</a>
+    </div>
+  </main>
+
+  <footer>© 2026 Miyazaki Mari. All rights reserved.</footer>
+</body>
+</html>
