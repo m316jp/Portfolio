@@ -100,4 +100,4 @@ AIの読みは一つの見方として受け取っています。痛みや強い
 
 8年分もあるので、まだしばらく遊べそうです。
 
-毎晩の振り返りを続けて初めてのハーフマラソンに臨み、休む判断まで変わった話は、[Garminのデータを毎日AIで分析。初ハーフで1時間38分32秒](https://miyazakimari.com/articles/garmin-ai-first-half-marathon/)で書いています。
+毎晩の振り返りを続けて初めてのハーフマラソンに臨み、休む判断まで変わった話は、[Garminのデータを毎日AIで分析。初ハーフマラソンで1時間38分](https://miyazakimari.com/articles/garmin-ai-first-half-marathon/)で書いています。

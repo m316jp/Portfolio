@@ -1,5 +1,5 @@
 ---
-title: "Garminのデータを毎日AIで分析。初ハーフで1時間38分32秒"
+title: "Garminのデータを毎日AIで分析。初ハーフマラソンで1時間38分"
 description: "Garminの走行記録と睡眠・HRVを毎晩AIで分析し、初めてのハーフマラソンを1時間38分32秒で完走した宮崎真理の記録。スクショを送る手間を自動化した仕組み、ラップと一行メモで具体的になった振り返り、休むのが苦手な自分が理由の説明で休めるようになった変化をつづります。"
 url: https://miyazakimari.com/articles/garmin-ai-first-half-marathon/
 date: 2026-10-19
@@ -9,7 +9,7 @@ author: 宮崎真理
 site: https://miyazakimari.com/
 ---
 
-# Garminのデータを毎日AIで分析。初ハーフで1時間38分32秒
+# Garminのデータを毎日AIで分析。初ハーフマラソンで1時間38分
 
 『AI×家事』（扶桑社）著者・宮崎真理／公開 2026-10-19
 
