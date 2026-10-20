@@ -2335,30 +2335,53 @@ a.event-card:hover {
   margin-bottom: 40px;
 }
 
+.articles-lead {
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
+
 .articles-list {
-  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
 }
 
 .articles-item {
-  display: grid;
-  grid-template-columns: 1fr 40px;
-  align-items: center;
-  gap: 20px;
-  padding: 28px 8px;
-  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
   text-decoration: none;
   color: var(--ink);
-  transition: background var(--dur-fast) ease, padding var(--dur-fast) ease;
+  transition: transform var(--dur-fast) ease, box-shadow var(--dur-fast) ease, border-color var(--dur-fast) ease;
 }
 
 .articles-item:hover {
-  background: var(--white);
-  padding-left: 20px;
+  transform: translateY(-4px);
+  border-color: var(--ink);
+  box-shadow: 0 10px 24px rgba(20, 20, 19, 0.08);
 }
 
-.articles-item:hover .articles-arrow {
-  color: var(--ink);
-  transform: translateX(5px);
+.articles-thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 40 / 21;
+  object-fit: cover;
+  border-bottom: 1px solid var(--line);
+}
+
+.articles-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px 22px 22px;
 }
 
 .articles-title {
@@ -2381,18 +2404,18 @@ a.event-card:hover {
 
 .articles-meta {
   display: block;
-  margin-top: 10px;
+  margin-top: auto;
+  padding-top: 14px;
   font-family: var(--font-en);
   font-size: 11px;
   letter-spacing: 0.08em;
   color: var(--gray-light);
 }
 
-.articles-arrow {
-  display: flex;
-  justify-content: flex-end;
-  color: var(--gray-light);
-  transition: color var(--dur-fast) ease, transform var(--dur-fast) ease;
+@media (max-width: 900px) and (min-width: 601px) {
+  .articles-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .articles-more {
@@ -2418,9 +2441,9 @@ a.event-card:hover {
 }
 
 @media (max-width: 600px) {
-  .articles-item {
-    grid-template-columns: 1fr 24px;
-    gap: 14px;
+  .articles-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
