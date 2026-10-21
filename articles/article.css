@@ -412,3 +412,82 @@ article blockquote,
     gap: 24px;
   }
 }
+
+/* 本文中の関連記事リンク：枠全体を押せるカードにする（2026-10-21） */
+.article-more:has(a) {
+  position: relative;
+  margin: 36px 0;
+  padding: 18px 60px 18px 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white, #fff);
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.8;
+  text-wrap: wrap;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.article-more:has(a)::before {
+  content: "関連記事";
+  display: block;
+  margin-bottom: 4px;
+  color: var(--gray);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.article-more:has(a)::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  transform: translateY(-50%);
+  color: var(--ink);
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.article-more a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  background: linear-gradient(transparent 62%, rgba(242, 196, 15, 0.45) 62%);
+}
+
+/* リンクの当たり判定を枠全体に広げる */
+.article-more a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+}
+
+.article-more:has(a):hover {
+  border-color: var(--ink);
+  box-shadow: 0 8px 20px rgba(20, 20, 19, 0.08);
+}
+
+.article-more:has(a):hover::after {
+  transform: translate(4px, -50%);
+}
+
+.article-more:has(a:focus-visible) {
+  box-shadow: 0 0 0 2px var(--ink), 0 0 0 5px var(--accent);
+}
+
+.article-more a:focus-visible {
+  box-shadow: none;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .article-more:has(a) {
+    padding: 16px 48px 16px 18px;
+  }
+
+  .article-more:has(a)::after {
+    right: 18px;
+  }
+}
