@@ -3,7 +3,7 @@ title: "生成AIに何を聞けばいい？日常の小さな質問から使い�
 description: "生成AIを使ってみたいけれど、何を聞けばいいかわからない人へ。すごい活用法を探す前に、日常の小さな疑問から始める理由と、AIに相談できる範囲を広げる方法を解説します。"
 url: https://miyazakimari.com/articles/what-to-ask-generative-ai/
 date: 2026-08-28
-updated: 2026-09-18
+updated: 2026-10-21
 section: "はじめかた"
 author: 宮崎真理
 site: https://miyazakimari.com/
@@ -11,7 +11,7 @@ site: https://miyazakimari.com/
 
 # 生成AIに何を聞けばいい？日常の小さな質問から使い方を広げる方法
 
-『AI×家事』（扶桑社）著者・宮崎真理／公開 2026-08-28・更新 2026-09-18
+『AI×家事』（扶桑社）著者・宮崎真理／公開 2026-08-28・更新 2026-10-21
 
 生成AIを使ってみたいけれど、何を聞けばいいかわからない。
 
@@ -20,6 +20,8 @@ site: https://miyazakimari.com/
 まず、自分が日常で少し迷っていることを、そのまま聞いてみる。
 
 1つの質問で少しでも役に立つ経験ができると、「これも聞けるかもしれない」と、生成AIに相談できる範囲が広がっていきます。
+
+その前に、どの生成AIを使えばいいかで迷っている場合は、[「どの生成AIがおすすめ？」と聞かれたら、私が答えていること](https://miyazakimari.com/articles/which-generative-ai-to-start-with/)に、私が実際に答えている内容を書きました。
 
 ## なぜ「何を聞けばいいかわからない」のか
 

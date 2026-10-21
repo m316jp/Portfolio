@@ -7,7 +7,16 @@
     <language>ja</language>
     <copyright>© 2026 Miyazaki Mari</copyright>
     <atom:link href="https://miyazakimari.com/articles/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 12:00:00 +0900</lastBuildDate>
+
+    <item>
+      <title>「どの生成AIがおすすめ？」と聞かれたら、私が答えていること</title>
+      <link>https://miyazakimari.com/articles/which-generative-ai-to-start-with/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/which-generative-ai-to-start-with/</guid>
+      <pubDate>Wed, 21 Oct 2026 12:00:00 +0900</pubDate>
+      <category>はじめかた</category>
+      <description>「どの生成AIがおすすめ？」と聞かれたとき、ChatGPTとClaudeの両方に課金して使っている宮崎真理が答えていること。最初はChatGPTを一つ使い続けることをすすめる理由と、モデルによる性能差、無料版と有料版の違い、公式アプリの見分け方。</description>
+    </item>
 
     <item>
       <title>Garminのデータを毎日AIで分析。初ハーフマラソンで1時間38分</title>
