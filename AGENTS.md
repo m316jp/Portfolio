@@ -39,7 +39,7 @@
 - [ ] 記事のMarkdown版（`index.md`）のフロントマター（`date` / `updated`）と冒頭の「公開・更新」表記を、HTML版の `datePublished` / `dateModified` とそろえる。
 - [ ] `python3 scripts/build_llms_full.py` を実行して `llms-full.txt` を再生成する（記事や `llms.txt` を変更したときは毎回）。
 - [ ] `sitemap.xml` に新しいURLを追加し、既存ページの `lastmod` も実際の更新日に合わせる。
-- [ ] `index.html` の「生成AIと暮らしの話」プレビューは新着順ではなく、読んでほしい記事を厳選して載せている（2026-10-20に、マラソン系ばかり並んでいたため変更。現在は入口の「何を聞けばいい？」、子どもの学習の「小さな障壁」、ハーフマラソン）。新記事を入れるかは内容で判断し、同じテーマが重ならないようにする。新着の告知はRSSと記事一覧が担う。カードはサムネイル付き（2026-10-20に文字だけの一覧から変更）。記事を差し替えるときはカバー画像から800×420のwebpを `assets/images/articles/<slug>-thumb.webp` として作り、リンクに `data-cta="article-<slug>"`（GA4の `cta_click` で計測）を付ける。
+- [ ] `index.html` の「生成AIと暮らしの話」プレビューは新着順ではなく、読んでほしい記事を厳選して載せている（2026-10-20に、マラソン系ばかり並んでいたため変更。現在は入口の「どの生成AIがおすすめ？」、子どもの学習の「小さな障壁」、ハーフマラソン）。新記事を入れるかは内容で判断し、同じテーマが重ならないようにする。新着の告知はRSSと記事一覧が担う。カードはサムネイル付き（2026-10-20に文字だけの一覧から変更）。記事を差し替えるときはカバー画像から800×420のwebpを `assets/images/articles/<slug>-thumb.webp` として作り、リンクに `data-cta="article-<slug>"`（GA4の `cta_click` で計測）を付ける。
 - [ ] 公開後は `python3 scripts/check_site.py` を実行し、リンク切れ・JSON-LD構文エラーが無いことを確認する。
 - [ ] pushしてサイトに反映されたら `python3 scripts/indexnow.py --since YYYY-MM-DD`（その日の日付）を実行し、新規・更新URLをBing等にIndexNowで通知する（ChatGPT検索はBingの索引を使うため）。キーファイルはルートの `d7f030e362a06eb79f8170c52aa44321.txt`。消したり改名したりしない。
 
