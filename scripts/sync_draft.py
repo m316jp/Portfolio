@@ -187,6 +187,7 @@ def main():
     (art / "index.html").write_text(page)
     md_path.write_text(md)
     print(f"反映しました: articles/{slug}/index.html, index.md" + ("（更新日も変更）" if touch else ""))
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "add_wbr.py"), str(art / "index.html")], check=True)
     subprocess.run([sys.executable, str(ROOT / "scripts" / "build_llms_full.py")], check=True)
     subprocess.run([sys.executable, str(ROOT / "scripts" / "check_site.py")], check=True)
 
