@@ -126,12 +126,13 @@ h2 {
 
 /* ---------- 記事本文 ---------- */
 /* 右端をそろえる（最終行は左寄せのまま）。
-   スマホ幅では1行の字数が少なく字間の伸びが目立つため左寄せのまま */
-@media (min-width: 768px) {
-  article p,
-  article li {
-    text-align: justify;
-  }
+   以前はスマホ幅だけ左寄せにしていたが、iPhone（Safari）では text-wrap: pretty が
+   段落全体の行長を調整するため右端が大きくガタついた（2026-10-21）。
+   本文は pretty を外し、全幅で両端そろえにする。 */
+article p,
+article li {
+  text-align: justify;
+  text-wrap: wrap;
 }
 
 /* ============================================================
