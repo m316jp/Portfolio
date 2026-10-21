@@ -162,7 +162,7 @@ def main():
     md = md_path.read_text()
     head_end = md.index("\n\n", md.index("\n# ") + 1)          # H1
     head_end = md.index("\n\n", head_end + 2)                   # 著者・日付の行
-    tail_i = md.find("\n---\n\n## この続きを読む")
+    tail_i = md.find("\n---\n\n## 次に読むなら")
     md = md[:head_end + 2] + to_md(body) + (md[tail_i:] if tail_i != -1 else "")
 
     if touch:
