@@ -157,7 +157,7 @@ ChatGPTは、無料版でも文章作成や相談、画像やファイルを使�
 
 「こんなこともAIに相談できるんだ」と気づく機会も増えて、日常の中で面倒なことに出合ったとき、「これもAIを使って解決できないだろうか」と考えるようになります。
 
-私自身、使い続けてきて一番大きく変わったのはここでした。以前なら自分には難しいと思っていたことでも、AIに相談しながら、自分で解決方法を考えられるようになりました。家庭の不便をどう仕組みにしてきたかは、[生成AIで家庭の不便を仕組みにする](https://miyazakimari.com/articles/generative-ai-home-systems/)にまとめています。
+私自身、使い続けてきて一番大きく変わったのはここでした。以前なら自分には難しいと思っていたことでも、AIに相談しながら、自分で解決方法を考えられるようになりました。
 
 もちろん、ただ使う回数が増えれば、自然に上達するわけではありません。AIの回答を鵜呑みにせず、結果を確かめ、必要に応じて頼み方を変える。その繰り返しがあって、使う側の経験になるのだと思います。
 
@@ -165,13 +165,17 @@ Microsoft Researchなどの研究者らが知識労働者319人に行った[調�
 
 **AIが自分に合った回答を返しやすくなるだけでなく、自分もAIをより適切に使えるようになっていく。** 私は、この両方に価値があると思っています。
 
+家庭の不便をどう仕組みにしてきたかは、[生成AIで家庭の不便を仕組みにする](https://miyazakimari.com/articles/generative-ai-home-systems/)にまとめています。
+
 ## AIに詳しくなることが目的ではない
 
 生成AIを使い始めるのに、特別な知識や完璧な指示文は必要ありません。
 
 「今日の夕食、何にしよう」「この学校のお知らせ、結局何をすればいいの？」「このメール、どう返信しよう」
 
-そんな身近なことから相談できます。何を聞けばいいか迷う場合の考え方は、[生成AIに何を聞けばいい？](https://miyazakimari.com/articles/what-to-ask-generative-ai/)に書きました。
+そんな身近なことから相談できます。
+
+何を聞けばいいか迷う場合の考え方は、[生成AIに何を聞けばいい？](https://miyazakimari.com/articles/what-to-ask-generative-ai/)に書きました。
 
 生成AIを使う目的は、生成AIに詳しくなることではありません。
 
@@ -181,21 +185,7 @@ Microsoft Researchなどの研究者らが知識労働者319人に行った[調�
 
 せっかくChatGPTを使おうと思ったのに、気づいたら別のアプリを使っていた、ということのないように。
 
-## 参考資料・公式サイト
-
-**研究・調査**
-
-- Stanford HAI（2026）[The 2026 AI Index Report](https://hai.stanford.edu/ai-index/2026-ai-index-report)
-- OpenAI（2025）[Why Language Models Hallucinate（言語モデルがハルシネーションを起こす理由）](https://openai.com/ja-JP/index/why-language-models-hallucinate/)
-- Lee et al.（2025）[The Impact of Generative AI on Critical Thinking](https://doi.org/10.1145/3706598.3713778)
-
-**生成AIの公式サイト**
-
-- ChatGPT（OpenAI）：[chatgpt.com](https://chatgpt.com/)
-- Gemini（Google）：[gemini.google.com](https://gemini.google.com/)
-- Claude（Anthropic）：[claude.ai](https://claude.ai/)
-
-*サービスの機能や料金プラン、利用できるモデルは随時変更されます。本記事は2026年10月時点の情報と筆者の利用経験にもとづいています。*
+*参考資料：Stanford HAI『[The 2026 AI Index Report](https://hai.stanford.edu/ai-index/2026-ai-index-report)』（2026）／OpenAI「[Why Language Models Hallucinate](https://openai.com/ja-JP/index/why-language-models-hallucinate/)」（2025）／Lee et al.「[The Impact of Generative AI on Critical Thinking](https://doi.org/10.1145/3706598.3713778)」（2025）。各サービスの公式サイト：ChatGPT（[chatgpt.com](https://chatgpt.com/)）／Gemini（[gemini.google.com](https://gemini.google.com/)）／Claude（[claude.ai](https://claude.ai/)）。サービスの機能や料金プラン、利用できるモデルは随時変更されます。本記事は2026年10月時点の情報と筆者の利用経験にもとづいています。*
 
 ---
 
