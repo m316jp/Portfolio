@@ -7,7 +7,16 @@
     <language>ja</language>
     <copyright>© 2026 Miyazaki Mari</copyright>
     <atom:link href="https://miyazakimari.com/articles/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 21 Oct 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 12:00:00 +0900</lastBuildDate>
+
+    <item>
+      <title>生成AIは課金したほうがいい？ 私は「まず1か月、有料版を」と答えている</title>
+      <link>https://miyazakimari.com/articles/should-i-pay-for-generative-ai/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/should-i-pay-for-generative-ai/</guid>
+      <pubDate>Thu, 05 Nov 2026 12:00:00 +0900</pubDate>
+      <category>はじめかた</category>
+      <description>「生成AIは課金したほうがいい？」と聞かれたとき、宮崎真理が今「まず1か月だけ有料版を」と答えている理由。無料版で満足している人に有料版で何が変わるのか、家族の図書館管理などを自分で作った経験と、時間も体力も足りないからAIに任せたい理由。</description>
+    </item>
 
     <item>
       <title>「どの生成AIがおすすめ？」と聞かれたら、私が答えていること</title>
