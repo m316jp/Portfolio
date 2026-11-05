@@ -1110,6 +1110,8 @@ body.nav-open .nav-toggle-icon::after { transform: rotate(-45deg); }
 
 .book-buy-btn {
   display: inline-block;
+  /* Safariは text-autospace の和欧間アキを幅に含めず「Amazonで見／る」と折り返すため */
+  white-space: nowrap;
   padding: 15px 32px;
   background: var(--accent);
   color: var(--ink);
