@@ -135,16 +135,19 @@ article p {
   margin-bottom: 26px;
 }
 
-/* AIへの頼み方など：左の線だけの控えめな引用（白いカードの関連記事と見分けるため、箱にしない） */
+/* AIへの頼み方など：チャットで送ったメッセージのような吹き出し（白いカードの関連記事と見分けるため） */
 article blockquote {
-  margin: 28px 0;
-  padding: 2px 0 2px 20px;
+  position: relative;
+  width: fit-content;
+  max-width: 86%;
+  margin: 28px 0 28px auto;
+  padding: 14px 20px;
   border: 0;
-  border-left: 3px solid var(--accent);
-  background: transparent;
-  color: var(--ink-soft);
+  border-radius: 18px 18px 4px 18px;
+  background: #ebe8df;
+  color: var(--ink);
   font-size: 15px;
-  line-height: 1.9;
+  line-height: 1.85;
 }
 
 article blockquote p {
@@ -413,7 +416,8 @@ article blockquote p + p {
   }
 
   article blockquote {
-    padding: 2px 0 2px 16px;
+    max-width: 92%;
+    padding: 12px 16px;
   }
 
   .article-more {
