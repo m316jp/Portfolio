@@ -7,7 +7,16 @@
     <language>ja</language>
     <copyright>© 2026 Miyazaki Mari</copyright>
     <atom:link href="https://miyazakimari.com/articles/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Thu, 05 Nov 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 12:00:00 +0900</lastBuildDate>
+
+    <item>
+      <title>画面の中の家事まで、AIがやってくれるようになってきた</title>
+      <link>https://miyazakimari.com/articles/ai-agents-for-on-screen-chores/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/ai-agents-for-on-screen-chores/</guid>
+      <pubDate>Tue, 10 Nov 2026 12:00:00 +0900</pubDate>
+      <category>AIエージェント</category>
+      <description>献立や段取りを考える家事にAIを使ってきた宮崎真理が、Claude in ChromeやMetaのMuseに、歯医者の予約フォーム入力、ネットスーパーのかご入れ、図書館の絵本予約といった画面の中の作業を任せてみた記録。ほぼ満点の予約と60点の買い物の差、頼んでいない場所を補ったMuseの通知。</description>
+    </item>
 
     <item>
       <title>生成AIは課金したほうがいい？ 私は「まず1か月、有料版を」と答えている</title>

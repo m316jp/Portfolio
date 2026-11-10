@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1WMFC152MS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1WMFC152MS');
+  </script>
+  <title>AIエージェントに画面の中の家事を任せてみた</title>
+  <meta name="description" content="献立や段取りを考える家事に生成AIを使ってきた『AI×家事』著者の宮崎真理が、Claude in ChromeやMetaのMuseに、歯医者の予約フォームやネットスーパーのかご入れ、図書館の絵本予約など画面の中の作業を任せてみた記録。どこまで任せて何を自分でやるか、ほぼ満点の予約と60点の買い物の差も考えました。">
+  <link rel="canonical" href="https://miyazakimari.com/articles/ai-agents-for-on-screen-chores/">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#f7f6f2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+  <link rel="alternate" type="text/markdown" href="index.md" title="Markdown版">
+  <link rel="alternate" type="application/rss+xml" href="/articles/feed.xml" title="生成AIと暮らしの話">
+
+  <!-- OGP -->
+  <meta property="og:site_name" content="宮崎真理 ポートフォリオ">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="画面の中の家事まで、AIがやってくれるようになってきた">
+  <meta property="og:description" content="献立や段取りを考える家事に生成AIを使ってきた『AI×家事』著者の宮崎真理が、Claude in ChromeやMetaのMuseに、歯医者の予約フォームやネットスーパーのかご入れ、図書館の絵本予約など画面の中の作業を任せてみた記録。どこまで任せて何を自分でやるか、ほぼ満点の予約と60点の買い物の差も考えました。">
+  <meta property="og:url" content="https://miyazakimari.com/articles/ai-agents-for-on-screen-chores/">
+  <meta property="og:image" content="https://miyazakimari.com/assets/images/articles/ai-agents-for-on-screen-chores-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="article:published_time" content="2026-11-10">
+  <meta property="article:modified_time" content="2026-11-10">
+  <meta property="article:author" content="宮崎真理">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="画面の中の家事まで、AIがやってくれるようになってきた">
+  <meta name="twitter:description" content="献立や段取りを考える家事に生成AIを使ってきた『AI×家事』著者の宮崎真理が、Claude in ChromeやMetaのMuseに、歯医者の予約フォームやネットスーパーのかご入れ、図書館の絵本予約など画面の中の作業を任せてみた記録。どこまで任せて何を自分でやるか、ほぼ満点の予約と60点の買い物の差も考えました。">
+  <meta name="twitter:image" content="https://miyazakimari.com/assets/images/articles/ai-agents-for-on-screen-chores-cover.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "画面の中の家事まで、AIがやってくれるようになってきた",
+    "description": "献立や段取りを考える家事に生成AIを使ってきた『AI×家事』著者の宮崎真理が、Claude in ChromeやMetaのMuseに、歯医者の予約フォームやネットスーパーのかご入れ、図書館の絵本予約など画面の中の作業を任せてみた記録。どこまで任せて何を自分でやるか、ほぼ満点の予約と60点の買い物の差も考えました。",
+    "inLanguage": "ja",
+    "articleSection": "AIエージェント",
+    "wordCount": 3815,
+    "about": [
+      {"@type": "Thing", "name": "AIエージェント"},
+      {"@type": "Thing", "name": "Claude in Chrome"},
+      {"@type": "Thing", "name": "Muse"},
+      {"@type": "Thing", "name": "家事"}
+    ],
+    "datePublished": "2026-11-10",
+    "dateModified": "2026-11-10",
+    "image": "https://miyazakimari.com/assets/images/articles/ai-agents-for-on-screen-chores-cover.png",
+    "author": {
+      "@id": "https://miyazakimari.com/#person",
+      "@type": "Person",
+      "name": "宮崎真理",
+      "url": "https://miyazakimari.com/",
+      "jobTitle": "著者",
+      "sameAs": [
+        "https://x.com/m316jp2",
+        "https://note.com/m316jp2",
+        "https://withonline.jp/authors/9miIK",
+        "https://shueisha.online/list/persons/698d552bb5762297e9000000"
+      ]
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://miyazakimari.com/#organization",
+      "name": "宮崎真理 ポートフォリオ",
+      "url": "https://miyazakimari.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://miyazakimari.com/apple-touch-icon.png",
+        "width": 180,
+        "height": 180
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://miyazakimari.com/articles/ai-agents-for-on-screen-chores/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://miyazakimari.com/"},
+      {"@type": "ListItem", "position": 2, "name": "生成AIと暮らしの話", "item": "https://miyazakimari.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "AIエージェントに画面の中の家事を任せてみた"}
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --ink: #141413;
+      --ink-soft: #3c3c39;
+      --gray: #5f5f5b;
+      --line: #e4e3dc;
+      --paper: #f7f6f2;
+      --white: #fff;
+      --night: #121211;
+      --accent: #f2c40f;
+      --font-en: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+      --font-jp: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
+      --space-4: 4px;
+      --space-8: 8px;
+      --space-12: 12px;
+      --space-16: 16px;
+      --space-20: 20px;
+      --space-24: 24px;
+      --space-28: 28px;
+      --space-32: 32px;
+      --space-40: 40px;
+      --space-56: 56px;
+      --space-64: 64px;
+      --fs-display: clamp(26px, 4.6vw, 38px);
+      --fs-headline: 20px;
+      --fs-title: 17px;
+      --fs-body-lg: 18px;
+      --fs-body: 16px;
+      --fs-body-base: 15px;
+      --fs-body-sm: 14px;
+      --fs-label: 13px;
+      --fs-label-sm: 12px;
+      --fs-caption: 11px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--font-jp);
+      font-size: var(--fs-body-base);
+      line-height: 1.9;
+      letter-spacing: 0.025em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+    :focus-visible { outline: none; box-shadow: 0 0 0 2px var(--ink), 0 0 0 5px var(--accent); }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-24);
+      min-height: 64px;
+      padding: var(--space-12) clamp(20px, 5vw, 64px);
+      border-bottom: 1px solid var(--line);
+      background: rgba(247, 246, 242, 0.96);
+    }
+
+    .site-name {
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+
+    main {
+      width: min(720px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(48px, 8vw, 88px) 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 var(--space-12);
+      color: var(--gray);
+      font-family: var(--font-en);
+      font-size: var(--fs-label-sm);
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: var(--fs-display);
+      line-height: 1.55;
+      letter-spacing: 0.04em;
+    }
+
+    .byline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: var(--space-8) var(--space-16);
+      margin: var(--space-20) 0 0;
+      color: var(--gray);
+      font-size: var(--fs-label-sm);
+      letter-spacing: 0.06em;
+    }
+
+    .byline .byline-name {
+      font-weight: 700;
+      color: var(--ink-soft);
+    }
+
+    .byline time { font-family: var(--font-en); letter-spacing: 0.04em; }
+
+    .article-cover {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: clamp(28px, 5vw, 40px) 0 0;
+      border: 1px solid var(--line);
+    }
+
+    article {
+      margin-top: clamp(40px, 7vw, 64px);
+      font-size: var(--fs-body);
+      line-height: 2;
+    }
+
+    article > p:first-of-type {
+      margin-bottom: var(--space-32);
+      font-size: var(--fs-body-lg);
+      font-weight: 500;
+      line-height: 1.9;
+      color: var(--ink);
+    }
+
+    article h2 {
+      position: relative;
+      margin: var(--space-56) 0 var(--space-20);
+      padding-top: var(--space-32);
+      border-top: 1px solid var(--line);
+      font-size: var(--fs-headline);
+      font-weight: 700;
+      line-height: 1.65;
+      letter-spacing: 0.04em;
+    }
+
+    article h2::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 44px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    article h2:first-of-type {
+      margin-top: var(--space-40);
+    }
+
+    article p { margin: 0 0 22px; }
+
+    article strong {
+      font-weight: 700;
+      background: linear-gradient(transparent 62%, rgba(242, 196, 15, 0.42) 62%);
+    }
+
+    article ul {
+      margin: 0 0 var(--space-24);
+      padding-left: 1.3em;
+    }
+
+    article li { margin-bottom: 8px; }
+    article li::marker { color: var(--accent); }
+
+    article a {
+      text-underline-offset: 3px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .article-more {
+      margin: var(--space-28) 0;
+      padding: var(--space-16) var(--space-20);
+      background: var(--white);
+      border-left: 3px solid var(--accent);
+      font-size: var(--fs-body-sm);
+      line-height: 1.8;
+    }
+
+    .article-more a { font-weight: 700; }
+
+    article ul {
+      margin: 0 0 var(--space-24);
+      padding-left: 1.4em;
+    }
+
+    article li + li { margin-top: 8px; }
+
+    article a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .author-box {
+      margin-top: clamp(56px, 9vw, 88px);
+      padding: clamp(24px, 5vw, 36px);
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .author-box .eyebrow { margin-bottom: 8px; }
+
+    .author-box h3 {
+      margin: 0 0 var(--space-4);
+      font-size: var(--fs-title);
+      letter-spacing: 0.06em;
+    }
+
+    .author-role {
+      margin: 0 0 var(--space-16);
+      color: var(--gray);
+      font-size: var(--fs-label-sm);
+      letter-spacing: 0.06em;
+    }
+
+    .author-box p { margin: 0 0 16px; font-size: var(--fs-body-sm); line-height: 1.9; }
+
+    .author-links {
+      margin: 0;
+      padding-left: 1.2em;
+      font-size: var(--fs-label);
+    }
+
+    .author-links li + li { margin-top: 6px; }
+
+    .author-links a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .related {
+      margin-top: clamp(48px, 8vw, 72px);
+      padding: clamp(20px, 4vw, 28px) clamp(22px, 5vw, 32px);
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .related .eyebrow { margin-bottom: 12px; }
+
+    .related ul {
+      margin: 0;
+      padding-left: 1.2em;
+      font-size: var(--fs-label);
+    }
+
+    .related li + li { margin-top: 8px; }
+    .related li::marker { color: var(--accent); }
+
+    .related a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .cta-box {
+      margin-top: var(--space-28);
+      padding: clamp(24px, 5vw, 36px);
+      border: 1px solid var(--ink);
+      background: rgba(242, 196, 15, 0.08);
+      text-align: center;
+    }
+
+    .cta-box p {
+      margin: 0 0 var(--space-16);
+      font-size: var(--fs-body-sm);
+      color: var(--ink-soft);
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: var(--space-12) var(--space-28);
+      background: var(--ink);
+      color: var(--paper);
+      font-size: var(--fs-label);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      border-radius: 999px;
+    }
+
+    .breadcrumb {
+      margin: 0 0 clamp(28px, 6vw, 44px);
+      font-size: var(--fs-label-sm);
+      color: var(--gray);
+      letter-spacing: 0.03em;
+    }
+
+    .breadcrumb ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4) var(--space-8);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .breadcrumb li { display: flex; align-items: center; gap: 4px 8px; }
+    .breadcrumb li + li::before { content: "/"; color: var(--line); }
+    .breadcrumb a { text-decoration: none; color: var(--gray); }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb [aria-current="page"] { color: var(--ink-soft); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    footer {
+      padding: var(--space-28) var(--space-20);
+      color: #8f8f88;
+      background: var(--night);
+      text-align: center;
+      font-family: var(--font-en);
+      font-size: var(--fs-caption);
+      letter-spacing: 0.12em;
+    }
+
+    @media (max-width: 600px) {
+      .site-header { align-items: flex-start; }
+      .site-name { font-size: var(--fs-label); }
+    }
+  </style>
+  <link rel="stylesheet" href="../article.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="/">宮崎 真理｜AI✕家事</a>
+    <nav class="site-nav" aria-label="サイトナビゲーション"><a class="nav-profile" href="/profile/">プロフィール</a><a href="/articles/" aria-current="page">読みもの</a><a href="/book/">著書</a><a href="/media/">実績</a><a href="/#contact">お問い合わせ</a></nav>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="/">ホーム</a></li>
+        <li><a href="../">生成AIと暮らしの話</a></li>
+        <li><span aria-current="page">AIエージェントに画面の中の家事を任せてみた</span></li>
+      </ol>
+    </nav>
+    <p class="eyebrow">Essay</p>
+    <h1>画面の<wbr>中の<wbr>家事まで、<wbr>AIが<wbr>やってくれるようになってきた</h1>
+    <div class="byline">
+      <img class="byline-avatar" src="../../assets/images/profile/mari-miyazaki-avatar.webp" alt="宮崎真理" width="44" height="44">
+      <span class="byline-name">宮崎真理</span>
+      <span>公開 <time datetime="2026-11-10">2026年11月10日</time></span>
+    </div>
+
+    <article>
+      <p>私はこれまで、AIが手伝ってくれる家事は「作業の前後にある考える家事」だと話してきました。献立を考える、段取りを組む、調べものをする。</p>
+
+      <p>AIが出してくれた答えを、実際の操作に移すのはいつも私でした。献立が決まっても、ネットスーパーで玉ねぎを検索して、かごに入れて、次はじゃがいも。そこは私の仕事でした。</p>
+
+      <p>ところが最近、この「画面の中で手を動かす作業」を、AIに任せられることが増えてきました。</p>
+
+      <p>「3か月後くらいの水曜日、16時から18時で歯医者を予約したい」と頼むと、AIが予約ページを開いて、日にちを選んで、フォームを埋めていく。「家族5人、今日はカレー」と頼むと、ネットスーパーのかごに食材が入っていく。そのあいだ私は、洗濯物をたたんでいます。</p>
+
+      <p>AIに相談する話はよく見かけますが、操作まで任せて家事をしている話は、まだあまり見かけません。この記事では、わが家で実際に試してわかったことを書いておきます。どんな頼み方で通じたのか。どこまで任せて、どこから自分でやるのか。それから、まだ60点のことと、びっくりしたこと。</p>
+
+      <h2>歯医者の<wbr>予約フォームが、<wbr>勝手に<wbr>埋まっていく</h2>
+
+      <p>まずは、歯医者の予約から。</p>
+
+      <p>かかりつけの歯医者は、Webのフォームで予約をします。第1希望日、第2希望日、第3希望日。希望内容は「クリーニング」と「定期検診」にチェック。名前、電話番号、メールアドレス。</p>
+
+      <p>謎なのが、何回も通っているのに、毎回なぜか性別と年齢にもチェックを入れないといけないこと。前回から変わっていません、と毎回思います。</p>
+
+      <p>これを今は、Claude in Chromeに任せています。ClaudeというAIを、Chromeというブラウザの中で動かせる機能です。Claudeの<a href="../should-i-pay-for-generative-ai/">有料プラン</a>で使えます（<a href="https://claude.com/chrome" target="_blank" rel="noopener">Claude in Chromeの公式ページ<span class="sr-only">（新しいタブで開きます）</span></a>）。</p>
+
+      <p>頼み方は、これだけです。</p>
+
+      <blockquote>
+        <p>3か月後くらいの水曜日、16時から18時に、定期検診とクリーニングで予約したい</p>
+      </blockquote>
+
+      <p>何月何日かは言っていません。頼むと、画面が勝手に動きはじめます。予約ページが開いて、3か月後あたりの水曜日が選ばれて、チェックが付いていく。はじめのうちは、ハラハラしながらAIの動きを見守っていました。いけ、そこだ、と応援するような気持ちで。今はもう放っておいて、その間に洗濯物を1枚たたんだりしています。</p>
+
+      <p>正直、これはすごいと思っています。あの面倒なフォームが、ひとこと頼むだけで埋まっていくのですから。</p>
+
+      <p>わが家は私と子ども3人、合わせて4人分の予約があります。名前と連絡先は、最後に自分で入力することにしています。希望日とチェックはClaude、名前と連絡先と送信ボタンは私。今のところ、そういう分担です。</p>
+
+      <p>始め方は、公式ページの「Chromeに追加する」から拡張機能を入れて、Claudeのアカウントでログインするだけです。あとは予約ページなどを開いて、Claudeの入力欄にやってほしいことを書きます。</p>
+
+      <h2>ボタンを<wbr>押すだけなら、<wbr>前から<wbr>できた</h2>
+
+      <p>こういう使い方をするAIを、AIエージェントと呼ぶそうです。ChatGPTやClaudeのような「答える」AIに、道具を持たせたものです。</p>
+
+      <p>私は最初、文章を書くAIと、ブラウザを動かすAIは、まったく別の技術だと思っていました。調べてみると、頭脳は同じでした。</p>
+
+      <p>AIがいま開いているページを読み、「この欄に日付を入れる」「このボタンを押す」と、操作をひとつ決める。実際にクリックや入力をするのは、拡張機能などの別のプログラムです。画面が変わったら、AIがまたそれを読んで、次の操作を決める。フォームが勝手に埋まっていくように見えたのは、この一手ずつの繰り返しでした。</p>
+
+      <p>ボタンを自動で押させる仕組みなら、前からありました。でもそれは、決まった手順を覚えさせて、毎回同じ操作をさせるためのもの。「3か月後くらいの水曜日」のような頼み方は通じません。</p>
+
+      <p>私がいちばん驚いたのは、そこでした。言葉を理解する頭脳が、そのまま操作もしている。だから、私のざっくりした言い方を、具体的な日付や入力に置き換えてくれるのだと思います。</p>
+
+      <h2>ネットスーパーは、<wbr>まだ<wbr>60点</h2>
+
+      <p>ネットスーパーの注文も面倒なので、同じやり方で試してみました。</p>
+
+      <blockquote>
+        <p>家族5人、今日はカレーとサラダとスープ</p>
+      </blockquote>
+
+      <p>こう頼むと、必要な食材を割り出して、量を考えて、かごに入れてくれます。注文を確定するのは私です。</p>
+
+      <p>ただ、こちらはまだ60点。ほしいものがきちんと入るかというと、難しいです。牛乳や卵とひとことで言っても、種類はいろいろあります。いくつ買えばいいのかも、AIにはわかりません。カレーのようにわかりやすい献立はまだいいのですが、そうでない日はもう少し苦戦します。</p>
+
+      <p>歯医者はほぼ満点なのに、どうしてネットスーパーは60点なのか。私なりに考えてみました。</p>
+
+      <p>歯医者のフォームは、私が言ったことだけで正解が決まります。曜日と時間と、チェックする項目。カレンダーを見れば、候補になる水曜日は誰が探しても同じです。</p>
+
+      <p>ネットスーパーは、そうはいきません。わが家の「いつもの」は、私の頭の中にしかないからです。言っていないところを埋めるとき、AIは一般的な答えで埋めるしかない。差はたぶん、そこにあるのだと思います。</p>
+
+      <p>それでも使い続けているのは、玉ねぎを検索してかごに入れて、じゃがいもを検索してかごに入れて……を一から自分でやるより、ずっと楽だからです。60点のかごを直すほうが、空のかごから始めるより早い。</p>
+
+      <p>図書館の絵本も、頼むことがあります。</p>
+
+      <p>絵本は、自分で選ぶのが好きです。表紙を見て、少し中身をめくって、これはあの子が好きそうだなと考える時間が楽しい。でも、時間がない週は、AIに頼むこともあります。</p>
+
+      <p>頼み方は、たとえばこんなふうです。</p>
+
+      <blockquote>
+        <p>福音館書店の「かがくのとも」シリーズから5冊、予約かごに入れて</p>
+      </blockquote>
+
+      <p>図書館のサイトで探して、予約かごに入れるところまでやってくれます。予約を確定するのは、これも私です。</p>
+
+      <p>もう少しざっくり、年齢だけ伝えて頼んだこともあります。</p>
+
+      <blockquote>
+        <p>5歳におすすめの絵本を、予約かごに5冊入れておいて</p>
+      </blockquote>
+
+      <p>5冊はちゃんと入っていました。どうやって選んだのかを聞いてみると、こんな回答でした。</p>
+
+      <p>図書館のサイトには5歳ぴったりの区分がないので、「絵本」と「幼児」で絞り込んだこと。「幼児」には赤ちゃん向けの本も混ざるので、そこから先は書名と作者と出版社を見て判断したこと。赤ちゃん向けらしいものは外して、話の筋がありそうなものや、4〜6歳によく読まれている作家のものを選んだこと。季節に合わせて、クリスマスの本も1冊入れたこと。</p>
+
+      <p>そして最後に、本の中身や詳しい対象年齢までは見ていないので、「5歳向け」というのは自分の見立てに近い、とも。</p>
+
+      <p>急いでいるときに、表紙と作家の名前だけで選ぶ私と、それほど変わらないのかもしれません。息子の好みは、私のほうが断然わかっています。それでも、たまには自分では選ばない絵本が混ざるのも、おもしろいと思っています。</p>
+
+      <h2>「着いたら<wbr>教えて」と<wbr>しか<wbr>言っていない</h2>
+
+      <p>もうひとつ、MuseというAIエージェントも使っています。Metaが出したもので、10月から日本でも使えるようになりました。基本的な機能の多くは無料で使えます（<a href="https://about.fb.com/ja/news/2026/10/muse-personal-ai-agent-launches-in-japan/" target="_blank" rel="noopener">Metaの発表<span class="sr-only">（新しいタブで開きます）</span></a>）。</p>
+
+      <p>たとえば、今度スーパーに行ったら買おうと思ったものを、思い出すたびにMuseに送っていました。牛乳、ほうれん草、子どものおやつ。メモ帳代わりのつもりでした。</p>
+
+      <p>ある日、スーパーの自動ドアをくぐった瞬間、スマホが鳴りました。「買い物リストです」。</p>
+
+      <p>えっ、なんで今？</p>
+
+      <p>あとから思い出したのですが、私は「スーパーに着いたら教えて」と言っていました。言った本人が、忘れていたのです。</p>
+
+      <p>でも、どこのスーパーかは言っていません。今着いたよ、とも言っていません。</p>
+
+      <p>Museに聞いてみると、こんな説明でした。私が位置情報を「常に許可」にしていたので、iPhoneの「登録した場所に着いたら知らせる」仕組みを使った。家の近くのスーパーを調べて、3店舗とも登録しておいた。そのうちの1店に、私が着いた。</p>
+
+      <p>その3店舗は、全部私がいつも行くスーパーでした。家から近い店を選べば、そうなるのは自然なのかもしれません。</p>
+
+      <p>Museは、ひとことだけの頼みごとの穴を、自分で埋めていたことになります。どこのスーパーかわからないから、近所を調べる。着いたかどうか知りたいから、iPhoneの仕組みを使う。そのために場所を登録して、通知を準備する。</p>
+
+      <p>ここまで読んで、位置情報をAIに渡して、プライバシーは大丈夫なの？と思った人もいるかもしれません。</p>
+
+      <p>位置情報を「常に許可」にすることを、私はあまり気にしていません。iPhoneはもともと、私がどこにいるかをずっと記録しています。今さら、というのが正直な気持ちです。</p>
+
+      <p>ただ、iPhoneの中に位置情報があることと、Metaのサービスにその権限を渡すことは、厳密には別の話です。それをわかったうえで、私は便利なほうを選んでいます。どこまで渡すかは、人それぞれでいいと思っています。</p>
+
+      <p>画面の中の家事は、少しずつAIに渡せるようになってきました。そのあいだに洗濯物をたたむのは、まだ私です。</p>
+
+      <p class="article-note">各サービスの機能や料金プランは随時変更されます。本記事は2026年11月時点の情報と筆者の利用経験にもとづいています。</p>
+    </article>
+
+    <p class="article-share"><a href="https://twitter.com/intent/tweet?text=%E7%94%BB%E9%9D%A2%E3%81%AE%E4%B8%AD%E3%81%AE%E5%AE%B6%E4%BA%8B%E3%81%BE%E3%81%A7%E3%80%81AI%E3%81%8C%E3%82%84%E3%81%A3%E3%81%A6%E3%81%8F%E3%82%8C%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F&amp;url=https%3A%2F%2Fmiyazakimari.com%2Farticles%2Fai-agents-for-on-screen-chores%2F&amp;via=m316jp2" target="_blank" rel="noopener">Xでシェア<span class="sr-only">（新しいタブで開きます）</span></a></p>
+
+    <div class="related" id="continue-reading">
+      <p class="eyebrow">次に読むなら</p>
+      <ul>
+        <li><a href="../personal-friction-as-ai-condition/"><img class="related-thumb" src="/assets/images/articles/personal-friction-as-ai-condition-thumb.webp" alt="" width="800" height="420" loading="lazy" decoding="async"><span class="related-body"><span class="related-question">わが家の<wbr>「いつもの」を、<wbr>AIに<wbr>どう<wbr>伝えるか</span><span class="related-title">生成AIは、<wbr>自分固有の<wbr>「面倒」を<wbr>条件に<wbr>できる</span></span></a></li>
+        <li><a href="../generative-ai-home-systems/"><img class="related-thumb" src="/assets/images/articles/generative-ai-home-systems-thumb.webp" alt="" width="800" height="420" loading="lazy" decoding="async"><span class="related-body"><span class="related-question">操作の<wbr>前の<wbr>「考える<wbr>家事」に、<wbr>AIを<wbr>どう<wbr>使うか</span><span class="related-title">生成AIで<wbr>家庭の<wbr>不便を<wbr>仕組みに<wbr>する<wbr>——家事に<wbr>正解が<wbr>なくても<wbr>役立つ理由</span></span></a></li>
+      </ul>
+      <a class="related-all" href="../">すべての記事を見る →</a>
+    </div>
+
+    <div class="author-box">
+      <p class="eyebrow">著者について</p>
+      <h3>宮崎真理</h3>
+      <p class="author-role">『AI×家事』著者</p>
+      <p>神戸大学大学院で生体計測工学を専攻し、修了後はオムロン株式会社で技術職として勤務。出産を機に10年間の専業主婦生活を経て、2023年より生成AIを家事・子育てに取り入れ、暮らしの中での活用を実践している。</p>
+      <p>WOMAN AI AWARD 2026 ライフ・イノベーター賞受賞。講談社「with class」でコラムを連載するほか、テレビ出演、雑誌・Webでの執筆・監修などを行う。</p>
+      <p>3兄弟の母。1000日以上にわたる生成AIの実践経験をもとに、理系出身・元専業主婦の視点から、家庭という最もテクノロジーが遅れた場所を、生活者自身がアップデートしていく可能性を発信している。</p>
+      <ul class="author-links">
+        <li><a href="/book/">著書『AI×家事』</a></li>
+        <li><a href="../../profile/">宮崎真理プロフィール</a></li>
+        <li><a href="/media/">メディア出演・執筆実績</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <p>取材・メディア出演・対談・執筆・監修のご相談を承っています。</p>
+      <a class="cta-button" href="/#contact">お問い合わせはこちら →</a>
+    </div>
+  </main>
+
+  <footer>© 2026 Miyazaki Mari. All rights reserved.</footer>
+</body>
+</html>
