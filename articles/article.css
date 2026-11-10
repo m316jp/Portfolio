@@ -135,14 +135,14 @@ article p {
   margin-bottom: 26px;
 }
 
-/* AIへの頼み方など：入力欄のような控えめな枠 */
+/* AIへの頼み方など：左の線だけの控えめな引用（白いカードの関連記事と見分けるため、箱にしない） */
 article blockquote {
-  margin: 32px 0;
-  padding: 18px 24px;
-  border: 1px solid var(--line);
+  margin: 28px 0;
+  padding: 2px 0 2px 20px;
+  border: 0;
   border-left: 3px solid var(--accent);
-  border-radius: 4px;
-  background: #fff;
+  background: transparent;
+  color: var(--ink-soft);
   font-size: 15px;
   line-height: 1.9;
 }
@@ -413,7 +413,7 @@ article blockquote p + p {
   }
 
   article blockquote {
-    padding: 14px 18px;
+    padding: 2px 0 2px 16px;
   }
 
   .article-more {
