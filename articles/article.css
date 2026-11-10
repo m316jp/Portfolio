@@ -135,7 +135,26 @@ article p {
   margin-bottom: 26px;
 }
 
-article blockquote,
+/* AIへの頼み方など：入力欄のような控えめな枠 */
+article blockquote {
+  margin: 32px 0;
+  padding: 18px 24px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  background: #fff;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+article blockquote p {
+  margin: 0;
+}
+
+article blockquote p + p {
+  margin-top: 12px;
+}
+
 .article-more {
   margin: 36px 0;
   padding: 24px 28px;
@@ -393,7 +412,10 @@ article blockquote,
     margin-top: 60px;
   }
 
-  article blockquote,
+  article blockquote {
+    padding: 14px 18px;
+  }
+
   .article-more {
     padding: 20px 0;
   }
