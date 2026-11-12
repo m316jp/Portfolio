@@ -3365,6 +3365,23 @@ body.lightbox-open {
 /* ============================================================
    REDUCED MOTION
    ============================================================ */
+/* 幅320px前後の端末で、ヒーローの相談ボタンが画面からはみ出さないようにする */
+@media (max-width: 360px) {
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .hero-cta .btn-primary,
+  .hero-cta .btn-secondary {
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
