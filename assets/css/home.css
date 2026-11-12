@@ -513,73 +513,76 @@ body.nav-open .nav-toggle-icon::after { transform: rotate(-45deg); }
 }
 
 /* TV badges */
-.hero-tv-badges {
-  margin-bottom: 48px;
+.hero-proof {
+  margin: 0 0 48px;
+  max-width: 520px;
+  border-top: 1px solid var(--line);
 }
 
-.hero-tv-label {
+.hero-proof-row {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: baseline;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-proof-label {
   font-family: var(--font-en);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.38em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gray);
-  margin-bottom: 14px;
 }
 
-.hero-tv-cards {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-}
-
-.hero-tv-badge {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  padding: 9px 16px;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  transition: border-color var(--dur-fast) ease, transform var(--dur-fast) ease;
-}
-
-.hero-tv-badge:hover {
-  border-color: var(--ink);
-  transform: translateY(-2px);
-}
-
-.hero-tv-badge--award {
-  background: var(--accent-soft);
-  border-color: var(--accent);
+.hero-proof-row--award .hero-proof-label {
   color: var(--ink);
-  text-decoration: none;
 }
 
-.hero-tv-badge--award:hover {
-  border-color: var(--ink);
-}
-
-.hero-tv-station {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  color: var(--gray);
-}
-
-.hero-tv-program {
+.hero-proof-value {
+  margin: 0;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.05em;
-  line-height: 1.5;
+  line-height: 1.7;
+  color: var(--ink);
 }
 
-.hero-tv-more {
-  font-size: 12px;
+.hero-proof-value a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero-proof-value strong {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-right: 6px;
+  background: linear-gradient(transparent 62%, var(--accent) 62%, var(--accent) 92%, transparent 92%);
+}
+
+.hero-proof-value a:hover strong {
+  background: linear-gradient(transparent 0, var(--accent) 0);
+}
+
+.hero-proof-item {
+  white-space: nowrap;
+}
+
+.hero-proof-sep {
+  margin: 0 6px;
+  color: var(--gray-light);
+  font-weight: 400;
+}
+
+.hero-proof-more {
+  font-weight: 400;
   color: var(--gray);
-  letter-spacing: 0.1em;
-  padding-left: 6px;
+  margin-left: 8px;
+  white-space: nowrap;
 }
 
 /* CTA */
