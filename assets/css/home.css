@@ -550,6 +550,17 @@ body.nav-open .nav-toggle-icon::after { transform: rotate(-45deg); }
   transform: translateY(-2px);
 }
 
+.hero-tv-badge--award {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.hero-tv-badge--award:hover {
+  border-color: var(--ink);
+}
+
 .hero-tv-station {
   font-size: 10px;
   font-weight: 700;
@@ -1949,6 +1960,7 @@ a.event-card:hover {
 
 .event-read-link {
   display: inline-block;
+  white-space: nowrap; /* Safariで幅が1px足りず「→」だけ改行されるのを防ぐ */
   margin-top: 14px;
   font-size: 13px;
   font-weight: 700;
