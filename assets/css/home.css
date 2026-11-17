@@ -1965,6 +1965,7 @@ a.event-card:hover {
   display: inline-block;
   white-space: nowrap; /* Safariで幅が1px足りず「→」だけ改行されるのを防ぐ */
   margin-top: 14px;
+  margin-right: 16px; /* 複数並べたとき、折り返した行の頭がずれないよう右側で間隔をとる */
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.05em;
