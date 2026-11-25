@@ -7,7 +7,16 @@
     <language>ja</language>
     <copyright>© 2026 Miyazaki Mari</copyright>
     <atom:link href="https://miyazakimari.com/articles/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 10 Nov 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 12:00:00 +0900</lastBuildDate>
+
+    <item>
+      <title>技術に委ねること、技術とともに踏み込むこと。家事と子育てで、私がこれからのAIに期待すること</title>
+      <link>https://miyazakimari.com/articles/what-i-expect-from-ai-at-home/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/what-i-expect-from-ai-at-home/</guid>
+      <pubDate>Wed, 25 Nov 2026 12:00:00 +0900</pubDate>
+      <category>これからのAI</category>
+      <description>生成AIで家事を自分の仕組みに変えてきた宮崎真理が、これからのAIに期待する二つのこと。図書館の返却期限や学校のメールなど「気にかけ続ける家事」は技術に委ね、家族のスマートウォッチのデータや子どもに合わせた教材づくりでは、AIとともに自分ひとりでは届かなかったところへ踏み込む。</description>
+    </item>
 
     <item>
       <title>画面の中の家事まで、AIがやってくれるようになってきた</title>
