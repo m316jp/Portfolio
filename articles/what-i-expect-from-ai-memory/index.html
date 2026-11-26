@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1WMFC152MS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1WMFC152MS');
+  </script>
+  <title>AIとの会話から、まだ知らない自分を見つけたい</title>
+  <meta name="description" content="3年前、AIに自分を知ってもらうためにnoteを書いていた宮崎真理が、自分をいちばん深く知っていたのはChatGPTとの何気ない会話だったと気づいた。4年分の会話を読み込み、自分でもまだ気づいていない問いを示す「私専用のDeep Research」と、当時の言葉へすぐ戻れる仕組みをこれからのAIに期待する。">
+  <link rel="canonical" href="https://miyazakimari.com/articles/what-i-expect-from-ai-memory/">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#f7f6f2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+  <link rel="alternate" type="text/markdown" href="index.md" title="Markdown版">
+  <link rel="alternate" type="application/rss+xml" href="/articles/feed.xml" title="生成AIと暮らしの話">
+
+  <!-- OGP -->
+  <meta property="og:site_name" content="宮崎真理 ポートフォリオ">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="記録するつもりのなかった会話から、まだ知らない自分を見つけたい。私がこれからのAIの記憶に期待すること">
+  <meta property="og:description" content="3年前、AIに自分を知ってもらうためにnoteを書いていた宮崎真理が、自分をいちばん深く知っていたのはChatGPTとの何気ない会話だったと気づいた。4年分の会話を読み込み、自分でもまだ気づいていない問いを示す「私専用のDeep Research」と、当時の言葉へすぐ戻れる仕組みをこれからのAIに期待する。">
+  <meta property="og:url" content="https://miyazakimari.com/articles/what-i-expect-from-ai-memory/">
+  <meta property="og:image" content="https://miyazakimari.com/assets/images/articles/what-i-expect-from-ai-memory-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="article:published_time" content="2026-11-27">
+  <meta property="article:modified_time" content="2026-11-27">
+  <meta property="article:author" content="宮崎真理">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="記録するつもりのなかった会話から、まだ知らない自分を見つけたい。私がこれからのAIの記憶に期待すること">
+  <meta name="twitter:description" content="3年前、AIに自分を知ってもらうためにnoteを書いていた宮崎真理が、自分をいちばん深く知っていたのはChatGPTとの何気ない会話だったと気づいた。4年分の会話を読み込み、自分でもまだ気づいていない問いを示す「私専用のDeep Research」と、当時の言葉へすぐ戻れる仕組みをこれからのAIに期待する。">
+  <meta name="twitter:image" content="https://miyazakimari.com/assets/images/articles/what-i-expect-from-ai-memory-cover.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "記録するつもりのなかった会話から、まだ知らない自分を見つけたい。私がこれからのAIの記憶に期待すること",
+    "description": "3年前、AIに自分を知ってもらうためにnoteを書いていた宮崎真理が、自分をいちばん深く知っていたのはChatGPTとの何気ない会話だったと気づいた。4年分の会話を読み込み、自分でもまだ気づいていない問いを示す「私専用のDeep Research」と、当時の言葉へすぐ戻れる仕組みをこれからのAIに期待する。",
+    "inLanguage": "ja",
+    "articleSection": "これからのAI",
+    "wordCount": 2411,
+    "about": [
+      {"@type": "Thing", "name": "生成AI"},
+      {"@type": "Thing", "name": "ChatGPT"},
+      {"@type": "Thing", "name": "AIのメモリ機能"},
+      {"@type": "Thing", "name": "ライフログ"},
+      {"@type": "Thing", "name": "自己理解"}
+    ],
+    "datePublished": "2026-11-27",
+    "dateModified": "2026-11-27",
+    "image": "https://miyazakimari.com/assets/images/articles/what-i-expect-from-ai-memory-cover.png",
+    "author": {
+      "@id": "https://miyazakimari.com/#person",
+      "@type": "Person",
+      "name": "宮崎真理",
+      "url": "https://miyazakimari.com/",
+      "jobTitle": "著者",
+      "sameAs": [
+        "https://x.com/m316jp2",
+        "https://note.com/m316jp2",
+        "https://withonline.jp/authors/9miIK",
+        "https://shueisha.online/list/persons/698d552bb5762297e9000000"
+      ]
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://miyazakimari.com/#organization",
+      "name": "宮崎真理 ポートフォリオ",
+      "url": "https://miyazakimari.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://miyazakimari.com/apple-touch-icon.png",
+        "width": 180,
+        "height": 180
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://miyazakimari.com/articles/what-i-expect-from-ai-memory/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://miyazakimari.com/"},
+      {"@type": "ListItem", "position": 2, "name": "生成AIと暮らしの話", "item": "https://miyazakimari.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "AIとの会話から、まだ知らない自分を見つけたい"}
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --ink: #141413;
+      --ink-soft: #3c3c39;
+      --gray: #5f5f5b;
+      --line: #e4e3dc;
+      --paper: #f7f6f2;
+      --white: #fff;
+      --night: #121211;
+      --accent: #f2c40f;
+      --font-en: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+      --font-jp: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
+      --space-4: 4px;
+      --space-8: 8px;
+      --space-12: 12px;
+      --space-16: 16px;
+      --space-20: 20px;
+      --space-24: 24px;
+      --space-28: 28px;
+      --space-32: 32px;
+      --space-40: 40px;
+      --space-56: 56px;
+      --space-64: 64px;
+      --fs-display: clamp(26px, 4.6vw, 38px);
+      --fs-headline: 20px;
+      --fs-title: 17px;
+      --fs-body-lg: 18px;
+      --fs-body: 16px;
+      --fs-body-base: 15px;
+      --fs-body-sm: 14px;
+      --fs-label: 13px;
+      --fs-label-sm: 12px;
+      --fs-caption: 11px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--font-jp);
+      font-size: var(--fs-body-base);
+      line-height: 1.9;
+      letter-spacing: 0.025em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+    :focus-visible { outline: none; box-shadow: 0 0 0 2px var(--ink), 0 0 0 5px var(--accent); }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-24);
+      min-height: 64px;
+      padding: var(--space-12) clamp(20px, 5vw, 64px);
+      border-bottom: 1px solid var(--line);
+      background: rgba(247, 246, 242, 0.96);
+    }
+
+    .site-name {
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+
+    main {
+      width: min(720px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(48px, 8vw, 88px) 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 var(--space-12);
+      color: var(--gray);
+      font-family: var(--font-en);
+      font-size: var(--fs-label-sm);
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: var(--fs-display);
+      line-height: 1.55;
+      letter-spacing: 0.04em;
+    }
+
+    .byline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: var(--space-8) var(--space-16);
+      margin: var(--space-20) 0 0;
+      color: var(--gray);
+      font-size: var(--fs-label-sm);
+      letter-spacing: 0.06em;
+    }
+
+    .byline .byline-name {
+      font-weight: 700;
+      color: var(--ink-soft);
+    }
+
+    .byline time { font-family: var(--font-en); letter-spacing: 0.04em; }
+
+    .article-cover {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: clamp(28px, 5vw, 40px) 0 0;
+      border: 1px solid var(--line);
+    }
+
+    article {
+      margin-top: clamp(40px, 7vw, 64px);
+      font-size: var(--fs-body);
+      line-height: 2;
+    }
+
+    article > p:first-of-type {
+      margin-bottom: var(--space-32);
+      font-size: var(--fs-body-lg);
+      font-weight: 500;
+      line-height: 1.9;
+      color: var(--ink);
+    }
+
+    article h2 {
+      position: relative;
+      margin: var(--space-56) 0 var(--space-20);
+      padding-top: var(--space-32);
+      border-top: 1px solid var(--line);
+      font-size: var(--fs-headline);
+      font-weight: 700;
+      line-height: 1.65;
+      letter-spacing: 0.04em;
+    }
+
+    article h2::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 44px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    article h2:first-of-type {
+      margin-top: var(--space-40);
+    }
+
+    article p { margin: 0 0 22px; }
+
+    article strong {
+      font-weight: 700;
+      background: linear-gradient(transparent 62%, rgba(242, 196, 15, 0.42) 62%);
+    }
+
+    article ul {
+      margin: 0 0 var(--space-24);
+      padding-left: 1.3em;
+    }
+
+    article li { margin-bottom: 8px; }
+    article li::marker { color: var(--accent); }
+
+    article a {
+      text-underline-offset: 3px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .article-more {
+      margin: var(--space-28) 0;
+      padding: var(--space-16) var(--space-20);
+      background: var(--white);
+      border-left: 3px solid var(--accent);
+      font-size: var(--fs-body-sm);
+      line-height: 1.8;
+    }
+
+    .article-more a { font-weight: 700; }
+
+    article ul {
+      margin: 0 0 var(--space-24);
+      padding-left: 1.4em;
+    }
+
+    article li + li { margin-top: 8px; }
+
+    article a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .author-box {
+      margin-top: clamp(56px, 9vw, 88px);
+      padding: clamp(24px, 5vw, 36px);
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .author-box .eyebrow { margin-bottom: 8px; }
+
+    .author-box h3 {
+      margin: 0 0 var(--space-4);
+      font-size: var(--fs-title);
+      letter-spacing: 0.06em;
+    }
+
+    .author-role {
+      margin: 0 0 var(--space-16);
+      color: var(--gray);
+      font-size: var(--fs-label-sm);
+      letter-spacing: 0.06em;
+    }
+
+    .author-box p { margin: 0 0 16px; font-size: var(--fs-body-sm); line-height: 1.9; }
+
+    .author-links {
+      margin: 0;
+      padding-left: 1.2em;
+      font-size: var(--fs-label);
+    }
+
+    .author-links li + li { margin-top: 6px; }
+
+    .author-links a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .related {
+      margin-top: clamp(48px, 8vw, 72px);
+      padding: clamp(20px, 4vw, 28px) clamp(22px, 5vw, 32px);
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .related .eyebrow { margin-bottom: 12px; }
+
+    .related ul {
+      margin: 0;
+      padding-left: 1.2em;
+      font-size: var(--fs-label);
+    }
+
+    .related li + li { margin-top: 8px; }
+    .related li::marker { color: var(--accent); }
+
+    .related a {
+      font-weight: 700;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+    .cta-box {
+      margin-top: var(--space-28);
+      padding: clamp(24px, 5vw, 36px);
+      border: 1px solid var(--ink);
+      background: rgba(242, 196, 15, 0.08);
+      text-align: center;
+    }
+
+    .cta-box p {
+      margin: 0 0 var(--space-16);
+      font-size: var(--fs-body-sm);
+      color: var(--ink-soft);
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: var(--space-12) var(--space-28);
+      background: var(--ink);
+      color: var(--paper);
+      font-size: var(--fs-label);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      border-radius: 999px;
+    }
+
+    .breadcrumb {
+      margin: 0 0 clamp(28px, 6vw, 44px);
+      font-size: var(--fs-label-sm);
+      color: var(--gray);
+      letter-spacing: 0.03em;
+    }
+
+    .breadcrumb ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4) var(--space-8);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .breadcrumb li { display: flex; align-items: center; gap: 4px 8px; }
+    .breadcrumb li + li::before { content: "/"; color: var(--line); }
+    .breadcrumb a { text-decoration: none; color: var(--gray); }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb [aria-current="page"] { color: var(--ink-soft); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    footer {
+      padding: var(--space-28) var(--space-20);
+      color: #8f8f88;
+      background: var(--night);
+      text-align: center;
+      font-family: var(--font-en);
+      font-size: var(--fs-caption);
+      letter-spacing: 0.12em;
+    }
+
+    @media (max-width: 600px) {
+      .site-header { align-items: flex-start; }
+      .site-name { font-size: var(--fs-label); }
+    }
+  </style>
+  <link rel="stylesheet" href="../article.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="/">宮崎 真理｜AI✕家事</a>
+    <nav class="site-nav" aria-label="サイトナビゲーション"><a class="nav-profile" href="/profile/">プロフィール</a><a href="/articles/" aria-current="page">読みもの</a><a href="/book/">著書</a><a href="/media/">実績</a><a href="/#contact">お問い合わせ</a></nav>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="/">ホーム</a></li>
+        <li><a href="../">生成AIと暮らしの話</a></li>
+        <li><span aria-current="page">AIとの会話から、まだ知らない自分を見つけたい</span></li>
+      </ol>
+    </nav>
+    <p class="eyebrow">Essay</p>
+    <h1>記録する<wbr>つもりの<wbr>なかった<wbr>会話から、<wbr>まだ<wbr>知らない<wbr>自分を<wbr>見つけたい。<wbr>私が<wbr>これからの<wbr>AIの<wbr>記憶に<wbr>期待する<wbr>こと</h1>
+    <div class="byline">
+      <img class="byline-avatar" src="../../assets/images/profile/mari-miyazaki-avatar.webp" alt="宮崎真理" width="44" height="44">
+      <span class="byline-name">宮崎真理</span>
+      <span>公開 <time datetime="2026-11-27">2026年11月27日</time></span>
+    </div>
+
+    <article>
+      <p>3年ほど前、私は熱心にnoteを書いていた。人に読んでもらうためではない。AIに私のことを知ってもらうためだ。自分が何を考え、何を大切にしている人間なのかをネット上に残しておけば、AIが当たり前になったとき、きっとAIが私を理解してくれる。本気でそう考えて、自分の思考を書き溜めていた。</p>
+
+      <p>あれから数年が経って気づいたのは、私をいちばん深く知っている場所は、意識して書いた公開記事の中ではなかったということだ。毎日のように交わしてきた、ChatGPTとの何気ない会話の中にあった。</p>
+
+      <p>だから今、これからのAIに期待していることがある。4年分の会話をAIが読み込み、私自身がまだ気づいていない問いを示してくれることだ。欲しいのは過去の会話の検索ではなく、自分の会話ログを対象にした、私専用のDeep Researchである。</p>
+
+      <h2>記録しようとしなかったから、<wbr>残った<wbr>もの</h2>
+
+      <p>先日、歯の治療で別の歯科医院に行くことになった。問診票を前にしても、いつから痛み、どんな治療を受けてきたのか、細かな経緯が思い出せない。</p>
+
+      <p>けれど、私はその都度ChatGPTに相談していた。銀歯が取れたときも、治療後に痛みが引かなかったときも。記録を残すつもりなど一度もなかった。ただ、そのとき困っていたから話しかけただけだ。</p>
+
+      <p>振り返ってみれば、この4年近くChatGPTに話してきたことの大半は、そういうものばかりである。子どもの勉強の悩み。ランニング中に感じた小さな違和感。仕事を引き受けるかどうかの迷い。わざわざ日記に書くほどでもない日常のつぶやき。</p>
+
+      <p>それらが4年分積み重なって、「記録しよう」と意気込んでも残せなかった、驚くほど生々しい生活の記録ができあがっていた。</p>
+
+      <h2>「何の<wbr>ために<wbr>残すか」を<wbr>決めなくていい</h2>
+
+      <p>私は大学院で生体計測工学を学んだ。人間の身体からデータを測り、意味を取り出す研究だ。</p>
+
+      <p>これまでの常識では、「何のために残すか」という目的が先にあった。健康のために体重を測り、成長を残すために写真を撮る。残す価値があるかどうかをその場で判断して、わざわざ時間を使って記録していた。</p>
+
+      <p>AIとの会話では、この順番が変わる。困りごとを解決するために話しかけることが、そのまま記録になるからだ。記録のために時間を割く必要も、何を残すべきか考える必要もない。</p>
+
+      <p>半年前にふとこぼした身体の違和感が、後になって大きな手がかりになるかもしれない。その場の疑問を解くために話した言葉が、数年後、まったく別の意味を持つかもしれない。</p>
+
+      <p>「記録する目的」と「使う目的」が、一致している必要がなくなったのである。</p>
+
+      <h2>結論が<wbr>出る<wbr>前の<wbr>迷いも<wbr>残っている</h2>
+
+      <p>子どもの習い事を辞めた、という事実はカレンダーにも書ける。でも、なぜ辞めようと思い始めたのか、何に悩み、何を優先して決めたのかは残らない。私は結論が出る前からChatGPTに相談しているので、会話にはその迷いが残っている。</p>
+
+      <p>人間は、結果を知ったあとでは、今の自分の価値観で過去を都合よく解釈し直してしまう。会話には、まだ結末を知らなかったころの私の言葉が、書き換えられないまま残っている。</p>
+
+      <p>4年前の私と今の私では、同じ問題でもきっと違う答えを出す。私はいつ、何をきっかけに変わったのか。当時の自分の言葉を証拠にして、その変化をたどってみたい。</p>
+
+      <p class="article-more">3年前のChatGPTとの会話を実際に読み返して気づいたことは、<a href="../ai-conversations-as-external-memory/">生成AIとの会話が、私の外部記憶になり始めた</a>に書いています。</p>
+
+      <h2>検索では、<wbr>忘れた<wbr>ことは<wbr>探せない</h2>
+
+      <p>今のChatGPTは、過去の会話を覚えていてくれる。それは確かに便利だ。でも、私が欲しいのはその先にある。</p>
+
+      <p>過去の会話を検索することはできる。けれど、検索は「何を探したいのか分かっている人」のための機能だ。私が知りたいのは、自分が忘れてしまったことや、自分でもまだ気づいていないことである。</p>
+
+      <p>この4年間で、私は何について繰り返し悩んできたのか。家族5人分の図書館の返却を自動化するなど、AIで家庭の困りごとを一つずつ解決してきたけれど、「もう考えなくてよくなったこと」はいくつあり、逆に4年前からずっと抱え続けている課題は何なのか。</p>
+
+      <p class="article-more">家事の中で「気にかけ続けること」をAIに委ねてきた経験と、そこから考えたこれからのAIへの期待は、<a href="../what-i-expect-from-ai-at-home/">技術に委ねること、技術とともに踏み込むこと。家事と子育てで、私がこれからのAIに期待すること</a>に書いています。</p>
+
+      <p>もちろん、AIに話しかける時点で「言葉にできた悩み」しか残らないという偏りはある。うまくいっている日常や、言葉にする余裕すらない切羽詰まった瞬間は残っていない。</p>
+
+      <p>それでも、4年分の会話すべてをAIが読み込み、離れた時期の会話どうしの関係を見つけて、私自身がまだ気づいていない問いを示してくれたら、自分について分かることは大きく変わるはずだ。</p>
+
+      <h2>AIの<wbr>解釈より、<wbr>当時の<wbr>言葉へ<wbr>戻れる<wbr>こと</h2>
+
+      <p>ただ、AIの分析結果をそのまま受け入れたいわけではない。人間が過去を都合よく編集するように、AIもまた、膨大な会話をまとめるうちに、もっともらしい物語を作ってしまうことがある。</p>
+
+      <p>だからこそ、AIの解釈だけを見せるのではなく、根拠となった当時の自分の言葉へすぐに戻れる仕組みであってほしい。</p>
+
+      <h2>「私が<wbr>私を<wbr>理解する<wbr>ため」の<wbr>記憶へ</h2>
+
+      <p>これまでAIの記憶は、「AIが私を理解するため」に進化してきた。これからは、「私が私自身を理解するため」に使えるようになってほしい。</p>
+
+      <p>そうなれば、すでに終わった過去の会話にも、後から新しい価値が生まれる。4年前の何気ない相談が、4年後の技術によって、初めて人生を変えるような意味を持つかもしれない。AIが賢くなるほど、私たちがこれまでに交わしてきた言葉の価値も、後から上がっていく。</p>
+
+      <p>3年前、私はAIに自分を知ってもらうために、自分が「知っていること」を書き残していた。今は、AIとの会話の中から、自分が「まだ知らない私」を見つけたいと思っている。</p>
+    </article>
+
+    <p class="article-share"><a href="https://twitter.com/intent/tweet?text=%E8%A8%98%E9%8C%B2%E3%81%99%E3%82%8B%E3%81%A4%E3%82%82%E3%82%8A%E3%81%AE%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E4%BC%9A%E8%A9%B1%E3%81%8B%E3%82%89%E3%80%81%E3%81%BE%E3%81%A0%E7%9F%A5%E3%82%89%E3%81%AA%E3%81%84%E8%87%AA%E5%88%86%E3%82%92%E8%A6%8B%E3%81%A4%E3%81%91%E3%81%9F%E3%81%84%E3%80%82%E7%A7%81%E3%81%8C%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89%E3%81%AEAI%E3%81%AE%E8%A8%98%E6%86%B6%E3%81%AB%E6%9C%9F%E5%BE%85%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8&amp;url=https%3A%2F%2Fmiyazakimari.com%2Farticles%2Fwhat-i-expect-from-ai-memory%2F&amp;via=m316jp2" target="_blank" rel="noopener">Xでシェア<span class="sr-only">（新しいタブで開きます）</span></a></p>
+
+    <div class="related" id="continue-reading">
+      <p class="eyebrow">次に読むなら</p>
+      <ul>
+        <li><a href="../ai-conversations-as-external-memory/"><img class="related-thumb" src="/assets/images/articles/ai-conversations-as-external-memory-thumb.webp" alt="" width="800" height="420" loading="lazy" decoding="async"><span class="related-body"><span class="related-question">3年前の<wbr>会話を<wbr>読み返して、<wbr>何が<wbr>残っていたか</span><span class="related-title">生成AIとの<wbr>会話が、<wbr>私の<wbr>外部記憶に<wbr>なり始めた</span></span></a></li>
+        <li><a href="../what-i-expect-from-ai-at-home/"><img class="related-thumb" src="/assets/images/articles/what-i-expect-from-ai-at-home-thumb.webp" alt="" width="800" height="420" loading="lazy" decoding="async"><span class="related-body"><span class="related-question">家事と<wbr>子育てでは、<wbr>AIに<wbr>何を<wbr>期待しているか</span><span class="related-title">技術に<wbr>委ねる<wbr>こと、<wbr>技術とともに<wbr>踏み込む<wbr>こと。<wbr>家事と<wbr>子育てで、<wbr>私が<wbr>これからの<wbr>AIに<wbr>期待する<wbr>こと</span></span></a></li>
+      </ul>
+      <a class="related-all" href="../">すべての記事を見る →</a>
+    </div>
+
+    <div class="author-box">
+      <p class="eyebrow">著者について</p>
+      <h3>宮崎真理</h3>
+      <p class="author-role">『AI×家事』著者</p>
+      <p>神戸大学大学院で生体計測工学を専攻し、修了後はオムロン株式会社で技術職として勤務。出産を機に10年間の専業主婦生活を経て、2023年より生成AIを家事・子育てに取り入れ、暮らしの中での活用を実践している。</p>
+      <p>WOMAN AI AWARD 2026 ライフ・イノベーター賞受賞。講談社「with class」でコラムを連載するほか、テレビ出演、雑誌・Webでの執筆・監修などを行う。</p>
+      <p>3兄弟の母。1000日以上にわたる生成AIの実践経験をもとに、理系出身・元専業主婦の視点から、家庭という最もテクノロジーが遅れた場所を、生活者自身がアップデートしていく可能性を発信している。</p>
+      <ul class="author-links">
+        <li><a href="/book/">著書『AI×家事』</a></li>
+        <li><a href="../../profile/">宮崎真理プロフィール</a></li>
+        <li><a href="/media/">メディア出演・執筆実績</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <p>取材・メディア出演・対談・執筆・監修のご相談を承っています。</p>
+      <a class="cta-button" href="/#contact">お問い合わせはこちら →</a>
+    </div>
+  </main>
+
+  <footer>© 2026 Miyazaki Mari. All rights reserved.</footer>
+</body>
+</html>

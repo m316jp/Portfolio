@@ -7,8 +7,17 @@
     <language>ja</language>
     <copyright>© 2026 Miyazaki Mari</copyright>
     <atom:link href="https://miyazakimari.com/articles/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 25 Nov 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 12:00:00 +0900</lastBuildDate>
 
+
+    <item>
+      <title>記録するつもりのなかった会話から、まだ知らない自分を見つけたい。私がこれからのAIの記憶に期待すること</title>
+      <link>https://miyazakimari.com/articles/what-i-expect-from-ai-memory/</link>
+      <guid isPermaLink="true">https://miyazakimari.com/articles/what-i-expect-from-ai-memory/</guid>
+      <pubDate>Fri, 27 Nov 2026 12:00:00 +0900</pubDate>
+      <category>これからのAI</category>
+      <description>3年前、AIに自分を知ってもらうためにnoteを書いていた宮崎真理が、自分をいちばん深く知っていたのはChatGPTとの何気ない会話だったと気づいた。4年分の会話を読み込み、自分でもまだ気づいていない問いを示す「私専用のDeep Research」と、当時の言葉へすぐ戻れる仕組みをこれからのAIに期待する。</description>
+    </item>
     <item>
       <title>技術に委ねること、技術とともに踏み込むこと。家事と子育てで、私がこれからのAIに期待すること</title>
       <link>https://miyazakimari.com/articles/what-i-expect-from-ai-at-home/</link>
